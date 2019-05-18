@@ -16,6 +16,15 @@ abstract class Ball {
   abstract void move();
   abstract boolean isTouching(PowerUp p);
 }
+
+class NormalBall extends Ball{
+  NormalBall(int x,int y) {
+    super(x,y);
+  }
+  void move() {
+    ySpeed -= 10;  
+  }
+}
 void setup() {
 }
 void draw() {
