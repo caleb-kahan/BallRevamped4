@@ -15,8 +15,6 @@ class NormalBall extends Ball {
     fill(255);
   }
   void move() {
-    this.x += this.xSpeed;
-    this.y -= this.ySpeed;
-    this.ySpeed -= 1;
+   super.move();
   }
 }
