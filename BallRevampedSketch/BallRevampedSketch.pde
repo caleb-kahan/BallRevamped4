@@ -21,51 +21,50 @@ abstract class Ball {
   }  
   abstract void display();
   void move() {
-    text(keyPressed + " " + keyCode + " " + Arrays.toString(keys), 10,10);
-    if (keyPressed == true) {
-      if (key == CODED) {
-        if (keys[0]) 
-          ySpeed+=.35;
-        if (keys[1])
-          ySpeed-=.35;
-        if (keys[2]) 
-          xSpeed+=.2;
-        if (keys[3]) 
-          xSpeed-=.2;
-      }
-    }
+    text(keyPressed + " " + keyCode + " " + Arrays.toString(keys), 10,10);;
+    //if (key == CODED) {
+      if (keys[0]) 
+        ySpeed+=.35;
+      if (keys[1])
+        ySpeed-=.35;
+      if (keys[2]) 
+        xSpeed+=.2;
+      if (keys[3]) 
+        xSpeed-=.2;
+    //}
     this.x += this.xSpeed;
     this.y -= this.ySpeed;
     this.ySpeed -= .09;
   }
-  void keyPressed() {
-    text("DAIJOBU", 100,100);
-    if (keyCode == UP) {
+  boolean keyPressed() {
+    if (key == 'w') {
       keys[0] = true;
     }
-    else if (keyCode == DOWN) {
+    else if (key == 's') {
       keys[1] = true;
     }
-    else if (keyCode == RIGHT) {
+    else if (key == 'd') {
       keys[2] = true;
     }
-    else if (keyCode == LEFT) {
+    else if (key == 'a') {
       keys[3] = true;
     }
+    return true;
   }
-  void keyReleased() {
-    if (keyCode == UP) {
+  boolean keyReleased() {
+    if (key == 'w') {
       keys[0] = false;
     }
-    else if (keyCode == DOWN) {
+    else if (key == 's') {
       keys[1] = false;
     }
-    else if (keyCode == RIGHT) {
+    else if (key == 'd') {
       keys[2] = false;
     }
-    else if (keyCode == LEFT) {
+    else if (key == 'a') {
       keys[3] = false;
     }
+    return true;
   }
   //abstract boolean isTouching(PowerUp p);
 }
