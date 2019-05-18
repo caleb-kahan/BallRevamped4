@@ -9,12 +9,30 @@ class Wall extends EnvironmentElement {
     //All these cases are containied with the constrained.
     //However, when the center is between the two sides of the rectangle, the circle will simply be perpindicularly above it,
     //and the closest point will share a coordinate with the circle.
-
+    /*
     float closestX = constrain(b.x, x-width/2.0, x+width/2.0);
     float closestY = constrain(b.y, y+height/2.0, y-height/2.0);
 
     float distanceSq = sq(b.x-closestX) +sq(b.y-closestY);
+    return distanceSq < sq(b.radius);*/
+    
+    
+    float newBallX = b.x-x;
+    float newBallY = b.y-y;
+    float angle = atan(newBallY/newBallX);
+    if(newBallX<0) angle+=PI;
+    float subAngle = radians(angleRotation);
+    newBallX= cos(angle)*cos(subAngle) + sin(angle)*sin(subAngle);
+    newBallY = sin(angle)*cos(subAngle) -cos(angle)*sin(subAngle);
+    
+    float closestX = constrain(newBallX, -width/2.0, width/2.0);
+    float closestY = constrain(newBallY, height/2.0, -height/2.0);
+
+    float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);
     return distanceSq < sq(b.radius);
+    
+    
+    
   }
   void display() {
     pushMatrix();
