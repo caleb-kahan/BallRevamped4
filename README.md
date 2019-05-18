@@ -7,7 +7,7 @@ Repository is made </br></br>
   <dd>-Added variables, the constructor, and the abstract methods. </dd>
   <dt>Move</dt>
   <dd>-Expanded on move to allow user interactivity: the arrow keys accelerate the boy in the specified direction.</dd>
-  <dd>-Made move part of the Ball class and called the super version in the NormalBall class.  <\dd>
+  <dd>-Made move part of the Ball class and called the super version in the NormalBall class.  </dd>
 <h4> Chris's Work </h4>
   <dt>NormalBall Class</dt>
   <dd>-wrote display() using the correct RGB values as the ball in the game, and arc() for the quadrants</dd>
