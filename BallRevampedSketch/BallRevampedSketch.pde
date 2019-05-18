@@ -9,10 +9,14 @@ abstract class Ball {
     this.x = x; 
     this.y=y;
     xSpeed = 0;
-    ySpeed = 0
-      isDead = false;
+    ySpeed = 0;
+    isDead = false;
   }  
   abstract void display();
   abstract void move();
-  abstract boolean isTouching(Powerup p);
+  abstract boolean isTouching(PowerUp p);
+}
+void setup() {
+}
+void draw() {
 }

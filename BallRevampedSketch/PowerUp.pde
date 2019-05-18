@@ -1,0 +1,3 @@
+class PowerUp {
+  int a;
+}
