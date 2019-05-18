@@ -4,9 +4,10 @@ Repository is made </br></br>
 <b>5/17/19</b></br>
 <h4> Caleb's Work </h4>
   <dt>Ball Class</dt>
-  <dd>-Movement</dd>
-  <dt>Milk</dt>
-  <dd>- white cold drink</dd>
+  <dd>-Added variables, the constructor, and the abstract methods. </dd>
+  <dt>Move</dt>
+  <dd>-Expanded on move to allow user interactivity: the arrow keys accelerate the boy in the specified direction.</dd>
+  <dd>-Made move part of the Ball class and called the super version in the NormalBall class.  <\dd>
 <h4> Chris's Work </h4>
   <dt>NormalBall Class</dt>
   <dd>-wrote display() using the correct RGB values as the ball in the game, and arc() for the quadrants</dd>
