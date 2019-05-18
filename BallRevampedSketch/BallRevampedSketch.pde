@@ -17,18 +17,18 @@ abstract class Ball {
     if (keyPressed == true) {
       if (key == CODED) {
         if (keyCode == UP) 
-          ySpeed+=1.5;
+          ySpeed+=.4;
         if (keyCode == DOWN)
-          ySpeed-=1.5;
+          ySpeed-=.4;
         if (keyCode== RIGHT) 
-          xSpeed+=1.5;
+          xSpeed+=.4;
         if (keyCode== DOWN) 
-          xSpeed -=1.5;
+          xSpeed -=.4;
       }
-      this.x += this.xSpeed;
-      this.y -= this.ySpeed;
-      this.ySpeed -= 1;
     }
+    this.x += this.xSpeed;
+    this.y -= this.ySpeed;
+    this.ySpeed -= .1;
   }
   //abstract boolean isTouching(PowerUp p);
 }
