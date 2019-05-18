@@ -14,7 +14,7 @@ class Ball {
   }  
   abstract void display();
   abstract void move();
-  abstract boolean isTouching(PowerUp p);
+  //abstract boolean isTouching(PowerUp p);
 }
 
 class NormalBall extends Ball{
@@ -33,10 +33,17 @@ class NormalBall extends Ball{
     arc(this.x-10, this.y, this.x, this.y-10, PI, PI/2);    
   }
   void move() {
-    this.ySpeed -= 10;  
+    this.x += this.xSpeed;
+    this.y -= this.ySpeed;
+    this.ySpeed -= 10;
   }
+  
 }
 void setup() {
+  size(400,700);
+  Ball ball = new NormalBall(50,50);
 }
 void draw() {
+  ball.display();
+  ball.move();  
 }
