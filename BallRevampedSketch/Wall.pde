@@ -1,4 +1,7 @@
 class Wall extends EnvironmentElement {
+  Wall(float cenX, float cenY, int wid, int heigh, float angle){
+    super(cenX,  cenY, wid, heigh, angle);
+  }
   boolean isTouching(Ball b) {
     //Stack-Overflow Code
     //If the center is on  the left side on the rectangle and above, the closest point is the upper left vertex.
@@ -15,7 +18,7 @@ class Wall extends EnvironmentElement {
   }
   void display() {
     pushMatrix();
-    fill(0); // white square
+    fill(0);
     translate(x, y);
     rotate(radians(angleRotation));
     rect(x, y, width, height);
