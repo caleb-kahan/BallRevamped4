@@ -2,6 +2,7 @@ import java.util.Arrays;
 abstract class Ball {
   float x;
   float y;
+  float radius;
   float xSpeed;
   float ySpeed;
   boolean isDead;
