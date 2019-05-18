@@ -21,47 +21,44 @@ abstract class Ball {
   }  
   abstract void display();
   void move() {
-    text(keyPressed + " " + keyCode + " " + Arrays.toString(keys), 10,10);;
-    //if (key == CODED) {
-      if (keys[0]) 
-        ySpeed+=.35;
-      if (keys[1])
-        ySpeed-=.35;
-      if (keys[2]) 
-        xSpeed+=.2;
-      if (keys[3]) 
-        xSpeed-=.2;
-    //}
+    if (keys[0]) 
+      ySpeed+=.35;
+    if (keys[1])
+      ySpeed-=.35;
+    if (keys[2]) 
+      xSpeed+=.2;
+    if (keys[3]) 
+      xSpeed-=.2;
     this.x += this.xSpeed;
     this.y -= this.ySpeed;
     this.ySpeed -= .09;
   }
   boolean keyPressed() {
-    if (key == 'w') {
+    if (keyCode == UP) {
       keys[0] = true;
     }
-    else if (key == 's') {
+    else if (keyCode == DOWN) {
       keys[1] = true;
     }
-    else if (key == 'd') {
+    else if (keyCode == RIGHT) {
       keys[2] = true;
     }
-    else if (key == 'a') {
+    else if (keyCode == LEFT) {
       keys[3] = true;
     }
     return true;
   }
   boolean keyReleased() {
-    if (key == 'w') {
+    if (keyCode == UP) {
       keys[0] = false;
     }
-    else if (key == 's') {
+    else if (keyCode == DOWN) {
       keys[1] = false;
     }
-    else if (key == 'd') {
+    else if (keyCode == RIGHT) {
       keys[2] = false;
     }
-    else if (key == 'a') {
+    else if (keyCode == LEFT) {
       keys[3] = false;
     }
     return true;
@@ -87,5 +84,10 @@ void draw() {
     ball.xSpeed = 0;
     ball.ySpeed = 0;
   }
-
+}
+void keyPressed() {
+  ball.keyPressed();
+}
+void keyReleased() {
+  ball.keyReleased();
 }
