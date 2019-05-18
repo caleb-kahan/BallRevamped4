@@ -1,16 +1,17 @@
 class NormalBall extends Ball {
   NormalBall(int x, int y) {
     super(x, y);
+    radius = 50;
   }
   void display() {
     fill(51,255,102);
-    arc(this.x,this.y,50,50,0,PI/2,PIE);
+    arc(this.x,this.y,radius,radius,0,PI/2,PIE);
     fill(204,51,204);
-    arc(this.x,this.y,50,50,-PI/2,0,PIE);
+    arc(this.x,this.y,radius,radius,-PI/2,0,PIE);
     fill(51,100,250);
-    arc(this.x,this.y,50,50,PI,3*PI/2,PIE);
+    arc(this.x,this.y,radius,radius,PI,3*PI/2,PIE);
     fill(255,51,50);
-    arc(this.x,this.y,50,50,PI/2,PI,PIE);
+    arc(this.x,this.y,radius,radius,PI/2,PI,PIE);
   }
   void move() {
    super.move();
