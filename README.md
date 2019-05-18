@@ -7,10 +7,10 @@ Repository is made </br></br>
   <dd>-Movement</dd>
   <dt>Milk</dt>
   <dd>- white cold drink</dd>
-</dl>
-Chris's Work 
-NormalBall Class
--wrote display() using the correct RGB values as the ball in the game, and arc() for the quadrants
--wrote move() to increment the x and y coors, and the ySpeed to emulate gravity
-Wrote setup() with dimensions of the display and ball that matched the game.
-Wrote draw() with restrictions that respawn the ball if it goes out of boundary. 
+<h4> Chris's Work </h4>
+  <dt>NormalBall Class</dt>
+  <dd>-wrote display() using the correct RGB values as the ball in the game, and arc() for the quadrants</dd>
+  <dd>-wrote move() to increment x and y, and ySpeed to emulate gravity</dd>
+  <dt>Wrote setup() with dimensions of the display and ball that matched the game.</dt>
+  <dt>Wrote draw() with restrictions that respawn the ball if it goes out of boundary. </dt>
+</d1>
