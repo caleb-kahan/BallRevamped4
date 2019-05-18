@@ -1,4 +1,4 @@
-class Ball {
+abstract class Ball {
   float x;
   float y;
   float xSpeed;
@@ -7,7 +7,7 @@ class Ball {
 
   Ball(int x, int y) {
     this.x = x; 
-    this.y=y;
+    this.y = y;
     xSpeed = 0;
     ySpeed = 0;
     isDead = false;
@@ -22,7 +22,7 @@ class NormalBall extends Ball{
     super(x,y);
   }
   void display() {
-    stroke(0);
+    stroke(255);
     fill(51,255,102);
     arc(this.x, this.y-10, this.x+10, this.y,PI/2,0);
     fill(204,51,204);
@@ -30,20 +30,26 @@ class NormalBall extends Ball{
     fill(51,0,153);
     arc(this.x, this.y+10, this.x-10, this.y, 3*PI/2, PI);
     fill(255,51,102);
-    arc(this.x-10, this.y, this.x, this.y-10, PI, PI/2);    
+    arc(this.x-10, this.y, this.x, this.y-10, PI, PI/2);
+    fill(255);
   }
   void move() {
     this.x += this.xSpeed;
     this.y -= this.ySpeed;
-    this.ySpeed -= 10;
+    this.ySpeed -= 1;
   }
   
 }
+
+Ball ball;
+
 void setup() {
-  size(400,700);
-  Ball ball = new NormalBall(50,50);
+  size(450,600);
+  ball = new NormalBall(50,50);
 }
+
 void draw() {
+  background(255);
   ball.display();
-  ball.move();  
+  ball.move();
 }
