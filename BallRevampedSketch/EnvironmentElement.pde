@@ -3,6 +3,7 @@ abstract class EnvironmentElement{
   float y;
   int width;
   int height;
+  float angleRotation;
   
   abstract boolean isTouching(Ball b);
   abstract void display();
