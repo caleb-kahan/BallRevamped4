@@ -13,7 +13,23 @@ abstract class Ball {
     isDead = false;
   }  
   abstract void display();
-  abstract void move();
+  void move() {
+    if (keyPressed == true) {
+      if (key == CODED) {
+        if (keyCode == UP) 
+          ySpeed+=1.5;
+        if (keyCode == DOWN)
+          ySpeed-=1.5;
+        if (keyCode== RIGHT) 
+          xSpeed+=1.5;
+        if (keyCode== DOWN) 
+          xSpeed -=1.5;
+      }
+      this.x += this.xSpeed;
+      this.y -= this.ySpeed;
+      this.ySpeed -= 1;
+    }
+  }
   //abstract boolean isTouching(PowerUp p);
 }
 
@@ -21,8 +37,8 @@ abstract class Ball {
 Ball ball;
 
 void setup() {
-  size(450,600);
-  ball = new NormalBall(50,50);
+  size(450, 600);
+  ball = new NormalBall(50, 50);
 }
 
 void draw() {
