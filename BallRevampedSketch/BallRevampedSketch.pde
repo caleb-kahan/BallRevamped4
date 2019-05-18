@@ -71,7 +71,7 @@ abstract class Ball {
 Ball ball;
 
 void setup() {
-  size(450, 600);
+  size(450, 450);
   ball = new NormalBall(225, 50);
 }
 

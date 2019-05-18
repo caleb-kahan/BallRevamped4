@@ -1,6 +1,6 @@
 class Wall extends EnvironmentElement {
-  Wall(float cenX, float cenY, int wid, int heigh, float angle){
-    super(cenX,  cenY, wid, heigh, angle);
+  Wall(float cenX, float cenY, int wid, int heigh, float angle) {
+    super(cenX, cenY, wid, heigh, angle);
   }
   boolean isTouching(Ball b) {
     //Stack-Overflow Code
@@ -21,7 +21,8 @@ class Wall extends EnvironmentElement {
     fill(0);
     translate(x, y);
     rotate(radians(angleRotation));
-    rect(x, y, width, height);
+    rectMode(CENTER);
+    rect(0, 0, width, height);
     popMatrix();
   }
 }
