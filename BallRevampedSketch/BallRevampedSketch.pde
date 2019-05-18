@@ -22,7 +22,7 @@ abstract class Ball {
           ySpeed-=.4;
         if (keyCode== RIGHT) 
           xSpeed+=.4;
-        if (keyCode== DOWN) 
+        if (keyCode== LEFT) 
           xSpeed -=.4;
       }
     }
