@@ -1,5 +1,5 @@
 class Wall extends EnvironmentElement {
-  Wall(float cenX, float cenY, int wid, int heigh, float angle) {
+  Wall(float cenX, float cenY, float wid, float heigh, float angle) {
     super(cenX, cenY, wid, heigh, angle);
   }
   boolean isTouching(Ball b) {

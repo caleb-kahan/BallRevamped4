@@ -1,11 +1,11 @@
 abstract class EnvironmentElement{
   float x;
   float y;
-  int w;
-  int l;
+  float w;
+  float l;
   float angleRotation;
   
-  EnvironmentElement(float cenX, float cenY, int wid, int heigh, float angle){
+  EnvironmentElement(float cenX, float cenY, float wid, float heigh, float angle){
     x = cenX;
     y = cenY;
     w = wid;
