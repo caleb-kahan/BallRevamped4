@@ -3,7 +3,7 @@ class Wall extends EnvironmentElement {
     super(cenX, cenY, wid, heigh, angle);
   }
   boolean isTouching(Ball b) {
-    //Stack-Overflow Code
+    //Stack-Overflow Code- Works for non-oblique rectangles.
     //If the center is on  the left side on the rectangle and above, the closest point is the upper left vertex.
     //Same with right and above, right and below, and left and below.
     //All these cases are containied with the constrained.
@@ -16,7 +16,7 @@ class Wall extends EnvironmentElement {
     float distanceSq = sq(b.x-closestX) +sq(b.y-closestY);
     return distanceSq < sq(b.radius);
     */
-    
+    //Works for Oblique rectangles
     float newBallX = b.x-x;
     float newBallY = b.y-y;
     float angle = atan(newBallY/newBallX);
