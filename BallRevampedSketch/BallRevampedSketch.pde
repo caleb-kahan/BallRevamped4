@@ -8,10 +8,13 @@ abstract class Ball {
   float startRadius;
   boolean isDead;
   boolean[] keys;
-
-  Ball(float x, float y, float radius,float startRadius) {
+  int [][] colors;
+  float gravity;
+  Ball(float x, float y, float radius,float startRadius, int [][] colors, float gravity) {
     this.x = x; 
     this.y = y;
+    this.gravity = gravity;
+    this.colors=colors;
     xSpeed = 0;
     ySpeed = 0;
     this.radius = radius;
