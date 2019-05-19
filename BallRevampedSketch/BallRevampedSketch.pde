@@ -32,7 +32,7 @@ abstract class Ball {
       xSpeed-=.13;
     this.x += this.xSpeed;
     this.y -= this.ySpeed;
-    this.ySpeed -= .06;
+    this.ySpeed += gravity;
   }
   boolean keyPressed() {
     if (keyCode == UP) {

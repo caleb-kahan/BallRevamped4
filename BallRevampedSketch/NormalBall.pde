@@ -1,7 +1,7 @@
 class NormalBall extends Ball {
   NormalBall(float x, float y, float radius, float startRadius) {
     super(x, y, radius, startRadius);
-    gravity = 0.06;
+    gravity = -0.06;
     colors = new int[4][3];
     colors[0][0]=51;
     colors[0][1]=255;
@@ -19,13 +19,13 @@ class NormalBall extends Ball {
   }
   void display() {
     if (!isDead) {  
-      fill(51, 255, 102);
+      fill(colors[0][0], colors[0][1], colors[0][2]);
       arc(this.x, this.y, this.radius*2, this.radius*2, 0, PI/2, PIE);
-      fill(204, 51, 204);
+      fill(colors[1][0],colors[1][1], colors[1][2]);
       arc(this.x, this.y, this.radius*2, this.radius*2, -PI/2, 0, PIE);
-      fill(51, 100, 250);
+      fill(colors[2][0], colors[2][1], colors[2][2]);
       arc(this.x, this.y, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
-      fill(255, 51, 50);
+      fill(colors[3][0], colors[3][1], colors[3][2]);
       arc(this.x, this.y, this.radius*2, this.radius*2, PI/2, PI, PIE);
     }
   }
