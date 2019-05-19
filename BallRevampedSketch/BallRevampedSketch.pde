@@ -78,7 +78,6 @@ abstract class Ball {
 
 Ball ball;
 Wall wallie;
-PowerUp star;
 float startX;
 float startY;
 float startRadius;
@@ -89,9 +88,11 @@ void setup() {
   startY = 50;
   ball = new NormalBall(startX, startY,25,25);
   wallie = new Wall(200,200,50,100,0);
-  star = new SmallPowerUp(100,100,10,new int[] {255,130,160});
+  PowerUp smallstar = new SmallPowerUp(100,100,10);
+  PowerUp bigstar = new BigPowerUp(300,100,10);
   powerUps = new ArrayList<PowerUp>();
-  powerUps.add(star);
+  powerUps.add(smallstar);
+  powerUps.add(bigstar);
 }
 
 void draw() {
@@ -99,10 +100,15 @@ void draw() {
   if (ball.y > 600 || ball.y < 0 || ball.x > 450 || ball.x < 0) {
     ball.respawn(255,50);
   }
-  star.display();
   wallie.display();
-  if(wallie.isTouching(ball) || star.isTouching(ball)) circle(300,300,50);
-  if (star.isTouching(ball)) star.use();
+  if(wallie.isTouching(ball)) circle(300,300,50);
+  for (PowerUp star : powerUps) { 
+    star.display();
+    if (star.isTouching(ball)) {
+      circle(300,300,50);
+      star.use();
+    }
+  }
   ball.display();
   ball.move();
 }
