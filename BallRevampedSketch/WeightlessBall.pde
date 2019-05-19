@@ -3,18 +3,18 @@ class WeightlessBall extends Ball {
     super(x, y, radius, startRadius);
     gravity = 0;
     colors = new int[4][3];
-    colors[0][0]=51;
-    colors[0][1]=255;
-    colors[0][2]=102;
-    colors[1][0]=204;
-    colors[1][1]=51;
-    colors[1][2]=204;
-    colors[2][0]=51;
-    colors[2][1]=100;
-    colors[2][2]=250;
-    colors[3][0]=255;
-    colors[3][1]=51;
-    colors[3][2]=50;
+    colors[0][0]=(int)(51*0.3);
+    colors[0][1]=(int)(255*0.3);
+    colors[0][2]=(int)(102*0.3);
+    colors[1][0]=(int)(204*0.3);
+    colors[1][1]=(int)(51*0.3);
+    colors[1][2]=(int)(204*0.3);
+    colors[2][0]=(int)(51*0.3);
+    colors[2][1]=(int)(100*0.3);
+    colors[2][2]=(int)(250*0.3);
+    colors[3][0]=(int)(255*0.3);
+    colors[3][1]=(int)(51*0.3);
+    colors[3][2]=(int)(50*0.3);
   }
    void display() {
     if (!isDead) {  
