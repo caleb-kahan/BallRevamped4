@@ -32,9 +32,6 @@ class Wall extends EnvironmentElement {
     float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);
     return distanceSq < sq(b.radius);
     
-   
-    
-    
   }
   void display() {
     pushMatrix();

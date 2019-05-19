@@ -60,6 +60,7 @@ void setup() {
     size(450,600);  
     background(255);  
     band = new Haken();
+    
 }
 
 void draw() {
