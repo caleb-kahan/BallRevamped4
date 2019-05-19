@@ -37,14 +37,11 @@ abstract class Ball {
   boolean keyPressed() {
     if (keyCode == UP) {
       keys[0] = true;
-    }
-    else if (keyCode == DOWN) {
+    } else if (keyCode == DOWN) {
       keys[1] = true;
-    }
-    else if (keyCode == RIGHT) {
+    } else if (keyCode == RIGHT) {
       keys[2] = true;
-    }
-    else if (keyCode == LEFT) {
+    } else if (keyCode == LEFT) {
       keys[3] = true;
     }
     return true;
@@ -52,14 +49,11 @@ abstract class Ball {
   boolean keyReleased() {
     if (keyCode == UP) {
       keys[0] = false;
-    }
-    else if (keyCode == DOWN) {
+    } else if (keyCode == DOWN) {
       keys[1] = false;
-    }
-    else if (keyCode == RIGHT) {
+    } else if (keyCode == RIGHT) {
       keys[2] = false;
-    }
-    else if (keyCode == LEFT) {
+    } else if (keyCode == LEFT) {
       keys[3] = false;
     }
     return true;
@@ -69,10 +63,15 @@ abstract class Ball {
 
 
 Ball ball;
-
+Wall wallie;
+Portal pot;
 void setup() {
   size(450, 450);
   ball = new NormalBall(225, 50);
+  wallie = new Wall(200, 200, 50, 50, 45);
+  pot = new Portal(284, 300, 50, 50, 0);
+
+
   rectMode(CENTER);
 }
 
@@ -86,11 +85,9 @@ void draw() {
     ball.xSpeed = 0;
     ball.ySpeed = 0;
   }
-  Wall wallie = new Wall(200,200,50,50,45);
   //wallie.display();
-  Portal pot = new Portal(284,300,50,50,0);
   pot.display();
-  if(pot.isTouching(ball)) circle(400,400,50);
+  if (pot.isTouching(ball)) circle(400, 400, 50);
 }
 void keyPressed() {
   ball.keyPressed();
