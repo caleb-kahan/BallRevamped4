@@ -4,16 +4,16 @@ abstract class Ball {
   float y;
   float xSpeed;
   float ySpeed;
-  int diameter;
+  int radius;
   boolean isDead;
   boolean[] keys;
 
-  Ball(int x, int y, int diameter) {
+  Ball(int x, int y, int radius) {
     this.x = x; 
     this.y = y;
     xSpeed = 0;
     ySpeed = 0;
-    this.diameter = diameter;
+    this.radius = radius;
     isDead = false;
     keys = new boolean[4];
   }  
@@ -74,7 +74,7 @@ Ball ball;
 
 void setup() {
   size(450, 600);
-  ball = new NormalBall(225, 50,50);
+  ball = new NormalBall(225, 50,25);
 }
 
 void draw() {
