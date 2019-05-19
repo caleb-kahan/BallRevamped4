@@ -4,11 +4,11 @@ abstract class Ball {
   float y;
   float xSpeed;
   float ySpeed;
-  int radius;
+  float radius;
   boolean isDead;
   boolean[] keys;
 
-  Ball(int x, int y, int radius) {
+  Ball(float x, float y, float radius) {
     this.x = x; 
     this.y = y;
     xSpeed = 0;
@@ -71,10 +71,17 @@ abstract class Ball {
 }
 
 Ball ball;
-
+Wall wallie;
+PowerUp star;
+float startX;
+float startY;
 void setup() {
   size(450, 600);
-  ball = new NormalBall(225, 50,25);
+  startX = 255;
+  startY = 50;
+  ball = new NormalBall(startX, startY,25);
+  wallie = new Wall(200,200,50,100,0);
+  star = new SmallPowerUp(100,100,10,new int[] {255,130,160});
 }
 
 void draw() {
@@ -82,9 +89,10 @@ void draw() {
   if (ball.y > 600 || ball.y < 0 || ball.x > 450 || ball.x < 0) {
     ball.respawn(255,50);
   }
-  Wall wallie = new Wall(200,200,50,100,0);
+  star.display();
   wallie.display();
-  if(wallie.isTouching(ball)) circle(300,300,50);
+  if(wallie.isTouching(ball) || star.isTouching(ball)) circle(300,300,50);
+  if (star.isTouching(ball)) star.use(ball);
   ball.display();
   ball.move();
 }
