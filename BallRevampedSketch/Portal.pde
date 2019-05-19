@@ -13,18 +13,19 @@ public class Portal extends EnvironmentElement {
     pushMatrix();
     translate(x, y);
     fill(75, 0, 130);
-    rect(0, 0, 180, 180);
+    rect(0, 0, w-10, l-10);
     rotate(radians(angleRotation));
     stroke(0, 255, 255);
-    for (float x =-40*PI; x<40*PI; x+=0.25) {
+    float sineDist = sqrt(sq(w-10)+sq(l-10))/2;
+    for (float x =-sinDist; x<sinDist; x+=0.25) {
       point(x, 10*cos(x/25));
     }
-    for (float y =-40*PI; y<40*PI; y+=0.25) {
+    for (float y =-sinDist; y<sinDist; y+=0.25) {
       point(10*sin(y/25), y);
     }
     rotate(radians(-angleRotation));
-    stroke(153, 50, 204);
-    for (float y = 0; y>=-20; y-=0.5) {
+    fill(153, 50, 204);
+    for (float y = 0; y>=-5; y-=0.5) {
       line(-110, y-90, 110, y-90);
     }
     for (float y = 0; y<=20; y+=0.5) {
@@ -36,7 +37,7 @@ public class Portal extends EnvironmentElement {
     for (float x = 0; x<=20; x+=0.5) {
       line(x+90, -110, x+90, 110);
     }
-    stroke(255);
+    fill(255);
 
     for (float y = -20; y>=-40; y-=0.5) {
       line(-110, y-90, 110, y-90);
@@ -53,4 +54,4 @@ public class Portal extends EnvironmentElement {
     popMatrix();
     angleRotation++;
   }
-}
+ 
