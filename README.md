@@ -18,7 +18,8 @@ Repository is made </br></br>
 <b>5/18/19</br>
 <h4>Caleb's Work </h4>
 <ul>
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Milk</li>
+  <li>Created the Wall Class, defined display() and isTouching(Ball b) for it</li>
+  <li>Created the EnvironmentElement Class, added constructor + abstract methods</li>
+  <li>Created the Concept of Radius</li>
+  <li>Created the Portal Class, defined display() and isTouching(Ball b) for it</li>
 </ul>
