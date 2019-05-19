@@ -4,13 +4,15 @@ class SmallPowerUp extends PowerUp {
   }
   void display(){
     super.display();
+    text(""+isUsed,10,400);
   }
   boolean isTouching(Ball b) {  
     return super.isTouching(b);
   }
-  void use(Ball b) {
-    if (!this.isUsed) {
-      b = new NormalBall(startX,startY,10);
+  void use() {
+    if (!isUsed) {
+      isUsed = true;
+      ball.radius = 12;
     }
   }
 }
