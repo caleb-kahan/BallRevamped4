@@ -87,7 +87,7 @@ void draw() {
   }
   Wall wallie = new Wall(200,200,50,50,45);
   wallie.display();
-  if(wallie.isTouching(ball)) circle(200,200,200);
+  if(wallie.isTouching(ball)) circle(300,300,50);
 }
 void keyPressed() {
   ball.keyPressed();

@@ -1,7 +1,7 @@
 class NormalBall extends Ball {
   NormalBall(int x, int y) {
     super(x, y);
-    radius = 25;
+    radius = 35;
   }
   void display() {
     fill(51,255,102);
