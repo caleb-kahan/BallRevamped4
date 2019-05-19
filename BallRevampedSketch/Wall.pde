@@ -3,25 +3,22 @@ class Wall extends EnvironmentElement {
     super(cenX, cenY, wid, heigh, angle);
   }
   boolean isTouching(Ball b) {
-    //Stack-Overflow Code- Works for non-oblique rectangles.
-    //If the center is on  the left side on the rectangle and above, the closest point is the upper left vertex.
-    //Same with right and above, right and below, and left and below.
-    //All these cases are containied with the constrained.
-    //However, when the center is between the two sides of the rectangle, the circle will simply be perpindicularly above it,
-    //and the closest point will share a coordinate with the circle.
-    if (this.angleRotation == 0) {
-      return (b.x > this.x-width/2 - b.diameter/2 && b.x < this.x+width/2 + b.diameter/2 && 
-          b.y > this.y-height/2 - b.diameter/2 && b.y < this.y+height/2 + b.diameter/2);
-    }
-    //Works for Oblique rectangles
+    /*Stack-Overflow Code- Works for non-oblique rectangles.
+     *If the center is on  the left side on the rectangle and above, the closest point is the upper left vertex.
+     *Same with right and above, right and below, and left and below.
+     *All these cases are containied with the constrained.
+     *However, when the center is between the two sides of the rectangle, the circle will simply be perpindicularly above it,
+     *and the closest point will share a coordinate with the circle.
+     *Works for Oblique rectangles
+     */
     float newBallX = b.x-x;
     float newBallY = b.y-y;
     float angle = atan(newBallY/newBallX);
     if(newBallX<0) angle+=PI;
     float distance= sqrt(sq(newBallX)+sq(newBallY));
     float subAngle = radians(angleRotation);
-    newBallX= distance*(cos(angle)*cos(subAngle) - sin(angle)*sin(subAngle));
-    newBallY = distance*(sin(angle)*cos(subAngle) + cos(angle)*sin(subAngle));
+    newBallX= distance*(cos(angle)*cos(subAngle) + sin(angle)*sin(subAngle));
+    newBallY = distance*(sin(angle)*cos(subAngle) - cos(angle)*sin(subAngle));
     
     float closestX = constrain(newBallX, -width/2.0, width/2.0);
     float closestY = constrain(newBallY, -height/2.0, height/2.0);

@@ -70,7 +70,6 @@ abstract class Ball {
   //abstract boolean isTouching(PowerUp p);
 }
 
-
 Ball ball;
 
 void setup() {
@@ -83,7 +82,7 @@ void draw() {
   if (ball.y > 600 || ball.y < 0 || ball.x > 450 || ball.x < 0) {
     ball.respawn(255,50);
   }
-  Wall wallie = new Wall(200,200,10,100,0);
+  Wall wallie = new Wall(200,200,50,100,0);
   wallie.display();
   if(wallie.isTouching(ball)) circle(300,300,50);
   ball.display();
