@@ -85,7 +85,7 @@ void draw() {
     ball.xSpeed = 0;
     ball.ySpeed = 0;
   }
-  Wall wallie = new Wall(200,200,50,50,0);
+  Wall wallie = new Wall(200,200,50,50,45);
   wallie.display();
   if(wallie.isTouching(ball)) circle(200,200,200);
 }
