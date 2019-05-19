@@ -10,11 +10,9 @@ abstract class Ball {
   boolean[] keys;
   int [][] colors;
   float gravity;
-  Ball(float x, float y, float radius,float startRadius, int [][] colors, float gravity) {
+  Ball(float x, float y, float radius,float startRadius) {
     this.x = x; 
     this.y = y;
-    this.gravity = gravity;
-    this.colors=colors;
     xSpeed = 0;
     ySpeed = 0;
     this.radius = radius;
