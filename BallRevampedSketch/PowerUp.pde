@@ -12,7 +12,6 @@ abstract class PowerUp {
     isUsed = false;
   }
   void display() {
-    background(255);
     fill(colors[0],colors[1],colors[2]);
     stroke(colors[0]/2,colors[1]/2,colors[2]/2);
     strokeWeight(2);
@@ -30,6 +29,7 @@ abstract class PowerUp {
     endShape(CLOSE);
     stroke(0);
     strokeWeight(1);
+    fill(0);
   }
   boolean isTouching(Ball b) {
     return (sqrt(sq(x - b.x)+sq(y - b.y)) < 50*50/size + b.radius);
