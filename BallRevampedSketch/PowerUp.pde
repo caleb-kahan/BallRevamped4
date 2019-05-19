@@ -32,8 +32,7 @@ abstract class PowerUp {
     strokeWeight(1);
   }
   boolean isTouching(Ball b) {
-    isUsed = true;
     return (sqrt(sq(x - b.x)+sq(y - b.y)) < 50*50/size + b.radius);
   }
-  abstract void use(Ball b);
+  abstract void use();
 }
