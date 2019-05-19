@@ -17,3 +17,8 @@ Repository is made </br></br>
 </d1></br>
 <b>5/18/19</br>
 <h4>Caleb's Work </h4>
+<ul>
+  <li>Coffee</li>
+  <li>Tea</li>
+  <li>Milk</li>
+</ul>
