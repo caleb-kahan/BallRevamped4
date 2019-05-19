@@ -26,8 +26,8 @@ class Wall extends EnvironmentElement {
     newBallX= distance*(cos(angle)*cos(subAngle) - sin(angle)*sin(subAngle));
     newBallY = distance*(sin(angle)*cos(subAngle) + cos(angle)*sin(subAngle));
     
-    float closestX = constrain(newBallX, -width/2.0, width/2.0);
-    float closestY = constrain(newBallY, -height/2.0, height/2.0);
+    float closestX = constrain(newBallX, -w/2.0, w/2.0);
+    float closestY = constrain(newBallY, -l/2.0, l/2.0);
 
     float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);
     return distanceSq < sq(b.radius);
@@ -39,7 +39,7 @@ class Wall extends EnvironmentElement {
     translate(x, y);
     rotate(radians(angleRotation));
     rectMode(CENTER);
-    rect(0, 0, width, height);
+    rect(0, 0, w, l);
     popMatrix();
   }
 }

@@ -3,19 +3,18 @@ public class Portal extends EnvironmentElement {
     super(cenX, cenY, wid, heigh, angle);
   }
   boolean isTouching(Ball b) {
-    float closestX = constrain(b.x, x-width/2.0, x+width/2.0);
-    float closestY = constrain(b.y, y-height/2.0, y+height/2.0);
+    float closestX = constrain(b.x, x-w/2.0, x+w/2.0);
+    float closestY = constrain(b.y, y-l/2.0, y+l/2.0);
 
     float distanceSq = sq(b.x-closestX) +sq(b.y-closestY);
     return distanceSq < sq(b.radius);
   }
   void display() {
     pushMatrix();
-    translate(500, 500);
-
+    translate(x, y);
     fill(75, 0, 130);
     rect(0, 0, 180, 180);
-    rotate(radians(angle));
+    rotate(radians(angleRotation));
     stroke(0, 255, 255);
     for (float x =-40*PI; x<40*PI; x+=0.25) {
       point(x, 10*cos(x/25));
@@ -23,7 +22,7 @@ public class Portal extends EnvironmentElement {
     for (float y =-40*PI; y<40*PI; y+=0.25) {
       point(10*sin(y/25), y);
     }
-    rotate(radians(-angle));
+    rotate(radians(-angleRotation));
     stroke(153, 50, 204);
     for (float y = 0; y>=-20; y-=0.5) {
       line(-110, y-90, 110, y-90);
@@ -52,6 +51,6 @@ public class Portal extends EnvironmentElement {
       line(x+90, -110, x+90, 110);
     }
     popMatrix();
-    angle++;
+    angleRotation++;
   }
 }
