@@ -1,6 +1,6 @@
 public class Portal extends EnvironmentElement {
-  Portal(float cenX, float cenY, float wid, float heigh, float angle) {
-    super(cenX, cenY, wid, heigh, angle);
+  Portal(float cenX, float cenY) {
+    super(cenX, cenY, 50, 50, 0);
   }
   boolean isTouching(Ball b) {
     float closestX = constrain(b.x, x-w/2.0, x+w/2.0);
