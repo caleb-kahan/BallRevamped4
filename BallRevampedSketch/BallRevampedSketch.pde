@@ -2,37 +2,36 @@ import java.util.Arrays;
 abstract class Ball {
   float x;
   float y;
-  float radius;
   float xSpeed;
   float ySpeed;
+  float radius;
+  float startRadius;
   boolean isDead;
   boolean[] keys;
 
-  Ball(int x, int y) {
+  Ball(float x, float y, float radius,float startRadius) {
     this.x = x; 
     this.y = y;
     xSpeed = 0;
     ySpeed = 0;
+    this.radius = radius;
+    this.startRadius = startRadius;
     isDead = false;
     keys = new boolean[4];
-    keys[0] = false;
-    keys[1] = false;
-    keys[0] = false;
-    keys[1] = false;
   }  
   abstract void display();
   void move() {
     if (keys[0]) 
-      ySpeed+=.35;
+      ySpeed+=.32;
     if (keys[1])
-      ySpeed-=.35;
+      ySpeed-=.32;
     if (keys[2]) 
-      xSpeed+=.2;
+      xSpeed+=.13;
     if (keys[3]) 
-      xSpeed-=.2;
+      xSpeed-=.13;
     this.x += this.xSpeed;
     this.y -= this.ySpeed;
-    this.ySpeed -= .09;
+    this.ySpeed -= .06;
   }
   boolean keyPressed() {
     if (keyCode == UP) {
@@ -58,37 +57,54 @@ abstract class Ball {
     }
     return true;
   }
+  void respawn(float x, float y) {
+    this.x = x;
+    this.y = y;
+    this.xSpeed = 0;
+    this.ySpeed = 0;
+    this.radius = startRadius;
+    for (PowerUp powerup : powerUps) {
+      powerup.isUsed = false;
+    }
+  }
   //abstract boolean isTouching(PowerUp p);
 }
 
-
 Ball ball;
 Wall wallie;
-Portal pot;
+float startX;
+float startY;
+float startRadius;
+ArrayList<PowerUp> powerUps;
 void setup() {
-  size(450, 450);
-  ball = new NormalBall(225, 50);
-  wallie = new Wall(200, 200, 50, 200, 60);
-  pot = new Portal(284, 300, 50, 50, 0);
-
-
-  rectMode(CENTER);
+  size(450, 600);
+  startX = 255;
+  startY = 50;
+  ball = new NormalBall(startX, startY,25,25);
+  wallie = new Wall(200,200,50,100,0);
+  PowerUp smallstar = new SmallPowerUp(100,100,10);
+  PowerUp bigstar = new BigPowerUp(300,100,10);
+  powerUps = new ArrayList<PowerUp>();
+  powerUps.add(smallstar);
+  powerUps.add(bigstar);
 }
 
 void draw() {
   background(255);
-  ball.display();
-  ball.move();
   if (ball.y > 600 || ball.y < 0 || ball.x > 450 || ball.x < 0) {
-    ball.x = 225;
-    ball.y = 50;
-    ball.xSpeed = 0;
-    ball.ySpeed = 0;
+    ball.respawn(255,50);
   }
   wallie.display();
-  if (wallie.isTouching(ball)) circle(100, 300, 50);
-  pot.display();
-  if (pot.isTouching(ball)) circle(400, 400, 50);
+  if(wallie.isTouching(ball)) circle(300,300,50);
+  for (PowerUp star : powerUps) { 
+    star.display();
+    if (star.isTouching(ball)) {
+      circle(300,300,50);
+      star.use();
+    }
+  }
+  ball.display();
+  ball.move();
 }
 void keyPressed() {
   ball.keyPressed();
