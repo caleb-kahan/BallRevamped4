@@ -68,7 +68,7 @@ Portal pot;
 void setup() {
   size(450, 450);
   ball = new NormalBall(225, 50);
-  wallie = new Wall(200, 200, 50, 50, 45);
+  wallie = new Wall(200, 200, 50, 200, 60);
   pot = new Portal(284, 300, 50, 50, 0);
 
 
@@ -85,7 +85,8 @@ void draw() {
     ball.xSpeed = 0;
     ball.ySpeed = 0;
   }
-  //wallie.display();
+  wallie.display();
+  if (wallie.isTouching(ball)) circle(100, 300, 50);
   pot.display();
   if (pot.isTouching(ball)) circle(400, 400, 50);
 }

@@ -23,8 +23,8 @@ class Wall extends EnvironmentElement {
     if(newBallX<0) angle+=PI;
     float distance= sqrt(sq(newBallX)+sq(newBallY));
     float subAngle = radians(angleRotation);
-    newBallX= distance*(cos(angle)*cos(subAngle) - sin(angle)*sin(subAngle));
-    newBallY = distance*(sin(angle)*cos(subAngle) + cos(angle)*sin(subAngle));
+    newBallX= distance*(cos(angle)*cos(subAngle) + sin(angle)*sin(subAngle));
+    newBallY = distance*(sin(angle)*cos(subAngle) - cos(angle)*sin(subAngle));
     
     float closestX = constrain(newBallX, -w/2.0, w/2.0);
     float closestY = constrain(newBallY, -l/2.0, l/2.0);
