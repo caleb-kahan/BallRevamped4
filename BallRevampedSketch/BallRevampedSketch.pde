@@ -73,6 +73,7 @@ Ball ball;
 void setup() {
   size(450, 450);
   ball = new NormalBall(225, 50);
+  rectMode(CENTER);
 }
 
 void draw() {
