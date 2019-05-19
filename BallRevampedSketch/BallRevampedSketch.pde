@@ -5,15 +5,17 @@ abstract class Ball {
   float xSpeed;
   float ySpeed;
   float radius;
+  float startRadius;
   boolean isDead;
   boolean[] keys;
 
-  Ball(float x, float y, float radius) {
+  Ball(float x, float y, float radius,float startRadius) {
     this.x = x; 
     this.y = y;
     xSpeed = 0;
     ySpeed = 0;
     this.radius = radius;
+    this.startRadius = startRadius;
     isDead = false;
     keys = new boolean[4];
   }  
@@ -66,6 +68,10 @@ abstract class Ball {
     this.y = y;
     this.xSpeed = 0;
     this.ySpeed = 0;
+    this.radius = startRadius;
+    for (PowerUp powerup : powerUps) {
+      powerup.isUsed = false;
+    }
   }
   //abstract boolean isTouching(PowerUp p);
 }
@@ -75,13 +81,17 @@ Wall wallie;
 PowerUp star;
 float startX;
 float startY;
+float startRadius;
+ArrayList<PowerUp> powerUps;
 void setup() {
   size(450, 600);
   startX = 255;
   startY = 50;
-  ball = new NormalBall(startX, startY,25);
+  ball = new NormalBall(startX, startY,25,25);
   wallie = new Wall(200,200,50,100,0);
   star = new SmallPowerUp(100,100,10,new int[] {255,130,160});
+  powerUps = new ArrayList<PowerUp>();
+  powerUps.add(star);
 }
 
 void draw() {
@@ -92,7 +102,7 @@ void draw() {
   star.display();
   wallie.display();
   if(wallie.isTouching(ball) || star.isTouching(ball)) circle(300,300,50);
-  if (star.isTouching(ball)) star.use(ball);
+  if (star.isTouching(ball)) star.use();
   ball.display();
   ball.move();
 }
