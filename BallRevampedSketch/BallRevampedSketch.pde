@@ -88,7 +88,7 @@ void draw() {
   }
   Wall wallie = new Wall(200,200,50,50,45);
   //wallie.display();
-  Portal pot = new Portal(300,300,0,0,0);
+  Portal pot = new Portal(284,300,50,50,0);
   pot.display();
   if(pot.isTouching(ball)) circle(400,400,50);
 }

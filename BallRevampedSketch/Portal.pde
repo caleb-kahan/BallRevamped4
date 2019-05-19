@@ -24,11 +24,13 @@ public class Portal extends EnvironmentElement {
       point(10*sin(y/25), y);
     }
     rotate(radians(-angleRotation));
+    stroke(153, 50, 204);
     fill(153, 50, 204);
-    rect(w/2.0+2.5
+    rect(w/2-2.5, 0, 5, l);
+    rect(-w/2+2.5, 0, 5, l);
+    rect(0, l/2-2.5, w, 5);
+    rect(0, -l/2+2.5, w, 5);
     fill(255);
-
-
     popMatrix();
     angleRotation++;
   }
