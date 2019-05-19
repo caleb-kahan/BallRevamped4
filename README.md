@@ -14,4 +14,6 @@ Repository is made </br></br>
   <dd>-wrote move() to increment x and y, and ySpeed to emulate gravity</dd>
   <dt>Wrote setup() with dimensions of the display and ball that matched the game.</dt>
   <dt>Wrote draw() with restrictions that respawn the ball if it goes out of boundary. </dt>
-</d1>
+</d1></br>
+<b>5/18/19</br>
+<h4>Caleb's Work </h4>
