@@ -33,5 +33,8 @@ class HeavyBall extends Ball {
   }
   void respawn() {
     ball = new NormalBall(startX, startY,25,25);
+    for (PowerUp powerup : powerUps) {
+      powerup.isUsed = false;
+    }
   }
 }

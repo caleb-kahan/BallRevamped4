@@ -98,20 +98,25 @@ void setup() {
 
 void draw() {
   background(255);
+  rectMode(CENTER);
+  fill(255,0,0);
+  rect(startX-1,startY,9,9);
+  fill(0);
+  text("X",startX-5,startY+4);
   if (ball.y > 600 || ball.y < 0 || ball.x > 450 || ball.x < 0) {
     ball.respawn();
   }
   wallie.display();
-  if(wallie.isTouching(ball)) ellipse(300,300,50,50);
   for (PowerUp star : powerUps) { 
     star.display();
     if (star.isTouching(ball)) {
-      ellipse(300,300,50,50);
       star.use();
     }
   }
   ball.display();
   ball.move();
+  stroke(0);
+  text(""+ball.startRadius + " "+ ball.radius,ball.x+25,ball.y+25);
 }
 void keyPressed() {
   ball.keyPressed();

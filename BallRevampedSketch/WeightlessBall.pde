@@ -35,7 +35,7 @@ class WeightlessBall extends Ball {
       fill(colors[3][0], colors[3][1], colors[3][2]);
       arc(this.x, this.y, this.startRadius*2, this.startRadius*2, PI/2, PI, PIE);
       for (int i=0; i<10; i++) {
-        fill(76.5);
+        fill(120);
         ellipse(x+spots[i][0], y+spots[i][1], 3, 3);
       }
     }
@@ -45,5 +45,8 @@ class WeightlessBall extends Ball {
   }
   void respawn() {
     ball = new NormalBall(startX, startY,25,25);
+    for (PowerUp powerup : powerUps) {
+      powerup.isUsed = false;
+    }
   }
 }
