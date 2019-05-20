@@ -55,3 +55,12 @@ Repository is made </br></br>
     <li>wrote use() for Small and Big PowerUps by changing the size of the ball</li>
   </ul>
 </d1>
+<h4> Caleb's Work </h4>
+  <ul>
+    <li>Whenever a shape hit a powerup, it became a new type of ball</li>
+    <li>Added an instance variable to balls: colors, and switched up color based on the class of ball</li>
+    <li>Added an instance variable to balls: grvaity: differs depending on ball</li>
+    <li>Created WeightlessBall Class and extended Ball</li>
+    <li>Created WeightlessBall PowerUp and extended PowerUp</li>
+  </ul>
+</d1>
