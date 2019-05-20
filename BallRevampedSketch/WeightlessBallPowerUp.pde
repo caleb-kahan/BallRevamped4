@@ -14,10 +14,10 @@ class WeightlessBallPowerUp extends PowerUp {
     stroke(192, 192, 192);
     fill(0);
     float radius = (50*50/size)*1.1;
-    circle(x, y, radius);
+    ellipse(x, y, radius, radius);
     for (int i=0; i<20; i++) {
       fill(76.5);
-      circle(x+spots[i][0], y+spots[i][1], 2);
+      ellipse(x+spots[i][0], y+spots[i][1], 2, 2);
     }
     super.display();
   }

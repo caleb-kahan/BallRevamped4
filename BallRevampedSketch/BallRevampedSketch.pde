@@ -96,11 +96,11 @@ void draw() {
     ball.respawn(255,50);
   }
   wallie.display();
-  if(wallie.isTouching(ball)) circle(300,300,50);
+  if(wallie.isTouching(ball)) ellipse(300,300,50,50);
   for (PowerUp star : powerUps) { 
     star.display();
     if (star.isTouching(ball)) {
-      circle(300,300,50);
+      ellipse(300,300,50,50);
       star.use();
     }
   }

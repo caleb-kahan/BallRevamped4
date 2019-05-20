@@ -35,7 +35,7 @@ class WeightlessBall extends Ball {
       arc(this.x, this.y, this.radius*2, this.radius*2, PI/2, PI, PIE);
       for (int i=0; i<10; i++) {
         fill(76.5);
-        circle(x+spots[i][0], y+spots[i][1], 3);
+        ellipse(x+spots[i][0], y+spots[i][1], 3, 3);
       }
     }
   }
