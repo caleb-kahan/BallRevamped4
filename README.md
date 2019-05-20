@@ -64,3 +64,13 @@ Repository is made </br></br>
     <li>Created WeightlessBall PowerUp and extended PowerUp</li>
   </ul>
 </d1>
+<b>5/20/19</br>
+<h4> Chris's Work </h4>
+  <ul>
+    <li>wrote HeavyBall and HeavyPowerUp classes</li>
+    <li>fixed the issue of the ball's momentum being preserved</li>
+    <li>overrode respawn in the HeavyBall and WeightLessBall so they spawn as a NormalBall</li>
+    <li>fixed the shades and colours of the HeavyBall, HeavyPowerUp, and WeightLessPowerUp classes</li>
+    <li>fixed the issue of the small and big balls not reverting to original size when activating the weightless or heavy powerup</li>
+  </ul>
+</d1>
