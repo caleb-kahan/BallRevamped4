@@ -44,4 +44,14 @@ Repository is made </br></br>
   <ul>
     <li>Discerned mistake for isTouching()</li>
   </ul>
+</d1></br>
+<b>5/19/19</br>
+<h4> Chris's Work </h4>
+  <dt>PowerUp Class</dt>
+  <ul>
+    <li>wrote display method by using a star shape</li>
+    <li>wrote the display method for Small and Big PowerUps by drawing arrows underneath</li>
+    <li>wrote the isTouching method by pretending its a small circle</li>
+    <li>wrote use() for Small and Big PowerUps by changing the size of the ball</li>
+  </ul>
 </d1>
