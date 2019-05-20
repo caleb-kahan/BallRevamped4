@@ -1,5 +1,5 @@
-class SmallPowerUp extends PowerUp {
-  SmallPowerUp(float x,float y,float size) {
+class WeightlessBallPowerUp extends PowerUp {
+ WeightlessBallPowerUp(float x,float y,float size) {
     super(x,y,size,new int[] {101,255,162});
   }
   void display(){

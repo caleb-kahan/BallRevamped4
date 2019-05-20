@@ -2,18 +2,18 @@ abstract class PowerUp {
   float size;
   float x;
   float y;
-  int[] colors;
+  int[] starColors;
   boolean isUsed;
-  PowerUp(float x,float y,float size,int[] colors) {
-    this.colors = colors;
+  PowerUp(float x,float y,float size,int[] starColors) {
+    this.starColors = starColors;
     this.size = 50*50/size;
     this.x = x;
     this.y = y;
     isUsed = false;
   }
   void display() {
-    fill(colors[0],colors[1],colors[2]);
-    stroke(colors[0]/2,colors[1]/2,colors[2]/2);
+    fill(starColors[0],starColors[1],starColors[2]);
+    stroke(starColors[0]/2,starColors[1]/2,starColors[2]/2);
     strokeWeight(2);
     beginShape();
     vertex(x+50*0/size, y-50*48/size);
