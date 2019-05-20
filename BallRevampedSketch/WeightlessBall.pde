@@ -38,7 +38,7 @@ class WeightlessBall extends Ball {
         circle(x+spots[i][0], y+spots[i][1], 3);
       }
     }
-  }//
+  }
   void move() {
     if (!isDead) super.move();
   }
