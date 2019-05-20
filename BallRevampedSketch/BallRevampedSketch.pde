@@ -85,9 +85,11 @@ void setup() {
   wallie = new Wall(200,200,50,100,0);
   PowerUp smallstar = new SmallPowerUp(100,100,10);
   PowerUp bigstar = new BigPowerUp(300,100,10);
+  PowerUp lightstar = new WeightlessBallPowerUp(100,300,10);
   powerUps = new ArrayList<PowerUp>();
   powerUps.add(smallstar);
   powerUps.add(bigstar);
+  powerUps.add(lightstar);
 }
 
 void draw() {

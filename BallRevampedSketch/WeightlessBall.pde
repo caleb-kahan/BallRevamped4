@@ -2,6 +2,7 @@ class WeightlessBall extends Ball {
   float spots [][];
   WeightlessBall(float x, float y, float radius, float startRadius) {
     super(x, y, radius, startRadius);
+    spots = new float[20][2]; 
     gravity = 0;
     colors = new int[4][3];
     colors[0][0]=(int)(51*0.3);

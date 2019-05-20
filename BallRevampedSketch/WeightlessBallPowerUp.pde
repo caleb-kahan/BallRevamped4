@@ -1,9 +1,10 @@
 class WeightlessBallPowerUp extends PowerUp {
-  float [][] spots;
+  float[][] spots;
   WeightlessBallPowerUp(float x, float y, float size) {
     super(x, y, size, new int[] {101, 255, 162});
     float radius = (50*50/size)*1.1;
     for (int i=0; i<20; i++) {
+      spots = new float[20][2];
       float a = random(-radius, radius);
       float b = random(-radius, radius);
       spots[i][0]=a;
