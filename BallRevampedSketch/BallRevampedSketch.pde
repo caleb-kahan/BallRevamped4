@@ -10,6 +10,7 @@ abstract class Ball {
   boolean[] keys;
   int [][] colors;
   float gravity;
+  float upIncrement;
   Ball(float x, float y, float radius,float startRadius) {
     this.x = x; 
     this.y = y;
@@ -19,13 +20,14 @@ abstract class Ball {
     this.startRadius = startRadius;
     isDead = false;
     keys = new boolean[4];
-  }  
+    upIncrement = .32;
+  }
   abstract void display();
   void move() {
     if (keys[0]) 
-      ySpeed+=.32;
+      ySpeed+=upIncrement;
     if (keys[1])
-      ySpeed-=.32;
+      ySpeed-=upIncrement;
     if (keys[2]) 
       xSpeed+=.13;
     if (keys[3]) 
@@ -81,7 +83,7 @@ void setup() {
   size(450, 600);
   startX = 255;
   startY = 50;
-  ball = new NormalBall(startX, startY,25,25);
+  ball = new HeavyBall(startX, startY,25,25);
   wallie = new Wall(200,200,50,100,0);
   PowerUp smallstar = new SmallPowerUp(100,100,10);
   PowerUp bigstar = new BigPowerUp(300,100,10);
