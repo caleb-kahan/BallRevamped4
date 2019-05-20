@@ -7,12 +7,12 @@ class HeavyBall extends Ball {
   void display() {
     if (!isDead) {  
       fill(175);
-      arc(this.x, this.y, this.radius*2, this.radius*2, 0, PI/2, PIE);
-      arc(this.x, this.y, this.radius*2, this.radius*2, -PI/2, 0, PIE);
-      arc(this.x, this.y, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
-      arc(this.x, this.y, this.radius*2, this.radius*2, PI/2, PI, PIE);
+      arc(this.x, this.y, this.startRadius*2, this.startRadius*2, 0, PI/2, PIE);
+      arc(this.x, this.y, this.startRadius*2, this.startRadius*2, -PI/2, 0, PIE);
+      arc(this.x, this.y, this.startRadius*2, this.startRadius*2, PI, 3*PI/2, PIE);
+      arc(this.x, this.y, this.startRadius*2, this.startRadius*2, PI/2, PI, PIE);
       fill(240);
-      polygon(x,y,radius/3,6);
+      polygon(x,y,startRadius/3,6);
       fill(0);
     }
   }
@@ -30,5 +30,8 @@ class HeavyBall extends Ball {
 }
   void move() {
     if (!isDead) super.move();
+  }
+  void respawn() {
+    ball = new NormalBall(startX, startY,25,25);
   }
 }

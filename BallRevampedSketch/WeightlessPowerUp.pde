@@ -1,6 +1,6 @@
-class WeightlessBallPowerUp extends PowerUp {
+class WeightlessPowerUp extends PowerUp {
   float[][] spots;
-  WeightlessBallPowerUp(float x, float y, float size) {
+  WeightlessPowerUp(float x, float y, float size) {
     super(x, y, size, new int[] {160, 160, 160});
     float radius = (50*50/size)*1.1;
     for (int i=0; i<20; i++) {
@@ -28,7 +28,11 @@ class WeightlessBallPowerUp extends PowerUp {
   void use() {
     if (!isUsed) {
       isUsed = true;
+      float xVel = ball.xSpeed;
+      float yVel = ball.ySpeed;
       ball = new WeightlessBall(ball.x, ball.y, ball.radius, ball.startRadius);
+      ball.xSpeed = xVel;
+      ball.ySpeed = yVel;
     }
   }
 }

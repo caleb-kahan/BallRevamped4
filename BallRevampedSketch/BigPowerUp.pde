@@ -24,7 +24,13 @@ class BigPowerUp extends PowerUp {
   void use() {
     if (!isUsed) {
       isUsed = true;
-      if(! (ball instanceof NormalBall)) ball = new NormalBall(x,y,48,ball.startRadius);
+      if(! (ball instanceof NormalBall)) {
+        float xVel = ball.xSpeed;
+        float yVel = ball.ySpeed;
+        ball = new NormalBall(x,y,48,ball.startRadius);
+        ball.xSpeed = xVel;
+        ball.ySpeed = yVel;
+      }
       else ball.radius = 48;
     }
   }
