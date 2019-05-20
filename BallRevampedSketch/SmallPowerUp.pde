@@ -3,8 +3,8 @@ class SmallPowerUp extends PowerUp {
     super(x,y,size,new int[] {101,255,162});
   }
   void display(){
-    fill(colors[0],colors[1],colors[2]);
-    stroke(colors[0]/2,colors[1]/2,colors[2]/2);
+    fill(starColors[0],starColors[1],starColors[2]);
+    stroke(starColors[0]/2,starColors[1]/2,starColors[2]/2);
     strokeWeight(2);
     beginShape();
     vertex(x-50*12/size, y-3*50*48/(size*2));

@@ -1,20 +1,14 @@
 class WeightlessBallPowerUp extends PowerUp {
- WeightlessBallPowerUp(float x,float y,float size) {
+  int [][] spots;
+ WeightlessBallPowerUp(float x,float y,float size, int [][] spots) {
     super(x,y,size,new int[] {101,255,162});
+    this.spots=spots;
   }
   void display(){
-    fill(colors[0],colors[1],colors[2]);
-    stroke(colors[0]/2,colors[1]/2,colors[2]/2);
-    strokeWeight(2);
-    beginShape();
-    vertex(x-50*12/size, y-3*50*48/(size*2));
-    vertex(x+50*12/size, y-3*50*48/(size*2));
-    vertex(x+50*12/size, y+50*20/size);
-    vertex(x+50*55/size, y+50*20/size);
-    vertex(x-50*0/size, y+5*50*48/(size*3));
-    vertex(x-50*55/size, y+50*20/size);
-    vertex(x-50*12/size, y+50*20/size);
-    endShape(CLOSE);
+   stroke(192,192,192);
+   fill(0);
+   circle(x,y,size);
+   
     super.display();
   }
   boolean isTouching(Ball b) {  
@@ -23,7 +17,7 @@ class WeightlessBallPowerUp extends PowerUp {
   void use() {
     if (!isUsed) {
       isUsed = true;
-      ball.radius = 12;
+      ball = new WeightlessBall(ball.x,ball.y,ball.radius,ball.startRadius);
     }
   }
 }
