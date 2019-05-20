@@ -6,14 +6,28 @@ class HeavyBall extends Ball {
   }
   void display() {
     if (!isDead) {  
-      fill(190);
+      fill(175);
       arc(this.x, this.y, this.radius*2, this.radius*2, 0, PI/2, PIE);
       arc(this.x, this.y, this.radius*2, this.radius*2, -PI/2, 0, PIE);
       arc(this.x, this.y, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
       arc(this.x, this.y, this.radius*2, this.radius*2, PI/2, PI, PIE);
+      fill(240);
+      polygon(x,y,radius/3,6);
       fill(0);
     }
   }
+  /*Regular Polygon code from processing website
+   */
+  void polygon(float x, float y, float radius, int npoints) {
+  float angle = TWO_PI / npoints;
+  beginShape();
+  for (float a = 0; a < TWO_PI; a += angle) {
+    float sx = x + cos(a) * radius;
+    float sy = y + sin(a) * radius;
+    vertex(sx, sy);
+  }
+  endShape(CLOSE);
+}
   void move() {
     if (!isDead) super.move();
   }
