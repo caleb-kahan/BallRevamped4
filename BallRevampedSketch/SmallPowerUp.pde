@@ -22,8 +22,7 @@ class SmallPowerUp extends PowerUp {
   }
   void use() {
     if (!isUsed) {
-      isUsed = true;
-      
+      isUsed = true;      
       if(! (ball instanceof NormalBall)) {
         float xVel = ball.xSpeed;
         float yVel = ball.ySpeed;

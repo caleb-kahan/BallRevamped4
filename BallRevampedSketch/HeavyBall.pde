@@ -1,6 +1,6 @@
 class HeavyBall extends Ball {
-  HeavyBall(float x, float y, float radius, float startRadius) {
-    super(x, y, radius, startRadius);
+  HeavyBall(float x, float y, float radius) {
+    super(x, y, radius, radius);
     gravity = -.13;
     upIncrement = .24;
   }

@@ -1,7 +1,7 @@
 class WeightlessBall extends Ball {
   float spots [][];
-  WeightlessBall(float x, float y, float radius, float startRadius) {
-    super(x, y, radius, startRadius);
+  WeightlessBall(float x, float y, float radius) {
+    super(x, y, radius, radius);
     spots = new float[20][2]; 
     gravity = 0;
     colors = new int[4][3];

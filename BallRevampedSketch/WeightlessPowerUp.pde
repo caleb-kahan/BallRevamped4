@@ -30,7 +30,7 @@ class WeightlessPowerUp extends PowerUp {
       isUsed = true;
       float xVel = ball.xSpeed;
       float yVel = ball.ySpeed;
-      ball = new WeightlessBall(ball.x, ball.y, ball.radius, ball.startRadius);
+      ball = new WeightlessBall(ball.x, ball.y, ball.startRadius);
       ball.xSpeed = xVel;
       ball.ySpeed = yVel;
     }
