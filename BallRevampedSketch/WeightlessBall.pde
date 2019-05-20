@@ -1,4 +1,5 @@
 class WeightlessBall extends Ball {
+  float spots [][];
   WeightlessBall(float x, float y, float radius, float startRadius) {
     super(x, y, radius, startRadius);
     gravity = 0;
@@ -15,6 +16,12 @@ class WeightlessBall extends Ball {
     colors[3][0]=(int)(255*0.3);
     colors[3][1]=(int)(51*0.3);
     colors[3][2]=(int)(50*0.3);
+    for (int i=0; i<10; i++) {
+      float a = random(-radius, radius);
+      float b = random(-radius, radius);
+      spots[i][0]=a;
+      spots[i][1]=b;
+    }
   }
   void display() {
     if (!isDead) {  
@@ -28,9 +35,7 @@ class WeightlessBall extends Ball {
       arc(this.x, this.y, this.radius*2, this.radius*2, PI/2, PI, PIE);
       for (int i=0; i<10; i++) {
         fill(76.5);
-        float a = random(-radius, radius);
-        float b = random(-radius, radius);
-        circle(x+a, y+b, 3);
+        circle(x+spots[i][0], y+spots[i][1], 3);
       }
     }
   }

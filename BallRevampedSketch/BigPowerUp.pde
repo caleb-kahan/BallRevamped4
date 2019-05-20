@@ -24,7 +24,8 @@ class BigPowerUp extends PowerUp {
   void use() {
     if (!isUsed) {
       isUsed = true;
-      ball.radius = 48;
+      if(! (ball instanceof NormalBall)) ball = new NormalBall(x,y,48,ball.startRadius);
+      else ball.radius = 48;
     }
   }
 }
