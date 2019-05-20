@@ -1,7 +1,7 @@
 class WeightlessBallPowerUp extends PowerUp {
   float[][] spots;
   WeightlessBallPowerUp(float x, float y, float size) {
-    super(x, y, size, new int[] {76.5, 76.5, 76.5});
+    super(x, y, size, new int[] {160, 160, 160});
     float radius = (50*50/size)*1.1;
     for (int i=0; i<20; i++) {
       spots = new float[20][2];
