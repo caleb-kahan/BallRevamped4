@@ -74,6 +74,8 @@ Repository is made </br></br>
     <li>fixed the issue of the small and big balls not reverting to original size when activating the weightless or heavy powerup</li>
   </ul>
   <h4> Caleb's Work </h4>
-  <h6>Only worked in class</h6>
-  <h6>Fixed Colors of WeightlessBall</h6>
+    <ul>
+      <li>Only worked in class</li>
+      <li>Fixed Colors of WeightlessBall</li>
+    </ul>
 </d1>
