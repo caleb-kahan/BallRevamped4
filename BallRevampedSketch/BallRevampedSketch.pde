@@ -116,7 +116,6 @@ void draw() {
   ball.display();
   ball.move();
   stroke(0);
-  text(""+ball.startRadius + " "+ ball.radius,ball.x+25,ball.y+25);
 }
 void keyPressed() {
   ball.keyPressed();

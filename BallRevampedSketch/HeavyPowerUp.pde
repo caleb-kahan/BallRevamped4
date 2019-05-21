@@ -15,15 +15,7 @@ class HeavyPowerUp extends PowerUp {
       isUsed = true;
       float xVel = ball.xSpeed;
       float yVel = ball.ySpeed;
-<<<<<<< HEAD
-<<<<<<< HEAD
-      ball = new HeavyBall(ball.x, ball.y, 48,48);
-=======
-      ball = new HeavyBall(ball.x, ball.y, ball.startRadius);
->>>>>>> help
-=======
       ball = new HeavyBall(ball.x, ball.y, 24);
->>>>>>> 5ecf2cd61f4b4a9f3cd9c9e5d5e8c56626ef319b
       ball.xSpeed = xVel;
       ball.ySpeed = yVel;
     }
