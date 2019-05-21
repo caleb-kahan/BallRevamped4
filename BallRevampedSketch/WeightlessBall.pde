@@ -18,8 +18,8 @@ class WeightlessBall extends Ball {
     colors[3][1]=(int)(51*0.3);
     colors[3][2]=(int)(50*0.3);
     for (int i=0; i<10; i++) {
-      float a = random(-startRadius, startRadius);
-      float b = random(-startRadius, startRadius);
+      float a = random(radius-1);
+      float b = random(2*PI);
       spots[i][0]=a;
       spots[i][1]=b;
     }
@@ -36,7 +36,7 @@ class WeightlessBall extends Ball {
       arc(this.x, this.y, this.startRadius*2, this.startRadius*2, PI/2, PI, PIE);
       for (int i=0; i<10; i++) {
         fill(120);
-        ellipse(x+spots[i][0], y+spots[i][1], 3, 3);
+        ellipse(x+spots[i][0]*cos(spots[i][1]), y+spots[i][0]*sin(spots[i][1]), 3, 3);
       }
     }
   }
