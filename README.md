@@ -5,18 +5,18 @@ Repository is made </br></br>
 <h4> Caleb's Work </h4>
   <dt>Ball Class</dt>
   <ui>
-    <li>-Added variables, the constructor, and the abstract methods. </li>
+    <li>Added variables, the constructor, and the abstract methods. </li>
   </ui>
   <dt>Move</dt>
   <ui>
-    <li>-Expanded on move to allow user interactivity: the arrow keys accelerate the boy in the specified direction.</li>
-    <li>-Made move part of the Ball class and called the super version in the NormalBall class.  </li>
+    <li>Expanded on move to allow user interactivity: the arrow keys accelerate the boy in the specified direction.</li>
+    <li>Made move part of the Ball class and called the super version in the NormalBall class.  </li>
   </ui>
 <h4> Chris's Work </h4>
   <dt>NormalBall Class</dt>
   <ui>
-    <li>-wrote display() using the correct RGB values as the ball in the game, and arc() for the quadrants</li>
-    <li>-wrote move() to increment x and y, and ySpeed to emulate gravity</li>
+    <li>wrote display() using the correct RGB values as the ball in the game, and arc() for the quadrants</li>
+    <li>wrote move() to increment x and y, and ySpeed to emulate gravity</li>
   </ui>
   <dt>Wrote setup() with dimensions of the display and ball that matched the game.</dt>
   <dt>Wrote draw() with restrictions that respawn the ball if it goes out of boundary. </dt>
@@ -73,4 +73,7 @@ Repository is made </br></br>
     <li>fixed the shades and colours of the HeavyBall, HeavyPowerUp, and WeightLessPowerUp classes</li>
     <li>fixed the issue of the small and big balls not reverting to original size when activating the weightless or heavy powerup</li>
   </ul>
+  <h4> Caleb's Work </h4>
+  <h6>Only worked in class</h6>
+  <h6>Fixed Colors of WeightlessBall</h6>
 </d1>
