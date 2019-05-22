@@ -82,9 +82,11 @@ Repository is made </br></br>
 <h4> Chris's Work </h4>
   <ul>
     <li>Worked in class only</li>
+    <li>Fixed ball size when switching between ball states</li>
   </ul>
   <h4> Caleb's Work </h4>
     <ul>
       <li>Only worked in class</li>
+      <li>Contained all the stars in weightless ball within the circle </li>
     </ul>
 </d1>
