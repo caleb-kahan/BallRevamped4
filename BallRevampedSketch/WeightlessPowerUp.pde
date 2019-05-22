@@ -21,7 +21,6 @@ class WeightlessPowerUp extends PowerUp {
     fill(175);
     stroke(120);
     for (int i=0; i<15; i++) {
-     
       ellipse(x+spots[i][0]*cos(spots[i][1]), y+spots[i][0]*sin(spots[i][1]), 2, 2);
     }
     super.display();
