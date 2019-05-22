@@ -6,11 +6,14 @@ public class Wood extends Wall{
   }
   void display(){
     pushMatrix();
-    fill(0);
+    color from = color(245,222,179);
+    color to = color(160,82,45);
     translate(x, y);
     rotate(radians(angleRotation));
     rectMode(CENTER);
     rect(0, 0, w, l);
+    for (float i = -l/2;i+=l/100;i<l/2){
+      
     popMatrix();
   }
 }
