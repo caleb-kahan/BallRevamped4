@@ -3,12 +3,14 @@ class WeightlessPowerUp extends PowerUp {
   WeightlessPowerUp(float x, float y, float size) {
     super(x, y, size, new int[] {160, 160, 160});
     float radius = (4*50*50/this.size);
-    spots = new float[40][2];
-    for (int i=0; i<40; i++) {
-      float a = random(radius-20);
-      float b = random(2*PI);
+    spots = new float[15][2];
+    float angle  = 0;
+    for (int i=0; i<15; i++) {
+      float a = radius-25;
+      float b = radians(angle);
       spots[i][0]=a;
       spots[i][1]=b;
+      angle+=24;
     }
   }
   void display() {
@@ -16,11 +18,11 @@ class WeightlessPowerUp extends PowerUp {
     fill(0);
     float radius = (50*50/size)*4;
     ellipse(x, y, radius, radius);
-    fill(0);
+    fill(175);
     stroke(120);
-    for (int i=0; i<40; i++) {
+    for (int i=0; i<15; i++) {
      
-      ellipse(x+spots[i][0]*cos(spots[i][1]), y+spots[i][0]*sin(spots[i][1]), 4, 4);
+      ellipse(x+spots[i][0]*cos(spots[i][1]), y+spots[i][0]*sin(spots[i][1]), 2, 2);
     }
     super.display();
   }
