@@ -78,4 +78,13 @@ Repository is made </br></br>
       <li>Only worked in class</li>
       <li>Fixed Colors of WeightlessBall</li>
     </ul>
+    <b>5/21/19</br>
+<h4> Chris's Work </h4>
+  <ul>
+    <li>Worked in class only</li>
+  </ul>
+  <h4> Caleb's Work </h4>
+    <ul>
+      <li>Only worked in class</li>
+    </ul>
 </d1>
