@@ -1,13 +1,16 @@
- PrintWriter output;
- 
+PrintWriter output;
+
 void setup() {
   // Create a new file in the sketch directory
-  output = createWriter("positions.txt"); 
+  size(1000, 1000);
+  output = createWriter("positions.txt");
 }
 
 void draw() {
-  ellipse(mouseX, mouseY,10,10);
-  output.println("ellipse(" + mouseX + " , " + mouseY+ ", 10 , 10);"); // Write the coordinate to the file
+  if (millis()%10==1) {
+    ellipse(mouseX, mouseY, 10, 10);
+    output.println("ellipse(" + mouseX + " , " + mouseY+ ", 10 , 10);"); // Write the coordinate to the file
+  }
 }
 
 void keyPressed() {
