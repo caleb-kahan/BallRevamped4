@@ -92,6 +92,7 @@ Repository is made </br></br>
   <b>5/23/19</br>
   <h4> Caleb's Work </h4>
     <ul>
-  <li>  </li>
+      <li>In experiments, managed to make a marker that draws a continous stream of circles</li>
+      <li>Every single "coordinate" of the marker was written to a file</li>
   </ul>
 </d1>
