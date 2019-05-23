@@ -10,9 +10,11 @@ void setup() {
 void draw() {
   //if (millis()%10==1) {
   noStroke();
-    fill(0);
-    ellipse(mouseX, mouseY, 10, 10);
-    output.println("ellipse(" + mouseX + " , " + mouseY+ ", 10 , 10);"); // Write the coordinate to the file
+  fill(0);
+  rectMode(CENTER);
+  rect(mouseX, mouseY, 40,10);
+  ellipse(mouseX-20, mouseY, 10, 10);
+  output.println("ellipse(" + mouseX + " , " + mouseY+ ", 10 , 10);"); // Write the coordinate to the file
   //}
 }
 
