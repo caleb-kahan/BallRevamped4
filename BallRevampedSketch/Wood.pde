@@ -10,8 +10,7 @@ public class Wood extends Wall {
     color to = color(160, 82, 45);
     translate(x, y);
     rotate(radians(angleRotation));
-    //rectMode(CENTER);
-    //rect(0, 0, w, l);
+
     if (w>l) {
       for (float i = -l/2, j=0; i<l/2; i+=l/200, j+=0.005) {
         color lerp = lerpColor(from, to, j);
