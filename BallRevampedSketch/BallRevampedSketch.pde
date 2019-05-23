@@ -75,6 +75,7 @@ abstract class Ball {
 
 Ball ball;
 Wall wallie;
+Wood woodie;
 float startX;
 float startY;
 float startRadius;
@@ -85,6 +86,7 @@ void setup() {
   startY = 50;
   ball = new NormalBall(startX, startY,25,25);
   wallie = new Wall(200,200,50,100,0);
+  woodiee = new Wood(200,200,50,100,0);
   PowerUp smallstar = new SmallPowerUp(100,100,10);
   PowerUp bigstar = new BigPowerUp(300,100,10);
   PowerUp lightstar = new WeightlessPowerUp(100,300,10);
