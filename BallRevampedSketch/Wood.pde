@@ -12,7 +12,9 @@ public class Wood extends Wall{
     rotate(radians(angleRotation));
     rectMode(CENTER);
     rect(0, 0, w, l);
-    for (float i = -l/2;i+=l/100;i<l/2){
+    for (float i = -l/2,j=0;i<l/2;i+=l/100,j+=0.01){
+      color lerp = lerpColor(from,to,j);
+    }
       
     popMatrix();
   }
