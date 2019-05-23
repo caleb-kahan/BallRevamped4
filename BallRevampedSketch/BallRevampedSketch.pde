@@ -86,7 +86,7 @@ void setup() {
   startY = 50;
   ball = new NormalBall(startX, startY,25,25);
   wallie = new Wall(200,200,50,100,0);
-  woodiee = new Wood(200,200,50,100,0);
+  woodie = new Wood(270,270,150,300,0);
   PowerUp smallstar = new SmallPowerUp(100,100,10);
   PowerUp bigstar = new BigPowerUp(300,100,10);
   PowerUp lightstar = new WeightlessPowerUp(100,300,10);
@@ -109,6 +109,7 @@ void draw() {
     ball.respawn();
   }
   wallie.display();
+  woodie.display();
   for (PowerUp star : powerUps) { 
     star.display();
     if (star.isTouching(ball)) {
