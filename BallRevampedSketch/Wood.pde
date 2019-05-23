@@ -13,14 +13,14 @@ public class Wood extends Wall {
     //rectMode(CENTER);
     //rect(0, 0, w, l);
     if (w>l) {
-      for (float i = -l/2, j=0; i<l/2; i+=l/100, j+=0.01) {
+      for (float i = -l/2, j=0; i<l/2; i+=l/200, j+=0.005) {
         color lerp = lerpColor(from, to, j);
         stroke(lerp);
         line(-w/2, i, w/2, i);
       }
     }
     else {
-      for (float i = -w/2, j=0; i<w/2; i+=w/100, j+=0.01) {
+      for (float i = -w/2, j=0; i<w/2; i+=w/200, j+=0.005) {
         color lerp = lerpColor(from, to, j);
         stroke(lerp);
         line(-l/2, i, l/2, i);
