@@ -94,5 +94,7 @@ Repository is made </br></br>
     <ul>
       <li>In experiments, managed to make a marker that draws a continous stream of circles</li>
       <li>Every single "coordinate" of the marker was written to a file</li>
+      <li>Created the Wood class which implemented the Wall class</li>
+      <li>Created a color gradient in the display the wood class</li>
   </ul>
 </d1>
