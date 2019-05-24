@@ -1,6 +1,14 @@
 public class LevelCreator{
   Level constructLevel(int num) {
-    "level"+num+"()";
+    Level level;
+    switch(num){
+      case 1:
+        level = level1();
+      default:
+        level = level1();
+    }
+    return level;
+   
   }
   Level level1(){
     size(450, 600);
