@@ -22,8 +22,12 @@ class Level {
     if (ball.y > 600 || ball.y < 0 || ball.x > 450 || ball.x < 0) {
       ball.respawn();
     }
-    wallie.display();
-    woodie.display();
+    for (EnvironmentElement element : elements) {
+      element.display();
+      if (element.isTouching(ball) {
+        ball.respawn();
+      }
+    }
     for (PowerUp star : powerUps) { 
       star.display();
       if (star.isTouching(ball)) {
