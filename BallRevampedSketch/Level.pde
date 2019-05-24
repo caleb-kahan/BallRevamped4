@@ -4,10 +4,11 @@ class Level {
   ArrayList<PowerUp> powerUps;
   Ball ball;
   
-  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps) {
+  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball) {
     levelNumber = levelNum;
     this.elements = elements;
     this.powerUps = powerUps;
+    this.ball = ball;
   }
   void respawn() {
     ball.x = startX;
