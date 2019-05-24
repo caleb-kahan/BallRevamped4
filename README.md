@@ -105,7 +105,7 @@ Repository is made </br></br>
   </ul>
   <hr>Caleb's Work </h4>
   <ul>
-    <li> </li>
-    <li> </li>
+    <li>Moved Ball Class to a new Tab </li>
+    <li>Thought successfully of an innovative solution to creating levels in the game.  </li>
   <ul>
 </d1>
