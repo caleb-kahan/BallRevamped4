@@ -89,12 +89,7 @@ Repository is made </br></br>
     <li>Only worked in class</li>
     <li>Contained all the stars in weightless ball within the circle </li>
   </ul>
-<b>5/23/19</br>
-<h4> Chris's Work </h4>
-  <ul>
-    <li>Added level class with 3 variables storing the ball, walls, and powerups</li>
-    <li>Started writing a display method that calls each item to display itself</li>
-  </ul>
+<b>5/22/19</br>
 <h4> Caleb's Work </h4>
   <ul>
     <li>In experiments, managed to make a marker that draws a continous stream of circles</li>
@@ -102,4 +97,15 @@ Repository is made </br></br>
     <li>Created the Wood class which implemented the Wall class</li>
     <li>Created a color gradient in the display the wood class</li>
   </ul>
+<b>5/23/19</br>
+  <h4> Chris's Work </h4>
+  <ul>
+    <li>Added level class with 3 variables storing the ball, walls, and powerups</li>
+    <li>Started writing a display method that calls each item to display itself</li>
+  </ul>
+  <hr>Caleb's Work </h4>
+  <ul>
+    <li> </li>
+    <li> </li>
+  <ul>
 </d1>
