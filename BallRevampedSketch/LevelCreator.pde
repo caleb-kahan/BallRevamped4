@@ -27,6 +27,6 @@ public class LevelCreator{
     powerUps.add(bigstar);
     powerUps.add(lightstar);
     powerUps.add(heavystar);
-    return new Level(num, elements, powerUps, ball);
+    return new Level(1, elements, powerUps, ball);
   }
 }
