@@ -10,6 +10,9 @@ class Level {
     this.powerUps = powerUps;
     this.ball = ball;
   }
+  run(){
+  }
+  
   void respawn() {
     ball.x = startX;
     ball.y = startY;
