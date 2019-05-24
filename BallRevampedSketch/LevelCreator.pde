@@ -1,5 +1,8 @@
 public class LevelCreator{
   Level constructLevel(int num) {
+    "level"+num+"()";
+  }
+  Level level1(){
     size(450, 600);
     startX = 255;
     startY = 50;
