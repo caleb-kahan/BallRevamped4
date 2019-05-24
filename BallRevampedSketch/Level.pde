@@ -3,6 +3,8 @@ class Level {
   ArrayList<EnvironmentElement> elements;
   ArrayList<PowerUp> powerUps;
   Ball ball;
+  float startX;
+  float startY;
   
   Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball) {
     levelNumber = levelNum;
@@ -10,7 +12,27 @@ class Level {
     this.powerUps = powerUps;
     this.ball = ball;
   }
-  run(){
+  void run(){
+    background(255);
+    rectMode(CENTER);
+    fill(255,0,0);
+    rect(startX-1,startY,9,9);
+    fill(0);
+    text("X",startX-5,startY+4);
+    if (ball.y > 600 || ball.y < 0 || ball.x > 450 || ball.x < 0) {
+      ball.respawn();
+    }
+    wallie.display();
+    woodie.display();
+    for (PowerUp star : powerUps) { 
+      star.display();
+      if (star.isTouching(ball)) {
+        star.use();
+      }
+    }
+    ball.display();
+    ball.move();
+    stroke(0);
   }
   
   void respawn() {
