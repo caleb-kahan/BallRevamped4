@@ -21,7 +21,7 @@ class BigPowerUp extends PowerUp {
   boolean isTouching(Ball b) {  
     return super.isTouching(b);
   }
-  void use(Ball ball) {
+  Ball use(Ball ball) {
     if (!isUsed) {
       isUsed = true;
       if(! (ball instanceof NormalBall)) {
@@ -33,5 +33,6 @@ class BigPowerUp extends PowerUp {
       }
       else ball.radius = 48;
     }
+    return ball;
   }
 }
