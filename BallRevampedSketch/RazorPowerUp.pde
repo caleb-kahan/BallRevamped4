@@ -5,7 +5,7 @@ class RazorPowerUp extends PowerUp {
   void display(){
     fill(220);
     for (float i = 0;i < 2*PI;i+=PI/4) {
-      arc(x+(2000/size)*cos(i),y+(2000/size)*sin(i),2700/size,2700/size,i,7*PI/8+i,CHORD);
+      arc(x+(1500/size)*cos(i),y+(1500/size)*sin(i),2700/size,2700/size,i,7*PI/8+i,CHORD);
     }
     super.display();
     fill(0);

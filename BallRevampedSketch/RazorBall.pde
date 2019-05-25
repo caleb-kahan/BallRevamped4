@@ -20,7 +20,7 @@ class RazorBall extends Ball {
     if (!isDead) {  
       fill(220);
       for (float i = 0;i < 2*PI;i+=PI/6) {
-        arc(x+18*cos(i),y+18*sin(i),20,20,-PI/10+i,2*PI/3+i,CHORD);
+        arc(x+18*cos(i),y+18*sin(i),22,22,-PI/10+i,2*PI/3+i,CHORD);
       }
       fill(colors[0][0], colors[0][1], colors[0][2]);
       arc(x, y, this.radius*2, this.radius*2, 0, PI/2, PIE);

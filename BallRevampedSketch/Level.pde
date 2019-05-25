@@ -23,8 +23,14 @@ class Level {
     text("X",startX-5,startY+4);
     for (EnvironmentElement element : elements) {
       element.display();
+      
       if (element.isTouching(ball)){
-        respawn();
+        if (element instanceof Wood && ball instanceof RazorBall) {
+          ((Wood)element).isDestroyed = true;
+        }
+        else {
+          respawn();
+        }
       }
     }
     for (PowerUp powerup : powerUps) { 
@@ -42,6 +48,11 @@ class Level {
     ball = new NormalBall(startX,startY,24);
     for (PowerUp powerup : powerUps) {
       powerup.isUsed = false;
+    }
+    for (EnvironmentElement element : elements) {
+      if (element instanceof Wood) {
+        ((Wood)element).isDestroyed = false;
+      }
     }
   }
 }
