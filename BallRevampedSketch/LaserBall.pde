@@ -46,6 +46,14 @@ class LaserBall extends Ball {
     }
   }
   void shootBeam() {
+    if(keys[0]==true){
+    }
+    if(keys[1]==true){
+    }
+    if(keys[2]==true){
+    }
+    if(keys[3]==true){
+    }
   }
   void move() {
     if (!isDead) super.move();
