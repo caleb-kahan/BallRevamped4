@@ -14,7 +14,7 @@ public class LevelCreator{
   Level level1(){
     float startX = 255;
     float startY = 50;
-    Ball ball = new NormalBall(startX, startY,24);
+    Ball ball = new LaserBall(startX, startY);
     ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
     elements.add(new Wood(270,270,100,100,0));
     elements.add(new Wall(440,300,20,580,0)); 
@@ -29,6 +29,7 @@ public class LevelCreator{
     powerUps.add(new HeavyPowerUp(100,400,10));
     powerUps.add(new RazorPowerUp(100,500,10));
     powerUps.add(new BombPowerUp(200,100,10));
+    
     return new Level(1, elements, powerUps, ball, startX, startY);
   }
 }

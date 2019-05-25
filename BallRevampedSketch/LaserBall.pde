@@ -2,6 +2,7 @@ class LaserBall extends Ball {
   LaserBall(float x, float y) {
     super(x, y, 24);
     gravity = -.06;
+    radius = 24;
     colors = new int[4][3];
     colors[0][0]=51;
     colors[0][1]=255;
@@ -30,17 +31,17 @@ class LaserBall extends Ball {
       //Here comes special cylinders;
       color from = color(28);
       color to = color(242);
-      for (float a = -2; a<1; a+=0.03) {
-        color lerp = lerpColor(from, to, (a+2)/3);
+      for (float a = -6; a<3; a+=0.03) {
+        color lerp = lerpColor(from, to, (a+6)/9);
         stroke(lerp);
-        line(x+a, y-6, x+a, y+6);
-        line(x-6, y+a, x+6, y+a);
+        line(x+a, y-18, x+a, y+18);
+        line(x-18, y+a, x+18, y+a);
       }
-      for (float a = 1; a<2; a+=0.03) {
-        color lerp = lerpColor(to, from, (a-1)/3);
+      for (float a = 3; a<6; a+=0.03) {
+        color lerp = lerpColor(to, from, (a-3)/9);
         stroke(lerp);
-        line(x+a, y-6, x+a, y+6);
-        line(x-6, y+a, x+6, y+a);
+        line(x+a, y-18, x+a, y+18);
+        line(x-18, y+a, x+18, y+a);
       }
     }
   }
