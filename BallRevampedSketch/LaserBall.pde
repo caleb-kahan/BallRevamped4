@@ -34,12 +34,14 @@ class LaserBall extends Ball {
         color lerp = lerpColor(from, to, (a+2)/3);
         stroke(lerp);
         line(x+a, y-6, x+a, y+6);
+        line(x-6, y+a, x+6, y+a);
       }
-      for(float a = 1; a<2; a+=0.03){
+      for (float a = 1; a<2; a+=0.03) {
         color lerp = lerpColor(to, from, (a-1)/3);
         stroke(lerp);
         line(x+a, y-6, x+a, y+6);
-      
+        line(x-6, y+a, x+6, y+a);
+      }
     }
   }
   void shootBeam() {
