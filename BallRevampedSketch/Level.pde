@@ -30,7 +30,7 @@ class Level {
     for (PowerUp powerup : powerUps) { 
       powerup.display();
       if (powerup.isTouching(ball)) {
-        powerup.use(ball);
+        ball = powerup.use(ball);
       }
     }
     ball.display();
