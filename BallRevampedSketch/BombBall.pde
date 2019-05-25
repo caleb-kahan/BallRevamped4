@@ -1,5 +1,6 @@
 class BombBall extends Ball {
   int time;
+  int prevTime;
   BombBall(float x, float y) {
     super(x, y, 24);
     gravity = -0.06;
@@ -17,6 +18,7 @@ class BombBall extends Ball {
     colors[3][1]=(int)(51*0.1);
     colors[3][2]=(int)(50*0.1);
     time = 5;
+    prevTime = second();
   }
   void display() {
     if (!isDead) {        
@@ -31,6 +33,19 @@ class BombBall extends Ball {
       fill(0);
       rectMode(CENTER);
       rect(x,y-27,15,6);
+      stroke(190);
+      strokeWeight(2);
+      noFill();
+      line(x,y-30,x,y-40);
+      arc(x+5,y-40,10,10,PI,11*PI/6);
+      textSize(15);
+      fill(255);
+      text(""+time,x-4,y+4);
+      strokeWeight(1);
+      if (second() != prevTime) {
+        prevTime = second();
+        time--;
+      }
     }
   }
   void move() {

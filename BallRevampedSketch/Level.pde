@@ -23,12 +23,14 @@ class Level {
     text("X",startX-5,startY+4);
     for (EnvironmentElement element : elements) {
       element.display();
-      
+      if (element instanceof Wood) {
+        ball = ((Wood)element).explode(ball);
+      }
       if (element.isTouching(ball)){
         if (element instanceof Wood && ball instanceof RazorBall) {
           ((Wood)element).isDestroyed = true;
         }
-        else {
+        else if (!(element instanceof Wood) || (element instanceof Wood && !((Wood)element).isDestroyed)) {
           respawn();
         }
       }
