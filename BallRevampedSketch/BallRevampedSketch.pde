@@ -1,36 +1,14 @@
 import java.util.Arrays;
-
-
-Ball ball;
-Wall wallie;
-Wood woodie;
-float startX;
-float startY;
-float startRadius;
-ArrayList<PowerUp> powerUps;
-void setup() {
-  size(450, 600);
-  startX = 255;
-  startY = 50;
-  ball = new NormalBall(startX, startY,25,25);
-  wallie = new Wall(200,200,50,100,0);
-  woodie = new Wood(270,270,200,200,0);
-  PowerUp smallstar = new SmallPowerUp(100,100,10);
-  PowerUp bigstar = new BigPowerUp(300,100,10);
-  PowerUp lightstar = new WeightlessPowerUp(100,300,10);
-  PowerUp heavystar = new HeavyPowerUp(300,300,10);
-  powerUps = new ArrayList<PowerUp>();
-  powerUps.add(smallstar);
-  powerUps.add(bigstar);
-  powerUps.add(lightstar);
-  powerUps.add(heavystar);
+Level level = new LevelCreator().constructLevel(1);
+void setup() { 
 }
 
 void draw() {
+  level.run();
 }
 void keyPressed() {
-  ball.keyPressed();
+  level.ball.keyPressed();
 }
 void keyReleased() {
-  ball.keyReleased();
+  level.ball.keyReleased();
 }

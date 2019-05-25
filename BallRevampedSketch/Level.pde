@@ -24,7 +24,7 @@ class Level {
     }
     for (EnvironmentElement element : elements) {
       element.display();
-      if (element.isTouching(ball) {
+      if (element.isTouching(ball)){
         ball.respawn();
       }
     }
@@ -44,7 +44,7 @@ class Level {
     ball.y = startY;
     ball.xSpeed = 0;
     ball.ySpeed = 0;
-    ball.radius = startRadius;
+    ball.radius = 48;
     for (PowerUp powerup : powerUps) {
       powerup.isUsed = false;
     }
