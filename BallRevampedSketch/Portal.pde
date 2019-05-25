@@ -12,16 +12,15 @@ public class Portal extends EnvironmentElement {
   void display() {
     pushMatrix();
     translate(x, y);
-    fill(75, 0, 130);
+    fill(78, 130, 222);
     rect(0, 0, w-10, l-10);
     rotate(radians(angleRotation));
-    stroke(0, 255, 255);
+    stroke(0);
     line(-w/2+6, l/2-6, w/2-6, -l/2+6);
     line(-w/2+6, -l/2+6, w/2-6, l/2-6);
 
     rotate(radians(-angleRotation));
-    stroke(153, 50, 204);
-    fill(153, 50, 204);
+    fill(100,150,250);
     rect(w/2-2.5, 0, 5, l);
     rect(-w/2+2.5, 0, 5, l);
     rect(0, l/2-2.5, w, 5);
