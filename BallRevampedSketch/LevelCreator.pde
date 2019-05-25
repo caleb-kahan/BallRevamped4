@@ -1,6 +1,5 @@
 public class LevelCreator{
-  LevelCreator(){
-    
+  LevelCreator(){    
   }
   Level constructLevel(int num) {
     Level level;
@@ -17,22 +16,17 @@ public class LevelCreator{
     float startY = 50;
     Ball ball = new NormalBall(startX, startY,24);
     ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
-    elements.add(new Wall(200,200,50,100,0));
-    elements.add(new Wood(270,270,200,200,0));
+    elements.add(new Wood(270,270,100,100,0));
     elements.add(new Wall(440,300,20,580,0)); 
     elements.add(new Wall(10,300,20,580,0)); 
     elements.add(new Wall(225,10,450,20,0)); 
     elements.add(new Wall(225,590,450,20,0)); 
     elements.add(new Portal(400,500));
-    PowerUp smallstar = new SmallPowerUp(100,100,10);
-    PowerUp bigstar = new BigPowerUp(300,100,10);
-    PowerUp lightstar = new WeightlessPowerUp(100,300,10);
-    PowerUp heavystar = new HeavyPowerUp(300,300,10);
     ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
-    powerUps.add(smallstar);
-    powerUps.add(bigstar);
-    powerUps.add(lightstar);
-    powerUps.add(heavystar);
+    powerUps.add(new SmallPowerUp(100,100,10));
+    powerUps.add(new BigPowerUp(300,100,10));
+    powerUps.add(new WeightlessPowerUp(100,300,10));
+    powerUps.add(new HeavyPowerUp(100,400,10));
     return new Level(1, elements, powerUps, ball, startX, startY);
   }
 }
