@@ -1,18 +1,18 @@
 class HeavyBall extends Ball {
-  HeavyBall(float x, float y, float radius) {
-    super(x, y, 24, 24);
+  HeavyBall(float x, float y) {
+    super(x, y, 24);
     gravity = -.13;
     upIncrement = .24;
   }
   void display() {
     if (!isDead) {  
       fill(175);
-      arc(this.x, this.y, this.startRadius*2, this.startRadius*2, 0, PI/2, PIE);
-      arc(this.x, this.y, this.startRadius*2, this.startRadius*2, -PI/2, 0, PIE);
-      arc(this.x, this.y, this.startRadius*2, this.startRadius*2, PI, 3*PI/2, PIE);
-      arc(this.x, this.y, this.startRadius*2, this.startRadius*2, PI/2, PI, PIE);
+      arc(this.x, this.y, 48, 48, 0, PI/2, PIE);
+      arc(this.x, this.y, 48, 48, -PI/2, 0, PIE);
+      arc(this.x, this.y, 48, 48, PI, 3*PI/2, PIE);
+      arc(this.x, this.y, 48, 48, PI/2, PI, PIE);
       fill(240);
-      polygon(x,y,startRadius/3,6);
+      polygon(x,y,24/3,6);
       fill(0);
     }
   }
@@ -31,10 +31,10 @@ class HeavyBall extends Ball {
   void move() {
     if (!isDead) super.move();
   }
-  void respawn() {
-    ball = new NormalBall(startX, startY,25,25);
+  Ball respawn(float x,float y, ArrayList<PowerUp> powerUps) {
     for (PowerUp powerup : powerUps) {
       powerup.isUsed = false;
     }
+    return new NormalBall(x, y);
   }
 }

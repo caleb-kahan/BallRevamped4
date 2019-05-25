@@ -19,13 +19,10 @@ class Level {
     rect(startX-1,startY,9,9);
     fill(0);
     text("X",startX-5,startY+4);
-    if (ball.y > 600 || ball.y < 0 || ball.x > 450 || ball.x < 0) {
-      ball.respawn();
-    }
     for (EnvironmentElement element : elements) {
       element.display();
       if (element.isTouching(ball)){
-        ball.respawn();
+        ball.respawn(startX,startY,powerUps);
       }
     }
     for (PowerUp star : powerUps) { 

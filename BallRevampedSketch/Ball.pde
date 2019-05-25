@@ -4,19 +4,17 @@ abstract class Ball {
   float xSpeed;
   float ySpeed;
   float radius;
-  float startRadius;
   boolean isDead;
   boolean[] keys;
   int [][] colors;
   float gravity;
   float upIncrement;
-  Ball(float x, float y, float radius,float startRadius) {
+  Ball(float x, float y, float radius) {
     this.x = x; 
     this.y = y;
     xSpeed = 0;
     ySpeed = 0;
     this.radius = radius;
-    this.startRadius = startRadius;
     isDead = false;
     keys = new boolean[4];
     upIncrement = .32;
@@ -59,15 +57,5 @@ abstract class Ball {
     }
     return true;
   }
-  void respawn() {
-    this.x = startX;
-    this.y = startY;
-    this.xSpeed = 0;
-    this.ySpeed = 0;
-    this.radius = startRadius;
-    for (PowerUp powerup : powerUps) {
-      powerup.isUsed = false;
-    }
-  }
-  //abstract boolean isTouching(PowerUp p);
+  abstract Ball respawn(float x, float y, ArrayList<PowerUp> powerUps);
 }
