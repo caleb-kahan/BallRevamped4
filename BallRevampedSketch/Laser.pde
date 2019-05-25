@@ -7,4 +7,11 @@ public class Laser extends EnvironmentElement {
   boolean isTouching(Ball b) {
     return false;
   }
+  void display() {
+    pushMatrix();
+    translate(x, y);
+    rotate(radians(angleRotation));
+ 
+    popMatrix();
+  }
 }
