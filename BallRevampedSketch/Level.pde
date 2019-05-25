@@ -45,7 +45,7 @@ class Level {
   }
   
   void respawn() {
-    ball = new NormalBall(startX,startY,24);
+    ball = new BombBall(startX,startY);
     for (PowerUp powerup : powerUps) {
       powerup.isUsed = false;
     }
