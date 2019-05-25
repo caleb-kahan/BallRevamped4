@@ -103,9 +103,19 @@ Repository is made </br></br>
     <li>Added level class with 3 variables storing the ball, walls, and powerups</li>
     <li>Started writing a display method that calls each item to display itself</li>
   </ul>
-  <hr>Caleb's Work </h4>
+  <h4>Caleb's Work </h4>
   <ul>
     <li>Moved Ball Class to a new Tab </li>
-    <li>Thought successfully of an innovative solution to creating levels in the game.  </li>
-  <ul>
+    <li>Thought successfully of an innovative solution to creating levels in the game.</li>
+  </ul>
 </d1>
+<b>5/24/19</br>
+  <h4> Chris's Work </h4>
+  <ul>
+    <li>Transferred the method calls from setup() into the level1() method in LevelCreator class</li>
+    <li>Transferred the method calls from draw() into the run() method in the Level class</li>
+    <li>Reduced the amount of radius parameters for all the Ball subclasses</li>
+    <li>Rewrote the use method for PowerUp classes to return a new ball</li>
+    <li>Removed respawn method in Ball class and wrote a new one in Level class to allow its methods to access the Ball's variables</li>
+    <li>Got the Level and LevelCreator class to successfully run in draw()</li>
+  </ul>
