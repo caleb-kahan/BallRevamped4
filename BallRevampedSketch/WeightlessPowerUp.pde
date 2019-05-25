@@ -28,7 +28,7 @@ class WeightlessPowerUp extends PowerUp {
   boolean isTouching(Ball b) {  
     return super.isTouching(b);
   }
-  void use(Ball ball) {
+  Ball use(Ball ball) {
     if (!isUsed) {
       isUsed = true;
       float xVel = ball.xSpeed;
@@ -37,5 +37,6 @@ class WeightlessPowerUp extends PowerUp {
       ball.xSpeed = xVel;
       ball.ySpeed = yVel;
     }
+    return ball;
   }
 }
