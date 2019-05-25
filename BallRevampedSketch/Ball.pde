@@ -57,5 +57,4 @@ abstract class Ball {
     }
     return true;
   }
-  abstract Ball respawn(float x, float y, ArrayList<PowerUp> powerUps);
 }

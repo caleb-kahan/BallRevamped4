@@ -32,10 +32,4 @@ class NormalBall extends Ball {
   void move() {
     if (!isDead) super.move();
   }
-  Ball respawn(float x, float y, ArrayList<PowerUp> powerUps) {
-    for (PowerUp powerup : powerUps) {
-      powerup.isUsed = false;
-    }
-    return new NormalBall(x, y,24);
-  }
 }

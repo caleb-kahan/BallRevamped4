@@ -13,17 +13,16 @@ public class LevelCreator{
     return level;   
   }
   Level level1(){
-    size(450, 600);
-    int startX = 255;
-    int startY = 50;
+    float startX = 255;
+    float startY = 50;
     Ball ball = new NormalBall(startX, startY,24);
     ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
     elements.add(new Wall(200,200,50,100,0));
     elements.add(new Wood(270,270,200,200,0));
-    elements.add(new Wall(440,300,20,290,0)); 
-    elements.add(new Wall(10,300,20,290,0)); 
+    elements.add(new Wall(440,300,20,580,0)); 
+    elements.add(new Wall(10,300,20,580,0)); 
     elements.add(new Wall(225,10,450,20,0)); 
-    elements.add(new Wall(225,690,450,20,0)); 
+    elements.add(new Wall(225,590,450,20,0)); 
     elements.add(new Portal(400,500));
     PowerUp smallstar = new SmallPowerUp(100,100,10);
     PowerUp bigstar = new BigPowerUp(300,100,10);
@@ -34,6 +33,6 @@ public class LevelCreator{
     powerUps.add(bigstar);
     powerUps.add(lightstar);
     powerUps.add(heavystar);
-    return new Level(1, elements, powerUps, ball);
+    return new Level(1, elements, powerUps, ball, startX, startY);
   }
 }

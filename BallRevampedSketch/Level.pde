@@ -6,11 +6,13 @@ class Level {
   float startX;
   float startY;
   
-  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball) {
+  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y) {
     levelNumber = levelNum;
     this.elements = elements;
     this.powerUps = powerUps;
     this.ball = ball;
+    startX = x;
+    startY = y;
   }
   void run(){
     background(255);
@@ -22,7 +24,7 @@ class Level {
     for (EnvironmentElement element : elements) {
       element.display();
       if (element.isTouching(ball)){
-        ball.respawn(startX,startY,powerUps);
+        respawn();
       }
     }
     for (PowerUp powerup : powerUps) { 
@@ -37,11 +39,7 @@ class Level {
   }
   
   void respawn() {
-    ball.x = startX;
-    ball.y = startY;
-    ball.xSpeed = 0;
-    ball.ySpeed = 0;
-    ball.radius = 48;
+    ball = new NormalBall(startX,startY,24);
     for (PowerUp powerup : powerUps) {
       powerup.isUsed = false;
     }
