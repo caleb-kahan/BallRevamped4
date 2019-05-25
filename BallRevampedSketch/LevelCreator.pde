@@ -18,6 +18,11 @@ public class LevelCreator{
     ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
     elements.add(new Wall(200,200,50,100,0));
     elements.add(new Wood(270,270,200,200,0));
+    elements.add(new Wall(440,300,20,290,0)); 
+    elements.add(new Wall(10,300,20,290,0)); 
+    elements.add(new Wall(225,10,450,20,0)); 
+    elements.add(new Wall(225,690,450,20,0)); 
+    elements.add(new Portal(400,500));
     PowerUp smallstar = new SmallPowerUp(100,100,10);
     PowerUp bigstar = new BigPowerUp(300,100,10);
     PowerUp lightstar = new WeightlessPowerUp(100,300,10);
