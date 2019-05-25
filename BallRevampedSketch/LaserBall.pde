@@ -26,9 +26,15 @@ class LaserBall extends Ball {
       arc(this.x, this.y, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
       fill(colors[3][0], colors[3][1], colors[3][2]);
       arc(this.x, this.y, this.radius*2, this.radius*2, PI/2, PI, PIE);
-      
+
       //Here comes special cylinders;
-      
+      color from = color(28);
+      color to = color(242);
+      for (float a = -2; a<2; a+=0.04) {
+        color lerp = lerpColor(from, to, (a+2)/4);
+        stroke(lerp);
+        line(x+a, y-6, x+a, y+6);
+      }
     }
   }
   void shootBeam() {
