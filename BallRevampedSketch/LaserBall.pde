@@ -30,11 +30,16 @@ class LaserBall extends Ball {
       //Here comes special cylinders;
       color from = color(28);
       color to = color(242);
-      for (float a = -2; a<2; a+=0.04) {
-        color lerp = lerpColor(from, to, (a+2)/4);
+      for (float a = -2; a<1; a+=0.03) {
+        color lerp = lerpColor(from, to, (a+2)/3);
         stroke(lerp);
         line(x+a, y-6, x+a, y+6);
       }
+      for(float a = 1; a<2; a+=0.03){
+        color lerp = lerpColor(to, from, (a-1)/3);
+        stroke(lerp);
+        line(x+a, y-6, x+a, y+6);
+      
     }
   }
   void shootBeam() {
