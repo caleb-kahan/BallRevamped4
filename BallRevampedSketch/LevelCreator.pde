@@ -27,6 +27,7 @@ public class LevelCreator{
     powerUps.add(new BigPowerUp(300,100,10));
     powerUps.add(new WeightlessPowerUp(100,300,10));
     powerUps.add(new HeavyPowerUp(100,400,10));
+    powerUps.add(new RazorPowerUp(100,500,10));
     return new Level(1, elements, powerUps, ball, startX, startY);
   }
 }
