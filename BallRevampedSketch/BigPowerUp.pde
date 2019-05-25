@@ -21,13 +21,13 @@ class BigPowerUp extends PowerUp {
   boolean isTouching(Ball b) {  
     return super.isTouching(b);
   }
-  void use() {
+  void use(Ball ball) {
     if (!isUsed) {
       isUsed = true;
       if(! (ball instanceof NormalBall)) {
         float xVel = ball.xSpeed;
         float yVel = ball.ySpeed;
-        ball = new NormalBall(x,y,48,ball.startRadius);
+        ball = new NormalBall(x,y,48);
         ball.xSpeed = xVel;
         ball.ySpeed = yVel;
       }

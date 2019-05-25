@@ -10,12 +10,12 @@ class HeavyPowerUp extends PowerUp {
   boolean isTouching(Ball b) {  
     return super.isTouching(b);
   }
-  void use() {
+  void use(Ball ball) {
     if (!isUsed) {
       isUsed = true;
       float xVel = ball.xSpeed;
       float yVel = ball.ySpeed;
-      ball = new HeavyBall(ball.x, ball.y, 24);
+      ball = new HeavyBall(ball.x, ball.y);
       ball.xSpeed = xVel;
       ball.ySpeed = yVel;
     }

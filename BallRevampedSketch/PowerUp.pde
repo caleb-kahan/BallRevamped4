@@ -34,5 +34,5 @@ abstract class PowerUp {
   boolean isTouching(Ball b) {
     return (sqrt(sq(x - b.x)+sq(y - b.y)) < 50*50/size + b.radius);
   }
-  abstract void use();
+  abstract void use(Ball ball);
 }

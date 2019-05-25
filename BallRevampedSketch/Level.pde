@@ -25,10 +25,10 @@ class Level {
         ball.respawn(startX,startY,powerUps);
       }
     }
-    for (PowerUp star : powerUps) { 
-      star.display();
-      if (star.isTouching(ball)) {
-        star.use();
+    for (PowerUp powerup : powerUps) { 
+      powerup.display();
+      if (powerup.isTouching(ball)) {
+        powerup.use(ball);
       }
     }
     ball.display();

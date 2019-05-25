@@ -16,7 +16,7 @@ public class LevelCreator{
     size(450, 600);
     int startX = 255;
     int startY = 50;
-    Ball ball = new NormalBall(startX, startY,25,25);
+    Ball ball = new NormalBall(startX, startY,24);
     ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
     elements.add(new Wall(200,200,50,100,0));
     elements.add(new Wood(270,270,200,200,0));

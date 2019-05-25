@@ -35,6 +35,6 @@ class HeavyBall extends Ball {
     for (PowerUp powerup : powerUps) {
       powerup.isUsed = false;
     }
-    return new NormalBall(x, y);
+    return new NormalBall(x, y,24);
   }
 }
