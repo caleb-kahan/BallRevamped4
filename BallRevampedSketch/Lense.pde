@@ -12,4 +12,7 @@ public class Lense extends EnvironmentElement {
   }
   void display() {
   }
+  float lineGenerator (float ellipseWidth, float ellipseHeight, float input) {
+    return sqrt(l*l-(input*input*l*l/w/w));
+  }
 }
