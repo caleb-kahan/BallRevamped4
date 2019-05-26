@@ -130,5 +130,5 @@ Repository is made </br></br>
     <li>Created the laser class; this controls the laser the laserBall shoots</li>
     <li>Created the laserBall class: this is a new type of ball<li>
     <li>Created the laserPowerUp class: this turns the ball into a laser ball<li>
-  <ul>
+  </ul>
   
