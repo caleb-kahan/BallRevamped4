@@ -4,20 +4,20 @@ Repository is made </br></br>
 <b>5/17/19</b></br>
 <h4> Caleb's Work </h4>
   <dt>Ball Class</dt>
-  <ui>
+  <ul>
     <li>Added variables, the constructor, and the abstract methods. </li>
   </ui>
   <dt>Move</dt>
-  <ui>
+  <ul>
     <li>Expanded on move to allow user interactivity: the arrow keys accelerate the boy in the specified direction.</li>
     <li>Made move part of the Ball class and called the super version in the NormalBall class.  </li>
-  </ui>
+  </ul>
 <h4> Chris's Work </h4>
   <dt>NormalBall Class</dt>
-  <ui>
+  <ul>
     <li>wrote display() using the correct RGB values as the ball in the game, and arc() for the quadrants</li>
     <li>wrote move() to increment x and y, and ySpeed to emulate gravity</li>
-  </ui>
+  </ul>
   <dt>Wrote setup() with dimensions of the display and ball that matched the game.</dt>
   <dt>Wrote draw() with restrictions that respawn the ball if it goes out of boundary. </dt>
 </d1></br>
@@ -39,10 +39,6 @@ Repository is made </br></br>
     <li>-added respawn() method to allow ball to respawn at any location</li>
     <li>-refined the increments of the arrow movements and gravity to more closely match the game</li>
     <li>-removed unecessary code</li>
-  </ul>
-  <dt>Wall Class</dt>
-  <ul>
-    <li>Discerned mistake for isTouching()</li>
   </ul>
 </d1></br>
 <b>5/19/19</br>
@@ -68,7 +64,7 @@ Repository is made </br></br>
 <h4> Chris's Work </h4>
   <ul>
     <li>wrote HeavyBall and HeavyPowerUp classes</li>
-    <li>fixed the issue of the ball's momentum being preserved</li>
+    <li>fixed the issue of the ball's momentum not being preserved</li>
     <li>overrode respawn in the HeavyBall and WeightLessBall so they spawn as a NormalBall</li>
     <li>fixed the shades and colours of the HeavyBall, HeavyPowerUp, and WeightLessPowerUp classes</li>
     <li>fixed the issue of the small and big balls not reverting to original size when activating the weightless or heavy powerup</li>
@@ -115,7 +111,6 @@ Repository is made </br></br>
     <li>Transferred the method calls from setup() into the level1() method in LevelCreator class</li>
     <li>Transferred the method calls from draw() into the run() method in the Level class</li>
     <li>Reduced the amount of radius parameters for all the Ball subclasses</li>
-    <li>Rewrote the use method for PowerUp classes to return a new ball</li>
     <li>Removed respawn method in Ball class and wrote a new one in Level class to allow its methods to access the Ball's variables</li>
     <li>Got the Level and LevelCreator class to successfully run in draw()</li>
   </ul>
@@ -125,10 +120,20 @@ Repository is made </br></br>
   </ul>
 <b>5/25/19</br>
   <h4> Chris's Work </h4>
+  <ul>
+    <li>Created RazorBall and RazorPowerUp classes</li>
+    <li>Wrote their display() methods with arcs as spikes</li>
+    <li>Made the Wood class to get destroyed when RazorBall touches it</li>
+    <li>Made working Bomb mechanics by getting a bomb to destroy wood if it is near it and its timer reaches 0</li>
+    <li>Made BombPowerUp class to allow ball to turn into a BombBall</li>
+  </ul>
   <h4> Caleb's Work </h4>
   <ul>
     <li>Created the laser class; this controls the laser the laserBall shoots</li>
-    <li>Created the laserBall class: this is a new type of ball<li>
-    <li>Created the laserPowerUp class: this turns the ball into a laser ball<li>
+    <li>Created the laserBall class: this is a new type of ball</li>
+    <li>Created the laserPowerUp class: this turns the ball into a laser ball</li>
   </ul>
+<b>5/26/19</br>
+  <h4> Chris's Work </h4>
+  <h4> Caleb's Work </h4>
   
