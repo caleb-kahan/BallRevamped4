@@ -125,6 +125,13 @@ Repository is made </br></br>
   </ul>
 <b>5/25/19</br>
   <h4> Chris's Work </h4>
+  <ul>
+    <li>Created RazorBall and RazorPowerUp classes</li>
+    <li>Wrote their display() methods with arcs as spikes</li>
+    <li>Made the Wood class to get destroyed when RazorBall touches it</li>
+    <li>Made working Bomb mechanics by getting a bomb to destroy wood if it is near it and its timer reaches 0</li>
+    <li>Made BombPowerUp class to allow ball to turn into a BombBall</li>
+  </ul>
   <h4> Caleb's Work </h4>
   <ul>
     <li>Created the laser class; this controls the laser the laserBall shoots</li>
