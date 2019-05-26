@@ -120,4 +120,7 @@ Repository is made </br></br>
     <li>Got the Level and LevelCreator class to successfully run in draw()</li>
   </ul>
   <h4>Caleb's Work </h4>
-    <ul>
+  <ul>
+    <li>Fixed the problem that balls were not affected by powerups</li>
+  </ul>
+  
