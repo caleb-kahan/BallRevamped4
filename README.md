@@ -123,4 +123,12 @@ Repository is made </br></br>
   <ul>
     <li>Fixed the problem that balls were not affected by powerups</li>
   </ul>
+<b>5/25/19</br>
+  <h4> Chris's Work </h4>
+  <h4> Caleb's Work </h4>
+  <ul>
+    <li>Created the laser class; this controls the laser the laserBall shoots</li>
+    <li>Created the laserBall class: this is a new type of ball<li>
+    <li>Created the laserPowerUp class: this turns the ball into a laser ball<li>
+  <ul>
   
