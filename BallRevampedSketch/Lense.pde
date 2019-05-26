@@ -14,10 +14,11 @@ public class Lense extends EnvironmentElement {
     pushMatrix();
     translate(x,y);
     
+    
   }
-  float lineGenerator (float ellipseWidth, float ellipseHeight, float input) {
-    ellipseWidth/=2;
-    ellipseHeight/=2;
-    return sqrt(l*l-(input*input*l*l/w/w));
+  float lineGenerator (float input) {
+    float altL = l/2;
+    float altW =  w/2;
+    return sqrt(altL*altL-(input*input*altL*altL/altW/altW));
   }
 }
