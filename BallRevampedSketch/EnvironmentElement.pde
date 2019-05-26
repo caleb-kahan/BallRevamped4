@@ -187,6 +187,12 @@ public class Wood extends Wall {
     }
     return ball;
   }
+  void explode(Fuse fuse) {
+    if (fuse.currentDot == fuse.dots.size()) {
+      isDestroyed = true;
+    }
+  }
+  
 }
 
 class Fuse extends EnvironmentElement{
@@ -228,13 +234,15 @@ class Fuse extends EnvironmentElement{
     for (Dot dot : dots) {
       dot.reset();
     }
+    currentDot = 0;
+    isActivated = false;
   }
   void display() {
     for (Dot dot : dots) {
       dot.display();
     }
     if (isActivated) {
-      if (millis() - time == 10 && currentDot < dots.size()) {
+      if (millis() - time > 60 && currentDot < dots.size()) {
         time = millis();
         dots.get(currentDot).light();
         currentDot++;

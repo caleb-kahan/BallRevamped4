@@ -13,9 +13,11 @@ class Dot {
     isLit = false;
   }
   void display() {
-    fill(130);
-    noStroke();
-    ellipse(x,y,7,7);
-    stroke(0);
+    if (!isLit) {
+      fill(130);
+      noStroke();
+      ellipse(x,y,7,7);
+      stroke(0);
+    }
   }
 }

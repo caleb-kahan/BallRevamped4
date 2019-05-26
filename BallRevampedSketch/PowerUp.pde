@@ -280,3 +280,32 @@ class WeightlessPowerUp extends PowerUp {
     return ball;
   }
 }
+
+class FusePowerUp extends PowerUp {
+  FusePowerUp(float x, float y, float size) {
+    super(x, y, size, new int[] {255, 167, 167});
+  }
+  void display() {
+    fill(130);
+    rectMode(CENTER);
+    rect(x, y+50*20/size,2*50*50/size,2*50*50/size);
+    stroke(190);
+    strokeWeight(2);
+    line(x,y+50*20/size-50*50/size,x,y-4750/size);
+    line(x-50*50/size,y-4750/size,x+50*50/size,y-4750/size);
+    super.display();
+    strokeWeight(1);
+  }
+  boolean isTouching(Ball b) {  
+    return super.isTouching(b);
+  }
+  Ball use(Ball ball) {
+    return ball;
+  }
+  void use (Fuse fuse) {
+    if (!isUsed) {
+      fuse.isActivated = true;
+      isUsed = true;
+    }
+  }
+}

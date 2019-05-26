@@ -5,14 +5,18 @@ class Level {
   Ball ball;
   float startX;
   float startY;
+  int fuseIndex;
+  int woodIndex;
   
-  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y) {
+  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y,int fuseIdx, int woodIdx) {
     levelNumber = levelNum;
     this.elements = elements;
     this.powerUps = powerUps;
     this.ball = ball;
     startX = x;
     startY = y;
+    fuseIndex = fuseIdx;
+    woodIndex = woodIdx;
   }
   void run(){
     background(255);
@@ -38,9 +42,15 @@ class Level {
     for (PowerUp powerup : powerUps) { 
       powerup.display();
       if (powerup.isTouching(ball)) {
-        ball = powerup.use(ball);
+        if (powerup instanceof FusePowerUp) {
+          ( (FusePowerUp)powerup).use((Fuse)(elements.get(fuseIndex)));
+        }
+        else {
+          ball = powerup.use(ball);
+        }
       }
     }
+    ((Wood)elements.get(woodIndex)).explode((Fuse)elements.get(fuseIndex));
     ball.display();
     ball.move();
     stroke(0);
@@ -54,6 +64,9 @@ class Level {
     for (EnvironmentElement element : elements) {
       if (element instanceof Wood) {
         ((Wood)element).isDestroyed = false;
+      }
+      if (element instanceof Fuse) {
+        ((Fuse)element).reset();
       }
     }
   }
