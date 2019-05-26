@@ -3,8 +3,6 @@ class LaserPowerUp extends PowerUp {
     super(x, y, size, new int[] {127, 255, 0});
   }
   void display() {
-    super.display();
-    fill(175);
     color from = color(28);
     color to = color(242);
     for (float a = -4; a<2; a+=0.03) {
@@ -19,7 +17,7 @@ class LaserPowerUp extends PowerUp {
       line(x+a, y-12, x+a, y+12);
       line(x-12, y+a, x+12, y+a);
     }
-    ellipse(x, y, 2500/size, 2500/size);
+    super.display();
   }
   boolean isTouching(Ball b) {  
     return super.isTouching(b);
