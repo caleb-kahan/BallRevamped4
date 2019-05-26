@@ -19,7 +19,7 @@ class Level {
     woodIndex = woodIdx;
   }
   void run(){
-    background(255);
+    background(125,195,242);
     rectMode(CENTER);
     fill(255,0,0);
     rect(startX-1,startY,9,9);

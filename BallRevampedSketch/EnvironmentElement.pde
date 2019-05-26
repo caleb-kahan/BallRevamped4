@@ -124,7 +124,8 @@ class Wall extends EnvironmentElement {
   }
   void display() {
     pushMatrix();
-    fill(0);
+    fill(70);
+    stroke(70);
     translate(x, y);
     rotate(radians(angleRotation));
     rectMode(CENTER);
@@ -248,5 +249,29 @@ class Fuse extends EnvironmentElement{
         currentDot++;
       }
     }
+  }
+}
+
+class Dot extends EnvironmentElement{
+  boolean isLit;
+  Dot (float x,float y) {
+    super(x,y,7,7,0);
+  }
+  void light() {
+    isLit = true;
+  }
+  void reset() {
+    isLit = false;
+  }
+  void display() {
+    if (!isLit) {
+      fill(130);
+      noStroke();
+      ellipse(x,y,w,l);
+      stroke(0);
+    }
+  }
+  boolean isTouching(Ball b) {
+    return false;
   }
 }
