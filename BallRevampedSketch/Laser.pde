@@ -20,4 +20,8 @@ public class Laser extends EnvironmentElement {
     rect(2/10, l, 2*w/5, l);
     popMatrix();
   }
+  void move() {
+    x+=cos(radians(angleRotation))*velocity;
+    y+=sin(radians(angleRotation))*velocity;
+  }
 }
