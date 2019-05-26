@@ -51,16 +51,20 @@ class LaserBall extends Ball {
   }
   void shootBeam() {
     if (keys[0]==true) {
-      lasers[laserIndex];
+      lasers[laserIndex]=new Laser(x, y, 90);
+      laserIndex++;
     }
     if (keys[1]==true) {
-      lasers[laserIndex];
+      lasers[laserIndex]=new Laser(x, y, 270);
+      laserIndex++;
     }
     if (keys[2]==true) {
-      lasers[laserIndex];
+      lasers[laserIndex]=new Laser(x, y, 0);
+      laserIndex++;
     }
     if (keys[3]==true) {
-      lasers[laserIndex];
+      lasers[laserIndex]=new Laser(x, y, 180);
+      laserIndex++;
     }
   }
   void move() {
