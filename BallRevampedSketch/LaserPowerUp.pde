@@ -15,7 +15,7 @@ class LaserPowerUp extends PowerUp {
       isUsed = true;
       float xVel = ball.xSpeed;
       float yVel = ball.ySpeed;
-      ball = new HeavyBall(ball.x, ball.y);
+      ball = new LaserBall(ball.x, ball.y);
       ball.xSpeed = xVel;
       ball.ySpeed = yVel;
     }
