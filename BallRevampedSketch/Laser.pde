@@ -12,7 +12,12 @@ public class Laser extends EnvironmentElement {
     translate(x, y);
     rotate(radians(angleRotation));
     rectMode(CORNER);
-    rect(0, 0, w, l);
+    fill(30, 144, 255);
+    rect(-w/2, l, 2*w/5, l);
+    fill(176, 219, 240);
+    rect(-w/10, l, w/5, l);
+    fill(30, 144, 255);
+    rect(2/10, l, 2*w/5, l);
     popMatrix();
   }
 }
