@@ -1,6 +1,7 @@
 class LaserBall extends Ball {
   Laser [] lasers;
   int laserIndex;
+  float frequency;
   LaserBall(float x, float y) {
     super(x, y, 24);
     gravity = -.06;
@@ -20,6 +21,7 @@ class LaserBall extends Ball {
     colors[3][2]=50;
     lasers= new Laser[20];
     laserIndex=0;
+    frequency = 10;
   }
   void display() {
     if (!isDead) {  
@@ -46,6 +48,13 @@ class LaserBall extends Ball {
         stroke(lerp);
         line(x+a, y-12, x+a, y+12);
         line(x-12, y+a, x+12, y+a);
+      }
+      if(millis()%(1/(frequency/1000))==1) shootBeam();
+      for(Laser laser: lasers){
+        if(laser!=null){
+          laser.display();
+          laser.move();
+        }
       }
     }
   }
