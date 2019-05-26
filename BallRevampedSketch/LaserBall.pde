@@ -1,4 +1,5 @@
 class LaserBall extends Ball {
+  Laser [] lasers;
   LaserBall(float x, float y) {
     super(x, y, 24);
     gravity = -.06;
@@ -16,6 +17,8 @@ class LaserBall extends Ball {
     colors[3][0]=255;
     colors[3][1]=51;
     colors[3][2]=50;
+    lasers= new Laser[20];
+
   }
   void display() {
     if (!isDead) {  
@@ -47,6 +50,7 @@ class LaserBall extends Ball {
   }
   void shootBeam() {
     if(keys[0]==true){
+      
     }
     if(keys[1]==true){
     }
