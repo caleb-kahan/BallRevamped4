@@ -22,6 +22,7 @@ public class LevelCreator{
     elements.add(new Wall(225,10,450,20,0)); 
     elements.add(new Wall(225,590,450,20,0)); 
     elements.add(new Portal(400,500));
+    elements.add(new Fuse(new float[] {50,50,50,150,100,150}));
     ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
     powerUps.add(new SmallPowerUp(100,100,10));
     powerUps.add(new BigPowerUp(300,100,10));
@@ -29,7 +30,6 @@ public class LevelCreator{
     powerUps.add(new HeavyPowerUp(100,400,10));
     powerUps.add(new RazorPowerUp(100,500,10));
     powerUps.add(new BombPowerUp(200,100,10));
-    
     return new Level(1, elements, powerUps, ball, startX, startY);
   }
 }
