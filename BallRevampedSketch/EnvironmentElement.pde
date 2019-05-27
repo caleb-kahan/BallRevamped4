@@ -110,7 +110,6 @@ class Wall extends EnvironmentElement {
   }
   void display() {
     pushMatrix();
-    fill(70);
     stroke(70);
     translate(x, y);
     rotate(radians(angleRotation));

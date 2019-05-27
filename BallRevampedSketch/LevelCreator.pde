@@ -24,6 +24,7 @@ public class LevelCreator{
     elements.add(new Portal(400,500));
     elements.add(new Fuse(new float[] {225,150,150,150,150,300,250,300}));
     elements.add(new ForceField(350,350,100));
+    elements.add(new Stick(350,150,100));
     ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
     powerUps.add(new SmallPowerUp(100,100,10));
     powerUps.add(new BigPowerUp(300,100,10));
