@@ -35,16 +35,16 @@ public class Lense extends EnvironmentElement {cir
   }
   void display() {
     stroke(232);
-    for (float n = -w/2; n<-w/6; n+=0.03) {
-      float output = lineGenerator(n);
-      line(n, output, n, -1*output);
+    for (float n = ; n<0; n+=0.03) {
+      float[] outputs = lineGenerator(n, true);
+      line(n, outputs[0], n, outputs[1]);
     }
     color from = color(136);
     color to = color(196);
     for (float n = -w/6; n<w/2; n+=0.03) {
-      float output = lineGenerator(n);
+      float[] outputs = lineGenerator(n, true);
       stroke(lerpColor(from, to, (w/6+n)/(2*w/3)));
-      line(n, output, n, -1*output);
+      line(n, outputs[0], n, outputs[1]);
     }
   }
   float[] lineGenerator (float input, boolean isCircle1) {
