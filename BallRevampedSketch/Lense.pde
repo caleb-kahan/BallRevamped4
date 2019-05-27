@@ -34,15 +34,15 @@ class Lense extends EnvironmentElement {
     float boundingAngle2B;
 
     if (vert) {
-      boundingAngle1A = -angleArc/2;
-      boundingAngle1B = angleArc/2;
-      boundingAngle2A = 180-angleArc/2;
-      boundingAngle2B = 180+angleArc/2;
+      boundingAngle1A = constrainAngle(-angleArc/2);
+      boundingAngle1B = constrainAngle(angleArc/2);
+      boundingAngle2A = constrainAngle(180-angleArc/2);
+      boundingAngle2B = constrainAngle(180+angleArc/2);
     } else {
-      boundingAngle1A = 270-angleArc/2;
-      boundingAngle1B = 270+angleArc/2;
-      boundingAngle2A = 90-angleArc/2;
-      boundingAngle2B = 90+angleArc/2;
+      boundingAngle1A = constrainAngle(270-angleArc/2);
+      boundingAngle1B = constrainAngle(270+angleArc/2);
+      boundingAngle2A = constrainAngle(90-angleArc/2);
+      boundingAngle2B = constrainAngle(90+angleArc/2);
     }
     float [] interestingPoints1 = circleIntersection.circleCircleIntersects(cen1X, cen1Y, b.x, b.y, radius, b.radius);
     float [] interestingPoints2 = circleIntersection.circleCircleIntersects(cen2X, cen2Y, b.x, b.y, radius, b.radius);
@@ -59,6 +59,11 @@ class Lense extends EnvironmentElement {
         return true;
     }
     return false;
+  }
+  float constrainAngle(float angle){
+    if(angle>360) angle-=360;
+    if(angle<0)angle+=360;
+    return angle;
   }
   void display() {
     stroke(230);
@@ -101,6 +106,6 @@ class Lense extends EnvironmentElement {
       angle +=PI;
     if (angle<0) angle+=360;
     if (angle>360) angle-=360;
-    return radians(angle);
+    return degrees(angle);
   }
 }
