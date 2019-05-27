@@ -106,7 +106,7 @@ class Lense extends EnvironmentElement {
     if (otX<cenX)
       angle +=180;
     if (angle<0) angle+=360;
-    if (angle>2*PI) angle-=360;
+    if (angle>360) angle-=360;
     return angle;
   }
 }
