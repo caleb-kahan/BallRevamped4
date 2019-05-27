@@ -15,13 +15,12 @@ public class Lense extends EnvironmentElement {
     isDead =false;
     this.vert = vert;
     float endDist = calculateEndDist();
-    if(vert){
+    if (vert) {
       cen1X = x-endDist+radius;
       cen2X = x+endDist-radius;
       cen1Y = y;
       cen2Y = y;
-    }
-    else {
+    } else {
       cen1Y = y-endDist+radius;
       cen2Y = y+endDist-radius;
       cen1X = x;
@@ -29,9 +28,9 @@ public class Lense extends EnvironmentElement {
     }
   }
   boolean isTouching(Ball b) {
-    float [] interestingPoints = circleIntersection.circleCircleIntersects(x,y,b.x,b.y,radius,b.radius);
-    if(interestingPoints==null) return false;
-    
+    float [] interestingPoints = circleIntersection.circleCircleIntersects(x, y, b.x, b.y, radius, b.radius);
+    if (interestingPoints==null) return false;
+
     return true;
   }
   void display() {
@@ -60,12 +59,14 @@ public class Lense extends EnvironmentElement {
       angle +=PI;
     return radians(angle);
   }
-  float [] quadFormula(float A, float B, float C){
+  float [] quadFormula(float A, float B, float C) {
     float [] roots = new float[2];
     float discrim = sqrt(B*B-4*A*C);
-    //roots[0]= 
-    return new float[2];
-    
+    if (discrim==null) {
+      return new float[]{null, null};
+    }
+    roots[0]= (-1*B+discrim)/(2*a);
+    roots[1]= (-1*B-discrim)/(2*a);
+    return roots;
   }
-  
 }
