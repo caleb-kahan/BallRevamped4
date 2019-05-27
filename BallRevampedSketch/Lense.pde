@@ -53,8 +53,8 @@ class Lense extends EnvironmentElement {
         return true;
     }
     if (interestingPoints2!= null) {
-      float propAngle1 = propAngle(radius, cen1X, cen1Y, interestingPoints2[0], interestingPoints2[1]);
-      float propAngle2 = propAngle(radius, cen1X, cen1Y, interestingPoints2[2], interestingPoints2[3]);
+      float propAngle1 = propAngle(radius, cen2X, cen2Y, interestingPoints2[0], interestingPoints2[1]);
+      float propAngle2 = propAngle(radius, cen2X, cen2Y, interestingPoints2[2], interestingPoints2[3]);
       if (propAngle1>boundingAngle2A && propAngle1<boundingAngle2B || propAngle2>boundingAngle2A && propAngle2<boundingAngle2B)
         return true;
     }
@@ -102,10 +102,11 @@ class Lense extends EnvironmentElement {
   }
   float propAngle(float radius, float cenX, float cenY, float otX, float otY) {
     float angle = atan((otY-cenY)/(otX-cenX));
+    angle = degrees(angle);
     if (otX<cenX)
-      angle +=PI;
+      angle +=180;
     if (angle<0) angle+=360;
-    if (angle>360) angle-=360;
-    return degrees(angle);
+    if (angle>2*PI) angle-=360;
+    return angle;
   }
 }
