@@ -49,10 +49,11 @@ public class Lense extends EnvironmentElement {
     if (interestingPoints1!= null) {
       float propAngle1 = propAngle(radius, cen1X, cen1Y, interestingPoints1[0], interestingPoints1[1]);
       float propAngle2 = propAngle(radius, cen1X, cen1Y, interestingPoints1[2], interestingPoints1[3]);
+      if(!(propAngle1>boundingAngle1A && propAngle1<boundingAngle1B && propAngle2>boundingAngle2A && propAngle2<boundingAngle2B)){
+              
     }
 
-    float propAngle2 = propAngle(radius, cen1X, cen1Y, interestingPoints1[0], interestingPoints1[1]);
-    if (interestingPoints==null) return false;
+    
 
 
     return true;
@@ -90,6 +91,8 @@ public class Lense extends EnvironmentElement {
     float angle = atan((otY-cenY)/(otX-cenX));
     if (otX<cenX)
       angle +=PI;
+    if(angle<0) angle+=360;
+    if(angle>360) angle-=360;
     return radians(angle);
   }
 }
