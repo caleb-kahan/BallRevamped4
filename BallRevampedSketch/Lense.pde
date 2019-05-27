@@ -34,15 +34,15 @@ public class Lense extends EnvironmentElement {
     float boundaingAngle2B;
 
     if (vert) {
-      boundaingAngle1A = 170;
-      boundaingAngle1B = 170;
-      boundaingAngle2A = 170;
-      boundaingAngle2B = 170;
+      boundaingAngle1A = -angleArc/2;
+      boundaingAngle1B = angleArc/2;
+      boundaingAngle2A = 180-angleArc/2;
+      boundaingAngle2B = 180+angleArc/2;
     } else {
-      boundaingAngle1A = 170;
-      boundaingAngle1B = 170;
-      boundaingAngle2A = 170;
-      boundaingAngle2B = 170;
+      boundaingAngle1A = 270-angleArc/2;
+      boundaingAngle1B = 270+angleArc/2;
+      boundaingAngle2A = 90-angleArc/2;
+      boundaingAngle2B = 90+angleArc/2;
     }
     float [] interestingPoints1 = circleIntersection.circleCircleIntersects(cen1X, cen1Y, b.x, b.y, radius, b.radius);
     float [] interestingPoints2 = circleIntersection.circleCircleIntersects(cen2X, cen2Y, b.x, b.y, radius, b.radius);
