@@ -27,7 +27,6 @@ public class Lense extends EnvironmentElement {
       cen1X = x;
       cen2X = x;
     }
-    
   }
   boolean isTouching(Ball b) {
     float [] interestingPoints = circleIntersection.circleCircleIntersects(x,y,b.x,b.y,radius,b.radius);
@@ -36,9 +35,6 @@ public class Lense extends EnvironmentElement {
     return true;
   }
   void display() {
-
-    pushMatrix();
-    translate(x, y);
     stroke(232);
     for (float n = -w/2; n<-w/6; n+=0.03) {
       float output = lineGenerator(n);
@@ -51,7 +47,6 @@ public class Lense extends EnvironmentElement {
       stroke(lerpColor(from, to, (w/6+n)/(2*w/3)));
       line(n, output, n, -1*output);
     }
-    popMatrix();
   }
   float lineGenerator (float input) {
     return sqrt(radius*radius-(input*input));
