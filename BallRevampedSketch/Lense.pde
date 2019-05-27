@@ -2,15 +2,27 @@ public class Lense extends EnvironmentElement {
   float radius;
   float angleArc;
   boolean isDead;
+  float cen1X;
+  float cen2X;
+  float cen1Y;
+  float cen2Y;
+  boolean vert;
 
   Lense(float x, float y) {
     super(x, y, 0, 0, 0);
     radius =50;
     angleArc = 20;
     isDead =false;
-    calculateWidth();
+    float endDist = calculateEndDist();
+    float cen1X = 
   }
   boolean isTouching(Ball b) {
+    float cenX1 = x-w/2+radius;
+    float cenX2 = x+w/2-radius;
+    float cenY1 = 
+    float cenY2 =
+    float [] interestingPoints = circleIntersection.circleCircleIntersects(x,y,b.x,b.y,radius,b.radius);
+    if(interestingPoints==null) return false;
     
     return true;
   }
@@ -35,8 +47,8 @@ public class Lense extends EnvironmentElement {
   float lineGenerator (float input) {
     return sqrt(radius*radius-(input*input));
   }
-  void calculateWidth() {
-    w = 2 * radius*(1-cos(radians(angleArc/2)));
+  float calculateEndDist() {
+    return radius*(1-cos(radians(angleArc/2)));
   }
   float propAngle(float radius, float cenX, float cenY, float otX, float otY) {
     float angle = atan((otY-cenY)/(otX-cenX));
@@ -44,4 +56,5 @@ public class Lense extends EnvironmentElement {
       angle +=PI;
     return radians(angle);
   }
+  
 }
