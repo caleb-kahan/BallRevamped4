@@ -22,6 +22,7 @@ public class LevelCreator{
     elements.add(new Wall(225,10,450,20,0)); 
     elements.add(new Wall(225,590,450,20,0)); 
     elements.add(new Portal(400,500));
+    elements.add(new Lense(200,200,false));
     elements.add(new Fuse(new float[] {225,150,150,150,150,300,250,300}));
     ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
     powerUps.add(new SmallPowerUp(100,100,10));
