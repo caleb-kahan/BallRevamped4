@@ -60,5 +60,12 @@ public class Lense extends EnvironmentElement {
       angle +=PI;
     return radians(angle);
   }
+  float [] quadFormula(float A, float B, float C){
+    float [] roots = new float[2];
+    float discrim = sqrt(B*B-4*A*C);
+    //roots[0]= 
+    return new float[2];
+    
+  }
   
 }

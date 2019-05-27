@@ -6,7 +6,8 @@ void setup() {
 }
 
 void draw() {
-  level.run();
+  //level.run();
+  text("HI",sqrt(-200.0), sqrt(-200.0));
 }
 void keyPressed() {
   level.ball.keyPressed();
