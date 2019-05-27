@@ -32,9 +32,7 @@ public class Lense extends EnvironmentElement {
     popMatrix();
   }
   float lineGenerator (float input) {
-    float altL = l/2;
-    float altW =  w/2;
-    return sqrt(altL*altL-(input*input*altL*altL/altW/altW));
+    return sqrt(radius*radius-(input*input));
   }
   void calculateWidth(){
     w = 2 * radius*(1-cos(radians(angleArc/2)));
