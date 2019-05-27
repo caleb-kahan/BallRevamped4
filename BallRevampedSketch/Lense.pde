@@ -16,8 +16,16 @@ public class Lense extends EnvironmentElement {
     this.vert = vert;
     float endDist = calculateEndDist();
     if(vert){
+      cen1X = x-endDist+radius;
+      cen2X = x+endDist-radius;
+      cen1Y = y;
+      cen2Y = y;
     }
     else {
+      cen1Y = y-endDist+radius;
+      cen2Y = y+endDist-radius;
+      cen1X = x;
+      cen2X = x;
     }
     
   }
