@@ -330,7 +330,7 @@ class Lense extends EnvironmentElement {
     return angle;
   }
   void display() {
-    stroke(230);
+    stroke(0,165,0);
 
     float input;
     if (vert) input = x;
@@ -344,8 +344,8 @@ class Lense extends EnvironmentElement {
       else 
       line(outputs[0], n, outputs[1], n);
     }
-    color from = color(136);
-    color to = color(196);
+    color from = color(0,0,255);
+    color to = color(255,0,0);
     for (float n = input; n<input+endDist; n+=0.03) {
       float[] outputs = lineGenerator(n, false);
       stroke(lerpColor(from, to, (-input+n)/(endDist)));
