@@ -1,4 +1,4 @@
-public class Lense extends EnvironmentElement {
+class Lense extends EnvironmentElement {
   float radius;
   float angleArc;
   boolean isDead;
