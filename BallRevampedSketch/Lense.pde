@@ -84,7 +84,7 @@ public class Lense extends EnvironmentElement {
     if (isCircle1) {
       return circleIntersection.outputFinder(cen1X, cen1Y, radius, input, ! vert);
     }
-    return circleIntersection.outputFinder(cen1Y, cen2Y, radius, input, ! vert);
+    return circleIntersection.outputFinder(cen2X, cen2Y, radius, input, ! vert);
   }
   float calculateEndDist() {
     return radius*(1-cos(radians(angleArc/2)));
