@@ -1,11 +1,11 @@
-abstract class EnvironmentElement{
+abstract class EnvironmentElement {
   float x;
   float y;
   float w;
   float l;
   float angleRotation;
-  
-  EnvironmentElement(float cenX, float cenY, float wid, float heigh, float angle){
+
+  EnvironmentElement(float cenX, float cenY, float wid, float heigh, float angle) {
     x = cenX;
     y = cenY;
     w = wid;
@@ -19,8 +19,8 @@ abstract class EnvironmentElement{
 class Laser extends EnvironmentElement {
   float velocity;
   Laser(float cenX, float cenY, float angle) {
-    super(cenX, cenY, 10, 50, angle);
-    velocity=10;
+    super(cenX, cenY, 10, 20, angle);
+    velocity=15;
   }
   boolean isTouching(Ball b) {
     return false;
@@ -42,12 +42,20 @@ class Laser extends EnvironmentElement {
     x+=cos(radians(angleRotation))*velocity;
     y-=sin(radians(angleRotation))*velocity;
   }
-  void isTouching(Lense lens){
-    if(lens.vertical){
-      
-    }
-    else{
-      
+  void isTouching(Lense lens) {
+    if (lens.vert) {
+      if (angleRotation==0) {
+      }
+      if (angleRotation==90) {
+        
+      }
+      if (angleRotation==180) {
+        
+      }
+      if (angleRotation==270) {
+        
+      }
+    } else {
     }
   }
 }
@@ -76,7 +84,7 @@ class Portal extends EnvironmentElement {
     line(-w/2+6, -l/2+6, w/2-6, l/2-6);
 
     rotate(radians(-angleRotation));
-    fill(100,150,250);
+    fill(100, 150, 250);
     rect(w/2-2.5, 0, 5, l);
     rect(-w/2+2.5, 0, 5, l);
     rect(0, l/2-2.5, w, 5);
@@ -103,18 +111,18 @@ class Wall extends EnvironmentElement {
     float newBallX = b.x-x;
     float newBallY = b.y-y;
     float angle = atan(newBallY/newBallX);
-    if(newBallX<0) angle+=PI;
+    if (newBallX<0) angle+=PI;
     float distance= sqrt(sq(newBallX)+sq(newBallY));
     float subAngle = radians(angleRotation);
     newBallX= distance*(cos(angle)*cos(subAngle) + sin(angle)*sin(subAngle));
     newBallY = distance*(sin(angle)*cos(subAngle) - cos(angle)*sin(subAngle));
-    
+
     float closestX = constrain(newBallX, -w/2.0, w/2.0);
     float closestY = constrain(newBallY, -l/2.0, l/2.0);
 
     float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);
 
-    return distanceSq < sq(b.radius);        
+    return distanceSq < sq(b.radius);
   }
   void display() {
     pushMatrix();
@@ -146,8 +154,7 @@ public class Wood extends Wall {
           stroke(lerp);
           line(-w/2, i, w/2, i);
         }
-      }
-      else {
+      } else {
         for (float i = -w/2, j=0; i<w/2; i+=w/200, j+=0.005) {
           color lerp = lerpColor(from, to, j);
           stroke(lerp);
@@ -162,7 +169,7 @@ public class Wood extends Wall {
       float newBallX = ball.x-x;
       float newBallY = ball.y-y;
       float angle = atan(newBallY/newBallX);
-      if(newBallX<0) angle+=PI;
+      if (newBallX<0) angle+=PI;
       float distance= sqrt(sq(newBallX)+sq(newBallY));
       float subAngle = radians(angleRotation);
       newBallX= distance*(cos(angle)*cos(subAngle) + sin(angle)*sin(subAngle));
@@ -175,7 +182,7 @@ public class Wood extends Wall {
       }
       float xVel = ball.xSpeed;
       float yVel = ball.ySpeed;
-      ball = new NormalBall(ball.x, ball.y,24);
+      ball = new NormalBall(ball.x, ball.y, 24);
       ball.xSpeed = xVel;
       ball.ySpeed = yVel;
     }
@@ -186,35 +193,33 @@ public class Wood extends Wall {
       isDestroyed = true;
     }
   }
-  
 }
 
-class Fuse extends EnvironmentElement{
+class Fuse extends EnvironmentElement {
   ArrayList<Dot> dots;
   float[] points;
   boolean isActivated;
   int currentDot;
   int time;
   Fuse(float[] points) {
-    super(0,0,0,0,0);
+    super(0, 0, 0, 0, 0);
     dots = new ArrayList<Dot>();
-    for (int i = 0;i < points.length-2;i+=2) {
+    for (int i = 0; i < points.length-2; i+=2) {
       if ((int)points[i] == (int)points[i+2]) {
         float direction = 1;
         if (points[i+1] > points[i+3]) {
           direction = -1;
         }
-        for (float y = points[i+1];abs(y - points[i+3]) >= 6;y += 11*direction) {
-          dots.add(new Dot(points[i],y));
+        for (float y = points[i+1]; abs(y - points[i+3]) >= 6; y += 11*direction) {
+          dots.add(new Dot(points[i], y));
         }
-      }
-      else {
+      } else {
         float direction = 1;
         if (points[i] > points[i+2]) {
           direction = -1;
         }
-        for (float x = points[i];abs(x - points[i+2]) >= 6;x += 11*direction) {
-          dots.add(new Dot(x,points[i+1]));
+        for (float x = points[i]; abs(x - points[i+2]) >= 6; x += 11*direction) {
+          dots.add(new Dot(x, points[i+1]));
         }
       }
     }
@@ -245,10 +250,10 @@ class Fuse extends EnvironmentElement{
   }
 }
 
-class Dot extends EnvironmentElement{
+class Dot extends EnvironmentElement {
   boolean isLit;
-  Dot (float x,float y) {
-    super(x,y,7,7,0);
+  Dot (float x, float y) {
+    super(x, y, 7, 7, 0);
   }
   void light() {
     isLit = true;
@@ -260,7 +265,7 @@ class Dot extends EnvironmentElement{
     if (!isLit) {
       fill(130);
       noStroke();
-      ellipse(x,y,w,l);
+      ellipse(x, y, w, l);
       stroke(0);
     }
   }
@@ -286,6 +291,7 @@ class Lense extends EnvironmentElement {
     isDead =false;
     this.vert = vert;
     endDist = calculateEndDist();
+    
     if (vert) {
       cen1X = x-endDist+radius;
       cen2X = x+endDist-radius;
@@ -327,7 +333,7 @@ class Lense extends EnvironmentElement {
       float propAngle1 = propAngle(radius, cen2X, cen2Y, interestingPoints2[0], interestingPoints2[1]);
       float propAngle2 = propAngle(radius, cen2X, cen2Y, interestingPoints2[2], interestingPoints2[3]);
       if (vert && (!(propAngle1>boundingAngle2A && propAngle1<boundingAngle2B) || !(propAngle2>boundingAngle2A && propAngle2<boundingAngle2B)))
-          return true;
+        return true;
       else if (! vert && (propAngle1>boundingAngle2A && propAngle1<boundingAngle2B || propAngle2>boundingAngle2A && propAngle2<boundingAngle2B))
         return true;
     }
@@ -339,7 +345,7 @@ class Lense extends EnvironmentElement {
     return angle;
   }
   void display() {
-    stroke(0,165,0);
+    stroke(0, 165, 0);
 
     float input;
     if (vert) input = x;
@@ -353,8 +359,8 @@ class Lense extends EnvironmentElement {
       else 
       line(outputs[0], n, outputs[1], n);
     }
-    color from = color(0,0,255);
-    color to = color(255,0,0);
+    color from = color(0, 0, 255);
+    color to = color(255, 0, 0);
     for (float n = input; n<input+endDist; n+=0.03) {
       float[] outputs = lineGenerator(n, false);
       stroke(lerpColor(from, to, (-input+n)/(endDist)));
@@ -371,7 +377,9 @@ class Lense extends EnvironmentElement {
     return circleIntersection.outputFinder(cen2X, cen2Y, radius, input, ! vert);
   }
   float calculateEndDist() {
-    return radius*(1-cos(radians(angleArc/2)));
+    float endDist = radius*(1-cos(radians(angleArc/2)));
+    l = sqrt(2*endDist*radius-endDist*endDist);
+    return endDist;
   }
   float propAngle(float radius, float cenX, float cenY, float otX, float otY) {
     float angle = atan((otY-cenY)/(otX-cenX));
