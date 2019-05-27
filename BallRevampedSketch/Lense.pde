@@ -11,7 +11,7 @@ public class Lense extends EnvironmentElement {
     calculateWidth();
   }
   boolean isTouching(Ball b) {
-    
+    return true;
   }
   void display() {
 
@@ -37,7 +37,7 @@ public class Lense extends EnvironmentElement {
   void calculateWidth() {
     w = 2 * radius*(1-cos(radians(angleArc/2)));
   }
-  static float propAngle(float radius, float cenX, float cenY, float otX, float otY) {
+  float propAngle(float radius, float cenX, float cenY, float otX, float otY) {
     float angle = atan((otY-cenY)/(otX-cenX));
     if (otX<cenX)
       angle +=PI;
