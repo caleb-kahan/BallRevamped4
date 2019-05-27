@@ -49,16 +49,16 @@ class Lense extends EnvironmentElement {
     if (interestingPoints1!= null) {
       float propAngle1 = propAngle(radius, cen1X, cen1Y, interestingPoints1[0], interestingPoints1[1]);
       float propAngle2 = propAngle(radius, cen1X, cen1Y, interestingPoints1[2], interestingPoints1[3]);
-      if (!(propAngle1>boundingAngle1A && propAngle1<boundingAngle1B && propAngle2>boundingAngle1A && propAngle2<boundingAngle1B))
-        return false;
+      if (propAngle1>boundingAngle1A && propAngle1<boundingAngle1B || propAngle2>boundingAngle1A && propAngle2<boundingAngle1B)
+        return true;
     }
     if (interestingPoints2!= null) {
       float propAngle1 = propAngle(radius, cen1X, cen1Y, interestingPoints2[0], interestingPoints2[1]);
       float propAngle2 = propAngle(radius, cen1X, cen1Y, interestingPoints2[2], interestingPoints2[3]);
-      if (!(propAngle1>boundingAngle2A && propAngle1<boundingAngle2B && propAngle2>boundingAngle2A && propAngle2<boundingAngle2B))
-        return false;
+      if (propAngle1>boundingAngle2A && propAngle1<boundingAngle2B || propAngle2>boundingAngle2A && propAngle2<boundingAngle2B)
+        return true;
     }
-    return true;
+    return false;
   }
   void display() {
     stroke(230);
