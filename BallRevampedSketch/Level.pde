@@ -19,7 +19,7 @@ class Level {
     woodIndex = woodIdx;
   }
   void run(){
-    background(125,195,242);
+    background(255);
     rectMode(CENTER);
     fill(255,0,0);
     rect(startX-1,startY,9,9);
@@ -30,12 +30,35 @@ class Level {
       if (element instanceof Wood) {
         ball = ((Wood)element).explode(ball);
       }
-      if (element.isTouching(ball)){
+      if (element.isTouching(ball) && !(element instanceof ForceField)){
         if (element instanceof Wood && ball instanceof RazorBall) {
           ((Wood)element).isDestroyed = true;
         }
-        else if (!(element instanceof Wood) || (element instanceof Wood && !((Wood)element).isDestroyed)) {
+        else if (!(element instanceof Stick) && (!(element instanceof Wood) || (element instanceof Wood && !((Wood)element).isDestroyed))) {
           respawn();
+        }
+        else if (element instanceof Stick) {
+          ((Stick)element).ballTouched = true;
+        }
+      }
+      else if (element instanceof ForceField) {
+        if (element.isTouching(ball) && !((ForceField)element).isDeactivated) {
+          respawn();
+        }
+      }
+      if (element instanceof Stick && (element.isTouching(ball) != ((Stick)element).ballTouched) && ((((Stick)element).ballAbove && ball.y > element.y) || 
+                                                                                                       (!((Stick)element).ballAbove && ball.y < element.y)) ) {
+          ((Stick)element).ballAbove = !((Stick)element).ballAbove;
+          ((Stick)element).ballTouched = false;
+          if (((Stick)element).passesLeft > 0) {
+            ((Stick)element).passesLeft--;
+          }
+      }
+      if (element instanceof Stick && ((Stick)element).passesLeft == 0) {
+        for (EnvironmentElement Element : elements) {
+          if (Element instanceof ForceField) {
+            ((ForceField)Element).isDeactivated = true;
+          }
         }
       }
     }
@@ -68,6 +91,14 @@ class Level {
       if (element instanceof Fuse) {
         ((Fuse)element).reset();
       }
+      if (element instanceof Stick) {
+        ((Stick)element).passesLeft = 5;
+        ((Stick)element).ballAbove = true;
+        ((Stick)element).ballTouched = false;
+      }
+       if (element instanceof ForceField) {
+         ((ForceField)element).isDeactivated = false;
+       }
     }
   }
 }
