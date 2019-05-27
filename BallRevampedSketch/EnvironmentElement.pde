@@ -40,10 +40,15 @@ class Laser extends EnvironmentElement {
   }
   void move() {
     x+=cos(radians(angleRotation))*velocity;
-    y+=sin(radians(angleRotation))*velocity;
+    y-=sin(radians(angleRotation))*velocity;
   }
   void isTouching(Lense lens){
-    
+    if(lens.vertical){
+      
+    }
+    else{
+      
+    }
   }
 }
 
