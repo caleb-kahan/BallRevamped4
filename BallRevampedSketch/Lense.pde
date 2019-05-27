@@ -28,18 +28,42 @@ public class Lense extends EnvironmentElement {
     }
   }
   boolean isTouching(Ball b) {
-    float [] interestingPoints = circleIntersection.circleCircleIntersects(x, y, b.x, b.y, radius, b.radius);
+    float boundaingAngle1A;
+    float boundaingAngle1B;
+    float boundaingAngle2A;
+    float boundaingAngle2B;
+
+    if (vert) {
+      boundaingAngle1A = 170;
+      boundaingAngle1B = 170;
+      boundaingAngle2A = 170;
+      boundaingAngle2B = 170;
+    } else {
+      boundaingAngle1A = 170;
+      boundaingAngle1B = 170;
+      boundaingAngle2A = 170;
+      boundaingAngle2B = 170;
+    }
+    float [] interestingPoints1 = circleIntersection.circleCircleIntersects(cen1X, cen1Y, b.x, b.y, radius, b.radius);
+    float [] interestingPoints2 = circleIntersection.circleCircleIntersects(cen2X, cen2Y, b.x, b.y, radius, b.radius);
+    if (interestingPoints1!= null) {
+      float propAngle1 = propAngle(radius, cen1X, cen1Y, interestingPoints1[0], interestingPoints1[1]);
+      float propAngle2 = propAngle(radius, cen1X, cen1Y, interestingPoints1[2], interestingPoints1[3]);
+    }
+
+    float propAngle2 = propAngle(radius, cen1X, cen1Y, interestingPoints1[0], interestingPoints1[1]);
     if (interestingPoints==null) return false;
+
 
     return true;
   }
   void display() {
     stroke(232);
-    
+
     float input;
     if (vert) input = x;
     else input = y;
-    
+
     float endDist = calculateEndDist();
     for (float n = input - endDist; n<input; n+=0.03) {
       float[] outputs = lineGenerator(n, true);
