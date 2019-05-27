@@ -7,7 +7,7 @@ void setup() {
 
 void draw() {
   //level.run();
-  Lense l = new Lense(200,200,true);
+  Lense l = new Lense(200,200,false);
   l.display();
 }
 void keyPressed() {

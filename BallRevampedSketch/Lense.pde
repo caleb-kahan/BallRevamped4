@@ -49,19 +49,19 @@ public class Lense extends EnvironmentElement {
     if (interestingPoints1!= null) {
       float propAngle1 = propAngle(radius, cen1X, cen1Y, interestingPoints1[0], interestingPoints1[1]);
       float propAngle2 = propAngle(radius, cen1X, cen1Y, interestingPoints1[2], interestingPoints1[3]);
-      if(!(propAngle1>boundingAngle1A && propAngle1<boundingAngle1B && propAngle2>boundingAngle1A && propAngle2<boundingAngle1B))
+      if (!(propAngle1>boundingAngle1A && propAngle1<boundingAngle1B && propAngle2>boundingAngle1A && propAngle2<boundingAngle1B))
         return false;
     }
     if (interestingPoints2!= null) {
       float propAngle1 = propAngle(radius, cen1X, cen1Y, interestingPoints2[0], interestingPoints2[1]);
       float propAngle2 = propAngle(radius, cen1X, cen1Y, interestingPoints2[2], interestingPoints2[3]);
-      if(!(propAngle1>boundingAngle2A && propAngle1<boundingAngle2B && propAngle2>boundingAngle2A && propAngle2<boundingAngle2B))
+      if (!(propAngle1>boundingAngle2A && propAngle1<boundingAngle2B && propAngle2>boundingAngle2A && propAngle2<boundingAngle2B))
         return false;
     }
     return true;
   }
   void display() {
-    stroke(232);
+    stroke(230);
 
     float input;
     if (vert) input = x;
@@ -70,14 +70,20 @@ public class Lense extends EnvironmentElement {
     float endDist = calculateEndDist();
     for (float n = input - endDist; n<input; n+=0.03) {
       float[] outputs = lineGenerator(n, true);
-      line(n, outputs[0], n, outputs[1]);
+      if (vert)
+        line(n, outputs[0], n, outputs[1]);
+      else 
+      line(outputs[0], n, outputs[1], n);
     }
     color from = color(136);
     color to = color(196);
     for (float n = input; n<input+endDist; n+=0.03) {
       float[] outputs = lineGenerator(n, false);
       stroke(lerpColor(from, to, (-input+n)/(endDist)));
-      line(n, outputs[0], n, outputs[1]);
+      if (vert)
+        line(n, outputs[0], n, outputs[1]);
+      else 
+      line(outputs[0], n, outputs[1], n);
     }
   }
   float[] lineGenerator (float input, boolean isCircle1) {
@@ -93,8 +99,8 @@ public class Lense extends EnvironmentElement {
     float angle = atan((otY-cenY)/(otX-cenX));
     if (otX<cenX)
       angle +=PI;
-    if(angle<0) angle+=360;
-    if(angle>360) angle-=360;
+    if (angle<0) angle+=360;
+    if (angle>360) angle-=360;
     return radians(angle);
   }
 }
