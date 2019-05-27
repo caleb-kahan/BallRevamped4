@@ -28,15 +28,17 @@ void polygon(float x, float y, float radius, int npoints) {
 }
 void arrow(float x,float y,float size,float angleRotation) {
   pushMatrix();
+  translate(x,y);
   rotate(radians(angleRotation));
   beginShape(); 
-  vertex(x-2.4*size/30.4, y-14.4*size/30.4);
-  vertex(x+2.4*size/30.4, y-14.4*size/30.4);
-  vertex(x+2.4*size/30.4, y+4*size/30.4);
-  vertex(x+11*size/30.4, y+4*size/30.4);
-  vertex(x, y+16*size/30.4);
-  vertex(x-11*size/30.4, y+4*size/30.4);
-  vertex(x-2.4*size/30.4, y+4*size/30.4);
+  vertex(-2.4*size/30.4, -14.4*size/30.4);
+  vertex(+2.4*size/30.4, -14.4*size/30.4);
+  vertex(+2.4*size/30.4, +4*size/30.4);
+  vertex(+11*size/30.4, +4*size/30.4);
+  vertex(0, +16*size/30.4);
+  vertex(-11*size/30.4, +4*size/30.4);
+  vertex(-2.4*size/30.4, +4*size/30.4);
   endShape(CLOSE);
+  translate(-x,-y);
   popMatrix();
 }
