@@ -1,4 +1,4 @@
-public class Lense extends EnvironmentElement {cir
+public class Lense extends EnvironmentElement {
   float radius;
   float angleArc;
   boolean isDead;
@@ -35,20 +35,26 @@ public class Lense extends EnvironmentElement {cir
   }
   void display() {
     stroke(232);
-    for (float n = ; n<0; n+=0.03) {
+    
+    float input;
+    if (vert) input = x;
+    else input = y;
+    
+    float endDist = calculateEndDist();
+    for (float n = input - endDist; n<input; n+=0.03) {
       float[] outputs = lineGenerator(n, true);
       line(n, outputs[0], n, outputs[1]);
     }
     color from = color(136);
     color to = color(196);
-    for (float n = -w/6; n<w/2; n+=0.03) {
-      float[] outputs = lineGenerator(n, true);
+    for (float n = input; n<input+endDist; n+=0.03) {
+      float[] outputs = lineGenerator(n, false);
       stroke(lerpColor(from, to, (w/6+n)/(2*w/3)));
       line(n, outputs[0], n, outputs[1]);
     }
   }
   float[] lineGenerator (float input, boolean isCircle1) {
-    if(isCircle1){
+    if (isCircle1) {
       return circleIntersection.outputFinder(cen1X, cen1Y, radius, input, ! vert);
     }
     return circleIntersection.outputFinder(cen1Y, cen2Y, radius, input, ! vert);
@@ -62,5 +68,4 @@ public class Lense extends EnvironmentElement {cir
       angle +=PI;
     return radians(angle);
   }
-  
 }
