@@ -28,29 +28,29 @@ public class Lense extends EnvironmentElement {
     }
   }
   boolean isTouching(Ball b) {
-    float boundaingAngle1A;
-    float boundaingAngle1B;
-    float boundaingAngle2A;
-    float boundaingAngle2B;
+    float boundingAngle1A;
+    float boundingAngle1B;
+    float boundingAngle2A;
+    float boundingAngle2B;
 
     if (vert) {
-      boundaingAngle1A = -angleArc/2;
-      boundaingAngle1B = angleArc/2;
-      boundaingAngle2A = 180-angleArc/2;
-      boundaingAngle2B = 180+angleArc/2;
+      boundingAngle1A = -angleArc/2;
+      boundingAngle1B = angleArc/2;
+      boundingAngle2A = 180-angleArc/2;
+      boundingAngle2B = 180+angleArc/2;
     } else {
-      boundaingAngle1A = 270-angleArc/2;
-      boundaingAngle1B = 270+angleArc/2;
-      boundaingAngle2A = 90-angleArc/2;
-      boundaingAngle2B = 90+angleArc/2;
+      boundingAngle1A = 270-angleArc/2;
+      boundingAngle1B = 270+angleArc/2;
+      boundingAngle2A = 90-angleArc/2;
+      boundingAngle2B = 90+angleArc/2;
     }
     float [] interestingPoints1 = circleIntersection.circleCircleIntersects(cen1X, cen1Y, b.x, b.y, radius, b.radius);
     float [] interestingPoints2 = circleIntersection.circleCircleIntersects(cen2X, cen2Y, b.x, b.y, radius, b.radius);
     if (interestingPoints1!= null) {
       float propAngle1 = propAngle(radius, cen1X, cen1Y, interestingPoints1[0], interestingPoints1[1]);
       float propAngle2 = propAngle(radius, cen1X, cen1Y, interestingPoints1[2], interestingPoints1[3]);
-      if(!(propAngle1>boundingAngle1A && propAngle1<boundingAngle1B && propAngle2>boundingAngle2A && propAngle2<boundingAngle2B)){
-              
+      if(!(propAngle1>boundingAngle1A && propAngle1<boundingAngle1B && propAngle2>boundingAngle2A && propAngle2<boundingAngle2B))
+        return false;
     }
 
     
