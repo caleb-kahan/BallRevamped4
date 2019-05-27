@@ -27,7 +27,7 @@ public class LevelCreator{
     elements.add(new Stick(350,150,100));
     ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
     powerUps.add(new SmallPowerUp(100,100,10));
-    powerUps.add(new BigPowerUp(300,100,10));
+    powerUps.add(new BigPowerUp(150,100,10));
     powerUps.add(new WeightlessPowerUp(100,300,10));
     powerUps.add(new HeavyPowerUp(100,400,10));
     powerUps.add(new RazorPowerUp(100,500,10));
