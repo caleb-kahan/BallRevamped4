@@ -405,3 +405,59 @@ class Lense extends EnvironmentElement {
     return angle;
   }
 }
+
+class ForceField extends Wall {
+  boolean isDeactivated;
+  float yPos;
+  ForceField (float x,float y,float len) {
+    super(x,y,len,30,0);
+  }
+  void display() {
+    if (!isDeactivated) {  
+      fill(96,209,243);
+      noStroke();
+      for (float xcoor = x - w/2;xcoor < x+w/2;xcoor++) {
+        ellipse(xcoor, y+12*cos(yPos),3,3);
+        yPos+=6;
+      }
+    }
+    fill(153,0,76);
+    stroke(0);
+    polygon(x-w/2,y,16,5);
+    polygon(x+w/2,y,16,5);
+  }
+}
+
+class Stick extends Wall{
+  int passesLeft;
+  boolean ballTouched;
+  boolean ballAbove;
+  Stick(float x,float y,float len) {
+    super(x,y,len,8,0);
+    passesLeft = 5;
+    ballAbove = true;
+  }
+  void display() {
+    fill(235,167,51);
+    super.display();
+    fill(153,0,76);
+    stroke(0);
+    polygon(x-w/2,y,16,5);
+    textSize(12);
+    fill(255);
+    text(""+passesLeft,x-w/2-4,y+4);
+    
+    if (passesLeft == 0) {
+      fill(0,0,255);
+      arrow(x,y+40,40,0);
+    }
+    else if (passesLeft % 2 == 1) {
+      fill(101,255,162);
+      arrow(x,y-30,20,0);
+    }
+    else {
+      fill(101,255,162);
+      arrow(x,y+30,20,180);
+    }
+  }
+}
