@@ -45,7 +45,7 @@ class BigPowerUp extends PowerUp {
     fill(starColors[0],starColors[1],starColors[2]);
     stroke(starColors[0]/2,starColors[1]/2,starColors[2]/2);
     strokeWeight(2);
-    beginShape();
+    /*beginShape();
     vertex(x-50*12/size, y+3*50*48/(size*2));
     vertex(x+50*12/size, y+3*50*48/(size*2));
     vertex(x+50*12/size, y-50*20/size);
@@ -53,7 +53,8 @@ class BigPowerUp extends PowerUp {
     vertex(x-50*0/size, y-5*50*48/(size*3));
     vertex(x-50*55/size, y-50*20/size);
     vertex(x-50*12/size, y-50*20/size);
-    endShape(CLOSE);
+    endShape(CLOSE);*/
+    arrow(x,y,30.4,180);
     super.display();
     fill(0);
   }
@@ -208,7 +209,7 @@ class SmallPowerUp extends PowerUp {
     fill(starColors[0],starColors[1],starColors[2]);
     stroke(starColors[0]/2,starColors[1]/2,starColors[2]/2);
     strokeWeight(2);
-    beginShape();
+    /*beginShape();
     vertex(x-50*12/size, y-3*50*48/(size*2));
     vertex(x+50*12/size, y-3*50*48/(size*2));
     vertex(x+50*12/size, y+50*20/size);
@@ -216,7 +217,8 @@ class SmallPowerUp extends PowerUp {
     vertex(x-50*0/size, y+5*50*48/(size*3));
     vertex(x-50*55/size, y+50*20/size);
     vertex(x-50*12/size, y+50*20/size);
-    endShape(CLOSE);
+    endShape(CLOSE);*/
+    arrow(x,y,30.4,0);
     super.display();
   }
   boolean isTouching(Ball b) {  
