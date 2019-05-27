@@ -34,10 +34,10 @@ class Lense extends EnvironmentElement {
     float boundingAngle2B;
 
     if (vert) {
-      boundingAngle1A = constrainAngle(angleArc/2);
-      boundingAngle1B = constrainAngle(-angleArc/2);
-      boundingAngle2A = constrainAngle(180-angleArc/2);
-      boundingAngle2B = constrainAngle(180+angleArc/2);
+      boundingAngle1A = constrainAngle(180-angleArc/2);
+      boundingAngle1B = constrainAngle(180+angleArc/2);
+      boundingAngle2A = constrainAngle(angleArc/2);
+      boundingAngle2B = constrainAngle(-angleArc/2);
     } else {
       boundingAngle1A = constrainAngle(270-angleArc/2);
       boundingAngle1B = constrainAngle(270+angleArc/2);
@@ -49,15 +49,15 @@ class Lense extends EnvironmentElement {
     if (interestingPoints1!= null) {
       float propAngle1 = propAngle(radius, cen1X, cen1Y, interestingPoints1[0], interestingPoints1[1]);
       float propAngle2 = propAngle(radius, cen1X, cen1Y, interestingPoints1[2], interestingPoints1[3]);
-      if (vert && (!(propAngle1>boundingAngle1A && propAngle1<boundingAngle1B) || ! (propAngle2>boundingAngle1A && propAngle2<boundingAngle1B)))
-          return true;
-      else if (! vert && (propAngle1>boundingAngle1A && propAngle1<boundingAngle1B || propAngle2>boundingAngle1A && propAngle2<boundingAngle1B))
+      if ((propAngle1>boundingAngle1A && propAngle1<boundingAngle1B || propAngle2>boundingAngle1A && propAngle2<boundingAngle1B))
         return true;
     }
     if (interestingPoints2!= null) {
       float propAngle1 = propAngle(radius, cen2X, cen2Y, interestingPoints2[0], interestingPoints2[1]);
       float propAngle2 = propAngle(radius, cen2X, cen2Y, interestingPoints2[2], interestingPoints2[3]);
-      if (propAngle1>boundingAngle2A && propAngle1<boundingAngle2B || propAngle2>boundingAngle2A && propAngle2<boundingAngle2B)
+      if (vert && (!(propAngle1>boundingAngle2A && propAngle1<boundingAngle2B) || !(propAngle2>boundingAngle2A && propAngle2<boundingAngle2B)))
+          return true;
+      else if (! vert && (propAngle1>boundingAngle2A && propAngle1<boundingAngle2B || propAngle2>boundingAngle2A && propAngle2<boundingAngle2B))
         return true;
     }
     return false;
