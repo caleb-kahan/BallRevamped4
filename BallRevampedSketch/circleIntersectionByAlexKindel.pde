@@ -1,5 +1,5 @@
-public class circleIntersection{
-  public double[] circleCircleIntersects(double x1, double y1, double x2, double y2, double r1, double r2)
+ class circleIntersection{
+   double[] circleCircleIntersects(double x1, double y1, double x2, double y2, double r1, double r2)
 {
   // Use change of coordinates to get:
   //   Cirlce 1: r1^2 = x^2 + y^2
@@ -44,51 +44,4 @@ public class circleIntersection{
   
   return r;
 }
-
-public void setup()
-{
-  size(700, 500);
 }
-
-float x1 = 400, y1 = 700;  // Position of first circle.
-
-public void draw()
-{
-  float x2 = mouseX;
-  float y2 = mouseY;
-  
-  float r1 = 350;
-  float r2 = 200;
-  
-  if (mousePressed) {
-    x1 = mouseX;
-    y1 = mouseY;
-  }
-  
-  pushMatrix();
-  
-    ellipseMode(RADIUS);
-    
-    background( #FFFFFF );
-    noFill();
-    stroke( #8888FF );
-    strokeWeight( 3.f );
-    ellipse( x1, y1, r1, r1 );
-    ellipse( x2, y2, r2, r2 );
-    
-    double[] sd = circleCircleIntersects( x1, y1, x2, y2, r1, r2 );
-    
-    if (sd != null) {
-      float[] s = new float[4];
-      
-      for (int i = 0; i < 4; i++)
-        s[i] = (float)sd[i];
-      
-      fill( #FF0000 );
-      noStroke();
-      ellipse( s[0], s[1], 8, 8 );
-      ellipse( s[2], s[3], 8, 8 );
-    }
-  
-  popMatrix();
-}}
