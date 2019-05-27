@@ -44,16 +44,16 @@ class Laser extends EnvironmentElement {
   }
   void isTouching(Lense lens) {
     if (lens.vert) {
+      float dist;
       if (angleRotation==0) {
+        dist = y - lens.y;
+        if(dist<lens.l+l/2) 
       }
       if (angleRotation==90) {
-        
       }
       if (angleRotation==180) {
-        
       }
       if (angleRotation==270) {
-        
       }
     } else {
     }
@@ -283,6 +283,7 @@ class Lense extends EnvironmentElement {
   float cen1Y;
   float cen2Y;
   boolean vert;
+  boolean isDestroyed;
 
   Lense(float x, float y, boolean vert) {
     super(x, y, 0, 0, 0);
@@ -291,7 +292,8 @@ class Lense extends EnvironmentElement {
     isDead =false;
     this.vert = vert;
     endDist = calculateEndDist();
-    
+    isDestroyed = false;
+
     if (vert) {
       cen1X = x-endDist+radius;
       cen2X = x+endDist-radius;
