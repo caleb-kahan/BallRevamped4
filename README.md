@@ -21,7 +21,7 @@ Repository is made </br></br>
   <dt>Wrote setup() with dimensions of the display and ball that matched the game.</dt>
   <dt>Wrote draw() with restrictions that respawn the ball if it goes out of boundary. </dt>
 </d1></br>
-<b>5/18/19</br>
+<b>5/18/19</b></br>
 <h4>Caleb's Work </h4>
 <ul>
   <li>Created the Wall Class, defined display() and isTouching(Ball b) for it</li>
@@ -41,7 +41,7 @@ Repository is made </br></br>
     <li>-removed unecessary code</li>
   </ul>
 </d1></br>
-<b>5/19/19</br>
+<b>5/19/19</b></br>
 <h4> Chris's Work </h4>
   <dt>PowerUp Class</dt>
   <ul>
@@ -59,8 +59,8 @@ Repository is made </br></br>
     <li>Created WeightlessBall Class and extended Ball</li>
     <li>Created WeightlessBall PowerUp and extended PowerUp</li>
   </ul>
-</d1>
-<b>5/20/19</br>
+</d1></br>
+<b>5/20/19</b></br>
 <h4> Chris's Work </h4>
   <ul>
     <li>wrote HeavyBall and HeavyPowerUp classes</li>
@@ -74,7 +74,8 @@ Repository is made </br></br>
     <li>Only worked in class</li>
     <li>Fixed Colors of WeightlessBall</li>
   </ul>
-<b>5/21/19</br>
+  </br>
+<b>5/21/19</b></br>
 <h4> Chris's Work </h4>
   <ul>
     <li>Worked in class only</li>
@@ -85,7 +86,8 @@ Repository is made </br></br>
     <li>Only worked in class</li>
     <li>Contained all the stars in weightless ball within the circle </li>
   </ul>
-<b>5/22/19</br>
+  </br>
+<b>5/22/19</b></br>
 <h4> Caleb's Work </h4>
   <ul>
     <li>In experiments, managed to make a marker that draws a continous stream of circles</li>
@@ -93,7 +95,8 @@ Repository is made </br></br>
     <li>Created the Wood class which implemented the Wall class</li>
     <li>Created a color gradient in the display the wood class</li>
   </ul>
-<b>5/23/19</br>
+  </br>
+<b>5/23/19</b></br>
   <h4> Chris's Work </h4>
   <ul>
     <li>Added level class with 3 variables storing the ball, walls, and powerups</li>
@@ -104,8 +107,8 @@ Repository is made </br></br>
     <li>Moved Ball Class to a new Tab </li>
     <li>Thought successfully of an innovative solution to creating levels in the game.</li>
   </ul>
-</d1>
-<b>5/24/19</br>
+</d1></br>
+<b>5/24/19</b></br>
   <h4> Chris's Work </h4>
   <ul>
     <li>Transferred the method calls from setup() into the level1() method in LevelCreator class</li>
@@ -117,8 +120,8 @@ Repository is made </br></br>
   <h4>Caleb's Work </h4>
   <ul>
     <li>Fixed the problem that balls were not affected by powerups</li>
-  </ul>
-<b>5/25/19</br>
+  </ul></br>
+<b>5/25/19</b></br>
   <h4> Chris's Work </h4>
   <ul>
     <li>Created RazorBall and RazorPowerUp classes</li>
@@ -132,8 +135,8 @@ Repository is made </br></br>
     <li>Created the laser class; this controls the laser the laserBall shoots</li>
     <li>Created the laserBall class: this is a new type of ball</li>
     <li>Created the laserPowerUp class: this turns the ball into a laser ball</li>
-  </ul>
-<b>5/26/19</br>
+  </ul></br>
+<b>5/26/19</b></br>
   <h4> Chris's Work </h4>
   <ul>
     <li>Reorganized the tabs; put all the subclasses into a single tab</li>
@@ -144,7 +147,8 @@ Repository is made </br></br>
     <li>Started Lense Class </li>
     <li>Wasted a lot of time figuring out how to draw an ellipse, but gave up because it's very hard to detect circle-ellipse collion.</li>
     <li>Started to draw out what a two arcs would look like instead, and starting arc-circle detecion </li>
-  </ul>
-<b>5/27/19</br>
+  </ul></br>
+<b>5/27/19</b></br>
   <h4>Chris's Work</h4>
   <h4>Caleb's Work</h4>
+</br>
