@@ -1,4 +1,4 @@
-public class Lense extends EnvironmentElement {
+public class Lense extends EnvironmentElement {cir
   float radius;
   float angleArc;
   boolean isDead;
@@ -47,8 +47,11 @@ public class Lense extends EnvironmentElement {
       line(n, output, n, -1*output);
     }
   }
-  float lineGenerator (float input) {
-    return sqrt(radius*radius-(input*input));
+  float[] lineGenerator (float input, boolean isCircle1) {
+    if(isCircle1){
+      return circleIntersection.outputFinder(cen1X, cen1Y, radius, input, ! vert);
+    }
+    return circleIntersection.outputFinder(cen1Y, cen2Y, radius, input, ! vert);
   }
   float calculateEndDist() {
     return radius*(1-cos(radians(angleArc/2)));
