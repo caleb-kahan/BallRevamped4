@@ -42,6 +42,9 @@ class Laser extends EnvironmentElement {
     x+=cos(radians(angleRotation))*velocity;
     y+=sin(radians(angleRotation))*velocity;
   }
+  void isTouching(Lense lens){
+    
+  }
 }
 
 
@@ -263,6 +266,7 @@ class Dot extends EnvironmentElement{
 class Lense extends EnvironmentElement {
   float radius;
   float angleArc;
+  float endDist;
   boolean isDead;
   float cen1X;
   float cen2X;
@@ -276,7 +280,7 @@ class Lense extends EnvironmentElement {
     angleArc = 40;
     isDead =false;
     this.vert = vert;
-    float endDist = calculateEndDist();
+    endDist = calculateEndDist();
     if (vert) {
       cen1X = x-endDist+radius;
       cen2X = x+endDist-radius;
