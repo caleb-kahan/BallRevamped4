@@ -51,7 +51,12 @@ static class circleIntersection {
     roots[1]= (-1*B-discrim)/(2*A);
     return roots;
   }
-  static float [] outputFinder(float h, float k, float r, float input) {
+  static float [] outputFinder(float h, float k, float r, float input, boolean isInputY) {
+    if(isInputY){
+      float temp = k;
+      k = h;
+      h = temp;
+    }
     float [] roots = new float[2];
     float constant = sqrt(-1*h*h+2*h*input+r*r-input*input);
     roots[0]=k-constant;
