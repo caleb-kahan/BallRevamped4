@@ -1,16 +1,20 @@
 public class Lense extends EnvironmentElement {
   float radius;
+  float angleArc;
   boolean isDead;
 
-  Lense(float x, float y, float w, float l) {
-    super(x, y, w, l, 0);
+  Lense(float x, float y) {
+    super(x, y, 0, 0, 0);
     radius =50;
+    angleArc = 20;
     isDead =false;
+    calculateWidth();
   }
   boolean isTouching(Ball b) {
-    return true;
+    
   }
   void display() {
+    
     pushMatrix();
     translate(x, y);
     stroke(232);
@@ -31,5 +35,8 @@ public class Lense extends EnvironmentElement {
     float altL = l/2;
     float altW =  w/2;
     return sqrt(altL*altL-(input*input*altL*altL/altW/altW));
+  }
+  void calculateWidth(){
+    w = 2 * radius*(1-cos(radians(angleArc/2)));
   }
 }
