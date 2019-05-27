@@ -10,8 +10,8 @@ public class Lense extends EnvironmentElement {
 
   Lense(float x, float y, boolean vert) {
     super(x, y, 0, 0, 0);
-    radius =50;
-    angleArc = 20;
+    radius =200;
+    angleArc = 40;
     isDead =false;
     this.vert = vert;
     float endDist = calculateEndDist();

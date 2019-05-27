@@ -6,8 +6,9 @@ void setup() {
 }
 
 void draw() {
-  level.run();
-  //text(sqrt(-200.0),sqrt(200.0), sqrt(200.0));
+  //level.run();
+  Lense l = new Lense(200,200,true);
+  l.display();
 }
 void keyPressed() {
   level.ball.keyPressed();
