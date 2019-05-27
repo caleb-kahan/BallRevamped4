@@ -45,17 +45,29 @@ class Laser extends EnvironmentElement {
   void isTouching(Lense lens) {
     if (lens.vert) {
       float dist;
-      if (angleRotation==0) {
-        dist = y - lens.y;
+      if (angleRotation==0 || angleRotation ==180) {
+        dist = abs(x - lens.x);
+        if(dist<lens.endDist+l/2) 
+          lens.isDestroyed = true;
+      }
+      else {
+        dist = abs(y - lens.y);
         if(dist<lens.l+l/2) 
+          lens.isDestroyed = true;
       }
-      if (angleRotation==90) {
+    }
+    else {
+      float dist;
+      if (angleRotation==0 || angleRotation ==180) {
+        dist = abs(x - lens.x);
+        if(dist<lens.l+l/2) 
+          lens.isDestroyed = true;
       }
-      if (angleRotation==180) {
+      else {
+        dist = abs(y - lens.y);
+        if(dist<lens.endDist+l/2) 
+          lens.isDestroyed = true;
       }
-      if (angleRotation==270) {
-      }
-    } else {
     }
   }
 }
