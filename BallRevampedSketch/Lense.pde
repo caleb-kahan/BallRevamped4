@@ -76,7 +76,7 @@ public class Lense extends EnvironmentElement {
     color to = color(196);
     for (float n = input; n<input+endDist; n+=0.03) {
       float[] outputs = lineGenerator(n, false);
-      stroke(lerpColor(from, to, (w/6+n)/(2*w/3)));
+      stroke(lerpColor(from, to, (-input+n)/(endDist)));
       line(n, outputs[0], n, outputs[1]);
     }
   }
