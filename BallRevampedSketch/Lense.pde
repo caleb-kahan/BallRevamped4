@@ -62,11 +62,8 @@ public class Lense extends EnvironmentElement {
   float [] quadFormula(float A, float B, float C) {
     float [] roots = new float[2];
     float discrim = sqrt(B*B-4*A*C);
-    if (discrim==null) {
-      return new float[]{null, null};
-    }
-    roots[0]= (-1*B+discrim)/(2*a);
-    roots[1]= (-1*B-discrim)/(2*a);
+    roots[0]= (-1*B+discrim)/(2*A);
+    roots[1]= (-1*B-discrim)/(2*A);
     return roots;
   }
 }
