@@ -11,6 +11,7 @@ public class Lense extends EnvironmentElement {
     calculateWidth();
   }
   boolean isTouching(Ball b) {
+    
     return true;
   }
   void display() {
