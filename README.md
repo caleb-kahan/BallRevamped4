@@ -136,4 +136,9 @@ Repository is made </br></br>
 <b>5/26/19</br>
   <h4> Chris's Work </h4>
   <h4> Caleb's Work </h4>
+  <ul>
+    <li>Started Lense Class </li>
+    <li>Wasted a lot of time figuring out how to draw an ellipse, but gave up because it's very hard to detect circle-ellipse collion.</li>
+    <li>Started to draw out what a two arcs would look like instead, and starting arc-circle detecion </li>
+  </ul>
   
