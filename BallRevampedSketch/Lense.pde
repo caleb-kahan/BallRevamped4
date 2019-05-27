@@ -34,8 +34,8 @@ class Lense extends EnvironmentElement {
     float boundingAngle2B;
 
     if (vert) {
-      boundingAngle1A = constrainAngle(-angleArc/2);
-      boundingAngle1B = constrainAngle(angleArc/2);
+      boundingAngle1A = constrainAngle(angleArc/2);
+      boundingAngle1B = constrainAngle(-angleArc/2);
       boundingAngle2A = constrainAngle(180-angleArc/2);
       boundingAngle2B = constrainAngle(180+angleArc/2);
     } else {
@@ -49,7 +49,9 @@ class Lense extends EnvironmentElement {
     if (interestingPoints1!= null) {
       float propAngle1 = propAngle(radius, cen1X, cen1Y, interestingPoints1[0], interestingPoints1[1]);
       float propAngle2 = propAngle(radius, cen1X, cen1Y, interestingPoints1[2], interestingPoints1[3]);
-      if (propAngle1>boundingAngle1A && propAngle1<boundingAngle1B || propAngle2>boundingAngle1A && propAngle2<boundingAngle1B)
+      if (vert && (!(propAngle1>boundingAngle1A && propAngle1<boundingAngle1B) || ! (propAngle2>boundingAngle1A && propAngle2<boundingAngle1B)))
+          return true;
+      else if (! vert && (propAngle1>boundingAngle1A && propAngle1<boundingAngle1B || propAngle2>boundingAngle1A && propAngle2<boundingAngle1B))
         return true;
     }
     if (interestingPoints2!= null) {
@@ -60,9 +62,9 @@ class Lense extends EnvironmentElement {
     }
     return false;
   }
-  float constrainAngle(float angle){
-    if(angle>360) angle-=360;
-    if(angle<0)angle+=360;
+  float constrainAngle(float angle) {
+    if (angle>360) angle-=360;
+    if (angle<0)angle+=360;
     return angle;
   }
   void display() {
