@@ -8,19 +8,20 @@ public class Lense extends EnvironmentElement {
   float cen2Y;
   boolean vert;
 
-  Lense(float x, float y) {
+  Lense(float x, float y, boolean vert) {
     super(x, y, 0, 0, 0);
     radius =50;
     angleArc = 20;
     isDead =false;
+    this.vert = vert;
     float endDist = calculateEndDist();
-    float cen1X = 
+    if(vert){
+    }
+    else {
+    }
+    
   }
   boolean isTouching(Ball b) {
-    float cenX1 = x-w/2+radius;
-    float cenX2 = x+w/2-radius;
-    float cenY1 = 
-    float cenY2 =
     float [] interestingPoints = circleIntersection.circleCircleIntersects(x,y,b.x,b.y,radius,b.radius);
     if(interestingPoints==null) return false;
     
