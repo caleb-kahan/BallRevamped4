@@ -155,8 +155,8 @@ Repository is made </br></br>
     <li>Added a stick that deactivates forcefield if ball passes up and down 5 times</li>
   <h4>Caleb's Work</h4>
   <ul>
-    <li>Added a color gradient to the lense's class<li>
-    <li>Pefected the display and the isTouching of Lense<li>
-    <li>Started to work on the laser destroying lense code<li>
+    <li>Added a color gradient to the lense's class</li>
+    <li>Pefected the display and the isTouching of Lense</li>
+    <li>Started to work on the laser destroying lense code</li>
   </ul>
 </br>
