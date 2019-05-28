@@ -7,8 +7,9 @@ class Level {
   float startY;
   int fuseIndex;
   int woodIndex;
+  boolean isDark;
   
-  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y,int fuseIdx, int woodIdx) {
+  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y,int fuseIdx, int woodIdx,boolean isdark) {
     levelNumber = levelNum;
     this.elements = elements;
     this.powerUps = powerUps;
@@ -17,6 +18,7 @@ class Level {
     startY = y;
     fuseIndex = fuseIdx;
     woodIndex = woodIdx;
+    isDark = isdark;
   }
   void run(){
     background(255);
@@ -76,7 +78,13 @@ class Level {
     ((Wood)elements.get(woodIndex)).explode((Fuse)elements.get(fuseIndex));
     ball.display();
     ball.move();
-    stroke(0);
+    if (isDark) {
+      stroke(0);
+      strokeWeight(750);
+      noFill();
+      ellipse(ball.x,ball.y,1000,1000);
+      strokeWeight(1);
+    }
   }
   
   void respawn() {
