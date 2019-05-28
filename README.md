@@ -150,5 +150,8 @@ Repository is made </br></br>
   </ul></br>
 <b>5/27/19</b></br>
   <h4>Chris's Work</h4>
+    <li>Wrote a function that draws an arrow pointed in a certain direction</li> 
+    <li>Added forcefield that has blue sine waves as electricity</li>
+    <li>Added a stick that deactivates forcefield if ball passes up and down 5 times</li>
   <h4>Caleb's Work</h4>
 </br>
