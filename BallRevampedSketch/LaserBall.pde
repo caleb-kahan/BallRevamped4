@@ -22,7 +22,7 @@ class LaserBall extends Ball {
     colors[3][2]=50;
     lasers= new Laser[20];
     laserIndex=0;
-    frequency = 10;
+    frequency = 50;
   }
   void display() {
     if (!isDead) {  
@@ -60,6 +60,8 @@ class LaserBall extends Ball {
     }
   }
   void shootBeam() {
+    if (laserIndex>=lasers.length)
+      laserIndex = 0;
     if (keys[0]==true) {
       lasers[laserIndex]=new Laser(x, y, 90);
       laserIndex++;
