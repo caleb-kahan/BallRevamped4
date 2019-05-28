@@ -1,8 +1,8 @@
 class Laser extends EnvironmentElement {
   float velocity;
   Laser(float cenX, float cenY, float angle) {
-    super(cenX, cenY, 10, 20, angle);
-    velocity=15;
+    super(cenX, cenY, 10, 40, angle);
+    velocity=30;
   }
   boolean isTouching(Ball b) {
     return false;
@@ -13,11 +13,11 @@ class Laser extends EnvironmentElement {
     rotate(radians(angleRotation));
     rectMode(CORNER);
     fill(30, 144, 255);
-    rect(-w/2, l, 2*w/5, l);
+    rect(0, -w/2, l, 2*w/5);
     fill(176, 219, 240);
-    rect(-w/10, l, w/5, l);
+    rect(0, -w/10, l, w/5);
     fill(30, 144, 255);
-    rect(2/10, l, 2*w/5, l);
+    rect(0, w/10, l, 2*w/5);
     popMatrix();
   }
   void move() {
