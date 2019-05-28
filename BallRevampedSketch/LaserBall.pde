@@ -61,19 +61,19 @@ class LaserBall extends Ball {
     if (laserIndex>=lasers.length-4)
       laserIndex = 0;
     if (keys[0]==true) {
-      lasers[laserIndex]=new Laser(x, y, 90);
+      lasers[laserIndex]=new Laser(x, y-radius, 90);
       laserIndex++;
     }
     if (keys[1]==true) {
-      lasers[laserIndex]=new Laser(x, y, 270);
+      lasers[laserIndex]=new Laser(x, y+radius, 270);
       laserIndex++;
     }
     if (keys[2]==true) {
-      lasers[laserIndex]=new Laser(x, y, 0);
+      lasers[laserIndex]=new Laser(x+radius, y, 0);
       laserIndex++;
     }
     if (keys[3]==true) {
-      lasers[laserIndex]=new Laser(x, y, 180);
+      lasers[laserIndex]=new Laser(x-radius, y, 180);
       laserIndex++;
     }
   }
