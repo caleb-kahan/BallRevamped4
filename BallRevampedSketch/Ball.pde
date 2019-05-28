@@ -9,6 +9,7 @@ abstract class Ball {
   int [][] colors;
   float gravity;
   float upIncrement;
+  boolean isFlipped;
   Ball(float x, float y, float radius) {
     this.x = x;
     this.y = y;

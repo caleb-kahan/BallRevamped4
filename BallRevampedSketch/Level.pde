@@ -8,6 +8,7 @@ class Level {
   int fuseIndex;
   int woodIndex;
   boolean isDark;
+  boolean isFlipped;
   
   Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y,int fuseIdx, int woodIdx,boolean isdark) {
     levelNumber = levelNum;
@@ -69,6 +70,9 @@ class Level {
       if (powerup.isTouching(ball)) {
         if (powerup instanceof FusePowerUp) {
           ( (FusePowerUp)powerup).use((Fuse)(elements.get(fuseIndex)));
+        }
+        else if (powerup instanceof FlipPowerUp) {
+          ((FlipPowerUp)powerup).use(this);
         }
         else {
           ball = powerup.use(ball);

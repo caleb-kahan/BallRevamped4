@@ -6,7 +6,15 @@ void setup() {
 }
 
 void draw() {
-  level.run();
+  if (level.isFlipped) {
+    pushMatrix();
+    rotate(PI);
+    level.run();
+    popMatrix();
+  }
+  else {
+    level.run();
+  }
 }
 void keyPressed() {
   level.ball.keyPressed();
