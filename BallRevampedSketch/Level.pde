@@ -124,7 +124,9 @@ class Level {
       if (element instanceof Spikes && hasSpikes) {
         element.display();
         ((Spikes)element).spikeLevel+= ((Spikes)element).spikeSpeed;
-        ((Spikes)element).spikeSpeed += .001;
+        ((Spikes)element).spikeSpeed += .0017;
+        element.l = ((Spikes)element).spikeLevel+25;
+        element.y = element.l/2;
       }
     }
   }  
@@ -154,6 +156,8 @@ class Level {
       }
       if (element instanceof Spikes) {
         ((Spikes)element).reset();
+        ((Spikes)element).spikeLevel = -10;
+        ((Spikes)element).spikeSpeed = .01;
       }
     }
   }
