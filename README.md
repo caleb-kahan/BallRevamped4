@@ -145,18 +145,29 @@ Repository is made </br></br>
   <h4> Caleb's Work </h4>
   <ul>
     <li>Started Lense Class </li>
-    <li>Wasted a lot of time figuring out how to draw an ellipse, but gave up because it's very hard to detect circle-ellipse collion.</li>
+    <li>Wasted a lot of time figuring out how to draw an ellipse, but gave up because it's very hard to detect circle-ellipse collision </li>
     <li>Started to draw out what a two arcs would look like instead, and starting arc-circle detecion </li>
   </ul></br>
 <b>5/27/19</b></br>
   <h4>Chris's Work</h4>
+  <ul>
     <li>Wrote a function that draws an arrow pointed in a certain direction</li> 
     <li>Added forcefield that has blue sine waves as electricity</li>
     <li>Added a stick that deactivates forcefield if ball passes up and down 5 times</li>
+  </ul>
   <h4>Caleb's Work</h4>
   <ul>
     <li>Added a color gradient to the lense's class</li>
     <li>Pefected the display and the isTouching of Lense</li>
     <li>Started to work on the laser destroying lense code</li>
   </ul>
-</br>
+  </br>
+ <b>5/28/19</b></br>
+  <h4>Chris's Work</h4>
+  <h4>Caleb's Work</h4>
+  <ul>
+    <li>Made two static functions: rectangleInsidecircle + intersectsRectangle</li>
+    <li>Used thosed functions for isTouching. isTouching now smei-works</li>
+    <li>Edited the Levels Class so the lasers have the ability to access the lens</li>
+  </ul>
+
