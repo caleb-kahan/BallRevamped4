@@ -73,9 +73,11 @@ class Level {
     if (ball instanceof LaserBall) {
       Laser[] lasers = ((LaserBall)ball).lasers;
       for (Laser laser : lasers) {
-        for (EnvironmentElement element : elements) {
-          if (element instanceof Lense && laser.isTouching((Lense)element)) {
-            ((Lense)element).isDestroyed = true;
+        if (laser != null) {
+          for (EnvironmentElement element : elements) {
+            if (element instanceof Lense && laser.isTouching((Lense)element)) {
+              ((Lense)element).isDestroyed = true;
+            }
           }
         }
       }
