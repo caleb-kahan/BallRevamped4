@@ -76,6 +76,19 @@ static class circleIntersection {
      return true;
    return false;
   }
+  static boolean intersectsRectangle(float cX, float cY, float radius, float rX, float rY, float rW, float rL){
+   float p1X = rX - rW/2;
+   float p1Y = rX + rL/2;
+   float p2X = rX + rW/2;
+   float p2Y = rX + rL/2;
+   float p3X = rX - rW/2;
+   float p3Y = rX - rL/2;
+   float p4X = rX + rW/2;
+   float p4Y = rX - rL/2;
+   if(dist(cX,cY,p1X,p1Y)<radius && dist(cX,cY,p2X,p2Y)<radius && dist(cX,cY,p3X,p3Y)<radius && dist(cX,cY,p4X,p4Y)<radius)
+     return true;
+   return false;
+  }
   
    
   }
