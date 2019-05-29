@@ -26,13 +26,13 @@ class Laser extends EnvironmentElement {
   }
   boolean isTouching(Lense lens) {
     //If the lens is intersecting one of the circles and is inside the other or at least intersecting the other, then the ball is touching the lens.
-    if(circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius,x,y+l/2,w,l) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius,x,y+l/2,w,l)){
+    if(circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius,x,y+l/2,w,l) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius,x,y+l/2,l,w)){
       return true;
     }
-    if(circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius,x,y+l/2,w,l) && circleIntersection.intersectsRectangle(lens.cen1X, lens.cen1Y, lens.radius,x,y+l/2,w,l)){
+    if(circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius,x,y+l/2,w,l) && circleIntersection.intersectsRectangle(lens.cen1X, lens.cen1Y, lens.radius,x,y+l/2,l,w)){
       return true;
     }
-    if(circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius,x,y+l/2,w,l) && circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius,x,y+l/2,w,l)){
+    if(circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius,x,y+l/2,w,l) && circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius,x,y+l/2,l,w)){
       return true;
     }
     return false;
@@ -64,5 +64,32 @@ class Laser extends EnvironmentElement {
           lens.isDestroyed = true;
       }
     }*/
+  }
+  float [] returningCenterAndWidthAndLength(){
+    float [] returner = new float[4];
+    if(angleRotation==0){
+      returner[0] = x+l/2;
+      returner[1] = y;
+      returner[2] = l;
+      returner[3] = w;
+    }
+    if(angleRotation==180){
+      returner[0] = x+l/2;
+      returner[1] = y;
+      returner[2] = l;
+      returner[3] = w;
+    }
+    if(angleRotation==0){
+      returner[0] = x+l/2;
+      returner[1] = y;
+      returner[2] = l;
+      returner[3] = w;
+    }
+    if(angleRotation==0){
+      returner[0] = x+l/2;
+      returner[1] = y;
+      returner[2] = l;
+      returner[3] = w;
+    }
   }
 }
