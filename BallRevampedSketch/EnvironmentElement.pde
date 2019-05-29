@@ -265,6 +265,7 @@ class Lense extends EnvironmentElement {
     }
   }
   boolean isTouching(Ball b) {
+    if (isDestroyed) return false;
     float boundingAngle1A;
     float boundingAngle1B;
     float boundingAngle2A;
@@ -305,6 +306,7 @@ class Lense extends EnvironmentElement {
     return angle;
   }
   void display() {
+    if(isDestroyed) return;
     stroke(0, 165, 0);
 
     float input;
