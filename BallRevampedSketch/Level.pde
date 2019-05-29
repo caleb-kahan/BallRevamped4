@@ -104,6 +104,9 @@ class Level {
         ((Stick)element).ballAbove = true;
         ((Stick)element).ballTouched = false;
       }
+      if(element instanceof Lense){
+        ((Lense)element).isDestroyed=false;
+      }
       if (element instanceof ForceField) {
         ((ForceField)element).isDeactivated = false;
       }
