@@ -63,6 +63,9 @@ static class circleIntersection {
     roots[1]=k+constant;
     return roots;
   }
+  static float dist(float a, float b, float x, float y){
+    return sqrt(sq(a-x)+sq(b-y));
+  }
   static boolean rectangleInsideCircle(float cX, float cY, float radius, float rX, float rY, float rW, float rL) {
     float p1X = rX - rW/2;
     float p1Y = rX + rL/2;

@@ -21,9 +21,9 @@ void draw() {
     noFill();
     circle(100,100,50);
     rectMode(CENTER);
-    rect(100,100,60,60);
+    rect(100,120,40,25);
     stroke(0);
-    text(circleIntersection.rectangleInsideCircle(100,100,50,100,100,60,60)+"",100,100);
+    text(circleIntersection.rectangleInsideCircle(100,100,25,100,120,40,25)+"",100,100);
   }
   level.run();
 }
