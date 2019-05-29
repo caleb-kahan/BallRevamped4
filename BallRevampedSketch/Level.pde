@@ -7,11 +7,13 @@ class Level {
   float startY;
   int fuseIndex;
   int woodIndex;
+  int[] colors;
   boolean isDark;
   boolean isFlipped;
   boolean hasSpikes;
+  boolean nextLevel;
   
-  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y,int fuseIdx, int woodIdx,boolean isdark, boolean hasSpikes) {
+  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y,int fuseIdx, int woodIdx,boolean isdark, boolean hasSpikes, int[] colors) {
     levelNumber = levelNum;
     this.elements = elements;
     this.powerUps = powerUps;
@@ -22,6 +24,7 @@ class Level {
     woodIndex = woodIdx;
     isDark = isdark;
     this.hasSpikes = hasSpikes;
+    this.colors = colors;
   }
 
   void run(){
@@ -34,14 +37,20 @@ class Level {
         ball = ((Wood)element).explode(ball);
       }
       if (element.isTouching(ball) && !(element instanceof ForceField)) {
+        if (element instanceof Portal) {
+          nextLevel = true;
+        }
         if (element instanceof Wood && ball instanceof RazorBall) {
           ((Wood)element).isDestroyed = true;
-        } else if (!(element instanceof Stick) && (!(element instanceof Wood) || (element instanceof Wood && !((Wood)element).isDestroyed))) {
+        } 
+        else if (!(element instanceof Stick) && (!(element instanceof Wood) || (element instanceof Wood && !((Wood)element).isDestroyed))) {
           respawn();
-        } else if (element instanceof Stick) {
+        } 
+        else if (element instanceof Stick) {
           ((Stick)element).ballTouched = true;
         }
-      } else if (element instanceof ForceField) {
+      } 
+      else if (element instanceof ForceField) {
         if (element.isTouching(ball) && !((ForceField)element).isDeactivated) {
           respawn();
         }
@@ -111,11 +120,11 @@ class Level {
     }
   }
   void display() {
-    background(255);
+    background(colors[0],colors[1],colors[2]);
     rectMode(CENTER);
     fill(255,0,0);
-    rect(startX-1,startY,9,9);
-    fill(0);
+    rect(startX-1,startY,9,11);
+    fill(145);
     text("X",startX-5,startY+4);
     for (EnvironmentElement element : elements) {
       element.display();

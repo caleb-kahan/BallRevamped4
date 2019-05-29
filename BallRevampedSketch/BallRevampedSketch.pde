@@ -1,31 +1,17 @@
-import java.util.Arrays;
-Level level;
+Game game;
 void setup() {
   size(450,600);
-  level = new LevelCreator().constructLevel(1);
+  game = new Game();
 }
 
 void draw() {
-  stroke(0);
-  strokeWeight(1);
-  if (level.isFlipped) {
-    pushMatrix();
-    translate(450,600);
-    rotate(PI);
-    level.display();
-    translate(-450,-600);
-    popMatrix();
-  }
-  else {
-    level.display();
-  }
-  level.run();
+  game.run();
 }
 void keyPressed() {
-  level.ball.keyPressed();
+  game.level.ball.keyPressed();
 }
 void keyReleased() {
-  level.ball.keyReleased();
+  game.level.ball.keyReleased();
 }
 /*Regular Polygon code from processing website
    */
