@@ -82,6 +82,13 @@ class Level {
     }
     ball.move();
     ball.display();
+    if (isDark) {
+      stroke(0);
+      strokeWeight(750);
+      noFill();
+      ellipse(ball.x,ball.y,1000,1000);
+      strokeWeight(1);
+    }
   }
   void display() {
     background(255);
@@ -95,13 +102,6 @@ class Level {
     }
     for (PowerUp powerup :powerUps) {
       powerup.display();
-    }
-    if (isDark) {
-      stroke(0);
-      strokeWeight(750);
-      noFill();
-      ellipse(ball.x,ball.y,1000,1000);
-      strokeWeight(1);
     }
   }  
   void respawn() {
