@@ -5,6 +5,10 @@ class LevelCreator {
     switch(num) {
       case 1:
         return level1();
+      case 2:
+        return level2();
+      case 3:
+        return level3();  
       default :
         return leveltest();
     }
@@ -52,5 +56,38 @@ class LevelCreator {
     elements.add(new Portal(350, 510));
     ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
     return new Level(1, elements, powerUps, ball, startX, startY, -1, -1, false,false,new int[]{0,0,110});
+  }
+  Level level2() {
+    float startX = 65;
+    float startY = 70;
+    Ball ball = new NormalBall(startX, startY, 24);
+    ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
+    elements.add(new Wall(440, 300, 20, 580, 0)); 
+    elements.add(new Wall(10, 300, 20, 580, 0)); 
+    elements.add(new Wall(225, 10, 450, 20, 0)); 
+    elements.add(new Wall(225, 590, 450, 20, 0)); 
+    elements.add(new Wall(100, 340, 225, 20, 0)); 
+    elements.add(new Portal(100, 525));
+    ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
+    return new Level(2, elements, powerUps, ball, startX, startY, -1, -1, false,false,new int[]{0,0,110});
+  }
+  Level level3() {
+    float startX = 65;
+    float startY = 70;
+    Ball ball = new NormalBall(startX, startY, 24);
+    ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
+    elements.add(new Wall(440, 300, 20, 580, 0)); 
+    elements.add(new Wall(10, 300, 20, 580, 0)); 
+    elements.add(new Wall(225, 10, 450, 20, 0)); 
+    elements.add(new Wall(225, 590, 450, 20, 0)); 
+    elements.add(new Wall(286, 71, 15, 141, 0)); 
+    elements.add(new Wall(286,494 , 15, 212, 0)); 
+    elements.add(new Wall(358,141,164,15, 0)); 
+    elements.add(new Wall(358,388 ,164,15,0));
+    elements.add(new Wood(286, 265, 246, 15, 90));
+    elements.add(new Portal(358, 265));
+    ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
+    powerUps.add(new RazorPowerUp(125, 445, 10));
+    return new Level(3, elements, powerUps, ball, startX, startY, -1, -1, false,false,new int[]{0,0,110});
   }
 }
