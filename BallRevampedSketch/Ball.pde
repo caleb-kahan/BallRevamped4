@@ -40,14 +40,11 @@ abstract class Ball {
   boolean keyPressed() {
     if (keyCode == UP) {
       keys[0] = true;
-    } 
-    else if (keyCode == DOWN) {
+    } else if (keyCode == DOWN) {
       keys[1] = true;
-    } 
-    else if (keyCode == RIGHT) {
+    } else if (keyCode == RIGHT) {
       keys[2] = true;
-    } 
-    else if (keyCode == LEFT) {
+    } else if (keyCode == LEFT) {
       keys[3] = true;
     }
     return true;
@@ -55,14 +52,11 @@ abstract class Ball {
   boolean keyReleased() {
     if (keyCode == UP) {
       keys[0] = false;
-    } 
-    else if (keyCode == DOWN) {
+    } else if (keyCode == DOWN) {
       keys[1] = false;
-    } 
-    else if (keyCode == RIGHT) {
+    } else if (keyCode == RIGHT) {
       keys[2] = false;
-    } 
-    else if (keyCode == LEFT) {
+    } else if (keyCode == LEFT) {
       keys[3] = false;
     }
     return true;
@@ -86,13 +80,12 @@ class NormalBall extends Ball {
     colors[3][0]=255;
     colors[3][1]=51;
     colors[3][2]=50;
-
   }
   void display() {
     if (!isDead) {  
       fill(colors[0][0], colors[0][1], colors[0][2]);
       arc(this.x, this.y, this.radius*2, this.radius*2, 0, PI/2, PIE);
-      fill(colors[1][0],colors[1][1], colors[1][2]);
+      fill(colors[1][0], colors[1][1], colors[1][2]);
       arc(this.x, this.y, this.radius*2, this.radius*2, -PI/2, 0, PIE);
       fill(colors[2][0], colors[2][1], colors[2][2]);
       arc(this.x, this.y, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
@@ -139,15 +132,15 @@ class BombBall extends Ball {
       arc(this.x, this.y, 48, 48, PI/2, PI, PIE);
       fill(0);
       rectMode(CENTER);
-      rect(x,y-27,15,6);
+      rect(x, y-27, 15, 6);
       stroke(190);
       strokeWeight(2);
       noFill();
-      line(x,y-30,x,y-40);
-      arc(x+5,y-40,10,10,PI,11*PI/6);
+      line(x, y-30, x, y-40);
+      arc(x+5, y-40, 10, 10, PI, 11*PI/6);
       textSize(15);
       fill(255);
-      text(""+time,x-4,y+4);
+      text(""+time, x-4, y+4);
       strokeWeight(1);
       if (second() != prevTime) {
         prevTime = second();
@@ -174,7 +167,7 @@ class HeavyBall extends Ball {
       arc(this.x, this.y, 48, 48, PI, 3*PI/2, PIE);
       arc(this.x, this.y, 48, 48, PI/2, PI, PIE);
       fill(240);
-      polygon(x,y,24/3,6);
+      polygon(x, y, 24/3, 6);
       fill(0);
     }
   }  
@@ -205,19 +198,17 @@ class RazorBall extends Ball {
   void display() {
     if (!isDead) {  
       fill(220);
-      for (float i = 0;i < 2*PI;i+=PI/6) {
-        arc(x+18*cos(i),y+18*sin(i),22,22,-PI/10+i,2*PI/3+i,CHORD);
+      for (float i = 0; i < 2*PI; i+=PI/6) {
+        arc(x+18*cos(i), y+18*sin(i), 22, 22, -PI/10+i, 2*PI/3+i, CHORD);
       }
       fill(colors[0][0], colors[0][1], colors[0][2]);
       arc(x, y, this.radius*2, this.radius*2, 0, PI/2, PIE);
-      fill(colors[1][0],colors[1][1], colors[1][2]);
+      fill(colors[1][0], colors[1][1], colors[1][2]);
       arc(x, y, this.radius*2, this.radius*2, -PI/2, 0, PIE);
       fill(colors[2][0], colors[2][1], colors[2][2]);
       arc(x, y, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
       fill(colors[3][0], colors[3][1], colors[3][2]);
       arc(x, y, this.radius*2, this.radius*2, PI/2, PI, PIE);
-      
-      
     }
   }
   void move() {
@@ -277,6 +268,11 @@ class WeightlessBall extends Ball {
 class LaserBall extends Ball {
   Laser [] lasers;
   int laserIndex;
+  float upCoolDown;
+  float downCoolDown;
+  float rightCoolDown;
+  float leftCoolDown;
+
   LaserBall(float x, float y) {
     super(x, y, 24);
     gravity = -.06;
@@ -296,6 +292,10 @@ class LaserBall extends Ball {
     colors[3][2]=50;
     lasers= new Laser[40];
     laserIndex=0;
+    upCoolDown = 0;
+    downCoolDown = 0;
+    leftCoolDown = 0;
+    rightCoolDown = 0;
   }
   void display() {
     if (!isDead) {  
@@ -323,9 +323,9 @@ class LaserBall extends Ball {
         line(x+a, y-12, x+a, y+12);
         line(x-12, y+a, x+12, y+a);
       }
-      if(millis()%5==1) shootBeam();
-      for(Laser laser: lasers){
-        if(laser!=null){
+      shootBeam();
+      for (Laser laser : lasers) {
+        if (laser!=null) {
           laser.display();
           laser.move();
         }
@@ -333,23 +333,36 @@ class LaserBall extends Ball {
     }
   }
   void shootBeam() {
+
     if (laserIndex>=lasers.length-4)
       laserIndex = 0;
     if (keys[0]==true) {
-      lasers[laserIndex]=new Laser(x, y-radius, 90);
-      laserIndex++;
+      if (upCoolDown<1) {
+        lasers[laserIndex]=new Laser(x, y-radius, 90);
+        laserIndex++;
+        upCoolDown=20;
+      } else upCoolDown--;
     }
     if (keys[1]==true) {
-      lasers[laserIndex]=new Laser(x, y+radius, 270);
-      laserIndex++;
+      if (downCoolDown<1) {
+        lasers[laserIndex]=new Laser(x, y+radius, 270);
+        laserIndex++;
+        downCoolDown=20;
+      } else downCoolDown--;
     }
     if (keys[2]==true) {
-      lasers[laserIndex]=new Laser(x+radius, y, 0);
-      laserIndex++;
+      if (rightCoolDown<1) {
+        lasers[laserIndex]=new Laser(x+radius, y, 0);
+        laserIndex++;
+        rightCoolDown=20;
+      } else rightCoolDown--;
     }
     if (keys[3]==true) {
-      lasers[laserIndex]=new Laser(x-radius, y, 180);
-      laserIndex++;
+      if (leftCoolDown<1) {
+        lasers[laserIndex]=new Laser(x-radius, y, 180);
+        laserIndex++;
+        leftCoolDown=20;
+      } else leftCoolDown--;
     }
   }
   void move() {
