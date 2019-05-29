@@ -71,6 +71,9 @@ class Level {
           ((FlipPowerUp)powerup).use(this);
         }
         else {
+          if (powerup instanceof LightPowerUp) {
+            isDark = false;
+          }
           ball = powerup.use(ball);
         }
       }
@@ -135,6 +138,9 @@ class Level {
     this.isFlipped = false;
     for (PowerUp powerup : powerUps) {
       powerup.isUsed = false;
+      if (powerup instanceof LightPowerUp) {
+        isDark = true;
+      }
     }
     for (EnvironmentElement element : elements) {
       if (element instanceof Wood) {
@@ -156,8 +162,6 @@ class Level {
       }
       if (element instanceof Spikes) {
         ((Spikes)element).reset();
-        ((Spikes)element).spikeLevel = -10;
-        ((Spikes)element).spikeSpeed = .01;
       }
     }
   }
