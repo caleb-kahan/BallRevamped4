@@ -26,13 +26,20 @@ class Laser extends EnvironmentElement {
   }
   boolean isTouching(Lense lens) {
     //If the lens is intersecting one of the circles and is inside the other or at least intersecting the other, then the ball is touching the lens.
-    if (circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius, x, y+l/2, w, l) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius, x, y+l/2, l, w)) {
+    float [] centerAndWidthAndLength = returningCenterAndWidthAndLength();
+    float rX = centerAndWidthAndLength[0];
+    float rY = centerAndWidthAndLength[1];
+    float rW = centerAndWidthAndLength[2];
+    float rL = centerAndWidthAndLength[3];
+
+
+    if (circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL)) {
       return true;
     }
-    if (circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius, x, y+l/2, w, l) && circleIntersection.intersectsRectangle(lens.cen1X, lens.cen1Y, lens.radius, x, y+l/2, l, w)) {
+    if (circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL) && circleIntersection.intersectsRectangle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL)) {
       return true;
     }
-    if (circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius, x, y+l/2, w, l) && circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius, x, y+l/2, l, w)) {
+    if (circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL) && circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL)) {
       return true;
     }
     return false;
@@ -74,5 +81,4 @@ class Laser extends EnvironmentElement {
     returner[3] = w * abs(cos(angle)) + l *abs(sin(angle));
     return returner;
   }
-  
 }
