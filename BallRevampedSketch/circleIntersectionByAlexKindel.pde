@@ -52,7 +52,7 @@ static class circleIntersection {
     return roots;
   }
   static float [] outputFinder(float h, float k, float r, float input, boolean isInputY) {
-    if(isInputY){
+    if (isInputY) {
       float temp = k;
       k = h;
       h = temp;
@@ -63,34 +63,25 @@ static class circleIntersection {
     roots[1]=k+constant;
     return roots;
   }
-  static boolean circleInsideRectangle(float cX, float cY, float radius, float rX, float rY, float rW, float rL){
-   float p1X = rX - rW/2;
-   float p1Y = rX + rL/2;
-   float p2X = rX + rW/2;
-   float p2Y = rX + rL/2;
-   float p3X = rX - rW/2;
-   float p3Y = rX - rL/2;
-   float p4X = rX + rW/2;
-   float p4Y = rX - rL/2;
-   if(dist(cX,cY,p1X,p1Y)<radius && dist(cX,cY,p2X,p2Y)<radius && dist(cX,cY,p3X,p3Y)<radius && dist(cX,cY,p4X,p4Y)<radius)
-     return true;
-   return false;
+  static boolean circleInsideRectangle(float cX, float cY, float radius, float rX, float rY, float rW, float rL) {
+    float p1X = rX - rW/2;
+    float p1Y = rX + rL/2;
+    float p2X = rX + rW/2;
+    float p2Y = rX + rL/2;
+    float p3X = rX - rW/2;
+    float p3Y = rX - rL/2;
+    float p4X = rX + rW/2;
+    float p4Y = rX - rL/2;
+    if (dist(cX, cY, p1X, p1Y)<radius && dist(cX, cY, p2X, p2Y)<radius && dist(cX, cY, p3X, p3Y)<radius && dist(cX, cY, p4X, p4Y)<radius)
+      return true;
+    return false;
   }
-  static boolean intersectsRectangle(float cX, float cY, float radius, float rX, float rY, float rW, float rL){
-   float p1X = rX - rW/2;
-   float p1Y = rX + rL/2;
-   float p2X = rX + rW/2;
-   float p2Y = rX + rL/2;
-   float p3X = rX - rW/2;
-   float p3Y = rX - rL/2;
-   float p4X = rX + rW/2;
-   float p4Y = rX - rL/2;
-   if(dist(cX,cY,p1X,p1Y)<radius && dist(cX,cY,p2X,p2Y)<radius && dist(cX,cY,p3X,p3Y)<radius && dist(cX,cY,p4X,p4Y)<radius)
-     return true;
-   return false;
+  static boolean intersectsRectangle(float cX, float cY, float radius, float rX, float rY, float rW, float rL) {
+    float closestX = constrain(cX, rX-rW/2.0, x+rW/2.0);
+    float closestY = constrain(cY, rY-rL/2.0, y+rL/2.0);
+    float distanceSq = sq(cX-closestX) +sq(cY-closestY);
+    return distanceSq < sq(radius);
   }
-  
-   
-  }
-  
+}
+
 }
