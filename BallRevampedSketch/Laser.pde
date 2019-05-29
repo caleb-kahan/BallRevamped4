@@ -24,12 +24,18 @@ class Laser extends EnvironmentElement {
     x+=cos(radians(angleRotation))*velocity;
     y-=sin(radians(angleRotation))*velocity;
   }
-  void isTouching(Lense lens) {
+  boolean isTouching(Lense lens) {
     //If the lens is intersecting one of the circles and is inside the other or at least intersecting the other, then the ball is touching the lens.
-    if(circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius,x+l/2,y,l,w)){
+    if(circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius,x+l/2,y,l,w) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius,x+l/2,y,l,w)){
+      return true;
     }
-    
-    
+    if(circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius,x+l/2,y,l,w) && circleIntersection.intersectsRectangle(lens.cen1X, lens.cen1Y, lens.radius,x+l/2,y,l,w)){
+      return true;
+    }
+    if(circleIntersection.intersectsRectangle(lens.cen1X, lens.cen1Y, lens.radius,x+l/2,y,l,w) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius,x+l/2,y,l,w)){
+      return true;
+    }
+    return false;
     
     /*
     if (lens.vert) {
