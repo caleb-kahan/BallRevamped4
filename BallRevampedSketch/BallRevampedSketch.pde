@@ -6,15 +6,23 @@ void setup() {
 }
 
 void draw() {
+  stroke(0);
+  strokeWeight(1);
   if (level.isFlipped) {
     pushMatrix();
+    translate(450,600);
     rotate(PI);
-    level.run();
+    level.display();
+    //level.run();
+    translate(-450,-600);
     popMatrix();
   }
   else {
-    level.run();
+    level.display();
+    //level.run();
   }
+  //text(""+level.ball.x + " "+level.ball.y,level.ball.x+50,level.ball.y);
+  level.run();
 }
 void keyPressed() {
   level.ball.keyPressed();

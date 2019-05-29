@@ -15,9 +15,11 @@ class FlipPowerUp extends PowerUp {
     triangle(x+11.5,y-5, x+26.5,y-5,x+19,y+8.2);
     super.display();
   }
-  Level use(Level level) {
+  Level use(Level level, Ball ball) {
     if (!isUsed) {
       isUsed = true;
+      //ball.x = 450 - ball.x;
+      //ball.y = 600 - ball.y;
       level.isFlipped = !level.isFlipped;
     }
     return level;
