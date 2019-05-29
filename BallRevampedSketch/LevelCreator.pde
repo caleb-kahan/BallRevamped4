@@ -35,6 +35,7 @@ public class LevelCreator {
     powerUps.add(new BombPowerUp(200, 100, 10));
     powerUps.add(new LaserPowerUp(300, 400, 10));
     powerUps.add(new FusePowerUp(225, 150, 10));
-    return new Level(1, elements, powerUps, ball, startX, startY, 6, 0);
+    powerUps.add(new FlipPowerUp(100, 150, 10));
+    return new Level(1, elements, powerUps, ball, startX, startY, 6, 0, false);
   }
 }

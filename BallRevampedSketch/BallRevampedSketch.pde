@@ -6,6 +6,19 @@ void setup() {
 }
 
 void draw() {
+  stroke(0);
+  strokeWeight(1);
+  if (level.isFlipped) {
+    pushMatrix();
+    translate(450,600);
+    rotate(PI);
+    level.display();
+    translate(-450,-600);
+    popMatrix();
+  }
+  else {
+    level.display();
+  }
   level.run();
 }
 void keyPressed() {

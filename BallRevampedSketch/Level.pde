@@ -7,8 +7,10 @@ class Level {
   float startY;
   int fuseIndex;
   int woodIndex;
+  boolean isDark;
+  boolean isFlipped;
   
-  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y,int fuseIdx, int woodIdx) {
+  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y,int fuseIdx, int woodIdx,boolean isdark) {
     levelNumber = levelNum;
     this.elements = elements;
     this.powerUps = powerUps;
@@ -17,16 +19,14 @@ class Level {
     startY = y;
     fuseIndex = fuseIdx;
     woodIndex = woodIdx;
+    isDark = isdark;
   }
   void run(){
-    background(255);
-    rectMode(CENTER);
-    fill(255,0,0);
-    rect(startX-1,startY,9,9);
-    fill(0);
-    text("X",startX-5,startY+4);
+    if (isFlipped) {
+      ball.x = 450 - ball.x;
+      ball.y = 600 - ball.y;
+    }
     for (EnvironmentElement element : elements) {
-      element.display();
       if (element instanceof Wood) {
         ball = ((Wood)element).explode(ball);
       }
@@ -63,10 +63,12 @@ class Level {
       }
     }
     for (PowerUp powerup : powerUps) { 
-      powerup.display();
       if (powerup.isTouching(ball)) {
         if (powerup instanceof FusePowerUp) {
           ( (FusePowerUp)powerup).use((Fuse)(elements.get(fuseIndex)));
+        }
+        else if (powerup instanceof FlipPowerUp) {
+          ((FlipPowerUp)powerup).use(this);
         }
         else {
           ball = powerup.use(ball);
@@ -74,13 +76,37 @@ class Level {
       }
     }
     ((Wood)elements.get(woodIndex)).explode((Fuse)elements.get(fuseIndex));
-    ball.display();
+    if (isFlipped) {
+      ball.x = 450 - ball.x;
+      ball.y = 600 - ball.y;
+    }
     ball.move();
-    stroke(0);
+    ball.display();
   }
-  
+  void display() {
+    background(255);
+    rectMode(CENTER);
+    fill(255,0,0);
+    rect(startX-1,startY,9,9);
+    fill(0);
+    text("X",startX-5,startY+4);
+    for (EnvironmentElement element : elements) {
+      element.display();
+    }
+    for (PowerUp powerup :powerUps) {
+      powerup.display();
+    }
+    if (isDark) {
+      stroke(0);
+      strokeWeight(750);
+      noFill();
+      ellipse(ball.x,ball.y,1000,1000);
+      strokeWeight(1);
+    }
+  }  
   void respawn() {
     ball = new NormalBall(startX,startY,24);
+    this.isFlipped = false;
     for (PowerUp powerup : powerUps) {
       powerup.isUsed = false;
     }
