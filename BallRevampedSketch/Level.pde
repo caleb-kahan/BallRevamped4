@@ -123,7 +123,8 @@ class Level {
     for (EnvironmentElement element : elements) {
       if (element instanceof Spikes && hasSpikes) {
         element.display();
-        ((Spikes)element).spikeLevel+=1;
+        ((Spikes)element).spikeLevel+= ((Spikes)element).spikeSpeed;
+        ((Spikes)element).spikeSpeed += .001;
       }
     }
   }  
@@ -150,6 +151,9 @@ class Level {
       }
       if (element instanceof ForceField) {
         ((ForceField)element).isDeactivated = false;
+      }
+      if (element instanceof Spikes) {
+        ((Spikes)element).reset();
       }
     }
   }

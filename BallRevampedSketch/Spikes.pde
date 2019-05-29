@@ -1,8 +1,10 @@
 class Spikes extends Wall {
   float spikeLevel;
+  float spikeSpeed;
   Spikes() {
     super(225,2.5,450,5,0);
     spikeLevel = 50;
+    spikeSpeed = .01;
   }
   void display() {
     fill(0);
