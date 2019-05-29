@@ -273,6 +273,7 @@ class WeightlessBall extends Ball {
 }
 
 
+
 class LaserBall extends Ball {
   Laser [] lasers;
   int laserIndex;

@@ -88,9 +88,9 @@ class Level {
         }
       }
     }
-    ball.display();
-
-    ((Wood)elements.get(woodIndex)).explode((Fuse)elements.get(fuseIndex));
+    if (woodIndex > -1 && fuseIndex > -1) {
+      ((Wood)elements.get(woodIndex)).explode((Fuse)elements.get(fuseIndex));
+    }
     if (isFlipped) {
       ball.x = 450 - ball.x;
       ball.y = 600 - ball.y;
