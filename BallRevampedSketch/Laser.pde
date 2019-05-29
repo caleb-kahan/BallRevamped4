@@ -1,8 +1,8 @@
 class Laser extends EnvironmentElement {
   float velocity;
   Laser(float cenX, float cenY, float angle) {
-    super(cenX, cenY, 10, 40, angle);
-    velocity=30;
+    super(cenX, cenY, 10, 90, angle);
+    velocity=50;
   }
   boolean isTouching(Ball b) {
     return false;
@@ -10,7 +10,7 @@ class Laser extends EnvironmentElement {
   void display() {
     pushMatrix();
     translate(x, y);
-    rotate(radians(angleRotation));
+    rotate(radians(-angleRotation));
     rectMode(CORNER);
     fill(30, 144, 255);
     rect(0, -w/2, l, 2*w/5);
@@ -32,7 +32,7 @@ class Laser extends EnvironmentElement {
     if(circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius,x,y+l/2,w,l) && circleIntersection.intersectsRectangle(lens.cen1X, lens.cen1Y, lens.radius,x,y+l/2,w,l)){
       return true;
     }
-    if(circleIntersection.intersectsRectangle(lens.cen1X, lens.cen1Y, lens.radius,x,y+l/2,w,l) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius,x,y+l/2,w,l)){
+    if(circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius,x,y+l/2,w,l) && circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius,x,y+l/2,w,l)){
       return true;
     }
     return false;
