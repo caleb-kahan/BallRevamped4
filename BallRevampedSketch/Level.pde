@@ -68,7 +68,7 @@ class Level {
           ( (FusePowerUp)powerup).use((Fuse)(elements.get(fuseIndex)));
         }
         else if (powerup instanceof FlipPowerUp) {
-          ((FlipPowerUp)powerup).use(this,ball);
+          ((FlipPowerUp)powerup).use(this);
         }
         else {
           ball = powerup.use(ball);

@@ -13,15 +13,12 @@ void draw() {
     translate(450,600);
     rotate(PI);
     level.display();
-    //level.run();
     translate(-450,-600);
     popMatrix();
   }
   else {
     level.display();
-    //level.run();
   }
-  //text(""+level.ball.x + " "+level.ball.y,level.ball.x+50,level.ball.y);
   level.run();
 }
 void keyPressed() {
