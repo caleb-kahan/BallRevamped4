@@ -306,7 +306,7 @@ class Lense extends EnvironmentElement {
     return angle;
   }
   void display() {
-    if(isDestroyed) return;
+    if (isDestroyed) return;
     stroke(0, 165, 0);
 
     float input;
@@ -331,6 +331,9 @@ class Lense extends EnvironmentElement {
       else 
       line(outputs[0], n, outputs[1], n);
     }
+    noFill();
+    ellipse(cen1X, cen1Y, radius*2, radius*2);
+    ellipse(cen2X, cen2Y, radius*2, radius*2);
   }
   float[] lineGenerator (float input, boolean isCircle1) {
     if (isCircle1) {
@@ -357,55 +360,53 @@ class Lense extends EnvironmentElement {
 class ForceField extends Wall {
   boolean isDeactivated;
   float yPos;
-  ForceField (float x,float y,float len) {
-    super(x,y,len,30,0);
+  ForceField (float x, float y, float len) {
+    super(x, y, len, 30, 0);
   }
   void display() {
     if (!isDeactivated) {  
-      fill(96,209,243);
+      fill(96, 209, 243);
       noStroke();
-      for (float xcoor = x - w/2;xcoor < x+w/2;xcoor++) {
-        ellipse(xcoor, y+12*cos(yPos),3,3);
+      for (float xcoor = x - w/2; xcoor < x+w/2; xcoor++) {
+        ellipse(xcoor, y+12*cos(yPos), 3, 3);
         yPos+=6;
       }
     }
-    fill(153,0,76);
+    fill(153, 0, 76);
     stroke(0);
-    polygon(x-w/2,y,16,5);
-    polygon(x+w/2,y,16,5);
+    polygon(x-w/2, y, 16, 5);
+    polygon(x+w/2, y, 16, 5);
   }
 }
 
-class Stick extends Wall{
+class Stick extends Wall {
   int passesLeft;
   boolean ballTouched;
   boolean ballAbove;
-  Stick(float x,float y,float len) {
-    super(x,y,len,8,0);
+  Stick(float x, float y, float len) {
+    super(x, y, len, 8, 0);
     passesLeft = 5;
     ballAbove = true;
   }
   void display() {
-    fill(235,167,51);
+    fill(235, 167, 51);
     super.display();
-    fill(153,0,76);
+    fill(153, 0, 76);
     stroke(0);
-    polygon(x-w/2,y,16,5);
+    polygon(x-w/2, y, 16, 5);
     textSize(12);
     fill(255);
-    text(""+passesLeft,x-w/2-4,y+4);
-    
+    text(""+passesLeft, x-w/2-4, y+4);
+
     if (passesLeft == 0) {
-      fill(0,0,255);
-      arrow(x,y+40,40,0);
-    }
-    else if (passesLeft % 2 == 1) {
-      fill(101,255,162);
-      arrow(x,y-30,20,0);
-    }
-    else {
-      fill(101,255,162);
-      arrow(x,y+30,20,180);
+      fill(0, 0, 255);
+      arrow(x, y+40, 40, 0);
+    } else if (passesLeft % 2 == 1) {
+      fill(101, 255, 162);
+      arrow(x, y-30, 20, 0);
+    } else {
+      fill(101, 255, 162);
+      arrow(x, y+30, 20, 180);
     }
   }
 }
@@ -414,7 +415,7 @@ class Spikes extends Wall {
   float spikeLevel;
   float spikeSpeed;
   Spikes() {
-    super(225,2.5,450,5,0);
+    super(225, 2.5, 450, 5, 0);
     spikeLevel = -10;
     spikeSpeed = .01;
   }
@@ -422,15 +423,15 @@ class Spikes extends Wall {
     fill(0);
     stroke(0);
     if (spikeLevel > 21) {
-      rect(x,(spikeLevel-21)/2,w,spikeLevel-21);
+      rect(x, (spikeLevel-21)/2, w, spikeLevel-21);
     }
     fill(50);
-    rect(x,spikeLevel-21,w,14);
+    rect(x, spikeLevel-21, w, 14);
     fill(110);
-    rect(x,spikeLevel-7,w,14);
+    rect(x, spikeLevel-7, w, 14);
     fill(160);
-    for (float x = 0;x < 450;x+=19.5) {
-      triangle(x,spikeLevel,x+19.5, spikeLevel,x+9.75,spikeLevel+25);
+    for (float x = 0; x < 450; x+=19.5) {
+      triangle(x, spikeLevel, x+19.5, spikeLevel, x+9.75, spikeLevel+25);
     }
   }
   void reset() {
