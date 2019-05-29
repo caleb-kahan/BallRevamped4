@@ -341,29 +341,34 @@ class LaserBall extends Ball {
         lasers[laserIndex]=new Laser(x, y-radius, 90);
         laserIndex++;
         upCoolDown=20;
-      } else upCoolDown--;
+      } 
     }
     if (keys[1]==true) {
       if (downCoolDown<1) {
         lasers[laserIndex]=new Laser(x, y+radius, 270);
         laserIndex++;
         downCoolDown=20;
-      } else downCoolDown--;
+      } 
     }
     if (keys[2]==true) {
       if (rightCoolDown<1) {
         lasers[laserIndex]=new Laser(x+radius, y, 0);
         laserIndex++;
         rightCoolDown=20;
-      } else rightCoolDown--;
+      } 
     }
     if (keys[3]==true) {
       if (leftCoolDown<1) {
         lasers[laserIndex]=new Laser(x-radius, y, 180);
         laserIndex++;
         leftCoolDown=20;
-      } else leftCoolDown--;
+      } 
     }
+    leftCoolDown--;
+    downCoolDown--;
+    rightCoolDown--;
+    upCoolDown--;
+
   }
   void move() {
     if (!isDead) super.move();
