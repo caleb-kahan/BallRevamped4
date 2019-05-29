@@ -18,6 +18,7 @@ void draw() {
   }
   else {
     level.display();
+    text(circleIntersection.rectangleInsideCircle(100,100,50,100,100,60,60)+"",100,100);
   }
   level.run();
 }

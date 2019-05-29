@@ -33,12 +33,12 @@ class Laser extends EnvironmentElement {
     float rL = centerAndWidthAndLength[3];
 
 
-    /*if (circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL)) {
+    if (circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL)) {
       return true;
     }
     if (circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL) && circleIntersection.intersectsRectangle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL)) {
       return true;
-    }*/
+    }
     if (circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL) && circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL)) {
       return true;
     }
