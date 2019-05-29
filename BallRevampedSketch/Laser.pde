@@ -26,7 +26,8 @@ class Laser extends EnvironmentElement {
   }
   void isTouching(Lense lens) {
     //If the lens is intersecting one of the circles and is inside the other or at least intersecting the other, then the ball is touching the lens.
-    
+    if(circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius,x+l/2,y,l,w)){
+    }
     
     
     
