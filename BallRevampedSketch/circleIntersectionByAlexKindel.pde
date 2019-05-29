@@ -77,11 +77,9 @@ static class circleIntersection {
     return false;
   }
   static boolean intersectsRectangle(float cX, float cY, float radius, float rX, float rY, float rW, float rL) {
-    float closestX = constrain(cX, rX-rW/2.0, x+rW/2.0);
-    float closestY = constrain(cY, rY-rL/2.0, y+rL/2.0);
+    float closestX = constrain(cX, rX-rW/2.0, rX+rW/2.0);
+    float closestY = constrain(cY, rY-rL/2.0, rY+rL/2.0);
     float distanceSq = sq(cX-closestX) +sq(cY-closestY);
     return distanceSq < sq(radius);
   }
-}
-
 }

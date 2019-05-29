@@ -25,6 +25,10 @@ class Laser extends EnvironmentElement {
     y-=sin(radians(angleRotation))*velocity;
   }
   void isTouching(Lense lens) {
+    
+    
+    
+    /*
     if (lens.vert) {
       float dist;
       if (angleRotation==0 || angleRotation ==180) {
@@ -50,6 +54,6 @@ class Laser extends EnvironmentElement {
         if(dist<lens.endDist+l/2) 
           lens.isDestroyed = true;
       }
-    }
+    }*/
   }
 }
