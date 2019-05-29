@@ -165,3 +165,10 @@ Repository is made </br></br>
  <b>5/28/19</b></br>
   <h4>Chris's Work</h4>
   <h4>Caleb's Work</h4>
+  <ul>
+    <li>Made two static functions: rectangleInsidecircle + intersectsRectangle<li>
+    <li>Used thosed functions for isTouching. isTouching now smei-works</li>
+    <li>Edited the Levels Class so the lasers have the ability to access the lens<li>
+  </ul>
+  
+  <li>
