@@ -25,6 +25,8 @@ class Laser extends EnvironmentElement {
     y-=sin(radians(angleRotation))*velocity;
   }
   void isTouching(Lense lens) {
+    //If the lens is intersecting one of the circles and is inside the other or at least intersecting the other, then the ball is touching the lens.
+    
     
     
     
