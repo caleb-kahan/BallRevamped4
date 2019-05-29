@@ -34,9 +34,12 @@ public class LevelCreator {
     powerUps.add(new HeavyPowerUp(100, 400, 10));
     powerUps.add(new RazorPowerUp(100, 500, 10));
     powerUps.add(new BombPowerUp(200, 100, 10));
-    */powerUps.add(new LaserPowerUp(300, 400, 10));/*
-    powerUps.add(new FusePowerUp(225, 150, 10));*/
-    //powerUps.add(new FlipPowerUp(100, 150, 10));
+    */
+
+    powerUps.add(new LaserPowerUp(300, 400, 10));
+    /*powerUps.add(new FusePowerUp(225, 150, 10));
+    powerUps.add(new FlipPowerUp(100, 150, 10));*/
+    //powerUps.add(new LightPowerUp(100, 150, 10));
     return new Level(1, elements, powerUps, ball, startX, startY, -1, -1, false,true); //if you uncomment out everything, change -1,-1 to 6,0
   }
 }
