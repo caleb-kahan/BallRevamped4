@@ -69,7 +69,9 @@ class Level {
         }
       }
     }
-    ((Wood)elements.get(woodIndex)).explode((Fuse)elements.get(fuseIndex));
+    if (woodIndex > -1 && fuseIndex > -1) {
+      ((Wood)elements.get(woodIndex)).explode((Fuse)elements.get(fuseIndex));
+    }
     if (ball instanceof LaserBall) {
       Laser[] lasers = ((LaserBall)ball).lasers;
       for (Laser laser : lasers) {
@@ -104,7 +106,7 @@ class Level {
         ((Stick)element).ballAbove = true;
         ((Stick)element).ballTouched = false;
       }
-      if(element instanceof Lense){
+      if (element instanceof Lense) {
         ((Lense)element).isDestroyed=false;
       }
       if (element instanceof ForceField) {
