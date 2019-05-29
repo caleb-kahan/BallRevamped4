@@ -323,7 +323,7 @@ class LaserBall extends Ball {
         line(x+a, y-12, x+a, y+12);
         line(x-12, y+a, x+12, y+a);
       }
-      if(millis()%2==1) shootBeam();
+      if(millis()%5==1) shootBeam();
       for(Laser laser: lasers){
         if(laser!=null){
           laser.display();
