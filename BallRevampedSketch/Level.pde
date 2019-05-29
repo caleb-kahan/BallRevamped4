@@ -9,8 +9,9 @@ class Level {
   int woodIndex;
   boolean isDark;
   boolean isFlipped;
+  boolean hasSpikes;
   
-  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y,int fuseIdx, int woodIdx,boolean isdark) {
+  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y,int fuseIdx, int woodIdx,boolean isdark, boolean hasSpikes) {
     levelNumber = levelNum;
     this.elements = elements;
     this.powerUps = powerUps;
@@ -20,6 +21,7 @@ class Level {
     fuseIndex = fuseIdx;
     woodIndex = woodIdx;
     isDark = isdark;
+    this.hasSpikes = hasSpikes;
   }
 
   void run(){
@@ -117,6 +119,12 @@ class Level {
     }
     for (PowerUp powerup :powerUps) {
       powerup.display();
+    }
+    for (EnvironmentElement element : elements) {
+      if (element instanceof Spikes && hasSpikes) {
+        element.display();
+        ((Spikes)element).spikeLevel+=1;
+      }
     }
   }  
   void respawn() {

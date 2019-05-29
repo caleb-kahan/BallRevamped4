@@ -1,13 +1,26 @@
 class Spikes extends Wall {
   float spikeLevel;
   Spikes() {
-    super(225,10,450,10,0);
+    super(225,2.5,450,5,0);
+    spikeLevel = 50;
   }
   void display() {
-    super.display();
-    fill(160);
-    for (float x = 0;x < 600;x+=25.5) {
-      triangle(x,spikeLevel,x+25.5, spikeLevel,x+12.75,spikeLevel+30);
+    fill(0);
+    stroke(0);
+    if (spikeLevel > 21) {
+      rect(x,(spikeLevel-21)/2,w,spikeLevel-21);
     }
+    fill(50);
+    rect(x,spikeLevel-21,w,14);
+    fill(110);
+    rect(x,spikeLevel-7,w,14);
+    fill(160);
+    for (float x = 0;x < 450;x+=19.5) {
+      triangle(x,spikeLevel,x+19.5, spikeLevel,x+9.75,spikeLevel+25);
+    }
+  }
+  void reset() {
+    spikeLevel = 5;
+    l = 5;
   }
 }
