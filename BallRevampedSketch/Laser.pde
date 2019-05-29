@@ -67,11 +67,12 @@ class Laser extends EnvironmentElement {
   }
   float [] returningCenterAndWidthAndLength(){
     float [] returner = new float[4];
+    float angle = radians(angleRotation);
     if(angleRotation==0){
       returner[0] = x+l/2;
       returner[1] = y;
-      returner[2] = l;
-      returner[3] = w;
+      returner[2] = l * abs(cos(angle)) + w *abs(sin(angle));
+      returner[3] = w * abs(cos(angle)) + l *abs(sin(angle));
     }
     if(angleRotation==180){
       returner[0] = x+l/2;
