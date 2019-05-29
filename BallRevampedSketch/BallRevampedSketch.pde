@@ -18,6 +18,11 @@ void draw() {
   }
   else {
     level.display();
+    noFill();
+    circle(100,100,50);
+    rectMode(CENTER);
+    rect(100,100,60,60);
+    stroke(0);
     text(circleIntersection.rectangleInsideCircle(100,100,50,100,100,60,60)+"",100,100);
   }
   level.run();
