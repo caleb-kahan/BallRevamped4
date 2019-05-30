@@ -22,7 +22,7 @@ abstract class EnvironmentElement {
 
 class Portal extends EnvironmentElement {
   Portal(float cenX, float cenY) {
-    super(cenX, cenY, 50, 50, 0);
+    super(cenX, cenY, 63, 63, 0);
   }
   boolean isTouching(Ball b) {
     float closestX = constrain(b.x, x-w/2.0, x+w/2.0);
