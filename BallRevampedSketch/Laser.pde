@@ -33,47 +33,16 @@ class Laser extends EnvironmentElement {
     float rL = centerAndWidthAndLength[3];
 
 
-    /*if (circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL)) {
+    if (circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL)) {
       return true;
     }
     if (circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL) && circleIntersection.intersectsRectangle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL)) {
       return true;
-    }*/
+    }
     if (circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL) && circleIntersection.rectangleInsideCircle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL)) {
       return true;
     }
-    /*if (circleIntersection.intersectsRectangle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL)) {
-      return true;
-    }*/
     return false;
-
-    /*
-    if (lens.vert) {
-     float dist;
-     if (angleRotation==0 || angleRotation ==180) {
-     dist = abs(x - lens.x);
-     if(dist<lens.endDist+l/2) 
-     lens.isDestroyed = true;
-     }
-     else {
-     dist = abs(y - lens.y);
-     if(dist<lens.l+l/2) 
-     lens.isDestroyed = true;
-     }
-     }
-     else {
-     float dist;
-     if (angleRotation==0 || angleRotation ==180) {
-     dist = abs(x - lens.x);
-     if(dist<lens.l+l/2) 
-     lens.isDestroyed = true;
-     }
-     else {
-     dist = abs(y - lens.y);
-     if(dist<lens.endDist+l/2) 
-     lens.isDestroyed = true;
-     }
-     }*/
   }
   float [] returningCenterAndWidthAndLength() {
     float [] returner = new float[4];
