@@ -24,6 +24,7 @@ void draw() {
     rect(100,120,40,25);
     stroke(0);
     text(circleIntersection.rectangleInsideCircle(100,100,25,100,120,40,25)+"",100,100);
+    ellipse(100,100,100,10);
   }
   level.run();
 }
