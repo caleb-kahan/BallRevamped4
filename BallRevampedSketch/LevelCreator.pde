@@ -194,7 +194,7 @@ class LevelCreator {
     elements.add(new Wall(225, 10, 450, 15, 0)); 
     elements.add(new Wall(225, 590, 450, 15, 0)); 
     
-    elements.add(new Wall(100, 105, 185, 15, 0)); 
+    elements.add(new Wall(100, 100, 185, 15, 0)); 
     elements.add(new Wall(340, 420, 185, 15, 0));
     elements.add(new Portal(53, 55));
     ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
