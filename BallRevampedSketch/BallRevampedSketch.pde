@@ -23,7 +23,8 @@ void draw() {
     rectMode(CENTER);
     rect(100,120,25,40);
     stroke(0);
-    text(circleIntersection.rectangleInsideCircle(100,100,25,100,120,25,40)+"",100,100);
+    text(circleIntersection.rectangleInsideCircle(100,100,25,100,120,40,25)+"",100,100);
+    ellipse(100,100,100,10);
   }
   level.run();
 }
