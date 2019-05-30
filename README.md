@@ -170,4 +170,11 @@ Repository is made </br></br>
     <li>Used thosed functions for isTouching. isTouching now smei-works</li>
     <li>Edited the Levels Class so the lasers have the ability to access the lens</li>
   </ul>
+ <b>5/29/19</b></br>
+   <h4>Chris's Work</h4>
+   <h4>Caleb's Work</h4>
+   <ul>
+    <li> Optimized rate of fire for laserBall </li>
+    <li> Fixed isTouching for Laser affecting Lense, laser now correctly destroys lense </li>
+   </ul>
 
