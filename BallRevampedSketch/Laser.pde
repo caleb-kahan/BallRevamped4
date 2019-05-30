@@ -48,7 +48,7 @@ class Laser extends EnvironmentElement {
           return true;
         }
       } else {
-        if (x>lens.x-lens.endDist && x<lens.x+lens.endDist) {
+        if (x>lens.x-lens.l && x<lens.x+lens.l) {
           return true;
         }
       }
