@@ -19,11 +19,11 @@ void draw() {
   else {
     level.display();
     noFill();
-    circle(100,100,50);
+    ellipse(100,100,50,50);
     rectMode(CENTER);
-    rect(100,120,40,25);
+    rect(100,120,25,40);
     stroke(0);
-    text(circleIntersection.rectangleInsideCircle(100,100,25,100,120,40,25)+"",100,100);
+    text(circleIntersection.rectangleInsideCircle(100,100,25,100,120,25,40)+"",100,100);
   }
   level.run();
 }
@@ -57,6 +57,7 @@ void arrow(float x,float y,float size,float angleRotation) {
   vertex(0, +16*size/30.4);
   vertex(-11*size/30.4, +4*size/30.4);
   vertex(-2.4*size/30.4, +4*size/30.4);
+  
   endShape(CLOSE);
   translate(-x,-y);
   popMatrix();
