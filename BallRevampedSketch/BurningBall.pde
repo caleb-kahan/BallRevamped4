@@ -10,7 +10,9 @@ class BurningBall extends NormalBall {
       color a = color(colors[i][0], colors[i][1], colors[i][2]);
       color black = color(0, 0, 0);
       a = lerpColor(a, black, secondsLeft);
-      colors[i]=a;
+      colors[i][0]= red(a);
+      colors[i][0]= green(a);
+      colors[i][0]= blue(a);
     }
   }
 }
