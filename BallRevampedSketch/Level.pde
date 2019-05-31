@@ -118,6 +118,7 @@ class Level {
       ellipse(ball.x,ball.y,1000,1000);
       strokeWeight(1);
     }
+    if(ball.isDead) respawn();
   }
   void display() {
     background(colors[0],colors[1],colors[2]);
