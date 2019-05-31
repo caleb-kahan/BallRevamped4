@@ -14,5 +14,10 @@ class BurningBall extends NormalBall {
       colors[i][0]= green(a);
       colors[i][0]= blue(a);
     }
+    if(endSec = second()) respawn());
+  }
+  void display(){
+    super.display();
+    dying();
   }
 }

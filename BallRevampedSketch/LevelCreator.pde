@@ -38,7 +38,7 @@ class LevelCreator {
   Level leveltest() {
     float startX = 255;
     float startY = 50;
-    Ball ball = new NormalBall(startX, startY, 24);
+    Ball ball = new BurningBall(startX, startY);
     ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
     //elements.add(new Wood(270, 270, 100, 100, 0));
     elements.add(new Wall(440, 300, 15, 580, 0)); 
