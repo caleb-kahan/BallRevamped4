@@ -164,6 +164,8 @@ Repository is made </br></br>
   </br>
  <b>5/28/19</b></br>
   <h4>Chris's Work</h4>
+    <li>Created the FlipPowerUp that rotates the display for 180 degrees</li>
+    <li>Created a dark version of level where only allows a radius from the ball to be visible</li>
   <h4>Caleb's Work</h4>
   <ul>
     <li>Made two static functions: rectangleInsidecircle + intersectsRectangle</li>
@@ -172,6 +174,10 @@ Repository is made </br></br>
   </ul>
  <b>5/29/19</b></br>
    <h4>Chris's Work</h4>
+   <ul>
+    <li>Created LightBall and that mitigates the dark level's effects</li>
+    <li>Created levels 1 to 10 by using the actual game as reference</li>
+   </ul>
    <h4>Caleb's Work</h4>
    <ul>
     <li> Optimized rate of fire for laserBall </li>
@@ -179,6 +185,9 @@ Repository is made </br></br>
    </ul>
 <b>5/30/19</b></br>
    <h4>Chris's Work</h4>
+   <ul>
+    <li>Created levels 10 to 14 by using the actual game as reference</li>
+   </ul>
    <h4>Caleb's Work</h4>
    <ul>
     <li> Started burningBall Class, did a couple of methods </li> 
