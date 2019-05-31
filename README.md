@@ -177,4 +177,11 @@ Repository is made </br></br>
     <li> Optimized rate of fire for laserBall </li>
     <li> Fixed isTouching for Laser affecting Lense, laser now correctly destroys lense </li>
    </ul>
+<b>5/30/19</b></br>
+   <h4>Chris's Work</h4>
+   <h4>Caleb's Work</h4>
+   <ul>
+    <li> Started burningBall Class, did a couple of methods </li> 
+   </ul>
+
 
