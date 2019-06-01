@@ -12,8 +12,9 @@ class Level {
   boolean isFlipped;
   boolean hasSpikes;
   boolean nextLevel;
+
   
-  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y,int fuseIdx, int woodIdx,boolean isdark, boolean hasSpikes, int[] colors) {
+  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y,int fuseIdx, int woodIdx,boolean isdark,  int[] colors) {
     levelNumber = levelNum;
     this.elements = elements;
     this.powerUps = powerUps;
@@ -23,7 +24,6 @@ class Level {
     fuseIndex = fuseIdx;
     woodIndex = woodIdx;
     isDark = isdark;
-    this.hasSpikes = hasSpikes;
     this.colors = colors;
   }
 
@@ -134,7 +134,7 @@ class Level {
       powerup.display();
     }
     for (EnvironmentElement element : elements) {
-      if (element instanceof Spikes && hasSpikes) {
+      if (element instanceof Spikes ) {
         element.display();
         ((Spikes)element).spikeLevel+= ((Spikes)element).spikeSpeed;
         ((Spikes)element).spikeSpeed += .0017;
