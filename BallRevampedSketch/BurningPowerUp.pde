@@ -1,11 +1,36 @@
 public class BurningPowerUp extends PowerUp {
   float ellipseVelocity;
+  float ellipseWidth;
+  float ellipseHeight;
+  BurningDrop [] drops;
+  int dropIndex;
 
-  BurningPowerUp(float x, float y) {
+  BurningPowerUp(float x, float y, float elWid, float elHei) {
     super(x, y, 20, new int[]{244, 216, 160});
     ellipseVelocity = 2;
+    drops = new BurningDrop[50];
+    dropIndex = 0;
+    ellipseWidth = elWid;
+    ellipseHeight = elHei;
   }
   void display() {
+
+    super.display();
+    if (millis()%3==1) {
+    }
+  }
+  void generateDrops() {
+    if (dropIndex>=drops.length-1)
+      dropIndex = 0;
+    float time = millis();
+    float newX = ellipseWidth*(cos(ellipseVelocity*time));
+    float newY = ellipseHeight*(sin(ellipseVelocity*time));
+    color yellow = color(255, 0, 0);
+    color red = color(255, 0, 0);
+    drops[dropIndex++] = new BurningDrop(newX, newY, 3, lerpColor(yellow, red, random(1)));
+    newX = ellipseWidth*(cos(ellipseVelocity*time+PI));
+    newY = ellipseHeight*(sin(ellipseVelocity*time+PI));
+    drops[dropIndex++] = new BurningDrop(newX, newY, 3, lerpColor(yellow, red, random(1)));
   }
   Ball use(Ball ball) {
     if (!isUsed) {
