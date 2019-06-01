@@ -1,7 +1,6 @@
 public class BurningPowerUp extends PowerUp {
 
   public class BurningDrop {
-    color c;
     float x;
     float y;
     float size;
@@ -10,7 +9,6 @@ public class BurningPowerUp extends PowerUp {
     float velocity;
     boolean isDead;
     BurningDrop(float x, float y, float size, color col) {
-      c=col;
       original = col;
       this.x=x;
       this.y=y;
