@@ -21,7 +21,7 @@ class BurningBall extends NormalBall {
       colors[i][1]= (int) green(a);
       colors[i][2]= (int) blue(a);
     }
-    if (millis()==millisSec) isDead = true;
+    if (millis()>millisSec) isDead = true;
   }
   void display() {
     super.display();
