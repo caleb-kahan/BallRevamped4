@@ -7,7 +7,7 @@ class BurningBall extends NormalBall {
   void dying() {
     fill(0);
     for (int i = 0; i<colors.length; i++) {
-      for (int j = 0; j<colors.length; j++) {
+      for (int j = 0; j<colors[0].length; j++) {
         colors[i][j] = 0;
       }
     }

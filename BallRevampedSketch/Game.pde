@@ -4,8 +4,8 @@ public class Game{
   LevelCreator creator;
   Game() {
     creator = new LevelCreator();
-    level = creator.constructLevel(14);
-    currentLevel = 14;
+    level = creator.constructLevel(15);
+    currentLevel = 15;
   }
   void run() {
     stroke(0);
