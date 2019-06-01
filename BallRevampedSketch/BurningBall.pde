@@ -1,26 +1,29 @@
 class BurningBall extends NormalBall {
-  int startSec;
-  int endSec;
-  float divisor = 0.25;
+  float millisSec;
+  float [][] original;
   BurningBall(float x, float y) {
     super(x, y, 24);
-    startSec = second();
-    endSec = (startSec+4)%60;
+    millisSec = millis()+4000;
+    original = new float[4][3];
+    for (int i = 0; i<colors.length; i++) {
+      for (int j =0; j<colors[0].length; j++) {
+        original[i][j] = colors[i][j];
+      }
+    }
   }
   void dying() { 
     for (int i = 0; i<colors.length; i++) {
-      float secondsLeft = (endSec+60-second())%60;
-      color a = color(colors[i][0], colors[i][1], colors[i][2]);
       color black = color(0, 0, 0);
-      a = lerpColor(a, black, divisor);
-      colors[i][0]= 0;//(int)red(a);
-      colors[i][1]= 0;//(int)green(a);
-      colors[i][2]= 0;//(int)blue(a);
+      float percentage = (millisSec+millis())/4000;
+      a = lerpColor(original, black, divisor);
+      colors[i][0]= (int) red(a);
+      colors[i][1]= (int) green(a);
+      colors[i][2]= (int) blue(a);
     }
     divisor+=0.25;
-    if(endSec == second()) isDead = true;
+    if (endSec == second()) isDead = true;
   }
-  void display(){
+  void display() {
     super.display();
     dying();
   }
