@@ -199,7 +199,7 @@ class Fuse extends EnvironmentElement {
       dot.display();
     }
     if (isActivated) {
-      if (millis() - time > 60 && currentDot < dots.size()) {
+      if (millis() - time > 100 && currentDot < dots.size()) {
         time = millis();
         dots.get(currentDot).light();
         currentDot++;
