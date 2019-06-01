@@ -7,17 +7,16 @@ public class BurningPowerUp extends PowerUp {
 
   BurningPowerUp(float x, float y, float elWid, float elHei) {
     super(x, y, 10, new int[]{244, 216, 160});
-    ellipseVelocity = 2;
-    drops = new BurningDrop[60];
+    ellipseVelocity = 0.2;
+    drops = new BurningDrop[200];
     dropIndex = 0;
     ellipseWidth = elWid;
     ellipseHeight = elHei;
   }
   void display() {
     super.display();
-    if (millis()%5==1) {
       generateDrops();
-    }
+    
     for (BurningDrop drop : drops) {
         if (drop!=null) {
           drop.display();
@@ -34,8 +33,8 @@ public class BurningPowerUp extends PowerUp {
     color yellow = color(255, 255, 0);
     color red = color(255, 0, 0);
     drops[dropIndex++] = new BurningDrop(newX, newY, 4, lerpColor(yellow, red, random(1)));
-    newX = ellipseWidth*(cos(ellipseVelocity*time+PI))+x;
-    newY = ellipseHeight*(sin(ellipseVelocity*time+PI))+y;
+    newX = ellipseWidth*(cos(ellipseVelocity*(time)+PI))+x;
+    newY = ellipseHeight*(sin(ellipseVelocity*(time)+PI))+y;
     drops[dropIndex++] = new BurningDrop(newX, newY,4, lerpColor(yellow, red, random(1)));
   }
   Ball use(Ball ball) {
@@ -64,14 +63,14 @@ public class BurningPowerUp extends PowerUp {
       this.x=x;
       this.y=y;
       this.size=size;
-      millisSec = millis()+1000;
+      millisSec = millis()+1500;
       velocity = 1;
       isDead = false;
     }
     void display() {
       if (! isDead) {
         color blackGround = g.backgroundColor;
-        float percentage = (millis()+1000-millisSec)/1000;
+        float percentage = (millis()+1500-millisSec)/1500;
         color a = lerpColor(original, blackGround, percentage);
         fill(a);
         noStroke();
