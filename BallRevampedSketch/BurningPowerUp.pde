@@ -1,5 +1,11 @@
 public class BurningPowerUp extends PowerUp {
-
+  float ellipseVelocity;
+  
+  BurningPowerUp(float x, float y){
+    super(x,y,20,new int[]{244,216,160});
+    ellipseVelocity = 2;
+  }
+  
   public class BurningDrop {
     float x;
     float y;
