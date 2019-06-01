@@ -8,14 +8,14 @@ public class BurningPowerUp extends PowerUp {
   BurningPowerUp(float x, float y, float elWid, float elHei) {
     super(x, y, 10, new int[]{244, 216, 160});
     ellipseVelocity = 2;
-    drops = new BurningDrop[50];
+    drops = new BurningDrop[60];
     dropIndex = 0;
     ellipseWidth = elWid;
     ellipseHeight = elHei;
   }
   void display() {
     super.display();
-    if (millis()%3==1) {
+    if (millis()%5==1) {
       generateDrops();
     }
     for (BurningDrop drop : drops) {
@@ -31,12 +31,12 @@ public class BurningPowerUp extends PowerUp {
     float time = millis();
     float newX = ellipseWidth*(cos(ellipseVelocity*time))+x;
     float newY = ellipseHeight*(sin(ellipseVelocity*time))+y;
-    color yellow = color(255, 0, 0);
+    color yellow = color(255, 255, 0);
     color red = color(255, 0, 0);
-    drops[dropIndex++] = new BurningDrop(newX, newY, 3, lerpColor(yellow, red, random(1)));
-    newX = ellipseWidth*(cos(ellipseVelocity*time+PI));
-    newY = ellipseHeight*(sin(ellipseVelocity*time+PI));
-    drops[dropIndex++] = new BurningDrop(newX, newY, 3, lerpColor(yellow, red, random(1)));
+    drops[dropIndex++] = new BurningDrop(newX, newY, 4, lerpColor(yellow, red, random(1)));
+    newX = ellipseWidth*(cos(ellipseVelocity*time+PI))+x;
+    newY = ellipseHeight*(sin(ellipseVelocity*time+PI))+y;
+    drops[dropIndex++] = new BurningDrop(newX, newY,4, lerpColor(yellow, red, random(1)));
   }
   Ball use(Ball ball) {
     if (!isUsed) {
@@ -64,14 +64,14 @@ public class BurningPowerUp extends PowerUp {
       this.x=x;
       this.y=y;
       this.size=size;
-      millisSec = millis()+2000;
+      millisSec = millis()+1000;
       velocity = 1;
       isDead = false;
     }
     void display() {
       if (! isDead) {
         color blackGround = g.backgroundColor;
-        float percentage = (millis()+2000-millisSec)/4000;
+        float percentage = (millis()+1000-millisSec)/1000;
         color a = lerpColor(original, blackGround, percentage);
         fill(a);
         noStroke();
