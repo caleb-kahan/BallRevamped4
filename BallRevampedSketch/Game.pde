@@ -15,7 +15,6 @@ public class Game{
       translate(450,600);
       rotate(PI);
       level.display();
-      translate(-450,-600);
       popMatrix();
     }
     else {
