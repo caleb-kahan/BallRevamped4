@@ -5,6 +5,23 @@ public class BurningPowerUp extends PowerUp {
     super(x,y,20,new int[]{244,216,160});
     ellipseVelocity = 2;
   }
+  void display(){
+  }
+  Ball use(Ball ball){
+     if (!isUsed) {
+      isUsed = true;
+      if(! (ball instanceof NormalBall)) {
+        float xVel = ball.xSpeed;
+        float yVel = ball.ySpeed;
+        ball = new BurningBall(x,y,48);
+        ball.xSpeed = xVel;
+        ball.ySpeed = yVel;
+      }
+      else ball.radius = 48;
+    }
+    return ball;
+  }
+  
   
   public class BurningDrop {
     float x;

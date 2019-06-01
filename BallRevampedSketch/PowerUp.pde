@@ -58,7 +58,7 @@ class BigPowerUp extends PowerUp {
       if(! (ball instanceof NormalBall)) {
         float xVel = ball.xSpeed;
         float yVel = ball.ySpeed;
-        ball = new NormalBall(x,y,48);
+        ball = new NormalBall(ball.x,ball.y,48);
         ball.xSpeed = xVel;
         ball.ySpeed = yVel;
       }
@@ -212,7 +212,7 @@ class SmallPowerUp extends PowerUp {
       if(! (ball instanceof NormalBall)) {
         float xVel = ball.xSpeed;
         float yVel = ball.ySpeed;
-        ball = new NormalBall(x,y,12);
+        ball = new NormalBall(ball.x,ball.y,12);
         ball.xSpeed = xVel;
         ball.ySpeed = yVel;
       }
