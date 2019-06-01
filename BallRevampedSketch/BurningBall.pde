@@ -14,7 +14,7 @@ class BurningBall extends NormalBall {
   void dying() { 
     for (int i = 0; i<colors.length; i++) {
       color black = color(0, 0, 0);
-      float percentage = (millisSec+millis())/4000;
+      float percentage = (millis()+4000-millisSec)/4000;
       color quadCol = color(original[i][0],original[i][1],original[i][2]);
       color a = lerpColor(quadCol, black, percentage);
       colors[i][0]= (int) red(a);
