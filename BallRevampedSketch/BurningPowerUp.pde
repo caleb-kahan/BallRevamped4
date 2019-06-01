@@ -8,13 +8,13 @@ public class BurningPowerUp extends PowerUp {
     float millisSec;
     color original;
     float velocity;
-    BurningDrop(float x, float y, float size, float sec, color col) {
+    BurningDrop(float x, float y, float size, color col) {
       c=col;
       original = col;
       this.x=x;
       this.y=y;
       this.size=size;
-      millisSec = sec;
+      millisSec = millis()+2000;
       velocity = 1;
     }
     void display() {
