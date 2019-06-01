@@ -29,8 +29,8 @@ public class BurningPowerUp extends PowerUp {
     if (dropIndex>=drops.length-1)
       dropIndex = 0;
     float time = millis();
-    float newX = ellipseWidth*(cos(ellipseVelocity*time));
-    float newY = ellipseHeight*(sin(ellipseVelocity*time));
+    float newX = ellipseWidth*(cos(ellipseVelocity*time))+x;
+    float newY = ellipseHeight*(sin(ellipseVelocity*time))+y;
     color yellow = color(255, 0, 0);
     color red = color(255, 0, 0);
     drops[dropIndex++] = new BurningDrop(newX, newY, 3, lerpColor(yellow, red, random(1)));
