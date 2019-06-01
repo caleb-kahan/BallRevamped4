@@ -14,10 +14,16 @@ public class BurningPowerUp extends PowerUp {
     ellipseHeight = elHei;
   }
   void display() {
-
     super.display();
     if (millis()%3==1) {
+      generateDrops();
     }
+    for (BurningDrop drop : drops) {
+        if (drop!=null) {
+          drop.display();
+          drop.move();
+        }
+      }
   }
   void generateDrops() {
     if (dropIndex>=drops.length-1)
