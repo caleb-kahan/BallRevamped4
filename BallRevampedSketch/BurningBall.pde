@@ -15,13 +15,13 @@ class BurningBall extends NormalBall {
     for (int i = 0; i<colors.length; i++) {
       color black = color(0, 0, 0);
       float percentage = (millisSec+millis())/4000;
-      a = lerpColor(original, black, divisor);
+      color quadCol = color(original[i][0],original[i][1],original[i][2]);
+      color a = lerpColor(quadCol, black, percentage);
       colors[i][0]= (int) red(a);
       colors[i][1]= (int) green(a);
       colors[i][2]= (int) blue(a);
     }
-    divisor+=0.25;
-    if (endSec == second()) isDead = true;
+    if (millis()==millisSec) isDead = true;
   }
   void display() {
     super.display();
