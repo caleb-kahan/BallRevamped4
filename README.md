@@ -192,5 +192,10 @@ Repository is made </br></br>
    <ul>
     <li> Started burningBall Class, did a couple of methods </li> 
    </ul>
+ <b>5/31/19</b></br>
+    <h4>Caleb's Work</h4>
+    <ul>
+      <li>Tried to fix black coloring process for burning ball in clas. Failed </li>
+     </ul>
 
 
