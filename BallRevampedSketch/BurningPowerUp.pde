@@ -1,28 +1,25 @@
 public class BurningPowerUp extends PowerUp {
   float ellipseVelocity;
-  
-  BurningPowerUp(float x, float y){
-    super(x,y,20,new int[]{244,216,160});
+
+  BurningPowerUp(float x, float y) {
+    super(x, y, 20, new int[]{244, 216, 160});
     ellipseVelocity = 2;
   }
-  void display(){
+  void display() {
   }
-  Ball use(Ball ball){
-     if (!isUsed) {
+  Ball use(Ball ball) {
+    if (!isUsed) {
       isUsed = true;
-      if(! (ball instanceof NormalBall)) {
-        float xVel = ball.xSpeed;
-        float yVel = ball.ySpeed;
-        ball = new BurningBall(x,y,48);
-        ball.xSpeed = xVel;
-        ball.ySpeed = yVel;
-      }
-      else ball.radius = 48;
+      float xVel = ball.xSpeed;
+      float yVel = ball.ySpeed;
+      ball = new BurningBall(ball.x, ball.y);
+      ball.xSpeed = xVel;
+      ball.ySpeed = yVel;
     }
     return ball;
   }
-  
-  
+
+
   public class BurningDrop {
     float x;
     float y;
