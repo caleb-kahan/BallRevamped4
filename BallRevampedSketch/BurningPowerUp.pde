@@ -1,14 +1,21 @@
 public class BurningPowerUp extends PowerUp {
+
   public class BurningDrop {
     color c;
     float x;
     float y;
     float size;
-    BurningDrop(color c, float x, float y, float size) {
-      this.c=c;
+    float millisSec;
+    color original;
+    float velocity;
+    BurningDrop(float x, float y, float size, float sec, color col) {
+      c=col;
+      original = col;
       this.x=x;
       this.y=y;
       this.size=size;
+      millisSec = sec;
+      velocity = 1;
     }
     void display() {
       noStroke();
