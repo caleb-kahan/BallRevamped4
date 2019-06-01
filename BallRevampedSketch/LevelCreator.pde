@@ -38,7 +38,7 @@ class LevelCreator {
   Level leveltest() {
     float startX = 255;
     float startY = 50;
-    Ball ball = new BurningBall(startX, startY);
+    Ball ball = new NormalBall(startX, startY,24);
     ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
     //elements.add(new Wood(270, 270, 100, 100, 0));
     elements.add(new Wall(440, 300, 15, 580, 0)); 
@@ -64,6 +64,7 @@ class LevelCreator {
     /*powerUps.add(new FusePowerUp(225, 150, 10));
     powerUps.add(new FlipPowerUp(100, 150, 10));*/
     //powerUps.add(new LightPowerUp(100, 150, 10));
+    powerUps.add(new BurningPowerUp(200,200,10,5));
     return new Level(0, elements, powerUps, ball, startX, startY, -1, -1, false,true,new int[]{255,255,255}); //if you uncomment out everything, change -1,-1 to 6,0
   }
   Level level1() {

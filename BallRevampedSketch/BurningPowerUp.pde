@@ -6,7 +6,7 @@ public class BurningPowerUp extends PowerUp {
   int dropIndex;
 
   BurningPowerUp(float x, float y, float elWid, float elHei) {
-    super(x, y, 20, new int[]{244, 216, 160});
+    super(x, y, 10, new int[]{244, 216, 160});
     ellipseVelocity = 2;
     drops = new BurningDrop[50];
     dropIndex = 0;
