@@ -21,13 +21,10 @@ public class BurningPowerUp extends PowerUp {
     }
     void display() {
       if (! isDead) {
-        color black = color(0, 0, 0);
-        float percentage = (millis()+4000-millisSec)/4000;
-        color quadCol = color(original[i][0], original[i][1], original[i][2]);
-        color a = lerpColor(quadCol, black, percentage);
-        colors[i][0]= (int) red(a);
-        colors[i][1]= (int) green(a);
-        colors[i][2]= (int) blue(a);
+        color blackGround = g.backgroundColor;
+        float percentage = (millis()+2000-millisSec)/4000;
+        color a = lerpColor(original, blackGround, percentage);
+        fill(a);
         noStroke();
         for (int i = 2; i < size; i++ ) {
           ellipse(x, y + i*4, i*2, i*2);
