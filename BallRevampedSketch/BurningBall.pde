@@ -13,9 +13,9 @@ class BurningBall extends NormalBall {
       color a = color(colors[i][0], colors[i][1], colors[i][2]);
       color black = color(0, 0, 0);
       a = lerpColor(a, black, divisor);
-      colors[i][0]= (int)red(a);
-      colors[i][0]= (int)green(a);
-      colors[i][0]= (int)blue(a);
+      colors[i][0]= 0;//(int)red(a);
+      colors[i][1]= 0;//(int)green(a);
+      colors[i][2]= 0;//(int)blue(a);
     }
     divisor+=0.25;
     if(endSec == second()) isDead = true;
