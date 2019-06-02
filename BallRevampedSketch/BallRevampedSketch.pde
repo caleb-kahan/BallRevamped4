@@ -9,7 +9,7 @@ void setup() {
 void draw() {
   game.run();
   textSize(20);
-  text(""+mouseX+" "+mouseY, mouseX,mouseY);
+  //text(""+mouseX+" "+mouseY, mouseX,mouseY);
 }
 void mouseClicked() {
   if (game.isPaused) {
@@ -17,8 +17,9 @@ void mouseClicked() {
       game.isPaused = !game.isPaused;
     }
     if (mouseX > 150 && mouseX < 300 && mouseY > 170 && mouseY < 190) {
-      game.currentLevel = 0;
       game.menu.levelStart = 0;
+      game.currentLevel = 0;
+      game.menu.menuType = 0;
       game.isPaused = !game.isPaused;
     }
   }

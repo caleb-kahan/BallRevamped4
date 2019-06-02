@@ -1,6 +1,5 @@
 public class Game{
   int currentLevel;
-  int deaths;
   int time;
   Level level;
   Menu menu;

@@ -117,8 +117,9 @@
       
     }
     else  {
+      textSize(30);
       fill(255);
-      text("Levels" ,160,40);
+      text("Levels" ,165,40);
       rectMode(CORNERS);
       noFill();
       rect (10,10,66,35);
