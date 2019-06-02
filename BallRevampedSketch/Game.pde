@@ -1,14 +1,15 @@
 public class Game{
   int currentLevel;
   Level level;
+  Menu menu;
   LevelCreator creator;
   Game() {
     creator = new LevelCreator();
-    level = creator.constructLevel(23);
-    currentLevel = 23;
+    level = creator.constructLevel(1);
+    currentLevel = 0;
+    menu = new Menu();
   }
   void run() {
-    currentLevel = level.levelNumber;
     if (currentLevel > 0) {
       stroke(0);
       strokeWeight(1);
@@ -28,7 +29,8 @@ public class Game{
       }
     }
     else {
-      
+      menu.run();
+      menu.display();
     }
   }  
 }

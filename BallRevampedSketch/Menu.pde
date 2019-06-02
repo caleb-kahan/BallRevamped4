@@ -30,6 +30,47 @@
       } 
     }
   }
+  void display() {
+    noStroke();
+    fill(51,255,102);
+    beginShape();
+    vertex(0,0);
+    vertex(284,0);
+    vertex(219,266);
+    vertex(0,206);
+    endShape(CLOSE);
+    
+    fill(204,51,204);
+    beginShape();
+    vertex(450,0);
+    vertex(450,326);
+    vertex(219,266);
+    vertex(284,0);
+    endShape(CLOSE);
+    
+    fill(51,100,250);
+    beginShape();
+    vertex(450,600);
+    vertex(134,600);
+    vertex(219,266);
+    vertex(450,326);
+    endShape(CLOSE);
+    
+    fill(255,51,50);
+    beginShape();
+    vertex(0,600);
+    vertex(0,206);
+    vertex(219,266);
+    vertex(134,600);
+    endShape(CLOSE);
+    if (menuType == 0) {
+      textSize(50);
+      fill(255);
+      text("Ball Revamped 4", 22,50);
+    }
+    fill(255);
+    arrow(mouseX,mouseY,20,0);
+  }
  }  
  class Square {
     float x1;
