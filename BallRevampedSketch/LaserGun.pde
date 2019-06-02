@@ -48,21 +48,28 @@ public class LaserGun extends EnvironmentElement {
     return false;
   }
   PShape drawShape(color c, float angle) {
+    color red = color(255, 0, 0);
     PShape alien = createShape(GROUP);
-    PShape smallArc1 = createShape(ARC, -15, 0, 10, 10, HALF_PI, 3/2*PI);
-    PShape smallArc2 = createShape(ARC, 15*-cos(PI/6), 15*sin(PI/6), 10, 10, radians(150), radians(330));
-    PShape bigArc = createShape(ARC, 0, 0, 60, 60, radians(150), 3/2*PI);
-    PShape line1 = createShape(LINE, 0, 0, 0, 10);
-    PShape line2 = createShape(LINE, 0, 20, 0, 30);
+    
+    noFill();
+    PShape bigArc = createShape(ARC, 0, 0, 60, 60, radians(150), PI*3/2);
+    PShape line1 = createShape(LINE, 0, 0, 0, -10);
+    PShape line2 = createShape(LINE, 0, -20, 0, -30);
     PShape line3 = createShape(LINE, 0, 0, 10*-cos(PI/6), 10*sin(PI/6));
     PShape line4 = createShape(LINE, 20*-cos(PI/6), 20*sin(PI/6), 30*-cos(PI/6), 30*sin(PI/6));
-    alien.addChild(smallArc1);
-    alien.addChild(smallArc2);
+
+
+    PShape smallArc1 = createShape(ARC, 0, -15, 10, 10, PI/2, PI*3/2);
+    PShape smallArc2 = createShape(ARC, 15*-cos(PI/6), 15*sin(PI/6), 10, 10, radians(150), radians(330));
+
     alien.addChild(bigArc);
     alien.addChild(line1);
     alien.addChild(line2);
     alien.addChild(line3);
     alien.addChild(line4);
+    alien.addChild(smallArc1);
+    alien.addChild(smallArc2);
+    alien.setFill(color(255, 0, 0));
     return alien;
   }
 }
