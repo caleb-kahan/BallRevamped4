@@ -41,7 +41,8 @@ public class LaserGun extends EnvironmentElement {
      circle3.add(new float[]{a, b, pixels[b*width+a]});
      }
      }*/
-    drawShape(0, 0);
+    PShape s = drawShape(0, 0);
+    shape(s, x, y);
   }
   boolean isTouching(Ball ball) {
     return false;
@@ -54,6 +55,7 @@ public class LaserGun extends EnvironmentElement {
     s.vertex(0, 0);
     s.vertex(-10, 0);
     noFill();
+    stroke(0);
     arc(-15, 0, 10, 10, HALF_PI, 3/2*PI);
     s.vertex(-20, 0);
     arc(0, 0, 60, 60, radians(150), 3/2*PI);
