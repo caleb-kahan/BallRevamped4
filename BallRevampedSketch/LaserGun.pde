@@ -3,8 +3,8 @@ public class LaserGun extends EnvironmentElement {
   Laser l;
   Ball b;
   boolean shootingMode;
-  LaserGun() {
-    super(0, 0, 0, 0, 0);
+  LaserGun(float cenX, float cenY, float angle) {
+    super(cenX, cenY,0 , 0, 0);
   }
   void display() {
     ArrayList<float[]> circle1 = new ArrayList<float[]>();
