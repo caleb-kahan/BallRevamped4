@@ -8,21 +8,27 @@ public class Game{
     currentLevel = 1;
   }
   void run() {
-    stroke(0);
-    strokeWeight(1);
-    if (level.isFlipped) {
-      pushMatrix();
-      translate(450,600);
-      rotate(PI);
-      level.display();
-      popMatrix();
+    currentLevel = level.levelNumber;
+    if (currentLevel > 0) {
+      stroke(0);
+      strokeWeight(1);
+      if (level.isFlipped) {
+        pushMatrix();
+        translate(450,600);
+        rotate(PI);
+        level.display();
+        popMatrix();
+      }
+      else {
+        level.display();
+      }
+      level.run();
+      if (level.nextLevel) {
+        level = creator.constructLevel(level.levelNumber+1);
+      }
     }
     else {
-      level.display();
-    }
-    level.run();
-    if (level.nextLevel) {
-      level = creator.constructLevel(level.levelNumber+1);
+      
     }
   }  
 }
