@@ -10,7 +10,7 @@ public class LaserGun extends EnvironmentElement {
     float [][] circle3;
     float radius = sqrt(12);
     float distSmall = radius*(tan(degrees(30)));
-    float distBig = radius*(tan(degrees(30)));
+    float distBig = radius*(cos(degrees(30)));
     
     
     float c1X = x;
