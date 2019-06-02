@@ -83,7 +83,7 @@ class LevelCreator {
     powerUps.add(new FlipPowerUp(100, 150, 10));*/
     //powerUps.add(new LightPowerUp(100, 150, 10));
     powerUps.add(new BurningPowerUp(200,200,30,10));
-    return new Level(0, elements, powerUps, ball, startX, startY, -1, -1, false,new int[]{255,255,255}); //if you uncomment out everything, change -1,-1 to 6,0
+    return new Level(24, elements, powerUps, ball, startX, startY, -1, -1, false,new int[]{255,255,255}); //if you uncomment out everything, change -1,-1 to 6,0
   }
   Level level1() {
     float startX = 65;
