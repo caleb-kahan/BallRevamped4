@@ -8,12 +8,16 @@ void setup() {
 }
 void draw() {
   game.run();
-  //game.menu.mouseclick();
-  textSize(40);
-  //text(""+mouseX+" "+mouseY, mouseX,mouseY);
+  textSize(20);
+  text(""+mouseX+" "+mouseY, mouseX,mouseY);
 }
 void mouseClicked() {
- game.menu.mouseClicked();
+  if (game.isPaused) {
+    if (mouseX > 125 && mouseX < 325 && mouseY > 425 && mouseY < 445) {
+      game.isPaused = !game.isPaused;
+    }
+  }
+  game.menu.mouseClicked();
 }
 void keyPressed() {
   game.level.ball.keyPressed();

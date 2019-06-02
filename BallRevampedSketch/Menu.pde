@@ -32,7 +32,6 @@
         menuType = 0;
       }
     }
-   return true;
   }
   /*void run() {
     if (menuType == 0) {
