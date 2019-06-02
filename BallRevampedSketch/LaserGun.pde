@@ -41,21 +41,7 @@ public class LaserGun extends EnvironmentElement {
      circle3.add(new float[]{a, b, pixels[b*width+a]});
      }
      }*/
-    PGraphics pg = createGraphics(100, 100);
-    pg.beginDraw();
-    pg.background(255, 0, 255);
-    pg.translate(10, 10);
-    pg.fill(0,255,0);
-    pg.noStroke();
-    float dia = radius*2;
-    pg.ellipse(c1X, c1Y, dia, dia);
-    pg.ellipse(c2X, c2Y, dia, dia);
-    pg.ellipse(c3X, c3Y, dia, dia);
-    pg.endDraw();
-    PImage msk = pg.get();
-    PImage umb = get((int)(x-10), (int)(y-10), 100, 100);
-    umb.mask(msk);
-    image(umb,x,y);
+    
   }
   boolean isTouching(Ball ball) {
     return false;
