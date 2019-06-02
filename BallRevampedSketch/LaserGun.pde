@@ -21,6 +21,7 @@ public class LaserGun extends EnvironmentElement {
     float c3X = x;
     float c1X = x-radius;
     float c2X = x+radius;
+    //background(255,0,0);
     /*loadPixels();
      for (int a = (int)(c1X -radius)-1; a<c1X+radius; a++) {
      for (int b = (int)(c1Y-radius)-1; b<c1Y+radius; b++) {
@@ -40,11 +41,11 @@ public class LaserGun extends EnvironmentElement {
      circle3.add(new float[]{a, b, pixels[b*width+a]});
      }
      }*/
-    PGraphics pg = createGraphics(20, 20);
+    PGraphics pg = createGraphics(100, 100);
     pg.beginDraw();
-    pg.background(0, 0, 0, 0);
+    pg.background(255, 0, 255);
     pg.translate(10, 10);
-    pg.fill(0);
+    pg.fill(0,255,0);
     pg.noStroke();
     float dia = radius*2;
     pg.ellipse(c1X, c1Y, dia, dia);
@@ -52,8 +53,9 @@ public class LaserGun extends EnvironmentElement {
     pg.ellipse(c3X, c3Y, dia, dia);
     pg.endDraw();
     PImage msk = pg.get();
-    PImage umb = get((int)(x-10), (int)(y-10), 20, 20);
+    PImage umb = get((int)(x-10), (int)(y-10), 100, 100);
     umb.mask(msk);
+    image(umb,x,y);
   }
   boolean isTouching(Ball ball) {
     return false;
