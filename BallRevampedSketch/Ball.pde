@@ -83,6 +83,7 @@ class NormalBall extends Ball {
   }
   void display() {
     if (!isDead) {  
+      stroke(0);
       fill(colors[0][0], colors[0][1], colors[0][2]);
       arc(this.x, this.y, this.radius*2, this.radius*2, 0, PI/2, PIE);
       fill(colors[1][0], colors[1][1], colors[1][2]);
