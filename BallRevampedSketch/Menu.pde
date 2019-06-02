@@ -7,7 +7,7 @@
     levelStart = 0;
     squares = new ArrayList<Square>();
     int level = 1;
-    for (float i = 40;i <= 348;i += 102) {
+    for (float i = 20;i <= 348;i += 102) {
       for (float j = 70;j <= 550;j += 86) {
         squares.add(new Square(i,j,i+62,j+62,level++));
       }    
@@ -15,24 +15,27 @@
   }
   void run() {
     if (menuType == 0) {
-      if (mousePressed && mouseX>45 && mouseX<113 && mouseY>151 && mouseY<171) {
+      if (mousePressed && mouseX>50 && mouseX<109 && mouseY>154 && mouseY<186) {
         levelStart = 1;
       }
-      else if (mousePressed && mouseX>45 && mouseX<113 && mouseY>220 && mouseY<240) {
+      else if (mousePressed && mouseX>50 && mouseX<138 && mouseY>284 && mouseY<310) {
         menuType = 1;
       }
     }
     else if (menuType == 1) {
       for (Square square : squares) {
-        if (square.isTouching()) {
+        if (mousePressed && square.isTouching()) {
           levelStart = square.level;
         }
-      } 
+      }
+      if (mousePressed && mouseX > 10 && mouseX<66 && mouseY>10 && mouseY<35) {
+        menuType = 0;
+      }
     }
   }
   void display() {
     noStroke();
-    fill(51,255,102);
+    fill(51,220,102);
     beginShape();
     vertex(0,0);
     vertex(284,0);
@@ -67,6 +70,54 @@
       textSize(50);
       fill(255);
       text("Ball Revamped 4", 22,50);
+      noFill();
+      rectMode(CORNERS);
+      rect(50,154,109,186);
+      rect(50,284,138,310);
+      textSize(30);
+      if (mouseX > 50 && mouseX < 109 && mouseY > 154 && mouseY < 186) {
+        fill(80);
+      }
+      else {
+        fill(255);
+      }
+      text("Play",50,180);
+      if (mouseX > 50 && mouseX < 138 && mouseY > 284 && mouseY < 310) {
+        fill(80);
+      }
+      else {
+        fill(255);
+      }
+      text("Levels",50,308);
+      fill(255);
+      text("Chris Choi",50,495);
+      text("Caleb Kahan",50,530);
+      textSize(18);
+      text("Created by",50,460);
+      
+    }
+    else if (menuType == 1) {
+      fill(255);
+      text("Levels" ,160,40);
+      rectMode(CORNERS);
+      noFill();
+      rect (10,10,66,35);
+      if (mouseX > 10 && mouseX < 66 && mouseY > 10 && mouseY < 35) {
+        fill(80);
+      }
+      else {
+        fill(255);
+      }
+      textSize(25);
+      text("back",10,33);
+      
+      for (Square square : squares) {
+        if (square.isTouching()) {
+          fill(80);
+        }
+        else fill(255);
+        square.display();
+      }
     }
     fill(255);
     arrow(mouseX,mouseY,20,0);
@@ -93,7 +144,9 @@
     }
     void display() {
       rectMode(CORNERS);
+      stroke(255);
+      fill(255);
       rect(x1,y1,x2,y2);
-      text(""+level,x1 + (x2-x1)/2,y1 + (y2-y1)/2);
+      //text(""+level,x1 + (x2-x1)/2,y1 + (y2-y1)/2);
     }
  }

@@ -6,7 +6,8 @@ void setup() {
 
 void draw() {
   game.run();
-  //text(""+mouseX+" "+mouseY, mouseX,mouseY);
+  textSize(40);
+  text(""+mouseX+" "+mouseY, mouseX,mouseY);
 }
 void keyPressed() {
   game.level.ball.keyPressed();
