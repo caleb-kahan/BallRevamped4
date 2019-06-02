@@ -8,11 +8,12 @@ void setup() {
 }
 void draw() {
   game.run();
+  //game.menu.mouseclick();
   textSize(40);
   //text(""+mouseX+" "+mouseY, mouseX,mouseY);
 }
 void mouseClicked() {
-  game.menu.mouseclick();
+ game.menu.mouseClicked();
 }
 void keyPressed() {
   game.level.ball.keyPressed();

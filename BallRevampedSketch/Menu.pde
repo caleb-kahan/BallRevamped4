@@ -13,7 +13,7 @@
       }    
     }
   }
-  boolean mouseclick() {
+  void mouseClicked() {
     if (menuType == 0) {
       if (mouseX>50 && mouseX<109 && mouseY>154 && mouseY<186) {
         levelStart = 1;
@@ -32,7 +32,7 @@
         menuType = 0;
       }
     }
-    return true;
+   return true;
   }
   /*void run() {
     if (menuType == 0) {

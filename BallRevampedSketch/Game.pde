@@ -32,7 +32,7 @@ public class Game{
         level = creator.constructLevel(level.levelNumber+1);
       }
       fill(255);
-      text("Level "+ currentLevel,15,15);
+      text("Level "+ level.levelNumber,15,15);
       text("Time "+timeOfGame,260,15);
       text("Deaths "+deaths,360,15);
     }

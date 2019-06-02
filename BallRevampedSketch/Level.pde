@@ -180,6 +180,3 @@ class Level {
     }
   }
 }
-void mouseClicked() {
-  
-}
