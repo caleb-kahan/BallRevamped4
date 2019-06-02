@@ -193,9 +193,19 @@ Repository is made </br></br>
     <li> Started burningBall Class, did a couple of methods </li> 
    </ul>
  <b>5/31/19</b></br>
+    <h4>Chris's Work</h4>
+    <ul>
+      <li>Brainstormed ideas for the remaining levels to code</li>
+    </ul>
     <h4>Caleb's Work</h4>
     <ul>
       <li>Tried to fix black coloring process for burning ball in clas. Failed </li>
      </ul>
+ <n>6/1/19</b></br>
+  <h4>Chris's Work</h4>
+  <ul>
+    <li>Created levels 15 to 23 which implement all of the features we coded</li>
+  </ul>
+  <h4>Caleb's Work</h4>
 
 
