@@ -102,7 +102,7 @@ class BombPowerUp extends PowerUp {
 
 class LaserPowerUp extends PowerUp {
   LaserPowerUp(float x, float y, float size) {
-    super(x, y, size, new int[] {127, 255, 0});
+    super(x, y, size, new int[] {205, 255, 250});
   }
   void display() {
     color from = color(28);

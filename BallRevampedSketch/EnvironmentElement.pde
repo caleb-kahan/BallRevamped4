@@ -307,7 +307,7 @@ class Lense extends EnvironmentElement {
   }
   void display() {
     if (isDestroyed) return;
-    noStroke();
+    stroke(165);
 
     float input;
     if (vert) input = x;
