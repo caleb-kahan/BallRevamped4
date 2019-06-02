@@ -125,8 +125,10 @@ class Level {
     rectMode(CENTER);
     fill(255,0,0);
     rect(startX-1,startY,9,11);
-    fill(145);
+    textSize(12);
+    fill(0);
     text("X",startX-5,startY+4);
+    fill(145);
     for (EnvironmentElement element : elements) {
       element.display();
     }
@@ -144,6 +146,7 @@ class Level {
     }
   }  
   void respawn() {
+    deaths++;
     ball = new NormalBall(startX,startY,24);
     this.isFlipped = false;
     for (PowerUp powerup : powerUps) {
@@ -173,6 +176,10 @@ class Level {
       if (element instanceof Spikes) {
         ((Spikes)element).reset();
       }
+      
     }
   }
+}
+void mouseClicked() {
+  
 }

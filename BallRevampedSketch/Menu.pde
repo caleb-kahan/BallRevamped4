@@ -7,13 +7,34 @@
     levelStart = 0;
     squares = new ArrayList<Square>();
     int level = 1;
-    for (float i = 20;i <= 348;i += 102) {
-      for (float j = 70;j <= 550;j += 86) {
+    for (float j = 70;j <= 550;j += 86) {
+      for (float i = 30;i <= 348;i += 102) {
         squares.add(new Square(i,j,i+62,j+62,level++));
       }    
     }
   }
-  void run() {
+  boolean mouseclick() {
+    if (menuType == 0) {
+      if (mouseX>50 && mouseX<109 && mouseY>154 && mouseY<186) {
+        levelStart = 1;
+      }
+      else if (mouseX>50 && mouseX<138 && mouseY>284 && mouseY<310) {
+        menuType = 1;
+      }
+    }
+    else {
+      for (Square square : squares) {
+        if (square.isTouching()) {
+          levelStart = square.level;
+        }
+      }
+      if (mouseX > 10 && mouseX<66 && mouseY>10 && mouseY<35) {
+        menuType = 0;
+      }
+    }
+    return true;
+  }
+  /*void run() {
     if (menuType == 0) {
       if (mousePressed && mouseX>50 && mouseX<109 && mouseY>154 && mouseY<186) {
         levelStart = 1;
@@ -32,7 +53,7 @@
         menuType = 0;
       }
     }
-  }
+  }*/
   void display() {
     noStroke();
     fill(51,220,102);
@@ -96,7 +117,7 @@
       text("Created by",50,460);
       
     }
-    else if (menuType == 1) {
+    else  {
       fill(255);
       text("Levels" ,160,40);
       rectMode(CORNERS);
@@ -112,11 +133,16 @@
       text("back",10,33);
       
       for (Square square : squares) {
+        int fill = 0;
         if (square.isTouching()) {
-          fill(80);
+          fill = 80;
         }
-        else fill(255);
-        square.display();
+        else {
+          fill = 255;
+        }
+        rectMode(CORNERS);
+        stroke(fill);
+        square.display(fill);
       }
     }
     fill(255);
@@ -131,7 +157,7 @@
     int level;
     Square(float X1, float Y1,float X2,float Y2,int lvl) {
       x1 = X1;
-      y1 = Y2;
+      y1 = Y1;
       x2 = X2;
       y2 = Y2;
       level = lvl;
@@ -142,11 +168,10 @@
       }
       return false;
     }
-    void display() {
-      rectMode(CORNERS);
-      stroke(255);
-      fill(255);
+    void display(int fill) {
+      noFill();
       rect(x1,y1,x2,y2);
-      //text(""+level,x1 + (x2-x1)/2,y1 + (y2-y1)/2);
+      fill(fill);
+      text(""+level,x1 + (x2-x1)/2-8,y1 + (y2-y1)/2+8);
     }
  }

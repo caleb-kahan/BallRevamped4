@@ -1,13 +1,18 @@
+int deaths;
+int sec = second();
+int timeOfGame = 0;
 Game game;
 void setup() {
   size(450,600);
   game = new Game();
 }
-
 void draw() {
   game.run();
   textSize(40);
-  text(""+mouseX+" "+mouseY, mouseX,mouseY);
+  //text(""+mouseX+" "+mouseY, mouseX,mouseY);
+}
+void mouseClicked() {
+  game.menu.mouseclick();
 }
 void keyPressed() {
   game.level.ball.keyPressed();

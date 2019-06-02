@@ -182,7 +182,7 @@ class LevelCreator {
     elements.add(new Wall(290, 510, 15, 150, 0));
     elements.add(new ForceField(210, 440, 175));
     elements.add(new Stick(205, 285, 160));
-    elements.add(new Portal(220, 550));
+    elements.add(new Portal(220, 530));
     ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
     return new Level(6, elements, powerUps, ball, startX, startY, -1, -1, false,new int[]{0,0,110});
   }
