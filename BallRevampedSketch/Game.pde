@@ -13,9 +13,6 @@ public class Game{
   void run() {
     if (!isPaused) {
       if (currentLevel > 0) {
-        if (keyPressed && key == 'p') {
-          isPaused = !isPaused;
-        }
         if (sec != second()) {
           sec = second();
           timeOfGame++;
@@ -57,18 +54,27 @@ public class Game{
       rectMode(CORNERS);
       noFill();
       noStroke();
-      rect(125,425,325,445);
-      if (mouseX > 125 && mouseX < 325 && mouseY > 425 && mouseY < 445) {
+      rect(125,420,325,440);
+      if (mouseX > 125 && mouseX < 320 && mouseY > 425 && mouseY < 440) {
         fill(80);
       }
       else {
         fill(255);
       }
       textSize(30);
-      text("Back to Game",125,445);
-      if (keyPressed && key == 'p') {
-          isPaused = !isPaused;
+      text("Back to Game",125,440);
+     
+      noFill();
+      noStroke();
+      rect(150,170,300,190);
+      if (mouseX > 150 && mouseX < 300 && mouseY > 170 && mouseY < 190) {
+        fill(80);
       }
+      else {
+        fill(255);
+      }
+      textSize(30);
+      text("Main Menu",145,190);
     }
   }
 }

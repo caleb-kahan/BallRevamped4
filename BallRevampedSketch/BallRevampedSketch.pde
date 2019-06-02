@@ -13,7 +13,12 @@ void draw() {
 }
 void mouseClicked() {
   if (game.isPaused) {
-    if (mouseX > 125 && mouseX < 325 && mouseY > 425 && mouseY < 445) {
+    if (mouseX > 125 && mouseX < 320 && mouseY > 425 && mouseY < 440) {
+      game.isPaused = !game.isPaused;
+    }
+    if (mouseX > 150 && mouseX < 300 && mouseY > 170 && mouseY < 190) {
+      game.currentLevel = 0;
+      game.menu.levelStart = 0;
       game.isPaused = !game.isPaused;
     }
   }
@@ -23,6 +28,9 @@ void keyPressed() {
   game.level.ball.keyPressed();
 }
 void keyReleased() {
+  if (key == 'p') {
+    game.isPaused = !game.isPaused;
+  }  
   game.level.ball.keyReleased();
 }
 /*Regular Polygon code from processing website
