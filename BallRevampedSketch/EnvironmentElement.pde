@@ -438,8 +438,8 @@ class Spikes extends Wall {
 }
 class Laser extends EnvironmentElement {
   float velocity;
-  Laser(float cenX, float cenY, float angle) {
-    super(cenX, cenY, 10, 90, angle);
+  Laser(float cenX, float cenY, float angle, float w, float l) {
+    super(cenX, cenY, w, l, angle);
     velocity=50;
   }
   boolean isTouching(Ball b) {
