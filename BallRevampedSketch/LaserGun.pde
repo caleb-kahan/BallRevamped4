@@ -41,9 +41,13 @@ public class LaserGun extends EnvironmentElement {
      circle3.add(new float[]{a, b, pixels[b*width+a]});
      }
      }*/
-     circle(x,y,60);
+    //circle(x,y,60);
     PShape s = drawShape(0, 0);
-    
+
+    shape(s, x, y);
+    s.rotate(radians(120));
+    shape(s, x, y);
+    s.rotate(radians(120));
     shape(s, x, y);
   }
   boolean isTouching(Ball ball) {
@@ -52,12 +56,12 @@ public class LaserGun extends EnvironmentElement {
   PShape drawShape(color c, float angle) {
     noFill();
     PShape bigArc = createShape(ARC, 0, 0, 60, 60, radians(150), PI*3/2);
-    PShape line1 = createShape(LINE, 0, 0, 0, -10);
-    PShape line2 = createShape(LINE, 0, -20, 0, -30);
-    PShape line3 = createShape(LINE, 0, 0, 10*-cos(PI/6), 10*sin(PI/6));
-    PShape line4 = createShape(LINE, 20*-cos(PI/6), 20*sin(PI/6), 30*-cos(PI/6), 30*sin(PI/6));
-    PShape smallArc1 = createShape(ARC, 0, -15, 10, 10, PI/2, PI*3/2);
-    PShape smallArc2 = createShape(ARC, 15*-cos(PI/6), 15*sin(PI/6), 10, 10, radians(150), radians(330));
+    PShape line1 = createShape(LINE, 0, 0, 0, -5);
+    PShape line2 = createShape(LINE, 0, -25, 0, -30);
+    PShape line3 = createShape(LINE, 0, 0, 5*-cos(PI/6), 5*sin(PI/6));
+    PShape line4 = createShape(LINE, 25*-cos(PI/6), 25*sin(PI/6), 30*-cos(PI/6), 30*sin(PI/6));
+    PShape smallArc1 = createShape(ARC, 0, -15, 20, 20, PI/2, PI*3/2);
+    PShape smallArc2 = createShape(ARC, 15*-cos(PI/6), 15*sin(PI/6), 20, 20, radians(150), radians(330));
     PShape alien = createShape(GROUP);
     alien.addChild(bigArc);
     alien.addChild(line1);
