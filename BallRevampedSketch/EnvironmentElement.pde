@@ -459,11 +459,11 @@ class Laser extends EnvironmentElement {
     float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);
     pushMatrix();
     stroke(70);
-    translate(importantData[0], importantData[1]);
-    rotate(radians(angleRotation));
+    translate(x, y);
+    rotate(radians(-angleRotation));
     fill(255,0,0);
-    rectMode(CENTER);
-    rect(0, 0, l, w);
+    rectMode(CORNER);
+    rect(0, -5, l, w);
     popMatrix();
     return distanceSq < sq(b.radius);
   }
