@@ -460,7 +460,7 @@ class Laser extends EnvironmentElement {
     pushMatrix();
     stroke(70);
     translate(importantData[0], importantData[1]);
-    rotate(radians(-angleRotation));
+    rotate(radians(angleRotation));
     fill(255,0,0);
     rectMode(CENTER);
     rect(0, 0, l, w);
