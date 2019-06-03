@@ -36,6 +36,12 @@ public class LaserGun extends EnvironmentElement {
     stroke(190);
     line(0, -smallDiam/2, 0, smallDiam/2);
     popMatrix();
+    
+    shootBeam();
+    if(l!= null){
+      l.display();
+      l.move();
+    }
   }
   boolean isTouching(Ball ball) {
     return false;
@@ -78,10 +84,6 @@ public class LaserGun extends EnvironmentElement {
       rotate(angleRotation);
       l = new Laser(10*bigDiam/12,y,0);
       coolDown = 200;
-    }
-    if(l!= null){
-      l.display();
-      l.move();
     }
     coolDown--;
   }
