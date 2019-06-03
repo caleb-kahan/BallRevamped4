@@ -473,7 +473,9 @@ class Laser extends EnvironmentElement {
     rect(0, -w/10, l, w/5);
     fill(30, 144, 255);
     rect(0, w/10, l, 2*w/5);
+    translate(-x,-y);
     popMatrix();
+    rectMode(CENTER);
   }
   void move() {
     x+=cos(radians(angleRotation))*velocity;
