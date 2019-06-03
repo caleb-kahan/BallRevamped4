@@ -1,12 +1,12 @@
 # BallRevamped4
-<b>5/16/19</b> </br> </br>
-Repository is made </br></br>
+<b>5/16/19</b> </br> 
+Repository is made </br>
 <b>5/17/19</b></br>
 <h4> Caleb's Work </h4>
   <dt>Ball Class</dt>
   <ul>
     <li>Added variables, the constructor, and the abstract methods. </li>
-  </ui>
+  </ul>
   <dt>Move</dt>
   <ul>
     <li>Expanded on move to allow user interactivity: the arrow keys accelerate the boy in the specified direction.</li>
@@ -164,14 +164,16 @@ Repository is made </br></br>
   </br>
  <b>5/28/19</b></br>
   <h4>Chris's Work</h4>
+  <ul>
     <li>Created the FlipPowerUp that rotates the display for 180 degrees</li>
     <li>Created a dark version of level where only allows a radius from the ball to be visible</li>
+  </ul>
   <h4>Caleb's Work</h4>
   <ul>
     <li>Made two static functions: rectangleInsidecircle + intersectsRectangle</li>
     <li>Used thosed functions for isTouching. isTouching now smei-works</li>
     <li>Edited the Levels Class so the lasers have the ability to access the lens</li>
-  </ul>
+  </ul></br>
  <b>5/29/19</b></br>
    <h4>Chris's Work</h4>
    <ul>
@@ -182,7 +184,7 @@ Repository is made </br></br>
    <ul>
     <li> Optimized rate of fire for laserBall </li>
     <li> Fixed isTouching for Laser affecting Lense, laser now correctly destroys lense </li>
-   </ul>
+   </ul></br>
 <b>5/30/19</b></br>
    <h4>Chris's Work</h4>
    <ul>
@@ -191,7 +193,7 @@ Repository is made </br></br>
    <h4>Caleb's Work</h4>
    <ul>
     <li> Started burningBall Class, did a couple of methods </li> 
-   </ul>
+   </ul></br>
  <b>5/31/19</b></br>
     <h4>Chris's Work</h4>
     <ul>
@@ -200,12 +202,21 @@ Repository is made </br></br>
     <h4>Caleb's Work</h4>
     <ul>
       <li>Tried to fix black coloring process for burning ball in clas. Failed </li>
-     </ul>
- <n>6/1/19</b></br>
+     </ul></br>
+ <b>6/1/19</b></br>
   <h4>Chris's Work</h4>
   <ul>
     <li>Created levels 15 to 23 which implement all of the features we coded</li>
   </ul>
   <h4>Caleb's Work</h4>
+  </br>
+ <b>6/2/19</b></br>
+  <h4>Chris's Work</h4>
+  <ul>
+    <li>Created a menu that allows you to start or choose levels/li>
+    <li>Created a pause menu that activates when P is pressed</li>
+  </ul>
+  <h4>Caleb's Work</h4>
+  </br>  
 
 
