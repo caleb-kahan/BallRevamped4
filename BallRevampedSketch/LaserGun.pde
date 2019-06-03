@@ -76,7 +76,12 @@ public class LaserGun extends EnvironmentElement {
       pushMatrix();
       translate(x,y);
       rotate(angleRotation);
-      //l = new Laser
+      l = new Laser(10*bigDiam/12,y,0);
+      coolDown = 200;
+    }
+    if(l!= null){
+      l.display();
+      l.move();
     }
     coolDown--;
   }
