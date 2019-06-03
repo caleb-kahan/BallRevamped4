@@ -1,6 +1,6 @@
 int deaths;
 int sec = second();
-int timeOfGame = 0;
+int timeOfGame;
 Game game;
 void setup() {
   size(450,600);
@@ -21,6 +21,8 @@ void mouseClicked() {
       game.currentLevel = 0;
       game.menu.menuType = 0;
       game.isPaused = !game.isPaused;
+      deaths = 0;
+      timeOfGame = 0;
     }
   }
   game.menu.mouseClicked();

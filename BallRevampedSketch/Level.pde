@@ -37,7 +37,7 @@ class Level {
         ball = ((Wood)element).explode(ball);
       }
       if (element.isTouching(ball) && !(element instanceof ForceField)) {
-        if (element instanceof Portal) {
+        if (element instanceof Portal && !((Portal)element).isFake) {
           nextLevel = true;
         }
         if (element instanceof Wood && ball instanceof RazorBall) {

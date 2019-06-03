@@ -21,8 +21,10 @@ abstract class EnvironmentElement {
 
 
 class Portal extends EnvironmentElement {
-  Portal(float cenX, float cenY) {
+  boolean isFake;
+  Portal(float cenX, float cenY,boolean fake) {
     super(cenX, cenY, 63, 63, 0);
+    isFake = fake;
   }
   boolean isTouching(Ball b) {
     float closestX = constrain(b.x, x-w/2.0, x+w/2.0);
