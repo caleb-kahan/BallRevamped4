@@ -490,16 +490,16 @@ class LevelCreator {
     
     elements.add(new Wall(300,355, 15,450,0));  
     elements.add(new Wall(139,198, 15,365,0));
-    elements.add(new LaserGun(276,144,90,ball,60, new color [] {color(135),color(190)}));
-    elements.add(new LaserGun(163,367,90,ball,60,  new color [] {color(135),color(190)}));
+    elements.add(new LaserGun(276,144,90,ball,40, new color [] {color(135),color(190)}));
+    elements.add(new LaserGun(163,367,90,ball,40,  new color [] {color(135),color(190)}));
     
     elements.add(new Portal(75,70,false));
     ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
     return new Level(21, elements, powerUps, ball, startX, startY, -1, -1,false,new int[]{200,200,200});
   }
   Level level22() {
-    float startX = 375;
-    float startY = 500;
+    float startX = 72;
+    float startY = 501;
     Ball ball = new NormalBall(startX, startY, 24);
     ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
     elements.add(new Wall(440, 300, 15, 580, 0)); 
@@ -507,16 +507,18 @@ class LevelCreator {
     elements.add(new Wall(225, 10, 450, 15, 0)); 
     elements.add(new Wall(225, 590, 450, 15, 0)); 
     
-    elements.add(new Wall(160,375,300,20,0));  
-    elements.add(new Wood(139,198, 15,365,0));
-    elements.add(new LaserGun(15,150,90,ball,60));
-    elements.add(new LaserGun(15,260,90,ball,60));
-    elements.add(new LaserGun(445,150,90,ball,60));
-    elements.add(new LaserGun(445,260,90,ball,60));
+    elements.add(new Wall(160,360,300,20,0));  
+    elements.add(new Wood(373,360, 130,15,0));
+    elements.add(new Fuse(new float[] {72,420,270,420,270,275,120,275,120,115,396,115,396,153,175,153,175,200,396,200,396,238,304,238,304,272,410,272,410,358}));
+    elements.add(new LaserGun(15,150,90,ball,40,new color [] {color(135),color(190)}));
+    elements.add(new LaserGun(15,260,90,ball,40,new color [] {color(135),color(190)}));
+    elements.add(new LaserGun(445,150,90,ball,40,new color [] {color(135),color(190)}));
+    elements.add(new LaserGun(445,260,90,ball,40,new color [] {color(135),color(190)}));
     
-    elements.add(new Portal(225,70,false));
+    elements.add(new Portal(225,55,false));
     ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
-    return new Level(22, elements, powerUps, ball, startX, startY, -1, -1,false,new int[]{200,200,200});
+    powerUps.add(new FusePowerUp(72,420,10));
+    return new Level(22, elements, powerUps, ball, startX, startY, 6, 5,false,new int[]{200,200,200});
   }
   Level level23() {
     float startX = 100;
