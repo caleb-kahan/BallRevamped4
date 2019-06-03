@@ -1,18 +1,44 @@
+int deaths;
+int sec = second();
+int timeOfGame;
 Game game;
 void setup() {
   size(450,600,P2D);
   game = new Game();
 }
-
 void draw() {
   game.run();
-  text(""+mouseX+" "+mouseY, mouseX,mouseY);
+  textSize(15);
+  //text(""+mouseX+" "+mouseY, mouseX,mouseY);
+}
+void mouseClicked() {
+  if (game.isPaused) {
+    if (mouseX > 125 && mouseX < 320 && mouseY > 425 && mouseY < 440) {
+      game.isPaused = !game.isPaused;
+    }
+    if (mouseX > 150 && mouseX < 300 && mouseY > 170 && mouseY < 190) {
+      game.menu.levelStart = 0;
+      game.currentLevel = 0;
+      game.menu.menuType = 0;
+      game.isPaused = !game.isPaused;
+      deaths = 0;
+      timeOfGame = 0;
+    }
+  }
+  game.menu.mouseClicked();
 }
 void keyPressed() {
-  game.level.ball.keyPressed();
+  if (game.currentLevel > 0) {
+    game.level.ball.keyPressed();
+  }
 }
 void keyReleased() {
-  game.level.ball.keyReleased();
+  if (key == 'p' && game.currentLevel > 0) {
+    game.isPaused = !game.isPaused;
+  }
+  if (game.currentLevel > 0) {
+    game.level.ball.keyReleased();
+  }
 }
 /*Regular Polygon code from processing website
    */

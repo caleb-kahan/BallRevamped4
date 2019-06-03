@@ -10,7 +10,6 @@ class Level {
   int[] colors;
   boolean isDark;
   boolean isFlipped;
-  boolean hasSpikes;
   boolean nextLevel;
 
 
@@ -37,8 +36,9 @@ class Level {
         ball = ((Wood)element).explode(ball);
       }
       if (element.isTouching(ball) && !(element instanceof ForceField)) {
-        if (element instanceof Portal) {
+        if (element instanceof Portal && !((Portal)element).isFake) {
           nextLevel = true;
+          deaths--;
         }
         if (element instanceof Wood && ball instanceof RazorBall) {
           ((Wood)element).isDestroyed = true;
@@ -126,10 +126,13 @@ class Level {
   void display() {
     background(colors[0], colors[1], colors[2]);
     rectMode(CENTER);
+
     fill(255, 0, 0);
     rect(startX-1, startY, 9, 11);
-    fill(145);
+    textSize(12);
+    fill(0);
     text("X", startX-5, startY+4);
+    fill(145);
     for (EnvironmentElement element : elements) {
       element.display();
     }
@@ -147,6 +150,7 @@ class Level {
     }
   }  
   void respawn() {
+    deaths++;
     ball = new NormalBall(startX, startY, 24);
     this.isFlipped = false;
     for (PowerUp powerup : powerUps) {
