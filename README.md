@@ -209,6 +209,10 @@ Repository is made </br>
     <li>Created levels 15 to 23 which implement all of the features we coded</li>
   </ul>
   <h4>Caleb's Work</h4>
+   <ul>
+    <li>Finished BurningBall</li>
+  <li>Finished BurningPowerUP</li>
+  </ul>
   </br>
  <b>6/2/19</b></br>
   <h4>Chris's Work</h4>
