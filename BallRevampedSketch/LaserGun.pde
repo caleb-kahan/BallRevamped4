@@ -80,7 +80,7 @@ public class LaserGun extends EnvironmentElement {
   void shootBeam() {
     if (coolDown<1) {
       float r = 10*bigDiam/12;
-      l = new Laser(x+r*cos(angleRotation), y+r*sin(angleRotation), degrees(-angleRotation));
+      l = new Laser(x+r*cos(angleRotation), y+r*sin(angleRotation), degrees(-angleRotation),10,800);
       coolDown = 200;
     }
     coolDown--;
