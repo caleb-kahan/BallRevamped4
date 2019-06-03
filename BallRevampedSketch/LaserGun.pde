@@ -7,13 +7,23 @@ public class LaserGun extends EnvironmentElement {
     super(cenX, cenY, 0, 0, 0);
   }
   void display() {
-    circle(x,y,60);
+
+
+    fill(135);
+    circle(x, y, 60);
     PShape s = drawShape();
     shape(s, x, y);
     s.rotate(radians(120));
     shape(s, x, y);
     s.rotate(radians(120));
     shape(s, x, y);
+    stroke(20);
+    fill(190);
+    arc(x, y, 25, 25, PI/2, 3*PI/2);
+    rectMode(CENTER);
+    rect(x+25, y, 50, 25);
+    stroke(190);
+    line(x, y-12.5, x, y+12.5);
   }
   boolean isTouching(Ball ball) {
     return false;
