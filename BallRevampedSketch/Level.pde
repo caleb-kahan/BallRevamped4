@@ -13,8 +13,8 @@ class Level {
   boolean hasSpikes;
   boolean nextLevel;
 
-  
-  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y,int fuseIdx, int woodIdx,boolean isdark,  int[] colors) {
+
+  Level(int levelNum, ArrayList<EnvironmentElement> elements, ArrayList<PowerUp> powerUps, Ball ball, float x, float y, int fuseIdx, int woodIdx, boolean isdark, int[] colors) {
     levelNumber = levelNum;
     this.elements = elements;
     this.powerUps = powerUps;
@@ -27,7 +27,7 @@ class Level {
     this.colors = colors;
   }
 
-  void run(){
+  void run() {
     if (isFlipped) {
       ball.x = 450 - ball.x;
       ball.y = 600 - ball.y;
@@ -42,15 +42,12 @@ class Level {
         }
         if (element instanceof Wood && ball instanceof RazorBall) {
           ((Wood)element).isDestroyed = true;
-        } 
-        else if (!(element instanceof Stick) && (!(element instanceof Wood) || (element instanceof Wood && !((Wood)element).isDestroyed))) {
+        } else if (!(element instanceof Stick) && (!(element instanceof Wood) || (element instanceof Wood && !((Wood)element).isDestroyed))) {
           respawn();
-        } 
-        else if (element instanceof Stick) {
+        } else if (element instanceof Stick) {
           ((Stick)element).ballTouched = true;
         }
-      } 
-      else if (element instanceof ForceField) {
+      } else if (element instanceof ForceField) {
         if (element.isTouching(ball) && !((ForceField)element).isDeactivated) {
           respawn();
         }
@@ -70,16 +67,21 @@ class Level {
           }
         }
       }
+      if (element instanceof LaserGun) {
+        element = (LaserGun)element;
+        if (element.l!=null && element.laser.isTouching(ball) {
+          respawn();
+          element.laser=null;
+        }
+      }
     }
     for (PowerUp powerup : powerUps) { 
       if (powerup.isTouching(ball)) {
         if (powerup instanceof FusePowerUp) {
           ( (FusePowerUp)powerup).use((Fuse)(elements.get(fuseIndex)));
-        }
-        else if (powerup instanceof FlipPowerUp) {
+        } else if (powerup instanceof FlipPowerUp) {
           ((FlipPowerUp)powerup).use(this);
-        }
-        else {
+        } else {
           if (powerup instanceof LightPowerUp) {
             isDark = false;
           }
@@ -115,22 +117,22 @@ class Level {
       stroke(0);
       strokeWeight(750);
       noFill();
-      ellipse(ball.x,ball.y,1000,1000);
+      ellipse(ball.x, ball.y, 1000, 1000);
       strokeWeight(1);
     }
-    if(ball.isDead) respawn();
+    if (ball.isDead) respawn();
   }
   void display() {
-    background(colors[0],colors[1],colors[2]);
+    background(colors[0], colors[1], colors[2]);
     rectMode(CENTER);
-    fill(255,0,0);
-    rect(startX-1,startY,9,11);
+    fill(255, 0, 0);
+    rect(startX-1, startY, 9, 11);
     fill(145);
-    text("X",startX-5,startY+4);
+    text("X", startX-5, startY+4);
     for (EnvironmentElement element : elements) {
       element.display();
     }
-    for (PowerUp powerup :powerUps) {
+    for (PowerUp powerup : powerUps) {
       powerup.display();
     }
     for (EnvironmentElement element : elements) {
@@ -144,7 +146,7 @@ class Level {
     }
   }  
   void respawn() {
-    ball = new NormalBall(startX,startY,24);
+    ball = new NormalBall(startX, startY, 24);
     this.isFlipped = false;
     for (PowerUp powerup : powerUps) {
       powerup.isUsed = false;
@@ -173,8 +175,8 @@ class Level {
       if (element instanceof Spikes) {
         ((Spikes)element).reset();
       }
-      if(element instanceof LaserGun)
-        ((LaserGun)element).reset(ball);
+      if (element instanceof LaserGun)
+      ((LaserGun)element).reset(ball);
     }
   }
 }

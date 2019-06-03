@@ -1,7 +1,7 @@
 public class LaserGun extends EnvironmentElement {
   float coolDown;
   float bigDiam;
-  Laser l;
+  Laser las;
   Ball b;
   boolean shootingMode;
   LaserGun(float cenX, float cenY, float angle, Ball b, float bigDiam) {
@@ -25,6 +25,7 @@ public class LaserGun extends EnvironmentElement {
     s.rotate(radians(120));
     shape(s, 0, 0);
     s.rotate(radians(120));
+    fill(0,0,255);
     shape(s, 0, 0);
     popMatrix();
     stroke(20);
@@ -38,9 +39,9 @@ public class LaserGun extends EnvironmentElement {
     popMatrix();
 
     shootBeam();
-    if (l!= null) {
-      l.display();
-      l.move();
+    if (las!= null) {
+      las.display();
+      las.move();
     }
   }
   boolean isTouching(Ball ball) {
@@ -80,7 +81,7 @@ public class LaserGun extends EnvironmentElement {
   void shootBeam() {
     if (coolDown<1) {
       float r = 10*bigDiam/12;
-      l = new Laser(x+r*cos(angleRotation), y+r*sin(angleRotation), degrees(-angleRotation),10,800);
+      las = new Laser(x+r*cos(angleRotation), y+r*sin(angleRotation), degrees(-angleRotation),10,800);
       coolDown = 200;
     }
     coolDown--;
