@@ -15,12 +15,15 @@ public class LaserGun extends EnvironmentElement {
     fill(135);
     float bigDiam=40;
     circle(0, 0, bigDiam);
+    pushMatrix();
+    rotate(35);
     PShape s = drawShape(bigDiam);
     shape(s, 0, 0);
     s.rotate(radians(120));
     shape(s, 0, 0);
     s.rotate(radians(120));
     shape(s, 0, 0);
+    popMatrix();
     stroke(20);
     fill(190);
     float smallDiam = bigDiam*5.0/12;
