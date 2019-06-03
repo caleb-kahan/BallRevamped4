@@ -9,6 +9,7 @@ public class LaserGun extends EnvironmentElement {
     this.b = b;
     coolDown = 200;
     this.bigDiam = bigDiam;
+    shootingMode = false;
   }
   void display() {
     setAngle();
@@ -80,10 +81,14 @@ public class LaserGun extends EnvironmentElement {
     coolDown=200;
   }
   void shootBeam() {
+    if(coolDown<50){
+      shootingMode = true;
+    }
     if (coolDown<1) {
       float r = 10*bigDiam/12;
       las = new Laser(x+r*cos(angleRotation), y+r*sin(angleRotation), degrees(-angleRotation),10,800);
       coolDown = 200;
+      shootingMode = false;
     }
     coolDown--;
   }
