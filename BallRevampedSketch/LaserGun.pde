@@ -11,14 +11,27 @@ public class LaserGun extends EnvironmentElement {
     coolDown = 200;
     this.bigDiam = bigDiam;
     shootingMode = false;
+    originalColors = original;
   }
   void display() {
-    if (! shootingMode)
+    color actualColor1;
+    color actualColor2;
+    if (! shootingMode){
       setAngle();
+      actualColor1 = originalColors[0];
+      actualColor2 = originalColors[1];
+    }
+    else{
+      float progress = (50-coolDown)/50;
+      color white = color(255);
+      actualColor1 = lerpColor(originalColors[0],white,progress);
+      actualColor2 = lerpColor(originalColors[0],white,progress);
+    } 
+      
     pushMatrix();
     translate(x, y);
     rotate(angleRotation);
-    fill(135);
+    fill(actualColor1);
     bigDiam=40;
     circle(0, 0, bigDiam);
     pushMatrix();
@@ -31,12 +44,12 @@ public class LaserGun extends EnvironmentElement {
     shape(s, 0, 0);
     popMatrix();
     stroke(20);
-    fill(190);
+    fill(actualColor2);
     float smallDiam = bigDiam*5.0/12;
     arc(0, 0, smallDiam, smallDiam, PI/2, 3*PI/2);
     rectMode(CENTER);
     rect(smallDiam, 0, smallDiam*2, smallDiam);
-    stroke(190);
+    stroke(actualColor2);
     line(0, -smallDiam/2, 0, smallDiam/2);
     popMatrix();
 
