@@ -10,22 +10,23 @@ public class LaserGun extends EnvironmentElement {
   void display() {
     setAngle();
     pushMatrix();
+    translate(x,y);
     rotate(angleRotation);
     fill(135);
-    circle(x, y, 60);
+    circle(0, 0, 60);
     PShape s = drawShape();
-    shape(s, x, y);
+    shape(s, 0, 0);
     s.rotate(radians(120));
-    shape(s, x, y);
+    shape(s, 0, 0);
     s.rotate(radians(120));
-    shape(s, x, y);
+    shape(s, 0, 0);
     stroke(20);
     fill(190);
-    arc(x, y, 25, 25, PI/2, 3*PI/2);
+    arc(0, 0, 25, 25, PI/2, 3*PI/2);
     rectMode(CENTER);
-    rect(x+25, y, 50, 25);
+    rect(25, 0, 50, 25);
     stroke(190);
-    line(x, y-12.5, x, y+12.5);
+    line(0, -12.5, 0, 12.5);
     popMatrix();
   }
   boolean isTouching(Ball ball) {
