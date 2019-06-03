@@ -69,123 +69,115 @@ class Level {
       }
       if (element instanceof LaserGun) {
         LaserGun ele = (LaserGun)element;
-        loadPixels();
-        for (int x=0; x<width; x++) {
-          for (int y=0; y<height; y++) {
-            ball = new NormalBall(x, y, 24);
-            if (ele.las!=null && ele.las.isTouching(ball)) {
-              pixels[y*width+x] = color(255,0,0);
-              //respawn();
-              //ele.las=null;
-            }
-            else
-              pixels[y*width+x] = color(0,255,0);
-          }
-        }
-        updatePixels();
-      }}
-      for (PowerUp powerup : powerUps) { 
-        if (powerup.isTouching(ball)) {
-          if (powerup instanceof FusePowerUp) {
-            ( (FusePowerUp)powerup).use((Fuse)(elements.get(fuseIndex)));
-          } else if (powerup instanceof FlipPowerUp) {
-            ((FlipPowerUp)powerup).use(this);
-          } else {
-            if (powerup instanceof LightPowerUp) {
-              isDark = false;
-            }
-            ball = powerup.use(ball);
-          }
+        if (ele.las!=null && ele.las.isTouching(ball)) {
+          respawn();
+          ele.las=null;
         }
       }
-      if (woodIndex > -1 && fuseIndex > -1) {
-        ((Wood)elements.get(woodIndex)).explode((Fuse)elements.get(fuseIndex));
-      }
-      if (ball instanceof LaserBall) {
-        Laser[] lasers = ((LaserBall)ball).lasers;
-        for (Laser laser : lasers) {
-          if (laser != null) {
-            for (EnvironmentElement element : elements) {
-              if (element instanceof Lense && laser.isTouching((Lense)element)) {
-                ((Lense)element).isDestroyed = true;
-              }
-            }
-          }
-        }
-      }
-      if (woodIndex > -1 && fuseIndex > -1) {
-        ((Wood)elements.get(woodIndex)).explode((Fuse)elements.get(fuseIndex));
-      }
-      if (isFlipped) {
-        ball.x = 450 - ball.x;
-        ball.y = 600 - ball.y;
-      }
-      ball.move();
-      ball.display();
-      if (isDark) {
-        stroke(0);
-        strokeWeight(750);
-        noFill();
-        ellipse(ball.x, ball.y, 1000, 1000);
-        strokeWeight(1);
-      }
-      if (ball.isDead) respawn();
     }
-    void display() {
-      background(colors[0], colors[1], colors[2]);
-      rectMode(CENTER);
-      fill(255, 0, 0);
-      rect(startX-1, startY, 9, 11);
-      fill(145);
-      text("X", startX-5, startY+4);
-      for (EnvironmentElement element : elements) {
+
+    for (PowerUp powerup : powerUps) { 
+      if (powerup.isTouching(ball)) {
+        if (powerup instanceof FusePowerUp) {
+          ( (FusePowerUp)powerup).use((Fuse)(elements.get(fuseIndex)));
+        } else if (powerup instanceof FlipPowerUp) {
+          ((FlipPowerUp)powerup).use(this);
+        } else {
+          if (powerup instanceof LightPowerUp) {
+            isDark = false;
+          }
+          ball = powerup.use(ball);
+        }
+      }
+    }
+    if (woodIndex > -1 && fuseIndex > -1) {
+      ((Wood)elements.get(woodIndex)).explode((Fuse)elements.get(fuseIndex));
+    }
+    if (ball instanceof LaserBall) {
+      Laser[] lasers = ((LaserBall)ball).lasers;
+      for (Laser laser : lasers) {
+        if (laser != null) {
+          for (EnvironmentElement element : elements) {
+            if (element instanceof Lense && laser.isTouching((Lense)element)) {
+              ((Lense)element).isDestroyed = true;
+            }
+          }
+        }
+      }
+    }
+    if (woodIndex > -1 && fuseIndex > -1) {
+      ((Wood)elements.get(woodIndex)).explode((Fuse)elements.get(fuseIndex));
+    }
+    if (isFlipped) {
+      ball.x = 450 - ball.x;
+      ball.y = 600 - ball.y;
+    }
+    ball.move();
+    ball.display();
+    if (isDark) {
+      stroke(0);
+      strokeWeight(750);
+      noFill();
+      ellipse(ball.x, ball.y, 1000, 1000);
+      strokeWeight(1);
+    }
+    if (ball.isDead) respawn();
+  }
+  void display() {
+    background(colors[0], colors[1], colors[2]);
+    rectMode(CENTER);
+    fill(255, 0, 0);
+    rect(startX-1, startY, 9, 11);
+    fill(145);
+    text("X", startX-5, startY+4);
+    for (EnvironmentElement element : elements) {
+      element.display();
+    }
+    for (PowerUp powerup : powerUps) {
+      powerup.display();
+    }
+    for (EnvironmentElement element : elements) {
+      if (element instanceof Spikes ) {
         element.display();
+        ((Spikes)element).spikeLevel+= ((Spikes)element).spikeSpeed;
+        ((Spikes)element).spikeSpeed += .0017;
+        element.l = ((Spikes)element).spikeLevel+25;
+        element.y = element.l/2;
       }
-      for (PowerUp powerup : powerUps) {
-        powerup.display();
+    }
+  }  
+  void respawn() {
+    ball = new NormalBall(startX, startY, 24);
+    this.isFlipped = false;
+    for (PowerUp powerup : powerUps) {
+      powerup.isUsed = false;
+      if (powerup instanceof LightPowerUp) {
+        isDark = true;
       }
-      for (EnvironmentElement element : elements) {
-        if (element instanceof Spikes ) {
-          element.display();
-          ((Spikes)element).spikeLevel+= ((Spikes)element).spikeSpeed;
-          ((Spikes)element).spikeSpeed += .0017;
-          element.l = ((Spikes)element).spikeLevel+25;
-          element.y = element.l/2;
-        }
+    }
+    for (EnvironmentElement element : elements) {
+      if (element instanceof Wood) {
+        ((Wood)element).isDestroyed = false;
       }
-    }  
-    void respawn() {
-      ball = new NormalBall(startX, startY, 24);
-      this.isFlipped = false;
-      for (PowerUp powerup : powerUps) {
-        powerup.isUsed = false;
-        if (powerup instanceof LightPowerUp) {
-          isDark = true;
-        }
+      if (element instanceof Fuse) {
+        ((Fuse)element).reset();
       }
-      for (EnvironmentElement element : elements) {
-        if (element instanceof Wood) {
-          ((Wood)element).isDestroyed = false;
-        }
-        if (element instanceof Fuse) {
-          ((Fuse)element).reset();
-        }
-        if (element instanceof Stick) {
-          ((Stick)element).passesLeft = 5;
-          ((Stick)element).ballAbove = true;
-          ((Stick)element).ballTouched = false;
-        }
-        if (element instanceof Lense) {
-          ((Lense)element).isDestroyed=false;
-        }
-        if (element instanceof ForceField) {
-          ((ForceField)element).isDeactivated = false;
-        }
-        if (element instanceof Spikes) {
-          ((Spikes)element).reset();
-        }
-        if (element instanceof LaserGun)
-          ((LaserGun)element).reset(ball);
+      if (element instanceof Stick) {
+        ((Stick)element).passesLeft = 5;
+        ((Stick)element).ballAbove = true;
+        ((Stick)element).ballTouched = false;
       }
+      if (element instanceof Lense) {
+        ((Lense)element).isDestroyed=false;
+      }
+      if (element instanceof ForceField) {
+        ((ForceField)element).isDeactivated = false;
+      }
+      if (element instanceof Spikes) {
+        ((Spikes)element).reset();
+      }
+      if (element instanceof LaserGun)
+        ((LaserGun)element).reset(ball);
     }
   }
+}
