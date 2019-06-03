@@ -443,13 +443,13 @@ class Laser extends EnvironmentElement {
     velocity=1;
   }
   boolean isTouching(Ball b) {
-    float [] importantData  = returningCenterAndWidthAndLength();
+    float [] importantData  = returningCenterAndWidthAndLength(true);
     float newBallX = b.x-importantData[0];
     float newBallY = b.y-importantData[1];
     float angle = atan(newBallY/newBallX);
     if (newBallX<0) angle+=PI;
     float distance= sqrt(sq(newBallX)+sq(newBallY));
-    float subAngle = radians(angleRotation);
+    float subAngle = radians(-angleRotation);
     newBallX= distance*(cos(angle)*cos(subAngle) + sin(angle)*sin(subAngle));
     newBallY = distance*(sin(angle)*cos(subAngle) - cos(angle)*sin(subAngle));
 
@@ -457,14 +457,7 @@ class Laser extends EnvironmentElement {
     float closestY = constrain(newBallY, -w/2.0, w/2.0);
 
     float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);
-    pushMatrix();
-    stroke(70);
-    translate(x, y);
-    rotate(radians(-angleRotation));
-    fill(255,0,0);
-    rectMode(CORNER);
-    rect(0, -5, l, w);
-    popMatrix();
+    
     return distanceSq < sq(b.radius);
   }
   void display() {
@@ -486,7 +479,7 @@ class Laser extends EnvironmentElement {
   }
   boolean isTouching(Lense lens) {
     //If the lens is intersecting one of the circles and is inside the other or at least intersecting the other, then the ball is touching the lens.
-    float [] centerAndWidthAndLength = returningCenterAndWidthAndLength();
+    float [] centerAndWidthAndLength = returningCenterAndWidthAndLength(false);
     float rX = centerAndWidthAndLength[0];
     float rY = centerAndWidthAndLength[1];
     float rW = centerAndWidthAndLength[2];
@@ -515,9 +508,10 @@ class Laser extends EnvironmentElement {
     }
     return false;
   }
-  float [] returningCenterAndWidthAndLength() {
+  float [] returningCenterAndWidthAndLength(boolean flipped) {
     float [] returner = new float[4];
-    float angle = radians(angleRotation);
+    float temp = flipped? -1: 1;
+    float angle = radians(angleRotation*temp);
     returner[0] = x+cos(angle)*l/2;
     returner[1] = y+sin(angle)*l/2;
     returner[2] = l * abs(cos(angle)) + w *abs(sin(angle));
