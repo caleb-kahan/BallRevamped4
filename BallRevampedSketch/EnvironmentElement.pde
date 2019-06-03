@@ -42,7 +42,6 @@ class Portal extends EnvironmentElement {
     stroke(0);
     line(-w/2+6, l/2-6, w/2-6, -l/2+6);
     line(-w/2+6, -l/2+6, w/2-6, l/2-6);
-
     rotate(radians(-angleRotation));
     fill(100, 150, 250);
     rect(w/2-2.5, 0, 5, l);
@@ -440,9 +439,12 @@ class Spikes extends Wall {
 }
 class Laser extends EnvironmentElement {
   float velocity;
-  Laser(float cenX, float cenY, float angle, float w, float l) {
+  color c;
+  Laser(float cenX, float cenY, float angle, float w, float l, color c) {
     super(cenX, cenY, w, l, angle);
     velocity=50;
+    this.c=c;
+    
   }
   boolean isTouching(Ball b) {
     float [] importantData  = returningCenterAndWidthAndLength(true);
@@ -467,11 +469,11 @@ class Laser extends EnvironmentElement {
     translate(x, y);
     rotate(radians(-angleRotation));
     rectMode(CORNER);
-    fill(30, 144, 255);
+    fill(c);
     rect(0, -w/2, l, 2*w/5);
     fill(176, 219, 240);
     rect(0, -w/10, l, w/5);
-    fill(30, 144, 255);
+    fill(c);
     rect(0, w/10, l, 2*w/5);
     translate(-x,-y);
     popMatrix();
