@@ -7,9 +7,9 @@
     levelStart = 0;
     squares = new ArrayList<Square>();
     int level = 1;
-    for (float j = 70;j <= 550;j += 86) {
-      for (float i = 30;i <= 348;i += 102) {
-        squares.add(new Square(i,j,i+62,j+62,level++));
+    for (float j = 54;j <= 550;j += 68) {
+      for (float i = 67;i <= 348;i += 85) {
+        squares.add(new Square(i,j,i+55,j+55,level++));
       }    
     }
   }
@@ -95,7 +95,7 @@
     else  {
       textSize(30);
       fill(255);
-      text("Levels" ,165,40);
+      text("Levels" ,180,35);
       if (mouseX > 10 && mouseX < 66 && mouseY > 10 && mouseY < 35) {
         fill(80);
       }

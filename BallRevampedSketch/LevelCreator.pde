@@ -50,7 +50,13 @@ class LevelCreator {
       case 23:
         return level23();
       case 24:
-        return level24();   
+        return level24();
+      case 25:
+        return level25();
+      case 26:
+        return level26();
+      case 27:
+        return level27();  
       default :
         return leveltest();
     }
@@ -584,5 +590,44 @@ class LevelCreator {
     powerUps.add(new SmallPowerUp(80,100,10));
     powerUps.add(new LightPowerUp(348,340,10));
     return new Level(25, elements, powerUps, ball, startX, startY, -1, -1,true,new int[]{51,153,255});
-  }  
+  }
+  Level level26() {
+    float startX = 225;
+    float startY = 55;
+    Ball ball = new NormalBall(startX, startY, 24);
+    ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
+    elements.add(new Wall(440, 300, 15, 580, 0)); 
+    elements.add(new Wall(10, 300, 15, 580, 0)); 
+    elements.add(new Wall(225, 10, 450, 15, 0)); 
+    elements.add(new Wall(225, 590, 450, 15, 0)); 
+    
+    elements.add(new Wall(140,300,15,580,0));  
+    elements.add(new Wall(300,300,15,580,0));
+    elements.add(new ForceField(225, 475, 155));
+    elements.add(new Stick(225, 315, 155));
+    
+    elements.add(new Portal(225,540,false));
+    ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
+    powerUps.add(new BurningPowerUp(225,280,30,10));
+    return new Level(26, elements, powerUps, ball, startX, startY, -1, -1,false,new int[]{139,22,22});
+  }
+  Level level27() {
+    float startX = 215;
+    float startY = 55;
+    Ball ball = new NormalBall(startX, startY, 24);
+    ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
+    elements.add(new Wall(440, 300, 15, 580, 0)); 
+    elements.add(new Wall(10, 300, 15, 580, 0)); 
+    elements.add(new Wall(225, 10, 450, 15, 0)); 
+    elements.add(new Wall(225, 590, 450, 15, 0)); 
+    
+    elements.add(new Wall(150,300,15,580,0));  
+    elements.add(new Wall(275,300,15,580,0));
+    elements.add(new ForceField(215, 400, 125));
+    elements.add(new Stick(215, 150, 125));
+    elements.add(new Spikes());
+    elements.add(new Portal(215,540,false));
+    ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
+    return new Level(27, elements, powerUps, ball, startX, startY, -1, -1,false,new int[]{178,19,102});
+  }
 }
