@@ -444,7 +444,7 @@ class Laser extends EnvironmentElement {
   }
   boolean isTouching(Ball b) {
     float [] importantData  = returningCenterAndWidthAndLength();
-    float newBallX = b.x-importantData[0];
+    /*float newBallX = b.x-importantData[0];
     float newBallY = b.y-importantData[1];
     float angle = atan(newBallY/newBallX);
     if (newBallX<0) angle+=PI;
@@ -457,8 +457,16 @@ class Laser extends EnvironmentElement {
     float closestY = constrain(newBallY, -w/2.0, w/2.0);
 
     float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);
-    
-    return distanceSq < sq(b.radius);
+    return distanceSq < sq(b.radius);*/
+    pushMatrix();
+    stroke(70);
+    translate(x, y);
+    rotate(radians(angleRotation));
+    fill(255,0,0);
+    rectMode(CENTER);
+    rect(0, 0, w, l);
+    popMatrix();
+    return false;
   }
   void display() {
     pushMatrix();
@@ -484,7 +492,7 @@ class Laser extends EnvironmentElement {
     float rY = centerAndWidthAndLength[1];
     float rW = centerAndWidthAndLength[2];
     float rL = centerAndWidthAndLength[3];
-
+    
 
     if (circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL)) {
       return true;
