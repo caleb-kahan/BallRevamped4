@@ -457,7 +457,7 @@ class Laser extends EnvironmentElement {
     float closestY = constrain(newBallY, -w/2.0, w/2.0);
 
     float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);
-
+    
     return distanceSq < sq(b.radius);
   }
   void display() {
