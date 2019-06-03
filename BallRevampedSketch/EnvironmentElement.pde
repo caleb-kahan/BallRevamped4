@@ -444,7 +444,7 @@ class Laser extends EnvironmentElement {
   }
   boolean isTouching(Ball b) {
     float [] importantData  = returningCenterAndWidthAndLength();
-    /*float newBallX = b.x-importantData[0];
+    float newBallX = b.x-importantData[0];
     float newBallY = b.y-importantData[1];
     float angle = atan(newBallY/newBallX);
     if (newBallX<0) angle+=PI;
@@ -457,16 +457,15 @@ class Laser extends EnvironmentElement {
     float closestY = constrain(newBallY, -w/2.0, w/2.0);
 
     float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);
-    return distanceSq < sq(b.radius);*/
     pushMatrix();
     stroke(70);
-    translate(x, y);
-    rotate(radians(angleRotation));
+    translate(importantData[0], importantData[1]);
+    rotate(radians(-angleRotation));
     fill(255,0,0);
     rectMode(CENTER);
-    rect(0, 0, w, l);
+    rect(0, 0, l, w);
     popMatrix();
-    return false;
+    return distanceSq < sq(b.radius);
   }
   void display() {
     pushMatrix();
