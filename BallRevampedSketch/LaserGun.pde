@@ -1,12 +1,14 @@
 public class LaserGun extends EnvironmentElement {
   float coolDown;
+  float bigDiam;
   Laser l;
   Ball b;
   boolean shootingMode;
-  LaserGun(float cenX, float cenY, float angle, Ball b) {
+  LaserGun(float cenX, float cenY, float angle, Ball b, float bigDiam) {
     super(cenX, cenY, 0, 0, 0);
     this.b = b;
     coolDown = 200;
+    this.bigDiam = bigDiam;
   }
   void display() {
     setAngle();
@@ -14,11 +16,11 @@ public class LaserGun extends EnvironmentElement {
     translate(x, y);
     rotate(angleRotation);
     fill(135);
-    float bigDiam=40;
+    bigDiam=40;
     circle(0, 0, bigDiam);
     pushMatrix();
     rotate(35);
-    PShape s = drawShape(bigDiam);
+    PShape s = drawShape();
     shape(s, 0, 0);
     s.rotate(radians(120));
     shape(s, 0, 0);
@@ -34,7 +36,6 @@ public class LaserGun extends EnvironmentElement {
     stroke(190);
     line(0, -smallDiam/2, 0, smallDiam/2);
     popMatrix();
-    coolDown--;
   }
   boolean isTouching(Ball ball) {
     return false;
@@ -47,7 +48,7 @@ public class LaserGun extends EnvironmentElement {
       angleRotation= angle;
     }
   }
-  PShape drawShape(float bigDiam) {
+  PShape drawShape() {
     float smallDiam = bigDiam*5.0/12;
     noFill();
     PShape bigArc = createShape(ARC, 0, 0, bigDiam, bigDiam, radians(150), PI*3/2);
@@ -69,5 +70,14 @@ public class LaserGun extends EnvironmentElement {
   }
   void reset(Ball b) {
     this.b = b;
+  }
+  void shootBeam(){
+    if(coolDown<1){
+      pushMatrix();
+      translate(x,y);
+      rotate(angleRotation);
+      //l = new Laser
+    }
+    coolDown--;
   }
 }
