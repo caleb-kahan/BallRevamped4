@@ -3,8 +3,9 @@ public class LaserGun extends EnvironmentElement {
   Laser l;
   Ball b;
   boolean shootingMode;
-  LaserGun(float cenX, float cenY, float angle) {
+  LaserGun(float cenX, float cenY, float angle, Ball b) {
     super(cenX, cenY, 0, 0, 0);
+    this.b = b;
   }
   void display() {
     setAngle();
