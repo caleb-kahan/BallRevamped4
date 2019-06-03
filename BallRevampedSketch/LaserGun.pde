@@ -12,7 +12,8 @@ public class LaserGun extends EnvironmentElement {
     shootingMode = false;
   }
   void display() {
-    setAngle();
+    if (! shootingMode)
+      setAngle();
     pushMatrix();
     translate(x, y);
     rotate(angleRotation);
@@ -26,7 +27,7 @@ public class LaserGun extends EnvironmentElement {
     s.rotate(radians(120));
     shape(s, 0, 0);
     s.rotate(radians(120));
-    fill(0,0,255);
+    fill(0, 0, 255);
     shape(s, 0, 0);
     popMatrix();
     stroke(20);
@@ -79,14 +80,15 @@ public class LaserGun extends EnvironmentElement {
   void reset(Ball b) {
     this.b = b;
     coolDown=200;
+    shootingMode = false;
   }
   void shootBeam() {
-    if(coolDown<50){
+    if (coolDown<50) {
       shootingMode = true;
     }
     if (coolDown<1) {
       float r = 10*bigDiam/12;
-      las = new Laser(x+r*cos(angleRotation), y+r*sin(angleRotation), degrees(-angleRotation),10,800);
+      las = new Laser(x+r*cos(angleRotation), y+r*sin(angleRotation), degrees(-angleRotation), 10, 800);
       coolDown = 200;
       shootingMode = false;
     }
