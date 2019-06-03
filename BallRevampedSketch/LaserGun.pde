@@ -34,6 +34,7 @@ public class LaserGun extends EnvironmentElement {
     pushMatrix();
     translate(x, y);
     rotate(angleRotation);
+    stroke(20);
     fill(actualColor1);
     circle(0, 0, actualBigDiam);
     pushMatrix();
@@ -45,7 +46,6 @@ public class LaserGun extends EnvironmentElement {
     s.rotate(radians(120));
     shape(s, 0, 0);
     popMatrix();
-    stroke(20);
     fill(actualColor2);
     float smallDiam = actualBigDiam*5.0/12;
     arc(0, 0, smallDiam, smallDiam, PI/2, 3*PI/2);
