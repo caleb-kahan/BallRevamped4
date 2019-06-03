@@ -443,8 +443,9 @@ class Laser extends EnvironmentElement {
     velocity=50;
   }
   boolean isTouching(Ball b) {
-    float newBallX = b.x-x;
-    float newBallY = b.y-y;
+    float [] importantData  = returningCenterAndWidthAndLength();
+    float newBallX = b.x-importantData[0];
+    float newBallY = b.y-importantData[1];
     float angle = atan(newBallY/newBallX);
     if (newBallX<0) angle+=PI;
     float distance= sqrt(sq(newBallX)+sq(newBallY));
@@ -452,8 +453,8 @@ class Laser extends EnvironmentElement {
     newBallX= distance*(cos(angle)*cos(subAngle) + sin(angle)*sin(subAngle));
     newBallY = distance*(sin(angle)*cos(subAngle) - cos(angle)*sin(subAngle));
 
-    float closestX = constrain(newBallX, -w/2.0, w/2.0);
-    float closestY = constrain(newBallY, -y/2.0, y/2.0);
+    float closestX = constrain(newBallX, -importantData[2]/2.0, importantData[2]/2.0);
+    float closestY = constrain(newBallY, -importantData[3]/2.0, importantData[3]/2.0);
 
     float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);
 
