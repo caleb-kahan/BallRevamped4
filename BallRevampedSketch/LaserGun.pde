@@ -59,4 +59,7 @@ public class LaserGun extends EnvironmentElement {
     alien.addChild(smallArc2);
     return alien;
   }
+  void reset(Ball b){
+    this.b = b;
+  }
 }

@@ -173,6 +173,8 @@ class Level {
       if (element instanceof Spikes) {
         ((Spikes)element).reset();
       }
+      if(element instanceof LaserGun)
+        ((LaserGun)element).reset(ball);
     }
   }
 }
