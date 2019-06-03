@@ -33,26 +33,6 @@
       }
     }
   }
-  /*void run() {
-    if (menuType == 0) {
-      if (mousePressed && mouseX>50 && mouseX<109 && mouseY>154 && mouseY<186) {
-        levelStart = 1;
-      }
-      else if (mousePressed && mouseX>50 && mouseX<138 && mouseY>284 && mouseY<310) {
-        menuType = 1;
-      }
-    }
-    else if (menuType == 1) {
-      for (Square square : squares) {
-        if (mousePressed && square.isTouching()) {
-          levelStart = square.level;
-        }
-      }
-      if (mousePressed && mouseX > 10 && mouseX<66 && mouseY>10 && mouseY<35) {
-        menuType = 0;
-      }
-    }
-  }*/
   void display() {
     noStroke();
     fill(51,220,102);
@@ -165,6 +145,9 @@
       noFill();
       rect(x1,y1,x2,y2);
       fill(fill);
-      text(""+level,x1 + (x2-x1)/2-8,y1 + (y2-y1)/2+8);
+      if (level > 9) {
+        text(""+level,x1 + (x2-x1)/2-15,y1 + (y2-y1)/2+8);
+      }
+      else text(""+level,x1 + (x2-x1)/2-8,y1 + (y2-y1)/2+8);
     }
  }
