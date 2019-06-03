@@ -8,7 +8,7 @@ void setup() {
 }
 void draw() {
   game.run();
-  textSize(20);
+  textSize(15);
   //text(""+mouseX+" "+mouseY, mouseX,mouseY);
 }
 void mouseClicked() {
@@ -28,13 +28,17 @@ void mouseClicked() {
   game.menu.mouseClicked();
 }
 void keyPressed() {
-  game.level.ball.keyPressed();
+  if (game.currentLevel > 0) {
+    game.level.ball.keyPressed();
+  }
 }
 void keyReleased() {
-  if (key == 'p') {
+  if (key == 'p' && game.currentLevel > 0) {
     game.isPaused = !game.isPaused;
-  }  
-  game.level.ball.keyReleased();
+  }
+  if (game.currentLevel > 0) {
+    game.level.ball.keyReleased();
+  }
 }
 /*Regular Polygon code from processing website
    */

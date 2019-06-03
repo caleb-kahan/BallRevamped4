@@ -10,7 +10,6 @@ class Level {
   int[] colors;
   boolean isDark;
   boolean isFlipped;
-  boolean hasSpikes;
   boolean nextLevel;
 
   
@@ -39,6 +38,7 @@ class Level {
       if (element.isTouching(ball) && !(element instanceof ForceField)) {
         if (element instanceof Portal && !((Portal)element).isFake) {
           nextLevel = true;
+          deaths--;
         }
         if (element instanceof Wood && ball instanceof RazorBall) {
           ((Wood)element).isDestroyed = true;

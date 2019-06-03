@@ -50,11 +50,7 @@ public class Game{
       fill(180);
       rectMode(CENTER);
       rect(225,300,200,300);
-      rectMode(CORNERS);
-      noFill();
-      noStroke();
-      rect(125,420,325,440);
-      if (mouseX > 125 && mouseX < 320 && mouseY > 425 && mouseY < 440) {
+      if (mouseX > 125 && mouseX < 320 && mouseY > 420 && mouseY < 440) {
         fill(80);
       }
       else {
@@ -63,9 +59,6 @@ public class Game{
       textSize(30);
       text("Back to Game",125,440);
      
-      noFill();
-      noStroke();
-      rect(150,170,300,190);
       if (mouseX > 150 && mouseX < 300 && mouseY > 170 && mouseY < 190) {
         fill(80);
       }

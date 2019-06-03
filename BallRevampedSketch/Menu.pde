@@ -90,10 +90,6 @@
       textSize(50);
       fill(255);
       text("Ball Revamped 4", 22,50);
-      noFill();
-      rectMode(CORNERS);
-      rect(50,154,109,186);
-      rect(50,284,138,310);
       textSize(30);
       if (mouseX > 50 && mouseX < 109 && mouseY > 154 && mouseY < 186) {
         fill(80);
@@ -120,9 +116,6 @@
       textSize(30);
       fill(255);
       text("Levels" ,165,40);
-      rectMode(CORNERS);
-      noFill();
-      rect (10,10,66,35);
       if (mouseX > 10 && mouseX < 66 && mouseY > 10 && mouseY < 35) {
         fill(80);
       }
