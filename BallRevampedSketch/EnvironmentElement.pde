@@ -453,7 +453,7 @@ class Laser extends EnvironmentElement {
     newBallY = distance*(sin(angle)*cos(subAngle) - cos(angle)*sin(subAngle));
 
     float closestX = constrain(newBallX, -w/2.0, w/2.0);
-    float closestY = constrain(newBallY, -l/2.0, l/2.0);
+    float closestY = constrain(newBallY, -y/2.0, y/2.0);
 
     float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);
 
