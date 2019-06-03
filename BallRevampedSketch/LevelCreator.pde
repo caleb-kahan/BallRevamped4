@@ -490,8 +490,8 @@ class LevelCreator {
     
     elements.add(new Wall(300,355, 15,450,0));  
     elements.add(new Wall(139,198, 15,365,0));
-    elements.add(new LaserGun(276,144,90,ball,60));
-    elements.add(new LaserGun(163,367,90,ball,60));
+    elements.add(new LaserGun(276,144,90,ball,60, new color [] {color(135),color(190)}));
+    elements.add(new LaserGun(163,367,90,ball,60,  new color [] {color(135),color(190)}));
     
     elements.add(new Portal(75,70,false));
     ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
