@@ -32,7 +32,6 @@ public class LaserGun extends EnvironmentElement {
     translate(x, y);
     rotate(angleRotation);
     fill(actualColor1);
-    bigDiam=40;
     circle(0, 0, bigDiam);
     pushMatrix();
     rotate(35);

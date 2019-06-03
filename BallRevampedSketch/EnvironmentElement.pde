@@ -42,7 +42,6 @@ class Portal extends EnvironmentElement {
     stroke(0);
     line(-w/2+6, l/2-6, w/2-6, -l/2+6);
     line(-w/2+6, -l/2+6, w/2-6, l/2-6);
-
     rotate(radians(-angleRotation));
     fill(100, 150, 250);
     rect(w/2-2.5, 0, 5, l);

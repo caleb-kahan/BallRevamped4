@@ -63,8 +63,8 @@ class LevelCreator {
     elements.add(new Wall(10, 300, 15, 580, 0)); 
     elements.add(new Wall(225, 10, 450, 15, 0)); 
     elements.add(new Wall(225, 590, 450, 15, 0)); 
-    elements.add(new LaserGun(200,200,90,ball,60, new color [] {color(135),color(190)}));
-    //elements.add(new Portal(400, 500));
+    elements.add(new LaserGun(200,200,90,ball,40, new color [] {color(135),color(190)}));
+    elements.add(new Portal(400, 500,false));
     //elements.add(new Fuse(new float[] {225, 150, 150, 150, 150, 300, 250, 300}));
     //elements.add(new ForceField(350, 350, 100));
    // elements.add(new Stick(350, 150, 100));
