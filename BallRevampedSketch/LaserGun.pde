@@ -7,8 +7,8 @@ public class LaserGun extends EnvironmentElement {
     super(cenX, cenY, 0, 0, 0);
   }
   void display() {
-
-
+    setAngle();
+    loadMatrix();
     fill(135);
     circle(x, y, 60);
     PShape s = drawShape();
@@ -27,6 +27,12 @@ public class LaserGun extends EnvironmentElement {
   }
   boolean isTouching(Ball ball) {
     return false;
+  }
+  void setAngle() {
+    float angle = atan((b.y-y)/(b.x-x));
+    if (b.x-x<0)
+      angle+=PI;
+    angleRotation= angle;
   }
   PShape drawShape() {
     noFill();
