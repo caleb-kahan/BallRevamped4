@@ -36,9 +36,9 @@ public class LaserGun extends EnvironmentElement {
     stroke(190);
     line(0, -smallDiam/2, 0, smallDiam/2);
     popMatrix();
-    
+
     shootBeam();
-    if(l!= null){
+    if (l!= null) {
       l.display();
       l.move();
     }
@@ -77,12 +77,10 @@ public class LaserGun extends EnvironmentElement {
   void reset(Ball b) {
     this.b = b;
   }
-  void shootBeam(){
-    if(coolDown<1){
-      pushMatrix();
-      translate(x,y);
-      rotate(angleRotation);
-      l = new Laser(10*bigDiam/12,y,0);
+  void shootBeam() {
+    if (coolDown<1) {
+
+      l = new Laser(x+(10*bigDiam/12), y, angleRotation);
       coolDown = 200;
     }
     coolDown--;
