@@ -1,10 +1,11 @@
 public class LaserGun extends EnvironmentElement {
   float coolDown;
+  color [] originalColors;
   float bigDiam;
   Laser las;
   Ball b;
   boolean shootingMode;
-  LaserGun(float cenX, float cenY, float angle, Ball b, float bigDiam) {
+  LaserGun(float cenX, float cenY, float angle, Ball b, float bigDiam, color [] original ) {
     super(cenX, cenY, 0, 0, 0);
     this.b = b;
     coolDown = 200;
@@ -27,7 +28,6 @@ public class LaserGun extends EnvironmentElement {
     s.rotate(radians(120));
     shape(s, 0, 0);
     s.rotate(radians(120));
-    fill(0, 0, 255);
     shape(s, 0, 0);
     popMatrix();
     stroke(20);
