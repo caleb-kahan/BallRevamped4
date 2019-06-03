@@ -339,28 +339,28 @@ class LaserBall extends Ball {
       laserIndex = 0;
     if (keys[0]==true) {
       if (upCoolDown<1) {
-        lasers[laserIndex]=new Laser(x, y-radius, 90,10,90);
+        lasers[laserIndex]=new Laser(x, y-radius, 90,10,90,color(30, 144, 255));
         laserIndex++;
         upCoolDown=20;
       } 
     }
     if (keys[1]==true) {
       if (downCoolDown<1) {
-        lasers[laserIndex]=new Laser(x, y+radius, 270,10,90);
+        lasers[laserIndex]=new Laser(x, y+radius, 270,10,90,color(30, 144, 255));
         laserIndex++;
         downCoolDown=20;
       } 
     }
     if (keys[2]==true) {
       if (rightCoolDown<1) {
-        lasers[laserIndex]=new Laser(x+radius, y, 0,10,90);
+        lasers[laserIndex]=new Laser(x+radius, y, 0,10,90,color(30, 144, 255));
         laserIndex++;
         rightCoolDown=20;
       } 
     }
     if (keys[3]==true) {
       if (leftCoolDown<1) {
-        lasers[laserIndex]=new Laser(x-radius, y, 180,10,90);
+        lasers[laserIndex]=new Laser(x-radius, y, 180,10,90,color(30, 144, 255));
         laserIndex++;
         leftCoolDown=20;
       } 

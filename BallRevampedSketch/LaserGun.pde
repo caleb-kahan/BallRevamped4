@@ -88,7 +88,7 @@ public class LaserGun extends EnvironmentElement {
     }
     if (coolDown<1) {
       float r = 10*bigDiam/12;
-      las = new Laser(x+r*cos(angleRotation), y+r*sin(angleRotation), degrees(-angleRotation), 10, 800);
+      las = new Laser(x+r*cos(angleRotation), y+r*sin(angleRotation), degrees(-angleRotation), 10, 800, color(244, 66, 131));
       coolDown = 200;
       shootingMode = false;
     }
