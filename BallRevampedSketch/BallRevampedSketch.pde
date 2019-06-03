@@ -9,7 +9,7 @@ void setup() {
 void draw() {
   game.run();
   textSize(15);
-  //text(""+mouseX+" "+mouseY, mouseX,mouseY);
+  text(""+mouseX+" "+mouseY, mouseX,mouseY);
 }
 void mouseClicked() {
   if (game.isPaused) {
