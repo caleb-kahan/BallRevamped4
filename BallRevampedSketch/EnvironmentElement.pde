@@ -440,7 +440,7 @@ class Laser extends EnvironmentElement {
   float velocity;
   Laser(float cenX, float cenY, float angle, float w, float l) {
     super(cenX, cenY, w, l, angle);
-    velocity=1;
+    velocity=50;
   }
   boolean isTouching(Ball b) {
     float [] importantData  = returningCenterAndWidthAndLength(true);
