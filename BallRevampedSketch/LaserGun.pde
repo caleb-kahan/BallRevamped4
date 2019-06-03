@@ -77,6 +77,7 @@ public class LaserGun extends EnvironmentElement {
   }
   void reset(Ball b) {
     this.b = b;
+    coolDown=200;
   }
   void shootBeam() {
     if (coolDown<1) {

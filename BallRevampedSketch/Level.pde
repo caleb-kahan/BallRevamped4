@@ -68,10 +68,10 @@ class Level {
         }
       }
       if (element instanceof LaserGun) {
-        element = (LaserGun)element;
-        if (element.l!=null && element.laser.isTouching(ball) {
+        LaserGun ele = (LaserGun)element;
+        if (ele.las!=null && ele.las.isTouching(ball)) {
           respawn();
-          element.laser=null;
+          ele.las=null;
         }
       }
     }
