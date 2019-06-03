@@ -41,27 +41,24 @@ public class LaserGun extends EnvironmentElement {
      circle3.add(new float[]{a, b, pixels[b*width+a]});
      }
      }*/
+     circle(x,y,60);
     PShape s = drawShape(0, 0);
+    
     shape(s, x, y);
   }
   boolean isTouching(Ball ball) {
     return false;
   }
   PShape drawShape(color c, float angle) {
-    color red = color(255, 0, 0);
-    PShape alien = createShape(GROUP);
-    
     noFill();
     PShape bigArc = createShape(ARC, 0, 0, 60, 60, radians(150), PI*3/2);
     PShape line1 = createShape(LINE, 0, 0, 0, -10);
     PShape line2 = createShape(LINE, 0, -20, 0, -30);
     PShape line3 = createShape(LINE, 0, 0, 10*-cos(PI/6), 10*sin(PI/6));
     PShape line4 = createShape(LINE, 20*-cos(PI/6), 20*sin(PI/6), 30*-cos(PI/6), 30*sin(PI/6));
-
-
     PShape smallArc1 = createShape(ARC, 0, -15, 10, 10, PI/2, PI*3/2);
     PShape smallArc2 = createShape(ARC, 15*-cos(PI/6), 15*sin(PI/6), 10, 10, radians(150), radians(330));
-
+    PShape alien = createShape(GROUP);
     alien.addChild(bigArc);
     alien.addChild(line1);
     alien.addChild(line2);
@@ -69,7 +66,7 @@ public class LaserGun extends EnvironmentElement {
     alien.addChild(line4);
     alien.addChild(smallArc1);
     alien.addChild(smallArc2);
-    alien.setFill(color(255, 0, 0));
+    shape(alien, 300, 300);
     return alien;
   }
 }

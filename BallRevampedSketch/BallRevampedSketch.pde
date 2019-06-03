@@ -1,6 +1,6 @@
 Game game;
 void setup() {
-  size(450,600);
+  size(450,600,P2D);
   game = new Game();
 }
 
