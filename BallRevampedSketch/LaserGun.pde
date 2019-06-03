@@ -41,9 +41,8 @@ public class LaserGun extends EnvironmentElement {
      circle3.add(new float[]{a, b, pixels[b*width+a]});
      }
      }*/
-    //circle(x,y,60);
-    PShape s = drawShape(0, 0);
-
+    circle(x,y,60);
+    PShape s = drawShape();
     shape(s, x, y);
     s.rotate(radians(120));
     shape(s, x, y);
@@ -53,7 +52,7 @@ public class LaserGun extends EnvironmentElement {
   boolean isTouching(Ball ball) {
     return false;
   }
-  PShape drawShape(color c, float angle) {
+  PShape drawShape() {
     noFill();
     PShape bigArc = createShape(ARC, 0, 0, 60, 60, radians(150), PI*3/2);
     PShape line1 = createShape(LINE, 0, 0, 0, -5);
@@ -70,7 +69,6 @@ public class LaserGun extends EnvironmentElement {
     alien.addChild(line4);
     alien.addChild(smallArc1);
     alien.addChild(smallArc2);
-    shape(alien, 300, 300);
     return alien;
   }
 }
