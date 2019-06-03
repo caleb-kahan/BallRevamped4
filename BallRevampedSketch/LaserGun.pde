@@ -1,11 +1,12 @@
 public class LaserGun extends EnvironmentElement {
-  int nextShot;
+  float coolDown;
   Laser l;
   Ball b;
   boolean shootingMode;
   LaserGun(float cenX, float cenY, float angle, Ball b) {
     super(cenX, cenY, 0, 0, 0);
     this.b = b;
+    coolDown = 200;
   }
   void display() {
     setAngle();
@@ -33,6 +34,7 @@ public class LaserGun extends EnvironmentElement {
     stroke(190);
     line(0, -smallDiam/2, 0, smallDiam/2);
     popMatrix();
+    coolDown--;
   }
   boolean isTouching(Ball ball) {
     return false;
