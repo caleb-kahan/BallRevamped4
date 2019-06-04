@@ -307,10 +307,13 @@ class LaserBall extends Ball {
     downCoolDown = 0;
     leftCoolDown = 0;
     rightCoolDown = 0;
-    rotatable = true;
+    rotatable = false;
   }
   void display() {
-    if (!isDead) {  
+    if (!isDead) {
+      pushMatrix();
+      translate(x,y);
+      rotate(angleRotation);
       fill(colors[0][0], colors[0][1], colors[0][2]);
       arc(0, 0, this.radius*2, this.radius*2, 0, PI/2, PIE);
       fill(colors[1][0], colors[1][1], colors[1][2]);
@@ -319,6 +322,7 @@ class LaserBall extends Ball {
       arc(0, 0, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
       fill(colors[3][0], colors[3][1], colors[3][2]);
       arc(0, 0, this.radius*2, this.radius*2, PI/2, PI, PIE);
+      popMatrix();
 
       //Here comes special cylinders;
       color from = color(28);
@@ -326,14 +330,14 @@ class LaserBall extends Ball {
       for (float a = -4; a<2; a+=0.03) {
         color lerp = lerpColor(from, to, (a+4)/6);
         stroke(lerp);
-        line(a, -12, a, 12);
-        line(-12, a, 12, a);
+        line(x+a, y-12, x+a, y+12);
+        line(x-12, y+a, x+12, y+a);
       }
       for (float a = 2; a<4; a+=0.03) {
         color lerp = lerpColor(to, from, (a-2)/6);
         stroke(lerp);
-        line(a, -12, a, 12);
-        line(-12, a, 12, a);
+        line(x+a, y-12, x+a, y+12);
+        line(x-12, y+a, x+12, y+a);
       }
       shootBeam();
       for (Laser laser : lasers) {
