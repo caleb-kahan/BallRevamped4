@@ -37,6 +37,7 @@ public class Game{
           currentLevel++;
         }
         fill(255);
+        textSize(15);
         text("Level "+ level.levelNumber,15,15);
         text("Time "+timeOfGame,260,15);
         text("Deaths "+deaths,360,15);

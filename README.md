@@ -201,7 +201,7 @@ Repository is made </br>
     </ul>
     <h4>Caleb's Work</h4>
     <ul>
-      <li>Tried to fix black coloring process for burning ball in clas. Failed </li>
+      <li>Tried to fix black coloring process for burning ball in class. Failed </li>
      </ul></br>
  <b>6/1/19</b></br>
   <h4>Chris's Work</h4>
@@ -217,8 +217,24 @@ Repository is made </br>
  <b>6/2/19</b></br>
   <h4>Chris's Work</h4>
   <ul>
-    <li>Created a menu that allows you to start or choose levels/li>
+    <li>Created a menu that allows you to start or choose levels</li>
     <li>Created a pause menu that activates when P is pressed</li>
+    <li>Implemented the fake portal for the levels with multiple portals</li>
+  </ul>
+  <h4>Caleb's Work</h4>
+  </br>
+ <b>6/3/19</b></br>
+  <h4>Chris's Work</h4>
+  <ul>
+    <li>Created levels 24 to 27</li>
+  </ul>
+  <h4>Caleb's Work</h4>
+  </br>
+ <b>6/4/19</b></br>
+  <h4>Chris's Work</h4>
+  <ul>
+    <li>Created levels 28 to 32</li>
+    <li>After completing the level, there is now an end screen that displays total death and time</li>
   </ul>
   <h4>Caleb's Work</h4>
   </br>  
