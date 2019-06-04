@@ -1,4 +1,4 @@
-public class FakeWood extends EnvironmentElement {
+public class FakeWood{
   float randomAngle;
   float diameter;
   float endPoint1X;
@@ -15,7 +15,6 @@ public class FakeWood extends EnvironmentElement {
   float point2BelowY;
 
   FakeWood(float x, float y) {
-    super(x,y,0,0,random(TWO_PI));
     diameter = random(5, 100);
     endPoint1X = x - (diameter*cos(randomAngle)/2);
     endPoint2X = x + (diameter*cos(randomAngle)/2);
@@ -23,6 +22,7 @@ public class FakeWood extends EnvironmentElement {
     endPoint2Y = y + (diameter*sin(randomAngle)/2);
 
     float vertAdj1, vertAdj2, vertAdj3, vertAdj4 = random(10);
+    
     
   }
 }
