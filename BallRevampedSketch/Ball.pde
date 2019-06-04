@@ -166,16 +166,17 @@ class HeavyBall extends Ball {
     super(x, y, 24);
     gravity = -.13;
     upIncrement = .24;
+    rotatable = true;
   }
   void display() {
     if (!isDead) {  
       fill(175);
-      arc(this.x, this.y, 48, 48, 0, PI/2, PIE);
-      arc(this.x, this.y, 48, 48, -PI/2, 0, PIE);
-      arc(this.x, this.y, 48, 48, PI, 3*PI/2, PIE);
-      arc(this.x, this.y, 48, 48, PI/2, PI, PIE);
+      arc(0, 0, 48, 48, 0, PI/2, PIE);
+      arc(0, 0, 48, 48, -PI/2, 0, PIE);
+      arc(0, 0, 48, 48, PI, 3*PI/2, PIE);
+      arc(0, 0, 48, 48, PI/2, PI, PIE);
       fill(240);
-      polygon(x, y, 24/3, 6);
+      polygon(0, 0, 24/3, 6);
       fill(0);
     }
   }  
@@ -202,21 +203,22 @@ class RazorBall extends Ball {
     colors[3][0]=255;
     colors[3][1]=51;
     colors[3][2]=50;
+    rotatable = true;
   }
   void display() {
     if (!isDead) {  
       fill(220);
       for (float i = 0; i < 2*PI; i+=PI/6) {
-        arc(x+18*cos(i), y+18*sin(i), 22, 22, -PI/10+i, 2*PI/3+i, CHORD);
+        arc(18*cos(i), 18*sin(i), 22, 22, -PI/10+i, 2*PI/3+i, CHORD);
       }
       fill(colors[0][0], colors[0][1], colors[0][2]);
-      arc(x, y, this.radius*2, this.radius*2, 0, PI/2, PIE);
+      arc(0, 0, this.radius*2, this.radius*2, 0, PI/2, PIE);
       fill(colors[1][0], colors[1][1], colors[1][2]);
-      arc(x, y, this.radius*2, this.radius*2, -PI/2, 0, PIE);
+      arc(0, 0, this.radius*2, this.radius*2, -PI/2, 0, PIE);
       fill(colors[2][0], colors[2][1], colors[2][2]);
-      arc(x, y, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
+      arc(0, 0, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
       fill(colors[3][0], colors[3][1], colors[3][2]);
-      arc(x, y, this.radius*2, this.radius*2, PI/2, PI, PIE);
+      arc(0, 0, this.radius*2, this.radius*2, PI/2, PI, PIE);
     }
   }
   void move() {
@@ -249,20 +251,21 @@ class WeightlessBall extends Ball {
       spots[i][0]=a;
       spots[i][1]=b;
     }
+    rotatable = true;
   }
   void display() {
     if (!isDead) {  
       fill(colors[0][0], colors[0][1], colors[0][2]);
-      arc(this.x, this.y, 48, 48, 0, PI/2, PIE);
+      arc(0, 0, 48, 48, 0, PI/2, PIE);
       fill(colors[1][0], colors[1][1], colors[1][2]);
-      arc(this.x, this.y, 48, 48, -PI/2, 0, PIE);
+      arc(0, 0, 48, 48, -PI/2, 0, PIE);
       fill(colors[2][0], colors[2][1], colors[2][2]);
-      arc(this.x, this.y, 48, 48, PI, 3*PI/2, PIE);
+      arc(0, 0, 48, 48, PI, 3*PI/2, PIE);
       fill(colors[3][0], colors[3][1], colors[3][2]);
-      arc(this.x, this.y, 48, 48, PI/2, PI, PIE);
+      arc(0, 0, 48, 48, PI/2, PI, PIE);
       for (int i=0; i<10; i++) {
         fill(120);
-        ellipse(x+spots[i][0]*cos(spots[i][1]), y+spots[i][0]*sin(spots[i][1]), 3, 3);
+        ellipse(spots[i][0]*cos(spots[i][1]), spots[i][0]*sin(spots[i][1]), 3, 3);
       }
     }
   }
@@ -304,17 +307,18 @@ class LaserBall extends Ball {
     downCoolDown = 0;
     leftCoolDown = 0;
     rightCoolDown = 0;
+    rotatable = true;
   }
   void display() {
     if (!isDead) {  
       fill(colors[0][0], colors[0][1], colors[0][2]);
-      arc(this.x, this.y, this.radius*2, this.radius*2, 0, PI/2, PIE);
+      arc(0, 0, this.radius*2, this.radius*2, 0, PI/2, PIE);
       fill(colors[1][0], colors[1][1], colors[1][2]);
-      arc(this.x, this.y, this.radius*2, this.radius*2, -PI/2, 0, PIE);
+      arc(0, 0, this.radius*2, this.radius*2, -PI/2, 0, PIE);
       fill(colors[2][0], colors[2][1], colors[2][2]);
-      arc(this.x, this.y, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
+      arc(0, 0, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
       fill(colors[3][0], colors[3][1], colors[3][2]);
-      arc(this.x, this.y, this.radius*2, this.radius*2, PI/2, PI, PIE);
+      arc(0, 0, this.radius*2, this.radius*2, PI/2, PI, PIE);
 
       //Here comes special cylinders;
       color from = color(28);
@@ -322,14 +326,14 @@ class LaserBall extends Ball {
       for (float a = -4; a<2; a+=0.03) {
         color lerp = lerpColor(from, to, (a+4)/6);
         stroke(lerp);
-        line(x+a, y-12, x+a, y+12);
-        line(x-12, y+a, x+12, y+a);
+        line(a, -12, a, 12);
+        line(-12, a, 12, a);
       }
       for (float a = 2; a<4; a+=0.03) {
         color lerp = lerpColor(to, from, (a-2)/6);
         stroke(lerp);
-        line(x+a, y-12, x+a, y+12);
-        line(x-12, y+a, x+12, y+a);
+        line(a, -12, a, 12);
+        line(-12, a, 12, a);
       }
       shootBeam();
       for (Laser laser : lasers) {
@@ -386,6 +390,7 @@ class LightBall extends Ball {
   LightBall(float x, float y) {
     super(x, y, 24);
     gravity = -.06;
+    rotatable = false;
   }
   void display() {
     if (!isDead) {
@@ -414,6 +419,7 @@ class BurningBall extends NormalBall {
         original[i][j] = colors[i][j];
       }
     }
+    rotatable = true;
   }
   void dying() { 
     for (int i = 0; i<colors.length; i++) {
