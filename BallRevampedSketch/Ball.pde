@@ -10,6 +10,7 @@ abstract class Ball {
   float gravity;
   float upIncrement;
   float angleRotation;
+  boolean rotatable;
   Ball(float x, float y, float radius) {
     this.x = x;
     this.y = y;
@@ -38,9 +39,8 @@ abstract class Ball {
     this.x += this.xSpeed;
     this.y -= this.ySpeed;
     this.ySpeed += gravity;
-    angleRotation+=(xSpeed/radius)*TWO_PI;
-    
-    
+    if (rotatable == true)
+      angleRotation+=0.8*(xSpeed/radius);
   }
   boolean keyPressed() {
     if (keyCode == UP) {
@@ -85,12 +85,10 @@ class NormalBall extends Ball {
     colors[3][0]=255;
     colors[3][1]=51;
     colors[3][2]=50;
+    rotatable = true;
   }
   void display() {
     if (!isDead) {
-      pushMatrix();
-      translate(x,y);
-      rotate(angleRotation);
       stroke(0);
       fill(colors[0][0], colors[0][1], colors[0][2]);
       arc(0, 0, this.radius*2, this.radius*2, 0, PI/2, PIE);
@@ -100,7 +98,6 @@ class NormalBall extends Ball {
       arc(0, 0, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
       fill(colors[3][0], colors[3][1], colors[3][2]);
       arc(0, 0, this.radius*2, this.radius*2, PI/2, PI, PIE);
-      popMatrix();
     }
   }
   void move() {
@@ -129,6 +126,7 @@ class BombBall extends Ball {
     colors[3][2]=(int)(50*0.1);
     time = 5;
     prevTime = second();
+    rotatable = false;
   }
   void display() {
     if (!isDead) {        
@@ -348,37 +346,36 @@ class LaserBall extends Ball {
       laserIndex = 0;
     if (keys[0]==true) {
       if (upCoolDown<1) {
-        lasers[laserIndex]=new Laser(x, y-radius, 90,10,90,color(30, 144, 255));
+        lasers[laserIndex]=new Laser(x, y-radius, 90, 10, 90, color(30, 144, 255));
         laserIndex++;
         upCoolDown=20;
-      } 
+      }
     }
     if (keys[1]==true) {
       if (downCoolDown<1) {
-        lasers[laserIndex]=new Laser(x, y+radius, 270,10,90,color(30, 144, 255));
+        lasers[laserIndex]=new Laser(x, y+radius, 270, 10, 90, color(30, 144, 255));
         laserIndex++;
         downCoolDown=20;
-      } 
+      }
     }
     if (keys[2]==true) {
       if (rightCoolDown<1) {
-        lasers[laserIndex]=new Laser(x+radius, y, 0,10,90,color(30, 144, 255));
+        lasers[laserIndex]=new Laser(x+radius, y, 0, 10, 90, color(30, 144, 255));
         laserIndex++;
         rightCoolDown=20;
-      } 
+      }
     }
     if (keys[3]==true) {
       if (leftCoolDown<1) {
-        lasers[laserIndex]=new Laser(x-radius, y, 180,10,90,color(30, 144, 255));
+        lasers[laserIndex]=new Laser(x-radius, y, 180, 10, 90, color(30, 144, 255));
         laserIndex++;
         leftCoolDown=20;
-      } 
+      }
     }
     leftCoolDown--;
     downCoolDown--;
     rightCoolDown--;
     upCoolDown--;
-
   }
   void move() {
     if (!isDead) super.move();
@@ -386,22 +383,22 @@ class LaserBall extends Ball {
 }
 
 class LightBall extends Ball {
-  LightBall(float x,float y) {
-    super(x,y,24);
+  LightBall(float x, float y) {
+    super(x, y, 24);
     gravity = -.06;
   }
   void display() {
     if (!isDead) {
       fill(255);
-      ellipse(x,y,48,48);
+      ellipse(x, y, 48, 48);
       noFill();
       stroke(245);
       strokeWeight(20);
-      ellipse(x,y,68,68);    
+      ellipse(x, y, 68, 68);    
       strokeWeight(1);
     }
   }
-   void move() {
+  void move() {
     if (!isDead) super.move();
   }
 }
@@ -422,7 +419,7 @@ class BurningBall extends NormalBall {
     for (int i = 0; i<colors.length; i++) {
       color black = color(0, 0, 0);
       float percentage = (millis()+4000-millisSec)/4000;
-      color quadCol = color(original[i][0],original[i][1],original[i][2]);
+      color quadCol = color(original[i][0], original[i][1], original[i][2]);
       color a = lerpColor(quadCol, black, percentage);
       colors[i][0]= (int) red(a);
       colors[i][1]= (int) green(a);

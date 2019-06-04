@@ -113,7 +113,11 @@ class Level {
       ball.y = 600 - ball.y;
     }
     ball.move();
+    pushMatrix();
+    translate(ball.x,ball.y);
+    rotate(ball.angleRotation);
     ball.display();
+    popMatrix();
     if (isDark) {
       stroke(0);
       strokeWeight(750);
