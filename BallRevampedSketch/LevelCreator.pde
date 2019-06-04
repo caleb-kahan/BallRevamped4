@@ -746,16 +746,17 @@ class LevelCreator {
     elements.add(new Wall(410,480,75,15,0)); 
     
     elements.add(new Fuse(new float[] {206, 460,350,460}));
-    elements.add(new Wood(350,540,15,150,90)); 
+    elements.add(new Wood(350,540,150,15,90)); 
     
     elements.add(new Lense(75, 451, false));
     elements.add(new Lense(200, 451, false));
+    elements.add(new Lense(331, 451, false));
     elements.add(new Wood(92,124,140,15,0));
     elements.add(new Wood(92,124,140,15,90)); 
-    elements.add(new Wood(205,176,15,140,0));
-    elements.add(new Wood(205,176,15,140,90)); 
-    elements.add(new Wood(331,284,15,140,0)); 
-    elements.add(new Wood(331,284,15,140,90)); 
+    elements.add(new Wood(205,176,140,15,0));
+    elements.add(new Wood(205,176,140,15,90)); 
+    elements.add(new Wood(331,284,140,15,0)); 
+    elements.add(new Wood(331,284,140,15,90)); 
     elements.add(new ForceField(196, 400, 125));
     elements.add(new Stick(73, 180, 125));
     elements.add(new Portal(73,530,true));
@@ -768,6 +769,6 @@ class LevelCreator {
     powerUps.add(new LaserPowerUp(370, 400, 10));
     powerUps.add(new FusePowerUp(206, 460, 10));
     powerUps.add(new FlipPowerUp(70, 376, 10));
-    return new Level(32, elements, powerUps, ball, startX, startY, 7, 8,false,new int[]{229,204,255});
+    return new Level(32, elements, powerUps, ball, startX, startY, 7,8,false,new int[]{229,204,255});
   }
 }

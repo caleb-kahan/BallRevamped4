@@ -22,7 +22,7 @@
         menuType = 1;
       }
     }
-    else {
+    else if (menuType == 1) {
       for (Square square : squares) {
         if (square.isTouching()) {
           levelStart = square.level;
@@ -31,6 +31,12 @@
       if (mouseX > 10 && mouseX<66 && mouseY>10 && mouseY<35) {
         menuType = 0;
       }
+    }
+    else {
+      if (mouseX > 150 && mouseX < 300 && mouseY > 420 && mouseY < 440) {
+        menuType = 0;
+      }
+      
     }
   }
   void display() {
@@ -92,7 +98,7 @@
       text("Created by",50,460);
       
     }
-    else  {
+    else if (menuType == 1) {
       textSize(30);
       fill(255);
       text("Levels" ,180,35);
@@ -117,6 +123,22 @@
         stroke(fill);
         square.display(fill);
       }
+    }
+    else {
+      textSize(50);
+      fill(255);
+      text("Ball Revamped 4", 22,50);
+      textSize(30);
+      text("Final Time: ", 116,203);
+      text("Final Deaths: ", 91,261);
+      if (mouseX > 150 && mouseX < 300 && mouseY > 420 && mouseY < 440) {
+        fill(80);
+      }
+      else {
+        fill(255);
+      }
+      textSize(30);
+      text("Main Menu",150,440);
     }
     fill(255);
     arrow(mouseX,mouseY,20,0);

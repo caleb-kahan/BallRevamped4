@@ -11,7 +11,7 @@ public class Game{
   }
   void run() {
     if (!isPaused) {
-      if (currentLevel > 0) {
+      if (currentLevel > 0 && currentLevel < 33) {
         if (sec != second()) {
           sec = second();
           timeOfGame++;
@@ -30,7 +30,11 @@ public class Game{
         }
         level.run();
         if (level.nextLevel) {
+          if (currentLevel == 32) {
+            menu.menuType = 2;
+          }
           level = creator.constructLevel(level.levelNumber+1);
+          currentLevel++;
         }
         fill(255);
         text("Level "+ level.levelNumber,15,15);
@@ -44,6 +48,13 @@ public class Game{
           creator = new LevelCreator();
           level = creator.constructLevel(currentLevel);
         }
+        if (menu.menuType == 2) {
+          textSize(30);
+          fill(255);
+          text(""+timeOfGame,300,203);
+          text(""+deaths,300,261);
+        }
+        menu.levelStart = 0;
       }
     }
     else {
