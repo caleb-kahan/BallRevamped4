@@ -9,6 +9,7 @@ abstract class Ball {
   int [][] colors;
   float gravity;
   float upIncrement;
+  float angleRotation;
   Ball(float x, float y, float radius) {
     this.x = x;
     this.y = y;
@@ -18,6 +19,7 @@ abstract class Ball {
     isDead = false;
     keys = new boolean[4];
     upIncrement = .32;
+    angleRotation =0;
   }
   abstract void display();
   void move() {
@@ -36,6 +38,9 @@ abstract class Ball {
     this.x += this.xSpeed;
     this.y -= this.ySpeed;
     this.ySpeed += gravity;
+    angleRotation+=(xSpeed/radius)*TWO_PI;
+    
+    
   }
   boolean keyPressed() {
     if (keyCode == UP) {
