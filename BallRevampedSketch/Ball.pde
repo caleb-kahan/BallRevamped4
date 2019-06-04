@@ -87,16 +87,20 @@ class NormalBall extends Ball {
     colors[3][2]=50;
   }
   void display() {
-    if (!isDead) {  
+    if (!isDead) {
+      pushMatrix();
+      translate(x,y);
+      rotate(angleRotation);
       stroke(0);
       fill(colors[0][0], colors[0][1], colors[0][2]);
-      arc(this.x, this.y, this.radius*2, this.radius*2, 0, PI/2, PIE);
+      arc(0, 0, this.radius*2, this.radius*2, 0, PI/2, PIE);
       fill(colors[1][0], colors[1][1], colors[1][2]);
-      arc(this.x, this.y, this.radius*2, this.radius*2, -PI/2, 0, PIE);
+      arc(0, 0, this.radius*2, this.radius*2, -PI/2, 0, PIE);
       fill(colors[2][0], colors[2][1], colors[2][2]);
-      arc(this.x, this.y, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
+      arc(0, 0, this.radius*2, this.radius*2, PI, 3*PI/2, PIE);
       fill(colors[3][0], colors[3][1], colors[3][2]);
-      arc(this.x, this.y, this.radius*2, this.radius*2, PI/2, PI, PIE);
+      arc(0, 0, this.radius*2, this.radius*2, PI/2, PI, PIE);
+      popMatrix();
     }
   }
   void move() {
