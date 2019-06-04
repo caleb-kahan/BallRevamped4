@@ -39,8 +39,7 @@ abstract class Ball {
     this.x += this.xSpeed;
     this.y -= this.ySpeed;
     this.ySpeed += gravity;
-    if (rotatable == true)
-      angleRotation+=0.8*(xSpeed/radius);
+    angleRotation+=0.8*(xSpeed/radius);
   }
   boolean keyPressed() {
     if (keyCode == UP) {
@@ -312,7 +311,7 @@ class LaserBall extends Ball {
   void display() {
     if (!isDead) {
       pushMatrix();
-      translate(x,y);
+      translate(x, y);
       rotate(angleRotation);
       fill(colors[0][0], colors[0][1], colors[0][2]);
       arc(0, 0, this.radius*2, this.radius*2, 0, PI/2, PIE);
