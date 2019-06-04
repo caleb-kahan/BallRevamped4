@@ -21,7 +21,18 @@ public class FakeWood{
     endPoint1Y = y - (diameter*sin(randomAngle)/2);
     endPoint2Y = y + (diameter*sin(randomAngle)/2);
 
-    float vertAdj1, vertAdj2, vertAdj3, vertAdj4 = random(10);
+    float vertAdj1= random(10);
+    float vertAdj2= random(10);
+    float vertAdj3= random(10);
+    float vertAdj4= random(10);
+    
+    point1AboveX = (endPoint1X + endPoint2X)/3;
+    point1BelowX = (endPoint1X + endPoint2X)/3;
+    point2AboveX = (endPoint1X + endPoint2X)*2/3;
+    point2BelowX = (endPoint1X + endPoint2X)*2/3;
+    
+    
+    
     
     
   }
