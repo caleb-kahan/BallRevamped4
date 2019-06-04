@@ -62,7 +62,11 @@ class LevelCreator {
       case 29:
         return level29(); 
       case 30:
-        return level30();   
+        return level30();
+      case 31:
+        return level31();    
+      case 32:
+        return level32();    
       default :
         return leveltest();
     }
@@ -98,7 +102,7 @@ class LevelCreator {
     powerUps.add(new FlipPowerUp(100, 150, 10));*/
     //powerUps.add(new LightPowerUp(100, 150, 10));
     //powerUps.add(new BurningPowerUp(200,200,30,10));
-    return new Level(24, elements, powerUps, ball, startX, startY, -1, -1, false,new int[]{255,255,255}); //if you uncomment out everything, change -1,-1 to 6,0
+    return new Level(31, elements, powerUps, ball, startX, startY, -1, -1, false,new int[]{255,255,255}); //if you uncomment out everything, change -1,-1 to 6,0
   }
   Level level1() {
     float startX = 65;
@@ -705,5 +709,65 @@ class LevelCreator {
     ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
     powerUps.add(new FusePowerUp(76,485,10));
     return new Level(30, elements, powerUps, ball, startX, startY, 10, 9,false,new int[]{178,19,102});
+  }
+  Level level31() {
+    float startX = 360;
+    float startY = 120;
+    Ball ball = new NormalBall(startX, startY, 24);
+    ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
+    elements.add(new Wall(440, 300, 15, 580, 0)); 
+    elements.add(new Wall(10, 300, 15, 580, 0)); 
+    elements.add(new Wall(225, 10, 450, 15, 0)); 
+    elements.add(new Wall(225, 590, 450, 15, 0)); 
+    
+    elements.add(new Wall(140,365,15,450,0));  
+    elements.add(new Wall(280,365,15,450,0)); 
+    elements.add(new LaserGun(208,555,90,ball,40,new color [] {color(135),color(190)}));
+    elements.add(new Spikes());
+    elements.add(new Portal(77,530,false));
+    ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
+    powerUps.add(new LightPowerUp(360,230,10));
+    powerUps.add(new BurningPowerUp(270,84,30,10));
+   
+    return new Level(31, elements, powerUps, ball, startX, startY, -1, -1,true,new int[]{51,153,255});
+  }
+  Level level32() {
+    float startX = 375;
+    float startY = 75;
+    Ball ball = new NormalBall(startX, startY, 24);
+    ArrayList<EnvironmentElement> elements = new ArrayList<EnvironmentElement>();
+    elements.add(new Wall(440, 300, 15, 580, 0)); 
+    elements.add(new Wall(10, 300, 15, 580, 0)); 
+    elements.add(new Wall(225, 10, 450, 15, 0)); 
+    elements.add(new Wall(225, 590, 450, 15, 0)); 
+    
+    elements.add(new Wall(135,350,15,470,0));  
+    elements.add(new Wall(260,350,15,470,0));
+    elements.add(new Wall(410,480,75,15,0)); 
+    
+    elements.add(new Fuse(new float[] {206, 460,350,460}));
+    elements.add(new Wood(350,540,15,150,90)); 
+    
+    elements.add(new Lense(75, 451, false));
+    elements.add(new Lense(200, 451, false));
+    elements.add(new Wood(92,124,140,15,0));
+    elements.add(new Wood(92,124,140,15,90)); 
+    elements.add(new Wood(205,176,15,140,0));
+    elements.add(new Wood(205,176,15,140,90)); 
+    elements.add(new Wood(331,284,15,140,0)); 
+    elements.add(new Wood(331,284,15,140,90)); 
+    elements.add(new ForceField(196, 400, 125));
+    elements.add(new Stick(73, 180, 125));
+    elements.add(new Portal(73,530,true));
+    elements.add(new Portal(200,530,true));
+    elements.add(new Portal(390,530,false));
+    ArrayList<PowerUp> powerUps = new ArrayList<PowerUp>();
+    powerUps.add(new SmallPowerUp(306, 523, 10));
+    powerUps.add(new HeavyPowerUp(290, 165, 10));
+    powerUps.add(new RazorPowerUp(291, 61, 10));
+    powerUps.add(new LaserPowerUp(370, 400, 10));
+    powerUps.add(new FusePowerUp(206, 460, 10));
+    powerUps.add(new FlipPowerUp(70, 376, 10));
+    return new Level(32, elements, powerUps, ball, startX, startY, 7, 8,false,new int[]{229,204,255});
   }
 }
