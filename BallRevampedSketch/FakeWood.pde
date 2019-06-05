@@ -23,9 +23,9 @@ public class FakeWood {
   FakeWood(float x, float y) {
     this.x=x;
     this.y=y;
-    xSpeed = random(-10,10);
-    ySpeed = random(-10,10);
-    angularVelocity = random(-PI/6,PI/6);
+    xSpeed = random(-20,20);
+    ySpeed = random(-30,10);
+    angularVelocity = random(-PI/3,PI/3);
     angle = random(TWO_PI);
     diameter = random(20, 150);
     endPoint1X = -(diameter/2);
@@ -76,7 +76,7 @@ public class FakeWood {
     x+=xSpeed;
     y+=ySpeed;
     angle+=angularVelocity;
-    ySpeed-=1;
+    ySpeed+=1;
     
   }
 }
