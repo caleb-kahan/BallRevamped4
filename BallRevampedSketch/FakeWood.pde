@@ -16,10 +16,16 @@ public class FakeWood {
   PShape shape;
   float x;
   float y;
+  float angularVelocity;
+  float xSpeed;
+  float ySpeed;
 
   FakeWood(float x, float y) {
     this.x=x;
     this.y=y;
+    xSpeed = random(-10,10);
+    ySpeed = random(-10,10);
+    angularVelocity = random(-30,30);
     angle = random(TWO_PI);
     diameter = random(20, 150);
     endPoint1X = -(diameter/2);
@@ -57,6 +63,7 @@ public class FakeWood {
     shape.curveVertex(endPoint1X, endPoint1Y);
     shape.curveVertex(endPoint1X, endPoint1Y);
     shape.endShape();
+    
   }
   void display() {
     pushMatrix();
