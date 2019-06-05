@@ -100,6 +100,10 @@ public class Wood extends Wall {
   Wood(float cenX, float cenY, float wid, float heigh, float angle) {
     super(cenX, cenY, wid, heigh, angle);
     isDestroyed=false;
+    components = new FakeWood[50];
+    for (int i = 0; i<components.length; i++) {
+      components[i] = new FakeWood(x, y);
+    }
   }
   void display() {
     if (!isDestroyed) {
@@ -144,10 +148,10 @@ public class Wood extends Wall {
       float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);  
       if (distanceSq < sq(3*ball.radius)) {
         isDestroyed = true;
-        components = new FakeWood[50];
-        for(int i = 0;i<components.length;i++){
-          components[i] = new FakeWood(x,y);
-        }
+        /*components = new FakeWood[50];
+        for (int i = 0; i<components.length; i++) {
+          components[i] = new FakeWood(x, y);
+        }*/
       }
       float xVel = ball.xSpeed;
       float yVel = ball.ySpeed;
