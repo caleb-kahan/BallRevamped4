@@ -25,7 +25,7 @@ public class FakeWood {
     this.y=y;
     xSpeed = random(-10,10);
     ySpeed = random(-10,10);
-    angularVelocity = random(-30,30);
+    angularVelocity = random(-PI/6,PI/6);
     angle = random(TWO_PI);
     diameter = random(20, 150);
     endPoint1X = -(diameter/2);
@@ -71,5 +71,12 @@ public class FakeWood {
     rotate(angle);
     shape(shape, 0, 0);
     popMatrix();
+  }
+  void move(){
+    x+=xSpeed;
+    y+=ySpeed;
+    angle+=angularVelocity;
+    ySpeed-=1;
+    
   }
 }
