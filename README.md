@@ -213,7 +213,7 @@ Repository is made </br>
   <h4>Caleb's Work</h4>
    <ul>
     <li>Finished BurningBall</li>
-  <li>Finished BurningPowerUP</li>
+    <li>Finished BurningPowerUP</li>
   </ul>
   </br>
  <b>6/2/19</b></br>
@@ -224,6 +224,10 @@ Repository is made </br>
     <li>Implemented the fake portal for the levels with multiple portals</li>
   </ul>
   <h4>Caleb's Work</h4>
+  <ul>
+  <li>Created Laser Cannon Class</li>
+  <li>Had problems with the laser destroying the ball<li>
+   </ul>
   </br>
  <b>6/3/19</b></br>
   <h4>Chris's Work</h4>
@@ -231,6 +235,10 @@ Repository is made </br>
     <li>Created levels 24 to 27</li>
   </ul>
   <h4>Caleb's Work</h4>
+  <ul>
+  <li>Fixed LaserGun's isTouching. Ball is now properly killed by laser.</li>
+  <li>Laser Cannon now has a windup animation for shooting.</li>
+  </ul>
   </br>
  <b>6/4/19</b></br>
   <h4>Chris's Work</h4>
@@ -239,6 +247,10 @@ Repository is made </br>
     <li>After completing the level, there is now an end screen that displays total death and time</li>
   </ul>
   <h4>Caleb's Work</h4>
+  <ul>
+  <li>Rotating(Spinning) Balls now a thing.</li>
+  <li>Wood Explosion animation for eveyr time wood is destroyed.</li>
+  </ul>
   </br>  
 
 
