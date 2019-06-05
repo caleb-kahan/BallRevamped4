@@ -22,7 +22,7 @@ abstract class EnvironmentElement {
 
 class Portal extends EnvironmentElement {
   boolean isFake;
-  Portal(float cenX, float cenY,boolean fake) {
+  Portal(float cenX, float cenY, boolean fake) {
     super(cenX, cenY, 63, 63, 0);
     isFake = fake;
   }
@@ -122,13 +122,12 @@ public class Wood extends Wall {
         }
       }
       popMatrix();
-    }
-    else{
-      for(FakeWood woodie: components){
+    } else {
+      for (FakeWood woodie : components) {
         woodie.display();
         woodie.move();
       }
-    }  
+    }
   }
   Ball explode(Ball ball) {
     if (ball instanceof BombBall && ((BombBall)ball).time < 0) {
@@ -146,23 +145,25 @@ public class Wood extends Wall {
       if (distanceSq < sq(3*ball.radius)) {
         isDestroyed = true;
         components = new FakeWood[50];
-        for(int i = 0;i<components.length;i++){
-          components[i] = new FakeWood(x,y);
+        for (int i = 0; i<components.length; i++) {
+          components[i] = new FakeWood(x, y);
         }
-        
       }
       float xVel = ball.xSpeed;
       float yVel = ball.ySpeed;
       ball = new NormalBall(ball.x, ball.y, 24);
       ball.xSpeed = xVel;
       ball.ySpeed = yVel;
-      
     }
     return ball;
   }
   void explode(Fuse fuse) {
     if (fuse.currentDot == fuse.dots.size()) {
       isDestroyed = true;
+      components = new FakeWood[50];
+      for (int i = 0; i<components.length; i++) {
+        components[i] = new FakeWood(x, y);
+      }
     }
   }
 }
@@ -342,7 +343,7 @@ class Lense extends EnvironmentElement {
       if (vert)
         line(n, outputs[0], n, outputs[1]);
       else 
-        line(outputs[0], n, outputs[1], n);
+      line(outputs[0], n, outputs[1], n);
     }
   }
   float[] lineGenerator (float input, boolean isCircle1) {
@@ -457,7 +458,6 @@ class Laser extends EnvironmentElement {
     super(cenX, cenY, w, l, angle);
     velocity=50;
     this.c=c;
-    
   }
   boolean isTouching(Ball b) {
     float [] importantData  = returningCenterAndWidthAndLength(true);
@@ -474,7 +474,7 @@ class Laser extends EnvironmentElement {
     float closestY = constrain(newBallY, -w/2.0, w/2.0);
 
     float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);
-    
+
     return distanceSq < sq(b.radius);
   }
   void display() {
@@ -488,7 +488,7 @@ class Laser extends EnvironmentElement {
     rect(0, -w/10, l, w/5);
     fill(c);
     rect(0, w/10, l, 2*w/5);
-    translate(-x,-y);
+    translate(-x, -y);
     popMatrix();
     rectMode(CENTER);
   }
@@ -503,7 +503,7 @@ class Laser extends EnvironmentElement {
     float rY = centerAndWidthAndLength[1];
     float rW = centerAndWidthAndLength[2];
     float rL = centerAndWidthAndLength[3];
-    
+
 
     if (circleIntersection.rectangleInsideCircle(lens.cen1X, lens.cen1Y, lens.radius, rX, rY, rW, rL) && circleIntersection.intersectsRectangle(lens.cen2X, lens.cen2Y, lens.radius, rX, rY, rW, rL)) {
       return true;
@@ -557,20 +557,19 @@ public class LaserGun extends EnvironmentElement {
   void display() {
     color actualColor1;
     color actualColor2;
-    if (! shootingMode){
+    if (! shootingMode) {
       setAngle();
       actualColor1 = originalColors[0];
       actualColor2 = originalColors[1];
       actualBigDiam = bigDiam;
-    }
-    else{
+    } else {
       float progress = (50-coolDown)/50;
       color white = color(255);
-      actualColor1 = lerpColor(originalColors[0],white,progress);
-      actualColor2 = lerpColor(originalColors[0],white,progress);
-      actualBigDiam = bigDiam*pow(1.005,progress*50);
+      actualColor1 = lerpColor(originalColors[0], white, progress);
+      actualColor2 = lerpColor(originalColors[0], white, progress);
+      actualBigDiam = bigDiam*pow(1.005, progress*50);
     } 
-      
+
     pushMatrix();
     translate(x, y);
     rotate(angleRotation);
