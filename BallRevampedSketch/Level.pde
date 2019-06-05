@@ -43,7 +43,7 @@ class Level {
         if (element instanceof Wood && ball instanceof RazorBall) {
           if (((Wood)element).isDestroyed == false) {
             ((Wood)element).isDestroyed = true;
-            ((Wood)element).components = new FakeWood[50];
+            ((Wood)element).components = new FakeWood[30];
             for (int i = 0; i<((Wood)element).components.length; i++) {
               ((Wood)element).components[i] = new FakeWood(element.x, element.y);
             }
