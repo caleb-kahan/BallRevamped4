@@ -1,4 +1,6 @@
 # BallRevamped4
+<h4> Description </h4></br>
+This is a model of the flash game Ball Revamped 4. Its objective is to get a ball to a square portal that moves you to the next level. There is gravity, or a constant acceleration that pulls the ball downwards, so the user needs have constant control over the movement of the ball. There are a multitude of powerups and obstacles that the ball must utilise and overcome in order to reach the portal. The game involves a combination of hand-eye coordination and strategy, but mostly the former. We recreated 32 levels from the actual game, which has 100 levels. </br>
 <b>5/16/19</b> </br> 
 Repository is made </br>
 <b>5/17/19</b></br>
