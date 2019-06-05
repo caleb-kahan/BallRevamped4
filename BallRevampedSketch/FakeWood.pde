@@ -1,5 +1,5 @@
 public class FakeWood{
-  float randomAngle;
+  float angle;
   float diameter;
   float endPoint1X;
   float endPoint2X;
@@ -15,11 +15,12 @@ public class FakeWood{
   float point2BelowY;
 
   FakeWood(float x, float y) {
+    angle = random(TWO_PI);
     diameter = random(5, 100);
-    endPoint1X = x - (diameter*cos(randomAngle)/2);
-    endPoint2X = x + (diameter*cos(randomAngle)/2);
-    endPoint1Y = y - (diameter*sin(randomAngle)/2);
-    endPoint2Y = y + (diameter*sin(randomAngle)/2);
+    endPoint1X = x - (diameter/2);
+    endPoint2X = x + (diameter/2);
+    endPoint1Y = y;
+    endPoint2Y = y;
 
     float vertAdj1= random(10);
     float vertAdj2= random(10);
@@ -31,9 +32,11 @@ public class FakeWood{
     point2AboveX = (endPoint1X + endPoint2X)*2/3;
     point2BelowX = (endPoint1X + endPoint2X)*2/3;
     
-    
-    
-    
-    
+    point1AboveY = y - vertAdj1;
+    point1BelowY = y + vertAdj2;
+    point2AboveY = y - vertAdj3;
+    point2BelowY = y + vertAdj4;   
   }
+  
+  
 }
