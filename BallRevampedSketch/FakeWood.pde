@@ -44,6 +44,8 @@ public class FakeWood {
 
     shape = createShape();
     shape.beginShape();
+    shape.stroke(0);
+    shape.fill(132, 99, 18);
     shape.curveVertex(endPoint1X, endPoint1Y);
     shape.curveVertex(endPoint1X, endPoint1Y);
     shape.curveVertex(point1AboveX, point1AboveY);
@@ -57,9 +59,8 @@ public class FakeWood {
     shape.endShape();
   }
   void display() {
-    stroke(0);
     pushMatrix();
-    translate(x,y);
+    translate(x, y);
     rotate(angle);
     shape(shape, 0, 0);
     popMatrix();
