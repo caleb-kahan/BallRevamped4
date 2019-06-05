@@ -54,7 +54,7 @@ public class Game{
           fill(255);
           text(""+timeOfGame,300,203);
           text(""+deaths,300,261);
-        }
+        } 
         menu.levelStart = 0;
       }
     }

@@ -9,15 +9,50 @@ This is a model of the flash game Ball Revamped 4. Its objective is to get a bal
       <dl>
         <dt>Click the play button</dt>
           <dd>This will take you to the first level</dd>
-        <dt>Click the levels button</dt> 
+        <dt>Click the levels button</dt>
           <dd>and then click the level number of the level you want to play to start playing at that level</dd>
       </dl>
    <li>Press the arrow keys to manipulate the ball's movements.</li>
    <li>You can press the P key to pause the game, where you can go to the main menu or continue playing. Pressing P will unpause</li>
-   <li>
+   <li>Your goal is to get the ball to touch the portal(the blue square with rotating lines). You advance to the next level if you do so</li>
+   <li>There are two things that your ball can interact with:
+    <dl>
+      <dt>Environment Elements</dt>
+        <dd>General Rule: Either you kill them or they kill you if they touch you.</dd>
+        <ul>Examples include
+          <li>Wall- always kills you</li>
+          <li>Wood- you kill them if you blow them up with a bomb or saw them to pieces
+          They kill you if you're not a BombBall or RazorBall</li>
+          <li>ForceField- always kills you if it's turned on. This is the blue sine curve
+          electricity looking thingie.</li>
+          <li>Stick- You could turn off the ForceField by going through the stick
+          back and forth multiple times. It has directional arrows indictating which way to cross the stick</li>
+          <li>Portal- 1st exception to the rule. You beat me the level if the ball touches the portal.</li>
+          <li>Fuse- 2nd exception to the rule. If the ball touches the detonator, in a few seconds, the wood the fuse is attached to will blow up.<li>
+          <li>Dot - The visual indicators of the progress of the fuse<li>
+          <li>Lense- Always kills you. However, a well-placed laser from the LaserBall will destroy the lense<li>
+          <li>Spikes- Always kill you. These are the slowly descending sharp triangles.</li>
+          <li>Laser- If shot by a laserBall, it only has the potential to kill lenses. If shot by a laserGun, it only has the potential to kill balls.</li>
+          <li>LaserGun- shoots delay-aimed lasers at the ball. </li>
+          </ul>
+      <dt>PowerUps</dt>
+        <dd>General Rule: Converts Ball to another type of Ball</dd>
+        <ul>Examples include
+          <li>Making ball bigger</li>
+          <li>Making ball smaller</li>
+          <li>Making ball weightless</li>
+          <li>Making ball heavier</li>
+          <li>Giving the ball laser shooters to destroy lenses</li>
+          <li>Giving the ball razors to destroy wood</li>
+          <li>Lighting the Ball on fire. You have around 5 seconds to win the level, or you die</li>
+          <li>Making the ball into a giant lightbulb, lighting up the whole screen</li>
+          <li>Making the ball into a giant bomb, capable of blowing up wood in a certain radius<li>
+       </ul>
+      </dl>
+    </li>
 </ol>
 
-<b>5/16/19</b> </br> 
+<b>5/16/19</b> </br>
 Repository is made </br></br>
 <b>5/17/19</b></br>
 <h4> Caleb's Work </h4>
@@ -169,7 +204,7 @@ Repository is made </br></br>
 <b>5/27/19</b></br>
   <h4>Chris's Work</h4>
   <ul>
-    <li>Wrote a function that draws an arrow pointed in a certain direction</li> 
+    <li>Wrote a function that draws an arrow pointed in a certain direction</li>
     <li>Added forcefield that has blue sine waves as electricity</li>
     <li>Added a stick that deactivates forcefield if ball passes up and down 5 times</li>
   </ul>
@@ -210,7 +245,7 @@ Repository is made </br></br>
    </ul>
    <h4>Caleb's Work</h4>
    <ul>
-    <li> Started burningBall Class, did a couple of methods </li> 
+    <li> Started burningBall Class, did a couple of methods </li>
    </ul></br>
  <b>5/31/19</b></br>
     <h4>Chris's Work</h4>
@@ -268,5 +303,3 @@ Repository is made </br></br>
   <li>Wood Explosion animation for every time wood is destroyed.</li>
   </ul>
   </br>  
-
-
