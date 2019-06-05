@@ -14,8 +14,12 @@ public class FakeWood {
   float point2BelowX;
   float point2BelowY;
   PShape shape;
+  float x;
+  float y;
 
   FakeWood(float x, float y) {
+    this.x=x;
+    this.y=y;
     angle = random(TWO_PI);
     diameter = random(5, 100);
     endPoint1X = x - (diameter/2);
@@ -51,5 +55,8 @@ public class FakeWood {
     shape.curveVertex(endPoint1X, endPoint1Y);
     shape.curveVertex(endPoint1X, endPoint1Y);
     shape.endShape();
+  }
+  void display(){
+    shape(shape,x,y);
   }
 }
