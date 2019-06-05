@@ -224,7 +224,7 @@ Repository is made </br></br>
   <h4>Caleb's Work</h4>
   <ul>
     <li>Made two static functions: rectangleInsidecircle + intersectsRectangle</li>
-    <li>Used thosed functions for isTouching. isTouching now smei-works</li>
+    <li>Used thosed functions for isTouching. isTouching now semi-works</li>
     <li>Edited the Levels Class so the lasers have the ability to access the lens</li>
   </ul></br>
  <b>5/29/19</b></br>
@@ -263,8 +263,8 @@ Repository is made </br></br>
   </ul>
   <h4>Caleb's Work</h4>
    <ul>
-    <li>Finished BurningBall</li>
-    <li>Finished BurningPowerUP</li>
+    <li>Finished BurningBall. While dying, the ball now turns a crisp black</li>
+    <li>Finished BurningPowerUp, it has a cool fire animation. </li>
   </ul>
   </br>
  <b>6/2/19</b></br>
@@ -276,8 +276,8 @@ Repository is made </br></br>
   </ul>
   <h4>Caleb's Work</h4>
   <ul>
-  <li>Created Laser Cannon Class</li>
-  <li>Had problems with the laser destroying the ball</li>
+  <li>Created Laser Cannon Class- the LaserGun can aim at the ball and shoot at the ball</li>
+  <li>However, there were problems with the laser destroying the ball</li>
    </ul>
   </br>
  <b>6/3/19</b></br>
@@ -288,7 +288,7 @@ Repository is made </br></br>
   <h4>Caleb's Work</h4>
   <ul>
   <li>Fixed LaserGun's isTouching. Ball is now properly killed by laser.</li>
-  <li>Laser Cannon now has a windup animation for shooting.</li>
+  <li>Laser Cannon now has a nice windup animation for shooting.</li>
   </ul>
   </br>
  <b>6/4/19</b></br>
