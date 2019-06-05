@@ -15,7 +15,7 @@ This is a model of the flash game Ball Revamped 4. Its objective is to get a bal
    <li>Press the arrow keys to manipulate the ball's movements.</li>
    <li>You can press the P key to pause the game, where you can go to the main menu or continue playing. Pressing P will unpause</li>
    <li>Your goal is to get the ball to touch the portal(the blue square with rotating lines). You advance to the next level if you do so</li>
-   <li>There are two things that your ball can interact with:
+   <li>There are two things that your ball can interact with via touching/intersection:
     <dl>
       <dt>Environment Elements</dt>
         <dd>General Rule: Either you kill them or they kill you if they touch you.</dd>
