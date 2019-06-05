@@ -11,6 +11,7 @@ This is a model of the flash game Ball Revamped 4. Its objective is to get a bal
         <dt>Press the levels button</dt> 
           <dd>and then press the level number of the level you want to play to start playing at that level</dd>
       </dl>
+   <li>You can press the P key to pause the game, where you can go to the main menu or continue playing. Pressing P will unpause</li>
 </ol>
 
 <b>5/16/19</b> </br> 
