@@ -27,10 +27,10 @@ public class FakeWood {
     endPoint1Y = y;
     endPoint2Y = y;
 
-    float vertAdj1= random(10);
-    float vertAdj2= random(10);
-    float vertAdj3= random(10);
-    float vertAdj4= random(10);
+    float vertAdj1= random(2, 10);
+    float vertAdj2= random(2, 10);
+    float vertAdj3= random(2, 10);
+    float vertAdj4= random(2, 10);
 
     point1AboveX = (endPoint1X + endPoint2X)/3;
     point1BelowX = (endPoint1X + endPoint2X)/3;
@@ -56,7 +56,11 @@ public class FakeWood {
     shape.curveVertex(endPoint1X, endPoint1Y);
     shape.endShape();
   }
-  void display(){
-    shape(shape,x,y);
+  void display() {
+    stroke(0);
+    shape(shape, 0, 0);
+    stroke(255,0,0);
+    line(endPoint1X,endPoint1Y,endPoint2X,endPoint2Y);
+    line(point1AboveX,point1AboveY,point2AboveX,point2AboveY);
   }
 }

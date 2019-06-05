@@ -1,13 +1,17 @@
 int deaths;
 int sec = second();
 int timeOfGame;
+FakeWood woodie;
 Game game;
 void setup() {
   size(450,600,P2D);
   game = new Game();
+  woodie = new FakeWood(200,200);
 }
 void draw() {
   game.run();
+  background(255);
+  woodie.display();
 }
 void mouseClicked() {
   if (game.isPaused) {
