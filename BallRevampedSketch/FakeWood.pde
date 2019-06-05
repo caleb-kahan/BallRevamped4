@@ -21,16 +21,16 @@ public class FakeWood {
     this.x=x;
     this.y=y;
     angle = random(TWO_PI);
-    diameter = random(5, 100);
+    diameter = random(20, 150);
     endPoint1X = x - (diameter/2);
     endPoint2X = x + (diameter/2);
     endPoint1Y = y;
     endPoint2Y = y;
 
-    float vertAdj1= random(2, 10);
-    float vertAdj2= random(2, 10);
-    float vertAdj3= random(2, 10);
-    float vertAdj4= random(2, 10);
+    float vertAdj1= random(1, 10);
+    float vertAdj2= random(1, 10);
+    float vertAdj3= random(1, 10);
+    float vertAdj4= random(1, 10);
 
     point1AboveX = endPoint1X + (endPoint2X-endPoint1X)/3;
     point1BelowX = endPoint1X + (endPoint2X-endPoint1X)/3;
