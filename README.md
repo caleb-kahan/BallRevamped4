@@ -249,7 +249,7 @@ Repository is made </br>
   <h4>Caleb's Work</h4>
   <ul>
   <li>Rotating(Spinning) Balls now a thing.</li>
-  <li>Wood Explosion animation for eveyr time wood is destroyed.</li>
+  <li>Wood Explosion animation for every time wood is destroyed.</li>
   </ul>
   </br>  
 
