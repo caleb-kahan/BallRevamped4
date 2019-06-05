@@ -21,12 +21,12 @@ This is a model of the flash game Ball Revamped 4. Its objective is to get a bal
         <dd>General Rule: Either you kill them or they kill you if they touch you.</dd>
         <ul>Examples include
           <li>Wall- always kills you</li>
-          <li>Wood- you kill them if you blow them up with a bomb or saw them to pieces
-          They kill you if you're not a BombBall or RazorBall</li>
+          <li>Wood- you kill them if you blow them up with a bomb or saw them to pieces.
+          They kill you if you're not a BombBall or RazorBall.</li>
           <li>ForceField- always kills you if it's turned on. This is the blue sine curve
           electricity looking thingie.</li>
           <li>Stick- You could turn off the ForceField by going through the stick
-          back and forth multiple times. It has directional arrows indictating which way to cross the stick</li>
+          back and forth multiple times. It has directional arrows indicating which way to cross the stick</li>
           <li>Portal- 1st exception to the rule. You beat me the level if the ball touches the portal.</li>
           <li>Fuse- 2nd exception to the rule. If the ball touches the detonator, in a few seconds, the wood the fuse is attached to will blow up.</li>
           <li>Dot - The visual indicators of the progress of the fuse</li>
