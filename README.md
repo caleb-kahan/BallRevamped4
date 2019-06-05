@@ -3,8 +3,9 @@
 This is a model of the flash game Ball Revamped 4. Its objective is to get a ball to a square portal that moves you to the next level. There is gravity, or a constant acceleration that pulls the ball downwards, so the user needs have constant control over the movement of the ball. There are a multitude of powerups and obstacles that the ball must utilise and overcome in order to reach the portal. The game involves a combination of hand-eye coordination and strategy, but mostly the former. We recreated 32 levels from the actual game, which has 100 levels. </br></br>
 <h4> Directions </h4></br>
 <ol>
-  <li>Click the green arrown inside the white circle button at the top left to start the program.</li>
-  <li>Now you have two options to start playing
+  <li>Open the BallRevampedSketch folder in Processing.</li>
+  <li>Click the green arrow inside the white circle button at the top left to start the program.</li>
+  <li>Now you have two options to start playing:
       <dl>
         <dt>Click the play button</dt>
           <dd>This will take you to the first level</dd>
