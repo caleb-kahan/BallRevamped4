@@ -158,7 +158,7 @@ public class Wood extends Wall {
     return ball;
   }
   void explode(Fuse fuse) {
-    if (fuse.currentDot == fuse.dots.size()) {
+    if (isDestroyed == false && fuse.currentDot == fuse.dots.size()) {
       isDestroyed = true;
       components = new FakeWood[50];
       for (int i = 0; i<components.length; i++) {

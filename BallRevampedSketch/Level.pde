@@ -41,11 +41,13 @@ class Level {
           deaths--;
         }
         if (element instanceof Wood && ball instanceof RazorBall) {
-          ((Wood)element).isDestroyed = true;
-          ((Wood)element).components = new FakeWood[50];
-          for(int i = 0;i<((Wood)element).components.length;i++){
-          ((Wood)element).components[i] = new FakeWood(element.x,element.y);
-        }
+          if (((Wood)element).isDestroyed == false) {
+            ((Wood)element).isDestroyed = true;
+            ((Wood)element).components = new FakeWood[50];
+            for (int i = 0; i<((Wood)element).components.length; i++) {
+              ((Wood)element).components[i] = new FakeWood(element.x, element.y);
+            }
+          }
         } else if (!(element instanceof Stick) && (!(element instanceof Wood) || (element instanceof Wood && !((Wood)element).isDestroyed))) {
           respawn();
         } else if (element instanceof Stick) {
