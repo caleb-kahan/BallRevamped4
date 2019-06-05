@@ -1,4 +1,4 @@
-public class FakeWood{
+public class FakeWood {
   float angle;
   float diameter;
   float endPoint1X;
@@ -13,6 +13,7 @@ public class FakeWood{
   float point1BelowY;
   float point2BelowX;
   float point2BelowY;
+  PShape shape;
 
   FakeWood(float x, float y) {
     angle = random(TWO_PI);
@@ -26,17 +27,29 @@ public class FakeWood{
     float vertAdj2= random(10);
     float vertAdj3= random(10);
     float vertAdj4= random(10);
-    
+
     point1AboveX = (endPoint1X + endPoint2X)/3;
     point1BelowX = (endPoint1X + endPoint2X)/3;
     point2AboveX = (endPoint1X + endPoint2X)*2/3;
     point2BelowX = (endPoint1X + endPoint2X)*2/3;
-    
+
     point1AboveY = y - vertAdj1;
     point1BelowY = y + vertAdj2;
     point2AboveY = y - vertAdj3;
-    point2BelowY = y + vertAdj4;   
+    point2BelowY = y + vertAdj4;
+
+    shape = createShape();
+    shape.beginShape();
+    shape.curveVertex(endPoint1X, endPoint1Y);
+    shape.curveVertex(endPoint1X, endPoint1Y);
+    shape.curveVertex(point1AboveX, point1AboveY);
+    shape.curveVertex(point2AboveX, point2AboveY);
+    shape.curveVertex(point2AboveX, point2AboveY);
+    shape.curveVertex(endPoint2X, endPoint2Y);
+    shape.curveVertex(point2BelowX, point2BelowY);
+    shape.curveVertex(point1BelowX, point1BelowY);
+    shape.curveVertex(endPoint1X, endPoint1Y);
+    shape.curveVertex(endPoint1X, endPoint1Y);
+    shape.endShape();
   }
-  
-  
 }
