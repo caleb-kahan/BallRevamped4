@@ -226,7 +226,7 @@ Repository is made </br>
   <h4>Caleb's Work</h4>
   <ul>
   <li>Created Laser Cannon Class</li>
-  <li>Had problems with the laser destroying the ball<li>
+  <li>Had problems with the laser destroying the ball</li>
    </ul>
   </br>
  <b>6/3/19</b></br>
