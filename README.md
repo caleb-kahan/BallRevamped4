@@ -5,10 +5,12 @@ This is a model of the flash game Ball Revamped 4. Its objective is to get a bal
 <ol>
   <li>Press the green arrown inside the white circle button.</li>
   <li>Now you have two options to start playing
-      <ul>
-        <li>Press the play button</li><dd> and this will take you to the first level</dd>
-        <li>Press the levels button and then press the level number of the level you want to play to start playing at that level</li>
-      </ul>
+      <dl>
+        <dt>Press the play button</dt>
+          <dd>This will take you to the first level</dd>
+        <dt>Press the levels button</dt> 
+          <dd>and then press the level number of the level you want to play to start playing at that level</dd>
+      </dl>
 </ol>
 
 <b>5/16/19</b> </br> 
