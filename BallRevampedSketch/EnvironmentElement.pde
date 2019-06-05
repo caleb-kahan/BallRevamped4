@@ -96,6 +96,7 @@ class Wall extends EnvironmentElement {
 
 public class Wood extends Wall {
   boolean isDestroyed;
+  FakeWood [] components;
   Wood(float cenX, float cenY, float wid, float heigh, float angle) {
     super(cenX, cenY, wid, heigh, angle);
     isDestroyed=false;
@@ -122,6 +123,12 @@ public class Wood extends Wall {
       }
       popMatrix();
     }
+    else{
+      for(FakeWood woodie: components){
+        woodie.display();
+        woodie.move();
+      }
+    }  
   }
   Ball explode(Ball ball) {
     if (ball instanceof BombBall && ((BombBall)ball).time < 0) {
@@ -138,12 +145,18 @@ public class Wood extends Wall {
       float distanceSq = sq(newBallX-closestX) +sq(newBallY-closestY);  
       if (distanceSq < sq(3*ball.radius)) {
         isDestroyed = true;
+        components = new FakeWood[100];
+        for(int i = 0;i<components.length;i++){
+          components[i] = new FakeWood(x,y);
+        }
+        
       }
       float xVel = ball.xSpeed;
       float yVel = ball.ySpeed;
       ball = new NormalBall(ball.x, ball.y, 24);
       ball.xSpeed = xVel;
       ball.ySpeed = yVel;
+      
     }
     return ball;
   }

@@ -10,8 +10,6 @@ void setup() {
 }
 void draw() {
   game.run();
-  background(255);
-  woodie.display();
 }
 void mouseClicked() {
   if (game.isPaused) {
