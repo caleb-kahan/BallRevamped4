@@ -145,8 +145,8 @@ public class Wood extends Wall {
       if (distanceSq < sq(3*ball.radius)) {
         isDestroyed = true;
         components = new FakeWood[50];
-        for (int i = 0; i<components.length; i++) {
-          components[i] = new FakeWood(x, y);
+        for(int i = 0;i<components.length;i++){
+          components[i] = new FakeWood(x,y);
         }
       }
       float xVel = ball.xSpeed;
