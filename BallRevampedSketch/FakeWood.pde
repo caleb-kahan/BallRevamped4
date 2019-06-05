@@ -32,10 +32,10 @@ public class FakeWood {
     float vertAdj3= random(2, 10);
     float vertAdj4= random(2, 10);
 
-    point1AboveX = (endPoint1X + endPoint2X)/3;
-    point1BelowX = (endPoint1X + endPoint2X)/3;
-    point2AboveX = (endPoint1X + endPoint2X)*2/3;
-    point2BelowX = (endPoint1X + endPoint2X)*2/3;
+    point1AboveX = endPoint1X + (endPoint2X-endPoint1X)/3;
+    point1BelowX = endPoint1X + (endPoint2X-endPoint1X)/3;
+    point2AboveX = endPoint1X + (endPoint2X-endPoint1X)*2/3;
+    point2BelowX = endPoint1X + (endPoint2X-endPoint1X)*2/3;
 
     point1AboveY = y - vertAdj1;
     point1BelowY = y + vertAdj2;
@@ -59,8 +59,5 @@ public class FakeWood {
   void display() {
     stroke(0);
     shape(shape, 0, 0);
-    stroke(255,0,0);
-    line(endPoint1X,endPoint1Y,endPoint2X,endPoint2Y);
-    line(point1AboveX,point1AboveY,point2AboveX,point2AboveY);
   }
 }
