@@ -3,19 +3,20 @@
 This is a model of the flash game Ball Revamped 4. Its objective is to get a ball to a square portal that moves you to the next level. There is gravity, or a constant acceleration that pulls the ball downwards, so the user needs have constant control over the movement of the ball. There are a multitude of powerups and obstacles that the ball must utilise and overcome in order to reach the portal. The game involves a combination of hand-eye coordination and strategy, but mostly the former. We recreated 32 levels from the actual game, which has 100 levels. </br></br>
 <h4> Directions </h4></br>
 <ol>
-  <li>Press the green arrown inside the white circle button.</li>
+  <li>Click the green arrown inside the white circle button at the top left to start the program.</li>
   <li>Now you have two options to start playing
       <dl>
-        <dt>Press the play button</dt>
+        <dt>Click the play button</dt>
           <dd>This will take you to the first level</dd>
-        <dt>Press the levels button</dt> 
-          <dd>and then press the level number of the level you want to play to start playing at that level</dd>
+        <dt>Click the levels button</dt> 
+          <dd>and then click the level number of the level you want to play to start playing at that level</dd>
       </dl>
+   <li>Press the arrow keys to manipulate the ball's movements.</li>
    <li>You can press the P key to pause the game, where you can go to the main menu or continue playing. Pressing P will unpause</li>
 </ol>
 
 <b>5/16/19</b> </br> 
-Repository is made </br>
+Repository is made </br></br>
 <b>5/17/19</b></br>
 <h4> Caleb's Work </h4>
   <dt>Ball Class</dt>
@@ -24,7 +25,7 @@ Repository is made </br>
   </ul>
   <dt>Move</dt>
   <ul>
-    <li>Expanded on move to allow user interactivity: the arrow keys accelerate the boy in the specified direction.</li>
+    <li>Expanded on move to allow user interactivity: the arrow keys accelerate the ball in the specified direction.</li>
     <li>Made move part of the Ball class and called the super version in the NormalBall class.  </li>
   </ul>
 <h4> Chris's Work </h4>
