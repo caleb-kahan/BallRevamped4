@@ -21,8 +21,8 @@ public class FakeWood {
   float ySpeed;
 
   FakeWood(float x, float y) {
-    this.x=x;
-    this.y=y;
+    this.x=x+random(-20,20);
+    this.y=y+random(-20,20);
     xSpeed = random(-20,20);
     ySpeed = random(-30,10);
     angularVelocity = random(-PI/3,PI/3);
