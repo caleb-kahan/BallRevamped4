@@ -22,10 +22,10 @@ public class FakeWood {
     this.y=y;
     angle = random(TWO_PI);
     diameter = random(20, 150);
-    endPoint1X = x - (diameter/2);
-    endPoint2X = x + (diameter/2);
-    endPoint1Y = y;
-    endPoint2Y = y;
+    endPoint1X = -(diameter/2);
+    endPoint2X = (diameter/2);
+    endPoint1Y = 0;
+    endPoint2Y = 0;
 
     float vertAdj1= random(1, 10);
     float vertAdj2= random(1, 10);
@@ -37,10 +37,10 @@ public class FakeWood {
     point2AboveX = endPoint1X + (endPoint2X-endPoint1X)*2/3;
     point2BelowX = endPoint1X + (endPoint2X-endPoint1X)*2/3;
 
-    point1AboveY = y - vertAdj1;
-    point1BelowY = y + vertAdj2;
-    point2AboveY = y - vertAdj3;
-    point2BelowY = y + vertAdj4;
+    point1AboveY = -vertAdj1;
+    point1BelowY = vertAdj2;
+    point2AboveY = -vertAdj3;
+    point2BelowY = +vertAdj4;
 
     shape = createShape();
     shape.beginShape();
@@ -58,6 +58,10 @@ public class FakeWood {
   }
   void display() {
     stroke(0);
+    pushMatrix();
+    translate(x,y);
+    rotate(angle);
     shape(shape, 0, 0);
+    popMatrix();
   }
 }
